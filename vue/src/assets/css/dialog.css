@@ -1,0 +1,479 @@
+.mask, .dialog-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.mask {
+  background:rgba(0,0,0,0.5) !important;
+  z-index: 1000;
+}
+/*弹框公用 */
+/*修改密码*/
+.dialog-container {
+  z-index: 1001;
+}
+.dialog-inner.ht354{
+  height: 354px;
+}
+.dialog-header {
+  height: 44px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #f5f7fb;
+}
+.dialog-header-tit {
+  font-size: 16px;
+  color: #333;
+  line-height: 44px;
+  padding-left: 20px;
+}
+.dialog-header-close {
+  width: 22px;
+  height: 22px;
+  background-position: -20px 0px;
+  cursor: pointer;
+  margin-right: 18px;
+  margin-top: 11px;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+}
+.dialog-header-close:hover{
+  opacity: 0.6;
+}
+.dialog-inner {
+  position: fixed;
+  width: 494px;
+  height: 260px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2;
+  background: #fff;
+}
+.dialog-body{
+  text-align: center;
+}
+.dialogPic{
+  margin-top: 50px;
+}
+.dialogPic img{
+  width: 60px;
+  height: 60px;
+}
+.dialogWord{
+  font-size: 24px;
+  color: #333;
+  margin-top: 13px;
+}
+.textListht .sy-publish-dialog-content .rm-advanced-search-dd .rm-advanced-search-inp{
+  height: 35px;
+  line-height: 35px;
+  width: 289px;
+}
+.textListht .sy-publish-dialog-content .rm-advanced-search-dd .rm-advanced-search-inp.codeText{
+  width: 149px;
+  margin-right: 10px;
+  border-right: 1px solid #d5dde6;
+  height: 35px;
+  line-height: 35px;
+}
+.verCodeBox{
+  background: #e7f5ff;
+  width: 130px;
+  height: 35px;
+  line-height: 35px;
+  color: #0081e9;
+}
+.verCodeBox.active{
+  color: #999;
+  background: #f5f6f7;
+}
+.dialog-footer.dialog-footMar{
+  margin-top: 40px;
+  padding: 10px 0;
+}
+.dialog-footer.dialog-footMar .btn-item-acvite{
+  background: #0081e9;
+  border: 1px solid #0081e9;
+}
+/*更换手机*/
+.sy-publish-dialog-content{
+  padding-top: 35px;
+}
+.dialog-inner.ht300{
+  height: 300px;
+}
+.sy-publish-dialog-content .rm-advanced-search-dl {
+  margin-bottom: 24px;
+  height:auto;
+}
+.sy-publish-dialog-content .rm-advanced-search-dt {
+  width: 126px;
+  float: left;
+  font-size: 14px;
+  color: #666;
+  line-height: 34px;
+  text-align: right;
+}
+.sy-publish-dialog-content .rm-advanced-search-dd {
+  float: left;
+  position: relative;
+}
+.sy-publish-dialog-content .error-tips-box{
+  position: absolute;
+  left: 15px;
+  line-height: 22px;
+  color: #ff3c00;
+  margin-left: 0;
+}
+.sy-publish-dialog-content .rm-advanced-search-inp {
+  margin-left: 15px;
+  height: 32px;
+  line-height: 32px;
+  color: #333;
+  font-size: 14px;
+  border: 1px solid #d5dde6;
+  background: #fff;
+  width: 244px;
+  padding-left: 10px;
+  border-radius: 2px;
+}
+.sy-publish-dialog-content .codeBox .rm-advanced-search-inp{
+  width: 144px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+.sy-publish-dialog-content .codeBox .v-code-box{
+  background: #f2f0f5;
+  color: #333;
+  width: 100px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+}
+.sy-publish-dialog-content .codeBox .v-code-box.active{
+  background: #00c3f5;
+  color: #fff;
+}
+.dialog-footer{
+  text-align: right;
+  border-top: 1px solid #e4eaf0;
+  padding-top: 10px;
+  height: 55px;
+}
+.btn-list {
+  display: inline-block;
+}
+.btn-item {
+  float: left;
+  width: 98px;
+  height: 32px;
+  font-size: 14px;
+  color: #585858;
+  line-height: 32px;
+  background: #fff;
+  border: 1px solid #d5dde6;
+  cursor: pointer;
+  text-align: center;
+  margin-right:20px;
+  border-radius: 2px;
+}
+.btn-item-acvite {
+  background: #0081e9;
+  color: #fff;
+  border-color: #0081e9;
+}
+.btn-item:hover {
+  opacity: 0.7;
+}
+/*修改手机号*/
+.verPhoneWord{
+  color: #666;
+  line-height: 34px;
+  margin-left: 15px;
+}
+.dlMarBom .sy-publish-dialog-content .rm-advanced-search-dl{
+  margin-bottom: 0;
+}
+.dlMarBom .sy-publish-dialog-content .rm-advanced-search-dl:nth-last-of-type(1){
+  margin-top: 10px;
+}
+.dialog-footer.dialog-footMar.marTop60{
+  margin-top: 60px;
+}
+
+/*操作成功*/
+.successBox{
+  background: #48D2A0;
+}
+.icon-success{
+  background-position:-39px -47px;
+}
+.rm-advanced-search-inp:-ms-input-placeholder{
+  color: #bfc0c1 !important;
+}
+.rm-advanced-search-inp::-webkit-input-placeholder{
+  color: #bfc0c1 !important;
+}
+/*图片预览*/
+.dialog-picPreview img{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1000;
+}
+/*确定要撤销吗*/
+.dialog-conTit{
+  text-align: center;
+  color: #666;
+  padding: 0 20px;
+  margin-top: 68px;
+  margin-bottom: 75px;
+}
+.dialog-conTit span{
+  color: #0081e9;
+  margin: 0 5px;
+}
+
+/*提交成功提示*/
+.submitSuccessBox{
+  background: #646773;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  top: 114px;
+  left: 50%;
+  margin-left: -60px;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px #aaa;
+}
+.icon-submitSuccess{
+  background-position: 0 -172px;
+  margin: 10px 10px 0 15px;
+}
+
+/*上线*/
+.icon-online,.icon-downline{
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.icon-online{
+  background-position:0 -80px;
+}
+.icon-online:hover{
+  background-position:-50px -80px;
+}
+/*下线*/
+.icon-downline{
+  background-position:0 -40px;
+}
+.icon-downline:hover{
+  background-position:-50px -40px;
+}
+/*上线弹框*/
+.dialog-conList{
+  text-align: left;
+}
+.dialog-conList:nth-of-type(1){
+  margin: 42px 0 22px;
+}
+.dialog-conList:nth-of-type(2){
+  margin-bottom: 50px;
+}
+.dialog-conList label{
+  float: left;
+  width: 144px;
+  padding-right: 18px;
+  text-align: right;
+  color: #666;
+}
+.dialog-conList span{
+  color: #666;
+  width: 330px;
+}
+.dialog-conList span.blue{
+  color: #0081e9;
+}
+/*添加预警邮箱*/
+.dialog-inner.dialog-ht358{
+  height: 358px;
+}
+.icon-emailWarn{
+  background-position: -29px -185px;
+  margin-left: 4px;
+  margin-top: 7px;
+  float: right;
+}
+.serviceAbnormalTit{
+  padding: 21px 0 12px;
+  margin: 0 25px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+  color: #333;
+}
+.addWarnEmailBox{
+  text-align: left;
+  margin: 10px 25px;
+}
+.addWarnEmailBox a{
+  display: inline-block;
+  width: 133px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  background: #e7f5ff;
+  color: #0081e9;
+  border-radius: 2px;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  transition: 0.25s;
+}
+.addWarnEmailBox a:hover{
+  opacity: 0.8;
+}
+.mailListBox{
+  height: 118px;
+  border: 1px solid #e5e5e5;
+  margin: 0 25px 30px;
+  background: #fafcfd;
+  overflow: hidden;
+}
+.mailTit{
+  background: #f5f6f7;
+  height: 39px;
+  line-height: 39px;
+  color: #333;
+  text-align: left;
+  padding: 0 14px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.mailTit span{
+  display: inline-block;
+  padding: 0 10px;
+}
+.mailTit .name{
+  width: 96px;
+  float: left;
+}
+.mailTit .mail{
+  width: 250px;
+}
+.mailListCon{
+  height: 79px;
+  overflow-y: auto;
+  width: 430px;
+  border-right: 1px solid #e5e5e5;
+}
+.mailListCon .mailTit{
+  background: #fff;
+  color: #666;
+}
+.mailListCon .mailTit:nth-last-of-type(1){
+  border-bottom: none;
+}
+.mailListCon .mailTit:nth-of-type(odd){
+  background: #fff;
+}
+.mailListCon .mailTit:nth-of-type(even){
+  background: #fafcfd;
+}
+.mailListCon .mailTit .icon-mailDelete{
+  display:none;
+}
+.mailListCon .mailTit:hover .icon-mailDelete{
+  display: inline-block;
+}
+.addName,.addEmail{
+  line-height: 20px;
+  border: 1px solid #e5e5e5;
+  padding: 4px 8px;
+  padding: 4px 8px 6px\0;
+  border-radius: 2px;
+  background: #fff;
+  float: left;
+  margin-top: 4px;
+}
+.addName:focus,.addEmail:focus{
+  border: 1px solid #0081e9;
+}
+.addName{
+  width: 94px;
+}
+.addEmail{
+  width: 230px;
+  margin-left: 16px;
+}
+/*添加预警邮箱*/
+.icon-addWarnEmail{
+  background-position: -27px -56px;
+  width: 19px;
+  height: 19px;
+  margin: 8px 0 0 10px;
+}
+/*邮箱删除*/
+.icon-mailDelete{
+  background-position: 0px -120px;
+  cursor: pointer;
+  -webkit-transition:0.25s;
+  -moz-transition:0.25s;
+  transition:0.25s;
+  float: right;
+  margin-top: 4px;
+}
+.icon-mailDelete:hover{
+  background-position: -50px -120px;
+}
+.dialog-inner.ht286{
+  height: 286px;
+}
+.dialog-inner.ht384{
+  height: 384px;
+}
+/*去认证-弹框*/
+.dialog-body .dialog-realNamePic{
+	margin-top: 40px;
+}
+.dialog-body .dialog-realNamePrompt{
+	font-size: 16px;
+	color: #666;
+	margin: 18px 0 28px;
+}
+.dialog-body .btnGoCertifi a{
+	display: inline-block;
+	width: 118px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	background: #4379ff;
+	color: #fff;
+	margin: 0 auto;
+	border-radius: 2px;
+}
+/*弹框关闭*/
+.icon-dialogClose{
+  background-position: 0 -198px !important;
+  width: 22px !important;
+  height: 22px !important;
+  float: right !important;
+  margin-right: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.icon-dialogClose:hover{
+  opacity: 0.8;
+}

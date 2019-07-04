@@ -1,0 +1,1115 @@
+[2019-05-28T14:54:14.622] [INFO] response - { method: 'GET',
+  url: '/favicon.ico',
+  body: {},
+  response:
+   { status: 404,
+     message: 'Not Found',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE' },
+     body: undefined } }
+[2019-05-28T15:03:16.935] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: {},
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:03:18.462] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:08:41.817] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:08:44.317] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:08:45.051] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:08:45.432] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:08:46.600] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:08:46.986] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:08:48.626] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:09:06.218] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:10:19.320] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:10:20.706] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:10:21.699] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:25:17.379] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:25:18.661] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:25:22.159] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:25:27.163] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:25:28.457] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:27:29.050] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:27:31.517] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:29.746] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:30.574] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:33.171] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:36.828] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:38.090] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:46.957] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:48.149] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:30:55.163] [INFO] response - { method: 'POST',
+  url: '/userInformation/login',
+  body:
+   { userName: 'admin123',
+     password: '0192023a7bbd73250516f069df18b500' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body:
+      { msg: '登陆成功',
+        code: 200,
+        userName: 'admin123',
+        openID: '5094b3757c1e1a5f630b61e0f5245dc2',
+        confirmStatus: '3' } } }
+[2019-05-28T15:30:55.280] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:30:55.310] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:30:56.574] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:31:09.355] [INFO] response - { method: 'POST',
+  url: '/userInformation/verification',
+  body:
+   { code:
+      'eyJiZWdpblRpbWVzcGFuIjowLCJmaW5pc2hUaW1lc3BhbiI6MTU1OTAyODY2OTMwOX0=' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success' } } }
+[2019-05-28T15:31:13.174] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:31:14.483] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:31:16.099] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:31:16.221] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:31:16.332] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:31:16.350] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:31:17.555] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:32:15.702] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:32:15.739] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:32:21.477] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:37:05.948] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:37:07.309] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:37:14.527] [INFO] response - { method: 'POST',
+  url: '/userInformation/login',
+  body:
+   { userName: 'admin123',
+     password: '0192023a7bbd73250516f069df18b500' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body:
+      { msg: '登陆成功',
+        code: 200,
+        userName: 'admin123',
+        openID: '5094b3757c1e1a5f630b61e0f5245dc2',
+        confirmStatus: '3' } } }
+[2019-05-28T15:37:14.843] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:37:14.909] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:37:16.841] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:39:03.639] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:39:03.670] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:39:05.140] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:40:24.851] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:40:24.881] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:40:27.236] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:45:48.988] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:45:49.019] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:45:50.238] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:8081',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 402, msg: '用户未登录' } } }
+[2019-05-28T15:48:31.782] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:31.818] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:48:33.476] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:34.567] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: {},
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:34.676] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: {},
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:38.563] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:39.148] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:39.178] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:48:40.536] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:44.207] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:49.153] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:50.900] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:52.166] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:53.466] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:53.588] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:48:53.687] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:48:53.716] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:48:54.820] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:50:21.638] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:50:22.519] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:50:23.279] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:50:24.188] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:50:24.337] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:50:24.460] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:50:24.498] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:50:25.331] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:00.974] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:01.008] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:52:02.972] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:04.072] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:05.229] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: {},
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:05.295] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: {},
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:06.431] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:07.109] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:07.632] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:08.093] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:08.734] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:08.892] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:08.926] [INFO] response - { method: 'POST',
+  url: '/userInformation/getUserByOpenID',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: 'success', results: [Object] } } }
+[2019-05-28T15:52:10.655] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:52:23.611] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }
+[2019-05-28T15:55:52.767] [INFO] response - { method: 'POST',
+  url: '/userInformation/isLogin',
+  body: { openID: '5094b3757c1e1a5f630b61e0f5245dc2' },
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': 'http://localhost:85',
+        'access-control-allow-methods': 'GET,HEAD,PUT,POST,DELETE',
+        'content-type': 'application/json; charset=utf-8' },
+     body: { code: 200, msg: '用户已登录' } } }

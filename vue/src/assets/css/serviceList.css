@@ -1,0 +1,151 @@
+/*热门分类*/
+.mainLayerTit{
+	font-size: 22px;
+	color: #333;
+	margin: 28px 0 18px;
+}
+.sortOutBox{
+	margin: 0 -10px 40px;
+}
+.sortList{
+	border-radius: 3px;
+	width: 25%;
+	float: left;
+	padding: 0 10px;
+}
+.sortWh{
+	background: #fff;
+	width: 100%;
+}
+.sortTit{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	color: #fff;
+	padding: 0 15px;
+}
+.sortTit a{
+	font-size: 14px;
+	color: #fff;
+	float: right;
+}
+.trafficTitBg{
+	background: url(../../assets/img/serviceBox/trafficTitBg.png) no-repeat;
+}
+.socialSecurityTitBg{
+	background: url(../../assets/img/serviceBox/socialSecurityTitBg.png) no-repeat;
+}
+.medicalTitBg{
+	background: url(../../assets/img/serviceBox/medicalTitBg.png) no-repeat;
+}
+.educationTitBg{
+	background: url(../../assets/img/serviceBox/educationTitBg.png) no-repeat;
+}
+.sortWh ul{
+	overflow: hidden;
+	padding-top: 34px;
+}
+.sortWh li{
+	font-size: 18px;
+	color: #333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 50px;
+	margin-bottom: 40px;
+	padding-right: 15px;
+}
+.sortWh li:nth-last-child(1){
+	margin-bottom: 34px;
+}
+.sortWh li img{
+	width: 50px;
+	height: 40px;
+	float: left;
+	margin: 0 15px;
+}
+/*更多分类*/
+.moreSort{
+	text-align: center;
+	padding: 36px 0;
+}
+.customizeBtn a{
+	display: inline-block;
+	width: 100px;
+	height: 25px;
+	line-height: 23px;
+	border-radius: 20px;
+	color: #0081e9;
+	border:1px solid #7fc0f4;
+	margin-top: 11px;
+}
+.publicListBox li:hover .pubListDiv.customizeList{
+	background: #fff;
+	border: none;
+	box-shadow: none;
+}
+.publicListBox li:hover .pubListDiv.customizeList .publicIcon{
+	display: inline-block;
+}
+/*分类服务选择*/
+.sortSelectList{
+	margin-bottom: 25px;
+}
+.sortSelectList:nth-of-type(1){
+	margin-top: 20px;
+}
+.sortSelectList:nth-last-of-type(1){
+	margin-bottom: 20px;
+}
+.sortSelectList .tit{
+	display: inline-block;
+	color: #666;
+	width: 75px;
+	float: left;
+}
+.sortSelectList .selectSort{
+	float: left;
+	width: -webkit-calc(100% - 140px);
+	width: -moz-calc(100% - 140px);
+	width: calc(100% - 140px);
+}
+.sortSelectList .selectSort a{
+	display: inline-block;
+	color: #333;
+	height: 25px;
+	line-height: 23px;
+	padding: 0 10px;
+	border-radius: 30px;
+}
+.sortSelectList .selectSort a.active{
+	background: #0081e9;
+	color: #fff;
+}
+.btnMultipleChoice{
+	float: right;
+	height: 22px;
+	line-height: 20px;
+	width: 54px;
+	border:1px solid #ccc;
+	border-radius: 3px;
+	font-size: 12px;
+	color: #333;
+	margin-top: 1px;
+}
+.btnMultipleChoice b{
+	color: #999;
+	float: left;
+	font-size: 20px;
+	margin: -1px 3px 0;
+}
+/*没有相关服务*/
+.noServiceBox{
+	text-align: center;
+	padding: 135px 0 96px;
+}
+.noServiceBox .noSerWord{
+	font-size: 14px;
+	color: #666;
+	margin-top: 2px;
+}

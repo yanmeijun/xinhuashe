@@ -1,0 +1,290 @@
+
+/*服务logo、申请*/
+.padTB{
+	padding-top:30px;
+	padding-bottom: 34px;
+	margin-bottom: 24px;
+}
+.serviceLogo{
+	border: 1px solid #e4e4e4;
+	border-radius: 2px;
+	width: 224px;
+	height: 234px;
+    padding: 10px;
+    float: left;
+    margin-right: 35px;
+}
+.percent33{
+	width: 33.3%;
+	float: left;
+	text-align: center;
+}
+.serLogoPic{
+	width: 200px;
+	height: 155px;
+	display: table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+.serLogoPic img{
+	/*max-width: 200px;
+	max-height: 147px;*/
+	width: 100px;
+	height: 80px;
+	vertical-align: middle;
+}
+.logoBom p{
+	margin-top: 6px;
+	color: #7c7c7c;
+}
+.serviceApply{
+	width: 500px;
+	float: left;
+}
+.serviceApply .tit{
+	font-size: 24px;
+	color: #333;
+	line-height: 24px;
+}
+.serviceApply .description{
+	color: #999;
+	margin: 12px 0 16px;
+}
+.serviceApply .price{
+	background: url(../../assets/img/serviceBox/priceBg.png) repeat-x;
+	height: 35px;
+}
+.serviceApply .type{
+	margin: 20px 0 22px;
+}
+.serviceApply .price label,
+.serviceApply .type label,
+.serviceApply .range label{
+	display: inline-block;
+	width: 100px;
+	padding-left: 10px;
+	color: #7c7c7c;
+}
+.serviceApply .price label{
+	float: left;
+	margin-top: 7px;
+}
+.serviceApply .price span{
+	font-size: 20px;
+	color: #ff0030;
+	float: left;
+	margin-top: 3px;
+}
+.serviceApply .type label{
+	line-height: 35px;
+}
+.serviceApply .type .selectType span{
+	width: 93px;
+	height: 35px;
+	line-height: 33px;
+	display: inline-block;
+	border: 1px solid #e4e4e4;
+	text-align: center;
+	color: #333;
+	border-radius: 2px;
+	cursor: pointer;
+	margin-right: 11px;
+}
+.serviceApply .type .selectType span.selected{
+	border: 1px solid #4379ff;
+	position: relative;
+}
+.serviceApply .range span{
+	color: #7c7c7c;
+}
+.btnBox{
+	border-top: 1px dashed #e4e4e4;
+	padding: 14px 10px 0;
+	margin-top: 14px;
+}
+.btnBox .btnApply,
+.btnBox .btnAttention{
+	display: inline-block;
+	height: 40px;
+	line-height: 38px;
+	text-align: center;
+	border-radius: 2px;
+}
+.btnBox .btnApply{
+	background-color: #4379ff;
+	width: 165px;
+	color: #fff;
+	font-size: 16px;
+	margin-right: 11px;
+}
+.btnBox .btnAttention{
+	width: 93px;
+	border: 1px solid #4379ff;
+	color: #4379ff;
+}
+/*服务详情、服务示例、免责声明*/
+.tabTitBox{
+	background: #fff;
+	height: 40px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom: 1px solid #4379ff;
+}
+.tabTitBox ul li{
+	float: left;
+}
+.tabTitBox ul li a{
+	display: inline-block;
+	color: #333;
+	font-size: 16px;
+	line-height: 40px;
+	width: 140px;
+	text-align: center;
+}
+.tabTitBox ul li.selected a{
+	background-color: #4379ff;
+	color: #fff;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.tabConTit{
+	font-size: 20px;
+	color: #333;
+	margin: 30px 0 18px;
+	height: 24px;
+    line-height: 20px;
+}
+.tabConTit span{
+	display: inline-block;
+	float: left;
+	width: 5px;
+	height: 24px;
+	background: #4379ff;
+	margin-right: 15px;
+}
+/*服务详情*/
+.tableBox{
+	padding-top: 20px;
+	padding-bottom: 8px;
+}
+.tableBox .table{
+	margin-bottom: 0px;
+}
+.tableBox .table tr td{
+	border-top: 1px dashed #e4e4e4;
+	padding: 12px 0;
+}
+.tableBox .table tr td span{
+	color: #666;
+}
+.tableBox .table tr td .el-upload .el-button--primary span{
+  color: #1089ea;
+}
+.el-button:focus, .el-button:hover{
+  background: #f5f6f7;
+}
+.tableBox .table tr:nth-of-type(1) td{
+	border-top: none;
+}
+.tableBox .table tr td:nth-of-type(1){
+	color: #666;
+	width: 156px;
+}
+.tableBox .table tr td:nth-of-type(2){
+	color: #333;
+	padding-right: 40px;
+}
+/*服务示例*/
+.serviceExample{
+	padding: 32px 110px 20px;
+}
+.serviceExample .sampleGraph{
+	float: left;
+	height: 500px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.serviceExample .sampleGraph img{
+	max-width: 280px;
+	width: 100%;
+	max-height: 498px;
+}
+.serviceExample .sampleGraph:nth-of-type(2),
+.serviceExample .sampleGraph:nth-of-type(5),
+.serviceExample .sampleGraph:nth-of-type(8),
+.serviceExample .sampleGraph:nth-of-type(11),
+.serviceExample .sampleGraph:nth-of-type(14),
+.serviceExample .sampleGraph:nth-of-type(17),
+.serviceExample .sampleGraph:nth-of-type(20),
+.serviceExample .sampleGraph:nth-of-type(23){
+	text-align: center;
+	padding: 0 70px;
+}
+.serviceExample .sampleGraph:nth-of-type(3){
+	text-align: right;
+}
+/*免责声明*/
+.statement{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.statement label{
+	color: #666;
+	width: 156px;
+	float: left;
+}
+.statement span{
+	float: left;
+	color: #999;
+	width: -webkit-calc(100% - 156px);
+	width: -moz-calc(100% - 156px);
+	width: calc(100% - 156px);
+}
+/*icon*/
+.icon-deltails{
+	display: inline-block;
+	width: 19px;
+	height: 18px;
+	vertical-align: middle;
+	background: url(../../assets/img/serviceBox/icon-details.png) no-repeat;
+}
+/*类型选中状态*/
+.icon-selected{
+	background-position: 0 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+/*关注*/
+.icon-attention{
+	background-position: 0 -27px;
+	margin-right: 4px;
+}
+.btnAttention.active .icon-attention{
+	background-position: 0 -200px;
+}
+/*服务ID*/
+.icon-serviceID{
+	background-position: 2px -54px;
+}
+/*销售量*/
+.icon-salesVolume{
+	background-position: 3px -78px;
+}
+/*关注量*/
+.icon-attentionVolume{
+	background-position: 2px -101px;
+}
+/*头部搜索*/
+.icon-search{
+	background-position: 0px -124px;
+	margin: 11px 10px 0 12px;
+    float: left;
+}
+/*底部热线*/
+.icon-hotline{
+	background-position: 2px -151px;
+}
+/*底部Email*/
+.icon-email{
+	background-position: 0px -176px;
+}
