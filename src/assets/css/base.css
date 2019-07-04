@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;-webkit-box-sizing: border-box;-ms-box-sizing: border-box;-o-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+
+body{ font-size:14px; margin:0; font-family:'Microsoft Yahei';}
+h1,h2,h3,h4,h5,h6{ margin:0; font-weight:normal; font-size:12px;}
+a{ color:#000; text-decoration:none;}
+a:active,a:hover{outline: none;}
+label{margin-bottom: 0px;font-weight: normal;}
+a:hover,a:focus{text-decoration: none;}
+p{ margin:0;}
+i,em{ font-style:normal;}
+b,strong{ font-weight:normal;}
+a img{ border:none;}
+input,button,textarea{font-family:'Microsoft Yahei';}
+input[type='button'],button{cursor: pointer;}
+input[type='button']:hover,button:hover{opacity: 0.9;}
+button{border: none;}
+input:focus,button:focus,textarea:focus{outline: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+ol,ul,dl,li{list-style:none;}
+ol, ul{margin: 0;padding: 0;}
+.fr{ float:right;}
+.fl{ float:left;}
+.clearfix:after{display:block;content:"";clear:both;}
+.clearfix{zoom:1;}
+.ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+[v-cloak] {
+  display: none;
+}

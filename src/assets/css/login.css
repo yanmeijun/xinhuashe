@@ -1,0 +1,321 @@
+body{
+	height: 100%;
+}
+/*登录背景*/
+.loginBg{
+	background:url(../img/loginBg.png) no-repeat center center;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	position: fixed;
+}
+/*logo*/
+.loginLogo{
+	width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #494949;
+  position: relative;
+}
+.loginLogo .newLogin{
+  height: 100%;
+}
+.header-menu{
+  line-height: 60px;
+  display: inline-block;
+}
+.header-menu a{
+  color: #ffffff;
+  font-size: 14px;
+  font-family:"Microsoft Yahei";
+  padding: 0 40px;
+
+}
+.header-menu a.selected {
+  color: #4379ff;
+}
+.header-menu  span.transtionX {
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  background: #4379ff;
+  border-radius: 20px;
+  position: absolute;
+  top: 45px;
+  left: 44px;
+  transition: left .3s;
+}
+.loginLogo img{
+	max-width: 146px;
+	max-height: 43px;
+  margin-top: 12px;
+  margin-right: 67px;
+}
+.loginCon{
+	width: 1204px;
+	height: 400px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin:auto;
+}
+.el-input__inner:focus{
+  border: 1px solid #4d84ff;
+  box-shadow: 0px 0px 6px #0b3fb1;
+}
+/**/
+.loginPic{
+  margin-left: 86px;
+  margin-top: 14px;
+}
+.loginPic img{
+	/*max-width: 617px;
+	max-height: 550px;*/
+	max-width: 550px;
+    max-height: 550px;
+}
+/*登录框*/
+
+.loginBox{
+	background:#fff;
+	padding:25px;
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 2px;
+	position: relative;
+	z-index: 1;
+}
+.loginBox .tab-pane{
+	position: relative;
+}
+.loginTitle{
+	font-size: 24px;
+	color: #4d84ff;
+	font-weight: normal;
+	margin-bottom: 45px;
+}
+.login-input-box,
+.login-code{
+	width:100%;
+	margin:20px auto 0px;
+	position: relative;
+}
+.login-code{
+	margin-bottom: 20px;
+}
+.login-input-box i,
+.login-code i{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+    top: 3px;
+    left: 1px;
+  z-index:2;
+}
+.login-input-box .icon-userName{
+	background: url(../img/icon-user.png) no-repeat;
+	top: 3px !important;
+}
+.login-input-box .icon-pwd{
+	background: url(../img/icon-pwd.png) no-repeat;
+    left: 1px;
+    top: 4px !important;
+}
+.login-code .icon-v-code{
+	background: url(../img/icon-code.png) no-repeat;
+    left: 1px;
+    top: 4px !important;
+}
+.login-input-box input.form-control,.login-code input.form-control{
+	padding-left: 31px;
+	font-weight: 100;
+}
+input.form-control{
+	width: 278px;
+	line-height: 14px;
+	padding:13px 9px 11px;
+	font-size:14px;
+	color: #000;
+	background:#f7f6f9;
+	border:1px solid #f7f6f9;
+	border-radius:2px;
+}
+input.form-control:focus{
+	border: 1px solid #02c1f8;
+	box-shadow: 0px 0px 5px #99eefd;
+}
+.login-code .v-code-box a{
+	display: inline-block;
+	border: 1px solid #ddd;
+	width: 98px;
+	height: 43px;
+	border-radius: 2px;
+}
+.allErrorTips{
+	position: absolute;
+    color: #FF3C00;
+    height: 32px;
+    width: 318px;
+    line-height: 32px;
+    background: #fff4d3;
+    border: 1px solid #f2d097;
+    border-radius: 2px;
+    top: -41px;
+    color: #333;
+	font-size: 14px;
+}
+.icon-errorTopPic{
+	display: inline-block;
+	background: url(../img/errorTipsPic.png) no-repeat;
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+	margin: -2px 8px 0 11px;
+}
+.dlk input[type=button]{
+   	height:45px;
+   	line-height: 45px;
+    width:100%;
+    background:#4d84ff;
+    border:none;
+    color:#fff;
+    font-size:18px;
+    cursor: pointer;
+   	transition:background .5s;
+   	-moz-transition:background .5s; /* Firefox 4 */
+	-webkit-transition:background .5s; /* Safari 和 Chrome */
+	-o-transition:background .5s; /* Opera */
+}
+.dlk input:hover[type=button]{
+   	background:#108ec3;
+}
+.login-status{
+	margin-top: 24px;
+}
+.login-status .dlzt label{
+	margin-bottom:0;
+	display: inline-block;
+	float: left;
+	background: #fff;
+	width: 14px;
+	height: 14px;
+	border: 1px solid #dadada;
+	margin-top: 1px;
+    margin-right: 10px;
+}
+.login-status .dlzt .tips-word{
+	color: #666;
+	font-size: 14px;
+	line-height: 14px;
+}
+.login-code .v-code-input input.login_input1{
+    width: 178px;
+}
+.forgetPwd{
+	text-align: right;
+  margin-bottom: 15px;
+}
+.forgetPwd a{
+	color: #4d84ff;
+	font-size: 14px;
+	padding-left: 3px;
+}
+.noAccount-reg{
+	font-size: 14px;
+	color: #999;
+	text-align: right;
+}
+.noAccount-reg a{
+	color: #4d84ff;
+}
+.icon-reg{
+	display: inline-block;
+	background: url(../img/icon-reg.png) no-repeat;
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-left: 5px;
+}
+
+/*底部版权*/
+.loginFooter{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 12px 0px 20px;
+	text-align: center;
+	font-size: 14px;
+	color: #616161;
+	z-index: 0;
+}
+.loginFooter span{
+  margin-top: 18px;
+  display: inline-block;
+}
+/*验证码*/
+.login-code .v-code-box canvas{
+  display: inline-block;
+  border: 1px solid #ddd;
+  width: 108px;
+  height: 44px;
+  border-radius: 2px;
+  cursor: pointer;/*光标为手型*/
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.2) 98%, #FFFFFF 100%);
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.2) 98%, #FFFFFF 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.1)), color-stop(40%, rgba(0, 0, 0, 0.1)), color-stop(98%, rgba(0, 0, 0, 0.2)),color-stop(100%, #FFFFFF));
+}
+/**/
+input.el-input__inner:-ms-input-placeholder{
+  color: #bfc0c1;
+}
+
+input.el-input__inner::-webkit-input-placeholder{
+  color: #bfc0c1;
+}
+/*开放平台-登录*/
+.loginBox.openPlatformLogin{
+	width: 370px;
+	height: 380px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+  z-index: 1001;
+}
+.loginBox.openPlatformLogin input.form-control{
+	width: 100%;
+}
+.loginBox.openPlatformLogin .allErrorTips{
+	width: 100%;
+}
+.loginBox.openPlatformLogin .loginTitle{
+	text-align: center;
+}
+.loginBox.openPlatformLogin .noAccount-reg{
+	margin-top: 15px;
+}
+.loginBox.openPlatformLogin .forgetPwd{
+	margin-top: 15px;
+}
+.loginBox.openPlatformLogin .loginClose{
+	font-size: 28px;
+	color: #666;
+	font-weight: 100;
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	-webkit-transition: 0.25s;
+	-ms-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-o-transition: 0.25s;
+	transition: 0.25s;
+}
+.loginBox.openPlatformLogin .loginClose:hover{
+	color: #0083e0;
+}

@@ -1,0 +1,100 @@
+/*我的关注*/
+.perwh20{
+	width: 20%;
+	float: left;
+	padding: 0px 10px;
+	overflow: hidden;
+}
+.appService.attention{
+	height: 150px;
+	text-align: center;
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 2px;
+	overflow: hidden;
+	margin-top: 20px;
+	-webkit-transition:all .25s ease;
+	transition:all .25s ease;
+}
+.appService.attention .pubFocus{
+	width: 40px;
+	height: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	margin: 0 auto;
+	-webkit-transition:all .25s ease;
+	transition:all .25s ease;
+	font-size: 12px;
+}
+.appService.attention .pubFocus.api{
+	background: #f79315;
+}
+.appService.attention .pubFocus.service{
+	background: #85c255;
+}
+.appService.attention .appServiceLogo{
+	width: 100%;
+	background: none;
+	height: auto;
+    line-height: initial;
+    margin-top:22px;
+    -webkit-transition:all .25s ease;
+	transition:all .25s ease;
+}
+.appService.attention .appServiceLogo{
+	max-height: 50px;
+}
+.appService.attention .serviceTit{
+	font-size: 16px;
+	color: #333;
+	margin-top: 18px;
+	-webkit-transition:all .25s ease;
+	transition:all .25s ease;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 6px;
+}
+.appService.attention .btnAttention{
+	margin-top: 27px;
+	opacity: 0;
+	-webkit-transition:all .25s ease;
+	transition:all .25s ease;
+}
+.appService.attention .btnAttention a{
+	display: inline-block;
+	width: 120px;
+	height: 30px;
+	line-height: 29px;
+	border-radius: 2px;
+	border:1px solid #0081e9;
+	color: #0081e9;
+	text-align: left;
+}
+.icon-unfollow{
+	background-position: 0 -56px;
+    margin: 7px 4px 0 18px;
+}
+.appService.attention:hover{
+	border: 1px solid #0081e9;
+}
+.appService.attention:hover .pubFocus{
+	margin-top: -20px;
+}
+.appService.attention:hover .appServiceLogo{
+	margin-top: -48px;
+	opacity: 0;
+}
+.appService.attention:hover .serviceTit{
+	color:#0081e9;
+	margin-top: 37px;
+}
+.appService.attention:hover .btnAttention{
+	opacity: 1;
+}
+.htvh220{
+	height: -webkit-calc(100vh - 220px);
+	height: -moz-calc(100vh - 220px);
+	height: calc(100vh - 220px);
+}

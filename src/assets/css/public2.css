@@ -1,0 +1,600 @@
+
+/*白色背景*/
+.whiteBG{
+	background-color: #fff;
+	border-radius: 3px;
+	padding: 0 20px;
+}
+.container{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+/*头部*/
+.headBgPic{
+	width: 100%;
+	background: url(../../assets/img/serviceBox/headBgPic.jpg) repeat-x;
+	height: 60px;
+	border-bottom: 1px solid #494949;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+.loginLogo{
+    position: relative;
+}
+.header-menu{
+	line-height: 60px;
+	display: inline-block;
+}
+.header-menu a{
+	color: #ffffff;
+	padding: 0 40px;
+	position: relative;
+}
+.header-menu span.transtionX {
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  background: #4379ff;
+  border-radius: 20px;
+  position: absolute;
+  top: 45px;
+  left: 44px;
+  -webkit-transition: left .3s;
+  transition: left .3s;
+}
+.header-menu a.selected,.header-menu a.router-link-exact-active {
+	color: #4379ff;
+}
+.header-menu a.selected span,.header-menu a.router-link-exact-active span{
+	display: inline-block;
+	width: 20px;
+	height: 3px;
+	background: #4379ff;
+	border-radius: 20px;
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	margin-left: -11px;
+}
+.loginLogo img{
+	max-width: 146px;
+	max-height: 43px;
+  	margin-top: 12px;
+  	margin-right: 67px;
+}
+.loginCon{
+	width: 1204px;
+	margin: 90px auto;
+}
+.el-input__inner:focus{
+  border: 1px solid #4d84ff;
+  box-shadow: 0px 0px 6px #0b3fb1;
+}
+.loginReg{
+	line-height: 60px;
+}
+.loginReg a{
+	display: inline-block;
+	width: 55px;
+	height: 24px;
+	line-height: 22px;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 12px;
+	color: #fff;
+}
+.loginReg a.btnLogin{
+	background: none;
+	border: 1px solid #929292;
+}
+.loginReg a.btnReg{
+	border:1px solid #4379ff;
+	background: #4379ff;
+	margin-left: 6px;
+}
+/*搜索*/
+.searchBgPic{
+	background: url(../../assets/img/serviceBox/searchBgPic.jpg) no-repeat center;
+	width: 100%;
+	height: 179px;
+	margin-top: 60px;
+	overflow: hidden;
+}
+.searchLayer{
+	padding: 0;
+	width: 751px;
+    margin: 64px auto 0;
+}
+.searchBox{
+	background: #fff;
+	height: 40px;
+	padding: 0;
+}
+.searchText{
+	height: 22px;
+	line-height: 22px;
+	border: none;
+	margin-top: 9px;
+	float: left;
+	width: -webkit-calc(100% - 98px - 50px);
+	width: -moz-calc(100% - 98px - 50px);
+	width: calc(100% - 98px - 50px);
+}
+.searchBtn{
+	width: 98px;
+	height: 40px;
+	border: none;
+	background: #4379ff;
+	color: #fff;
+	font-size: 18px;
+	float: right;
+}
+.hotSearchName{
+	padding-top: 14px;
+}
+.hotSearchName ul li{
+	height: 16px;
+	line-height: 16px;
+	padding: 0 10px;
+	float: left;
+	border-left: 1px solid #727272;
+	border-right: 1px solid #949494;
+}
+.hotSearchName ul li:nth-of-type(1){
+	border-left: 0;
+	padding-left: 0;
+}
+.hotSearchName ul li:nth-last-of-type(1){
+	border-right: 0;
+	padding-right: 0;
+}
+.hotSearchName ul li a{
+	color: #b7b8ba;
+}
+/*当前位置*/
+.currentLocation{
+	padding: 21px 0 17px;
+	overflow: hidden;
+}
+.currentLocation span{
+	color: #333;
+	float: left;
+}
+.currentLocation span.symbol{
+	margin: 0 7px;
+}
+/*底部*/
+.footerBG{
+	background: #383b40;
+	padding:35px 0 54px;
+}
+.homeFooterBg{
+	height: 100%;
+}
+.homeFooterBg .container{
+	height: 215px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -128px;
+	margin-left: -600px;
+}
+.footerList{
+	float: left;
+	width: 16.4%;
+}
+.footerList .tit{
+	font-size: 16px;
+	margin-bottom: 14px;
+	color: #fff;
+}
+.footerList ul li a{
+	color: #888f99;
+	line-height: 36px;
+}
+.footerOther{
+	padding-right: 78px;
+    float: right;
+}
+.hotlineBox,.emailBox{
+	color: #fff;
+	font-size: 16px;
+}
+.hotlineBox i,.emailBox i{
+	margin-right: 8px;
+}
+.hotlineBox{
+	margin-bottom: 14px;
+}
+.scanCode{
+	margin-top: 30px;
+}
+.ucap-publicNum,.ucap-weChat{
+	text-align: center;
+}
+.ucap-publicNum{
+	margin-right: 32px;
+}
+.ucap-publicNum .tit,.ucap-weChat .tit{
+	color: #888f99;
+	margin-top: 6px;
+}
+.ucap-publicNum .picCode,.ucap-weChat .picCode{
+	height: 95px;
+	width: 95px;
+}
+/*版权*/
+.copyrightBG{
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	background: #2b2e33;
+	color: #888f99;
+}
+.homeCopyBg{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.copyrightBG span{
+	margin-left: 26px;
+}
+
+/*公用分类*/
+.marBom{
+	margin-bottom:45px;
+}
+.mainLayerTit .btnMore{
+	float: right;
+	color: #333;
+	font-size: 14px;
+	line-height: 40px;
+}
+.publicListBox{
+	text-align: center;
+	width: 972px;
+	padding-left: 7px;
+}
+.publicListBox ul{
+	margin-right: -7px;
+}
+.publicListBox li{
+	width: 25%;
+	float: left;
+	padding:0 7px;
+}
+.publicListBox li:nth-of-type(1),
+.publicListBox li:nth-of-type(2),
+.publicListBox li:nth-of-type(3),
+.publicListBox li:nth-of-type(4){
+	margin-bottom: 15px;
+}
+.pubListDiv{
+	background: #ecf0f9;
+	height: 150px;
+	border-radius: 3px;
+	overflow: hidden;
+	-webkit-transition:all .25s ease;
+	transition:all .25s ease;
+}
+.publicSortPic img{
+	width: 228px;
+	height: 315px;
+}
+.publicIcon{
+	-webkit-transition:all .25s ease;
+	transition:all .25s ease;
+}
+.publicIcon img{
+	width: 50px;
+	height: 40px;
+	margin-top: 40px;
+}
+.publicBigTit{
+	font-size: 16px;
+	color: #333;
+	margin-top: 14px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+}
+.publicDescription{
+	color: #999;
+	margin: 14px 0 17px;
+	opacity: 0;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+}
+.publicBtnDetails a{
+	display: inline-block;
+	background: #fff;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #0081e9;
+	border: 1px solid #0081e9;
+	border-radius: 2px;
+	opacity: 0;
+}
+/*分类外框动画效果*/
+.publicListBox li:hover .pubListDiv{
+	background: #fff;
+	border: 1px solid #0081e9;
+	box-shadow: 0 0 15px #7abef4;
+}
+/*分类图标动画效果*/
+.publicListBox li:hover .pubListDiv .publicIcon{
+	margin-top: -100px;
+	opacity: 0;
+}
+/*分类标题动画效果*/
+.publicListBox li:hover .pubListDiv .publicBigTit{
+	margin-top: 35px;
+}
+/*分类描述动画效果*/
+.publicListBox li:hover .pubListDiv .publicDescription{
+	opacity: 1;
+}
+/*分类查看详情按钮动画效果*/
+.publicListBox li:hover .pubListDiv .publicBtnDetails a{
+	opacity: 1;
+}
+.publicListBox li:hover .pubListDiv.customizeList .publicIcon{
+	margin-top: 0px;
+	opacity: 1;
+}
+.publicListBox.ListBgWhite .pubListDiv{
+	background: #fff;
+}
+.mormService{
+	background: url(../../assets/img/serviceBox/moreServiceBg.jpg);
+	height: 150px;
+	line-height: 148px;
+	margin-left: 7px;
+	border-radius: 3px;
+	color: #0081e9;
+}
+.moreSerIcon{
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../assets/img/serviceBox/moreService.png) no-repeat;
+	width: 18px;
+	height: 24px;
+	margin-right: 10px;
+	margin-top: -2px;
+}
+/*服务分类*/
+.serviceSortBox .mainLayerTit{
+	padding:0 5px;
+	margin: 16px 0 12px;
+}
+.serviceSortBox .mainLayerTit a{
+	font-size: 14px;
+	color: #333;
+	margin: 0 15px;
+	float: left;
+}
+.serviceSortBox .mainLayerTit a.active{
+	color: #0081e9;
+	border-bottom: 2px solid #0081e9;
+}
+.serviceSortBox .publicListBox{
+	width: 100%;
+	padding-left: 0;
+}
+.serviceSortBox .publicListBox ul{
+	margin-left: -7px;
+}
+.serviceSortBox .publicListBox li{
+	width: 20%;
+	margin-bottom: 15px;
+}
+
+/*右侧浮层菜单-返回首页、客服*/
+.floatMenu{
+	position: fixed;
+	right: 0;
+	bottom: 55px;
+}
+.floatMenu i{
+	display: block;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.icon-floatMenu{
+	display: inline-block;
+	vertical-align: middle;
+	width: 60px;
+	height: 60px;
+	background: url(../../assets/img/serviceBox/icon-floatMenu.png) no-repeat;
+}
+.icon-kf{
+	background-position: 0 0;
+}
+.icon-upTop{
+	background-position: 0 -70px;
+}
+/*修改每屏垂直居中*/
+.second5{
+	position: relative;
+}
+.second1 .home1 {
+	height: 708px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -320px;
+	margin-left: -600px;
+}
+@media (max-width:1199px ) {
+	.whiteBG{
+		padding:0px;
+	}
+}
+
+
+
+/*开放平台*/
+.openPlatformHomeBox{
+  background: url(../../assets/img/serviceApply/openPlatformHomeBg.png) no-repeat center;
+  height: 650px;
+  background-size: cover;
+  margin-top: 60px;
+}
+.platHomeCon{
+  width: 635px;
+  padding-right: 120px;
+}
+.platHomeCon .tit{
+  font-size: 38px;
+  color: #fff;
+  margin: 122px 0 24px;
+}
+.platHomeCon .intro{
+  font-size: 16px;
+  color: #fff;
+  line-height: 36px;
+  margin-bottom: 52px;
+}
+.btn-serviceAccessBox a{
+  display: inline-block;
+  width: 152px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  background: #e9f8fe;
+  color: #048cec;
+  border-radius: 30px;
+}
+.platHomeImg{
+  margin-top: 73px;
+}
+
+
+
+/*遮罩层*/
+.mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+/**/
+.dialog-publicOutLayer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 496px;
+  height: 300px;
+  z-index: 2;
+  background: #fff;
+}
+.dialog-tit{
+  height: 44px;
+  line-height: 44px;
+  background: #f5f7fb;
+  font-size: 16px;
+  padding-left: 15px;
+  color: #333;
+  border-bottom: 1px solid #e4eaf0;
+}
+.dialog-con{
+  text-align: center;
+  padding: 30px 0 27px;
+}
+.submitSuccess{
+  font-size: 18px;
+  color: #2d2d2d;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+.orderCode{
+  color: #999;
+}
+.dialog-btnBox{
+  text-align: center;
+}
+.dialog-btnBox a{
+  display: inline-block;
+  width: 118px;
+  height: 34px;
+  text-align: center;
+  line-height: 34px;
+  border-radius: 2px;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  transition: 0.25s;
+}
+.dialog-btnBox a:hover{
+  opacity: 0.8;
+}
+.dialog-btnBox .blue{
+  background: #0081e9;
+  border: 1px solid #0081e9;
+  color: #fff;
+  margin-right: 16px;
+}
+.dialog-btnBox .backHome{
+  background: #fff;
+  border: 1px solid #d5dde6;
+  color: #57677e;
+}
+
+
+/*头部*/
+.header-user-box {
+  position: relative;
+}
+.userAvator{
+  padding-right: 26px;
+}
+.userAvator .header-user-avator {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin: 13px 7px 0 0;
+  background: #3c4452;
+  cursor: pointer;
+}
+.header-user-name{
+  color: #fff;
+  line-height: 60px;
+  cursor: pointer;
+}
+.header-user-name:hover{
+	color: #4379ff;
+}
+.triangle_border_down{
+  position: absolute;
+  top: 27px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: #cfcfcf transparent;
+}
+.triangle_border_down .triangle_border_down{
+  border-color: #2b2e33 transparent;
+  top: -7px;
+  right: -6px;
+}
+.userMenu li.portalList span{
+	color: #fff;	
+}
+.userMenu li.portalList:hover span{
+	color: #4379ff;	
+}

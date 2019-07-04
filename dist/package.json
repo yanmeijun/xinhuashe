@@ -1,0 +1,30 @@
+{
+  "name": "publicAuditWeb",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "pm2 start ./app.js -i 4",
+    "restart": "pm2 restart ./app.js -i 4",
+    "stop": "pm2 stop ./app.js"
+  },
+  "dependencies": {
+    "ali-oss": "^6.1.0",
+    "busboy": "^0.2.14",
+    "koa": "^2.6.2",
+    "koa-body": "^2.3.0",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^3.1.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.10.1",
+    "koa-static": "^4.0.1",
+    "koa2-session-redis": "0.0.2",
+    "log4js": "^2.11.0",
+    "moment": "^2.23.0",
+    "monk": "^6.0.6",
+    "request": "^2.88.0",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "koa-cors": "0.0.16"
+  }
+}

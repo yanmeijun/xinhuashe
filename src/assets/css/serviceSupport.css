@@ -1,0 +1,71 @@
+/* 服务支持 */
+.serviceSupport_searchBgPic{
+  background: #1c292e url("../../assets/img/serviceApply/serviceSup.png") no-repeat center;
+  margin-bottom: 20px;
+}
+.serviceSup{
+  margin-bottom: 80px;
+}
+.left-Con{
+  width: 242px;
+  padding: 14px 0 80px 15px;
+}
+.left-Con .pad-right{
+  margin-right: 29px;
+  border-bottom: 1px solid #e5e5e5;
+  line-height: 52px;
+  color: #333333;
+  font-size: 22px;
+  font-family: "Microsoft Yahei";
+}
+.right-Con{
+  width: calc(100% - 242px);
+  padding: 16px 96px 80px 46px;
+  border-left: 1px solid #e5e5e5;
+}
+.level li{
+  color: #666666;
+  font-size: 16px;
+  font-family: "Microsoft Yahei";
+  margin-top: 28px;
+}
+.level li:nth-of-type(1){
+  margin-top:15px;
+}
+.level li a{
+  color: #666666;
+}
+.level li.active a{
+  color: #048cec;
+}
+.level li.active{
+  border-right: 2px solid #048cec;
+}
+.level li:hover{
+  border-right: 2px solid #048cec;
+}
+.level li:hover a{
+  color: #048cec;
+}
+.right-Con h3{
+  line-height: 50px;
+  color: #333333;
+  font-size: 22px;
+  font-family: "Microsoft Yahei";
+}
+.right-Con h2{
+  color: #333333;
+  font-size: 18px;
+  font-family: "Microsoft Yahei";
+  line-height: 40px;
+  margin-top: 4px;
+}
+.right-Con p{
+  color: #707070;
+  font-size: 14px;
+  font-family: "Microsoft Yahei";
+  line-height: 28px;
+}
+.right-Con .mar-top{
+  margin-top: 30px;
+}
