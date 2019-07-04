@@ -1,0 +1,2047 @@
+/*初始化*/
+* {
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+em{
+    font-style: normal;
+}
+html {
+    font-family: 'microsoft yahei', Helvetica, Arial, sans-serif;
+}
+
+input, button {
+    font-family: 'microsoft yahei', Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    color: #2d8dd5;
+    text-decoration: none;
+}
+
+a, input, button {
+    outline: none;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.max {
+    width: 100%;
+    overflow: hidden;
+}
+input::-webkit-input-placeholder {
+    　　color: #999;
+}
+
+input:-moz-placeholder {
+    　　color: #999;
+}
+
+input::-moz-placeholder {
+    　　color: #999;
+}
+
+input:-ms-input-placeholder {
+    　　color: #999;
+}
+
+/*解决苹果手机input自带效果*/
+input[type=button], input[type=submit], input[type=file], button {
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+/*input[disabled],input:disabled,input.disabled{
+	color: #333;
+	-webkit-text-fill-color:#333;
+	-webkit-opacity:1;
+	opacity: 1;
+}*/
+/*头部*/
+header {
+    width: 100%;
+    background-color: #fff;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    height: 1.22rem;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+header ul li {
+    float: left;
+    line-height: 0.75rem;
+    margin: 0 0.3rem;
+}
+
+header ul li:nth-child(1) {
+    line-height: 0.7rem;
+}
+
+header ul li.active a {
+    color: #0083e0;
+}
+
+header ul li a {
+    font-size: 0.47rem;
+    color: #333;
+}
+
+.img-logo {
+    width: 0.83rem;
+    height: 0.52rem;
+}
+
+header ul li:nth-last-child(1) {
+    position: fixed;
+    right: -0.3rem;
+    top: 0;
+}
+
+.img-add {
+    width: 1.13rem;
+    height: 0.72rem;
+}
+
+/*banner*/
+.banner {
+    /*margin-top: 1.22rem;*/
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    /*height: 3.26rem;*/
+}
+
+.banner .address{
+	font-size: 0;
+	position: absolute;
+	top: 0.63rem;
+	left: 0.6rem;
+}
+
+.banner .address span{
+	display: inline-block;
+    background: url(../images/address.png) no-repeat left center;
+    font-size: 0.52rem;
+    color: #fff;
+    background-size: 0.33rem 0.44rem;
+    text-align: left;
+    padding-left: 0.6rem;
+    line-height: 0.48rem;
+    height: 0.52rem;
+}
+
+.banner .title {
+    position: absolute;
+    right: 0.35rem;
+    top: 1.39rem;
+    color: #fff;
+    font-size: 0.33rem;
+}
+
+.main-box {
+    background: #fff;
+}
+
+/*主要部分*/
+.img-list-box {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 0.18rem;
+    padding-bottom: 0.55rem;
+}
+.img-list-box ul{
+	letter-spacing: -0.11rem;
+    font-size: 0;
+}
+.img-list-box ul li{
+	display: inline-block;
+    text-align: center;
+    letter-spacing: normal;
+    width: 25%;
+    padding: 0 0.25rem;
+    margin: 0;
+    font-size: 0;
+    vertical-align: top;
+    margin-top: 0.472rem;
+}
+.img-list-box ul li a img{
+	/*width: 1.16rem;
+	height: 1.16rem;*/
+	width: 0.7rem;
+    height: 0.55rem;
+}
+.img-list-box ul li a p{
+	font-size: 0.33rem;
+	color: #000;
+	margin-top: 0.23rem;
+}
+
+/*热点*/
+.newsHot-box {
+    font-size: 0.32rem;
+    color: #545454;
+    padding-bottom: 0.13rem;
+    padding-top: 0.27rem;
+}
+
+.newsHot-box img {
+    width: 0.33rem;
+    height: 0.4rem;
+    margin-left: 0.25rem;
+    margin-right: 0.13rem;
+    margin-top: -0.1rem;
+}
+
+.newsHot-box span {
+    display: inline-block;
+    height: 0.58rem;
+    font-size: 0.36rem;
+    color: #000;
+    margin-left: 0.25rem;
+    padding-left: 0.25rem;
+    border-left: 1px solid #e7e7e7;
+}
+
+/*车主服务*/
+.public-list-box {
+    border-top: none;
+    margin-top: 0.27rem;
+}
+
+.public-list-box .public-tit {
+    font-size: 0.41rem;
+    font-weight: normal;
+    color: #000;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 0.23rem;
+    padding-bottom: 0.36rem;
+    padding-left: 0.38rem;
+}
+.public-list-box ul li {
+    width: 25%;
+    padding: 0 0.25rem;
+    margin: 0;
+    font-size: 0;
+    vertical-align: top;
+    margin-top: 0.472rem;
+}
+.public-list-box ul li a img {
+    width: 0.7rem;
+    height: 0.55rem;
+}
+
+/*news-banner*/
+.news-banner {
+    margin-top: 0.27rem;
+}
+
+/*生活缴费*/
+.public-list-box.life-list-img ul li a img {
+    width: 0.55rem;
+    height: 0.62rem;
+}
+
+.public-list-box.life-list-img ul li:nth-last-child(1) a img {
+    width: 0.7rem;
+    height: 0.55rem;
+}
+
+/*信访投诉*/
+.public-list-box.complaint-list-img ul li {
+    width: auto;
+}
+
+.public-list-box.complaint-list-img ul li a img {
+    width: 0.55rem;
+    height: 0.58rem;
+}
+
+/*食药监*/
+.public-list-box.drug-list ul li {
+    width: auto;
+    margin: 0.25rem 0.4rem;
+}
+
+/*机动车违法查询*/
+.warpBox {
+    position: relative;
+}
+
+.peccancyQuery {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    margin: -0.55rem 0.33rem 0;
+    width: -webkit-calc(100% - (0.33rem * 2));
+    width: -moz-calc(100% - (0.33rem * 2));
+    width: calc(100% - (0.33rem * 2));
+}
+
+.p-q-tit {
+    text-align: center;
+    font-size: 0.41rem;
+    color: #364555;
+    font-weight: normal;
+    padding: 0.4rem 1.388rem 0.36rem;
+	position: relative;
+}
+
+.p-q-tit .icon-return {
+    width: 0.55rem;
+    height: 0.55rem;
+    float: left;
+    position: absolute;
+    left: 0.33rem;
+}
+
+.text-list-div {
+    padding-top: 0.61rem;
+    padding-bottom: 0.25rem;
+    margin: 0 0.55rem;
+    line-height: 0;
+    border-bottom: 1px solid #edefee;
+    position: relative;
+}
+
+.peccancyQuery.XLQuery-home .text-list-div.phone-list-code input {
+    width: -webkit-calc(100% - 2.33rem - 3.25rem);
+    width: -moz-calc(100% - 2.33rem - 3.25rem);
+    width: calc(100% - 2.33rem - 3.25rem);
+}
+
+.text-list-div .icon-downMenu {
+    width: 0.694rem;
+    height: 0.694rem;
+    position: absolute;
+    right: -0.1rem;
+    top: 0.6rem;
+}
+
+.text-list-div label {
+    display: inline-block;
+    font-size: 0.38rem;
+    color: #474747;
+    width: 2.63rem;
+}
+
+.text-list-div input {
+    display: inline-block;
+    border: none;
+    font-size: 0.38rem;
+    color: #b2b2b2;
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    color: #474747;
+    background: #fff;
+    line-height: normal;
+}
+
+.text-list-div .car-num {
+    display: inline-block;
+    color: #0b71d6;
+    border: 1px solid #0b71d6;
+    border-radius: 3px;
+    text-align: center;
+    width: 0.58rem;
+    height: 0.69rem;
+    line-height: 0.69rem;
+    font-size: 0.38rem;
+}
+
+.text-list-div.text-list-code {
+    padding-top: 0.48rem;
+}
+
+.text-list-div.text-list-code input {
+    width: -webkit-calc(100% - 2.27rem - 2.63rem - 0.6rem);
+    width: -moz-calc(100% - 2.27rem - 2.63rem - 0.6rem);
+    width: calc(100% - 2.27rem - 2.63rem - 0.6rem);
+}
+
+.text-list-div .img-code {
+    display: inline-block;
+    border: 1px solid #ececec;
+    width: 2.27rem;
+    height: 0.83rem;
+    margin-bottom: -0.03rem;
+}
+
+.btn-box {
+    margin: 0.4rem 0 0.55rem;
+}
+
+.btn-box input {
+    font-size: 0.41rem;
+    background: #549dfb;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    height: 1.25rem;
+    border: none;
+    margin: 0 0.55rem;
+    width: -webkit-calc(100% - (0.55rem * 2));
+    width: -moz-calc(100% - (0.55rem * 2));
+    width: calc(100% - (0.55rem * 2));
+}
+
+.data-sources {
+    width: 100%;
+    padding-top: 0.36rem;
+    background: #f3f9f9;
+    text-align: center;
+    color: #a1a9ac;
+    font-size: 0.3rem;
+    position: fixed;
+    bottom: 0rem;
+    padding-bottom: 0.3rem;
+}
+
+.peccancyQuery .text-list-div .text-car-number {
+    width: -webkit-calc(100% - 2.63rem - 1.2rem);
+    width: -moz-calc(100% - 2.63rem - 1.2rem);
+    width: calc(100% - 2.63rem - 1.2rem);
+}
+
+/*查询结果*/
+.queryResult {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    margin: 0.28rem 0.33rem 0rem;
+    width: -webkit-calc(100% - (0.33rem * 2));
+    width: -moz-calc(100% - (0.33rem * 2));
+    width: calc(100% - (0.33rem * 2));
+}
+
+.queryResult p {
+    color: #333;
+    font-size: 0.36rem;
+    line-height: 0.6rem;
+    padding: 0 0.62rem 1.25rem;
+}
+
+.queryResult p span {
+    color: #ff8400;
+    margin-left: 0.1rem;
+    margin-right: 0.15rem;
+}
+
+.queryResult .q-r-tit {
+    color: #797979;
+    font-size: 0.38rem;
+    font-weight: normal;
+    padding-top: 0.26rem;
+    padding-bottom: 0.9rem;
+}
+
+.queryResult .q-r-tit span {
+    display: inline-block;
+    width: 0.083rem;
+    height: 0.33rem;
+    background: #549dfb;
+    border-radius: 20px;
+    margin-left: 0.27rem;
+    margin-right: 0.27rem;
+}
+
+/*驾驶证记分查询*/
+.queryResult .drivingfraction {
+    color: #333;
+    font-size: 0.36rem;
+    text-align: center;
+    border-bottom: 1px solid #edefee;
+    margin: 0 0.55rem 0.3rem;
+    padding-bottom: 0.55rem;
+}
+
+.queryResult .drivingfraction span {
+    color: #ff8400;
+    margin-left: 0.1rem;
+    margin-right: 0.15rem;
+}
+
+.queryResult .drivingDescribe {
+    color: #6e6e6e;
+    font-size: 0.27rem;
+    padding-bottom: 0.5rem;
+}
+
+/*请选择机动车类型*/
+.mask {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.dialog-car-box {
+    position: fixed;
+    z-index: 101;
+    left: 0.33rem;
+    top: 4.16rem;
+    background: #fff;
+    border-radius: 3px;
+    width: -webkit-calc(100% - (0.33rem * 2));
+    width: -moz-calc(100% - (0.33rem * 2));
+    width: calc(100% - (0.33rem * 2));
+    text-align: center;
+}
+
+.dialog-car-box ul li {
+    height: 0.83rem;
+    line-height: 0.83rem;
+    border-bottom: 1px solid #ececec;
+    font-size: 0;
+}
+
+.dialog-car-box ul li a {
+    color: #000;
+    font-size: 0.38rem;
+}
+
+.dialog-car-box ul li:nth-child(1) {
+    height: 0.97rem;
+    line-height: 0.97rem;
+}
+
+.dialog-car-box ul li:nth-child(1) a {
+    font-size: 0.41rem;
+    color: #329dfc;
+}
+
+/*.dialog-car-box ul li:nth-child(2) {
+    margin-top: 0.25rem;
+}*/
+
+.dialog-car-box ul li:nth-child(3) a {
+    color: #ff6600;
+}
+
+.dialog-car-box ul li:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0.25rem;
+}
+
+/*车牌号*/
+.dialog-carNum-box {
+    position: fixed;
+    z-index: 101;
+    left: 0.33rem;
+    top: 4.16rem;
+    background: #fff;
+    border-radius: 3px;
+    width: -webkit-calc(100% - (0.33rem * 2));
+    width: -moz-calc(100% - (0.33rem * 2));
+    width: calc(100% - (0.33rem * 2));
+    text-align: center;
+}
+
+.dialog-carNum-box {
+    padding: 0.41rem 0.2rem 0.22rem;
+}
+
+.dialog-carNum-box ul li {
+    float: left;
+    margin: 0 0.098rem 0.2rem;
+}
+
+.dialog-carNum-box ul li a {
+    float: left;
+    display: inline-block;
+    width: 1.08rem;
+    height: 1.08rem;
+    line-height: 1.06rem;
+    border: 1px solid #ebebeb;
+    font-size: 0.47rem;
+    color: #585858;
+    border-radius: 3px;
+}
+
+.dialog-carNum-box ul li.active a {
+    color: #fff;
+    background: #2196f3;
+    border: 1px solid #2196f3;
+}
+
+/*北京市社会保险查询系统*/
+.btn-box.bj-insuranceSystem {
+    margin-top: 0.63rem;
+}
+
+.btn-box.bj-insuranceSystem input.activeBGC {
+    background: #5295e4;
+}
+
+.btn-box.bj-insuranceSystem input {
+    display: inherit;
+    margin: 0 0.27rem 0.55rem;
+    width: -webkit-calc(100% - (0.27rem * 2));
+    width: -moz-calc(100% - (0.27rem * 2));
+    width: calc(100% - (0.27rem * 2));
+    background: #5295e4;
+}
+
+.hrLine {
+    margin: 0 0.55rem;
+    background-color: #edefee;
+    height: 1px;
+    border: none;
+}
+
+.login-tips {
+    color: #6e6e6e;
+    font-size: 0.277rem;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    margin: 0.25rem 0.33rem 1.5rem;
+    padding: 0.47rem 0.27rem;
+}
+
+.login-tips img {
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-right: 0.13rem;
+    margin-top: -2px;
+}
+
+.text-list-div .get-code {
+    display: inline-block;
+    background: #549dfb;
+    width: 2.33rem;
+    height: 0.77rem;
+    line-height: 0.77rem;
+    text-align: center;
+    font-size: 0.3rem;
+    color: #fff;
+    border-radius: 3px;
+    margin-top: -0.1rem;
+    border: none;
+    cursor: auto;
+}
+
+.text-list-div .get_code_wait {
+    display: inline-block;
+    width: 2.33rem;
+    height: 0.77rem;
+    line-height: 0.77rem;
+    text-align: center;
+    font-size: 0.3rem;
+    border-radius: 3px;
+    margin-top: -0.1rem;
+    border: none;
+    cursor: auto;
+    background: #ddd;
+    color: #fff;
+}
+.text-list-div .getCode_wait {
+    display: inline-block;
+    width: 2.33rem;
+    height: 0.77rem;
+    line-height: 0.77rem;
+    text-align: center;
+    font-size: 0.3rem;
+    border-radius: 3px;
+    margin-top: -0.1rem;
+    border: none;
+    cursor: auto;
+    background: #ddd;
+    color: #fff;
+}
+
+.text-list-div.msg-list-code input {
+    width: -webkit-calc(100% - 2.33rem - 3.25rem);
+    width: -moz-calc(100% - 2.33rem - 3.25rem);
+    width: calc(100% - 2.33rem - 3.25rem);
+}
+
+.peccancyQuery .q-r-tit {
+    color: #474747;
+    font-size: 0.38rem;
+    font-weight: normal;
+    padding-top: 0.26rem;
+    padding-bottom: 0.18rem;
+    position: relative;
+}
+
+.peccancyQuery .q-r-tit span {
+    display: inline-block;
+    float: left;
+    width: 0.083rem;
+    height: 0.38rem;
+    background: #549dfb;
+    border-radius: 20px;
+    margin-left: 0.55rem;
+    margin-right: 0.27rem;
+    margin-top: 3px;
+}
+
+/*个人信息*/
+.peccancyQuery.userInfor hr {
+    margin-bottom: 0.3rem;
+}
+
+.peccancyQuery.userInfor .text-list-div {
+    line-height: 1.25rem;
+}
+
+.peccancyQuery.userInfor .text-list-div:nth-last-child(1) {
+    margin-bottom: 0.27rem;
+    border-bottom: none;
+}
+
+.peccancyQuery.userInfor .text-list-div label {
+    width: 4rem;
+    padding-right: 0.2rem;
+    float: left;
+    line-height: 0.5rem;
+}
+
+.peccancyQuery.userInfor .text-list-div span {
+    float: right;
+    text-align: right;
+    color: #b2b2b2;
+    font-size: 0.38rem;
+    width: -webkit-calc(100% - 4rem);
+    width: -moz-calc(100% - 4rem);
+    width: calc(100% - 4rem);
+    line-height: 0.5rem;
+    word-break: break-all;
+}
+
+.peccancyQuery.userInfor.onlyStyle {
+    margin-top: 0.25rem;
+}
+
+.peccancyQuery.userInfor.onlyStyle .q-r-tit {
+    padding-top: 0.47rem;
+    padding-bottom: 0.27rem;
+}
+
+.peccancyQuery.userInfor.onlyStyle .q-r-tit .icon-downMenu {
+    width: 0.694rem;
+    height: 0.694rem;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.4rem;
+}
+
+.peccancyQuery.userInfor.onlyStyle .hrLine {
+    margin: 0rem;
+}
+
+.baseLeft {
+    float: left;
+    width: 6.2rem;
+}
+
+.peccancyQuery.userInfor .baseLeft .text-list-div label {
+    width: 1.6rem;
+}
+
+.peccancyQuery.userInfor .baseLeft .text-list-div span {
+    width: auto;
+    float: left;
+}
+
+.peccancyQuery.userInfor .baseLeft .text-list-div:nth-last-child(1) {
+    margin-bottom: 0rem;
+}
+
+.base-avatar {
+    float: right;
+    width: -webkit-calc(100% - 6.2rem);
+    width: -moz-calc(100% - 6.2rem);
+    width: calc(100% - 6.2rem);
+    text-align: right;
+    padding-right: 0.55rem;
+    padding-top: 0.55rem;
+}
+
+.base-avatar img {
+    width: 2.51rem;
+    height: 3.12rem;
+}
+
+.peccancyQuery.userInfor.onlyStyle .hrLine.hrLineOnly {
+    margin: 0 0.55rem;
+}
+
+/*药品查询*/
+.yaopin-box {
+    margin-top: -0.5rem;
+}
+
+.yaopin-box li {
+    font-size: 0.38rem;
+    border-bottom: 1px solid #eee;
+    padding: 0.3rem 0.55rem;
+}
+
+/*高等教育学历查询*/
+.peccancyQuery.XLQuery-home .text-list-div input {
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    font-size: 0.37rem;
+}
+
+.peccancyQuery.XLQuery-home .text-list-div.text-list-code input {
+    width: -webkit-calc(100% - 2.27rem - 2.63rem - 0.6rem);
+    width: -moz-calc(100% - 2.27rem - 2.63rem - 0.6rem);
+    width: calc(100% - 2.27rem - 2.63rem - 0.6rem);
+}
+
+.login-tips.XL-query {
+    padding: 0.4rem 0.55rem;
+}
+
+.login-tips.XL-query p {
+    font-size: 0.28rem;
+    color: #6e6e6e;
+    line-height: 24px;
+}
+
+.login-tips.XL-query p img {
+    margin-left: -0.36rem;
+}
+
+.peccancyQuery.userInfor .text-list-div.text-list-only label {
+    width: auto;
+}
+
+.peccancyQuery.userInfor .text-list-div.text-list-only span {
+    text-align: left;
+    float: left;
+}
+
+/*手机验证提示*/
+.dialog-phone {
+    width: 9.32rem;
+    background: #fff;
+    border-radius: 5px;
+    /*height: 3.47rem;*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -4.66rem;
+    margin-top: -3.5rem;
+    z-index: 101;
+    font-size: 0;
+}
+
+.dialog-phone p {
+    font-size: 0.39rem;
+    color: #a3a3a3;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    line-height: 30px;
+    margin-top: 0.46rem;
+    margin-bottom: 0.42rem;
+}
+
+.dialog-phone a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #edefee;
+    height: 0.97rem;
+    line-height: 0.97rem;
+    font-size: 0.30rem;
+    color: #329dfc;
+}
+
+/*footer*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer img {
+    width: 10rem;
+    height: 1.4rem;
+}
+
+@media (max-width: 320px) {
+    /*.img-list-box.main-list ul li {
+        margin: 0 0.28rem;
+    }*/
+
+    .public-list-box.drug-list ul li {
+        margin: 0.25rem 0.3rem;
+    }
+
+    .public-list-box.complaint-list-img ul li {
+        margin: 0.25rem 0.26rem;
+    }
+}
+
+.peccancy_car {
+    font-size: 0.38rem;
+    color: #b2b2b2;
+    line-height: 20px;
+}
+.peccancy_car#type{
+	color: #666;
+}
+.site-error-tips {
+    margin: 0.3rem 0.55rem 0;
+    color: #f65e56;
+    font-size: 0.38rem;
+}
+.downMenu-style span {
+    font-size: 0.37rem;
+    color: #ababae;
+    display: inline-block;
+    height: 8px;
+}
+/*提示语*/
+.masktime{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 8.2rem;
+    height: 49px;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 49px;
+    border-radius: 4px;
+    margin: auto;
+}
+
+/*按钮入口a连接效果*/
+.btn-box .btnLink {
+    display: block;
+    margin: 0 0.27rem 0.55rem;
+    background: #5295e4;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1.25rem;
+    height: 1.25rem;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 0.416rem;
+}
+/*热门服务图标*/
+.hotService.img-list-box ul li a img{
+	width: 1.166rem;
+    height: 1.166rem;
+}
+
+
+/*下拉刷新动画*/
+.circle{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+}
+.circle p{
+    color: #109de3;
+    font-size: 0.37rem;
+    position: relative;
+    top: -35px;
+}
+.circleImg{
+    width: 1.4rem;
+}
+/*查询动画提示*/
+.timeM{
+    width: 103px !important;
+    height: 82px !important;
+    background: #000 !important;
+    opacity: .4;
+    left: 50%;
+    margin-left: -50px !important;
+    margin-top: -1.07rem !important;
+}
+.timeM p{
+    color: #fff;
+    font-size: 0.37rem;
+    line-height: .7rem;
+    text-align: center;
+
+}
+.dialog-tel{
+    position: fixed;
+    top: 50%;
+    z-index: 100;
+    border-radius: 5px;
+}
+/*请选择 span*/
+.downMenu-style span {
+    font-size: 0.37rem;
+    color: #ababae;
+    display: inline-block;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    width: -webkit-calc(100% - 3.5rem);
+    width: -moz-calc(100% - 3.5rem);
+    width: calc(100% - 3.5rem);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/*提示*/
+.prompt{
+	position: fixed;
+    top: 50%;
+    margin-top: -0.763rem;
+    background: rgba(0,0,0,0.8);
+    border-radius: 0.0695rem;
+    color: #fff;
+    font-size: 0.388rem;
+    line-height: 1.527rem;
+    text-align: center;
+    width: 8.25rem;
+    left: 50%;
+	margin-left: -4.125rem;
+}
+/*向上箭头*/
+.icon-upMenu{
+	width: 0.694rem;
+    height: 0.694rem;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.4rem;
+}
+/*列表标题超出左对齐-商务法规*/
+.h-Title{
+	float: left;
+    width: -webkit-calc(100% - 1.8rem);
+    width: -moz-calc(100% - 1.8rem);
+    width: calc(100% - 1.8rem);
+    font-weight: normal;
+}
+.disabled{
+	background: #fff;
+}
+.under-line {
+    width: .39rem;
+    height: .083rem;
+    background: #549dfb;
+    border-radius: 5px 5px;
+    position: absolute;
+    left: 2.17rem;
+    top: .99rem;
+}
+/*预约失败*/
+.notFound {
+    font-size: 0.3rem;
+    color: #6e6e6e;
+    text-align: center;
+    height: 3.33rem;
+    padding-top: 0.83rem;
+    border-top: 1px solid #edefee;
+    margin: 0 0.55rem;
+}
+.notFound .img-box img {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-bottom: 0.41rem;
+}
+/*取消预约弹框*/
+.dialog-tel {
+    background: #fff;
+    margin: 0 0.33rem;
+    height: 2.55rem;
+    position: fixed;
+    top: 50%;
+    margin-top: -1.275rem;
+    z-index: 100;
+    width: -webkit-calc(100% - 0.66rem);
+    width: -moz-calc(100% - 0.66rem);
+    width: calc(100% - 0.66rem);
+    border-radius: 5px;
+}
+.dialog-tel .titTel {
+    height: 1.44rem;
+    line-height: 1.44rem;
+    font-size: 0.416rem;
+    color: #474747;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.dialog-tel .btn-tel {
+    font-size: 0;
+}
+.dialog-tel .btn-tel a {
+    display: inline-block;
+    width: 50%;
+    height: 1.083rem;
+    line-height: 1.083rem;
+    color: #329dfc;
+    font-size: 0.416rem;
+    text-align: center;
+}
+.dialog-tel .btn-tel a:nth-of-type(1) {
+    border-right: 1px solid #ececec;
+    color: #a1a9ac;
+}
+/*切换城市首页*/
+.cityListBox{
+	margin-bottom: 1.3rem;
+}
+.cityListBox .rightArrow{
+	display: inline-block;
+	background: url(../images/city/rightArrow.png) no-repeat;
+	width: 0.694rem;
+	height: 0.694rem;
+	background-size: 0.694rem;
+	margin-top: 0.2rem;
+	margin-right: 0.138rem;
+    float: right;
+    cursor: pointer;
+}
+.useCity{
+	padding:0 0.61rem;
+	border-bottom: 1px solid #e0e0e0;
+}
+.useCityTit{
+	color: #787d80;
+	font-size: 0.36rem;
+	padding: 0.33rem 0;
+}
+.useCityList a{
+	display: inline-block;
+	float: left;
+	color: #474747;
+	height: 0.652rem;
+	line-height: 0.6rem;
+	font-size: 0.36rem;
+	text-align: center;
+	border: 1px solid #b3b3b3;
+	padding: 0 0.166rem;
+	border-radius: 1px;
+	margin-right: 0.222rem;
+	margin-bottom: 0.36rem;
+}
+.useCityList a.active{
+	color: #0083e0;
+	border: 1px solid #0083e0;
+}
+/*城市列表*/
+.cityTitle{
+    color: #333;
+    font-size: 0.41rem;
+    line-height: 1.22rem;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+.cityTitle .icon-return {
+    float: left;
+    margin-left: 0.33rem;
+    margin-top: 0.34rem;
+    width: 0.55rem;
+    height: 0.55rem;
+}
+.cityListBox ul li,.cityLisTit{
+	color: #474747;
+	font-size: 0.388rem;
+	border-bottom: 1px solid #dedede;
+	line-height: 1.11rem;
+	padding-left: 0.638rem;
+}
+.cityLisTit{
+	color: #787d80;
+	font-size: 0.36rem;
+	font-weight: normal;
+}
+@media screen and (min-width:768px){
+    .dialog-tel img{
+        vertical-align: top;
+        padding-top: 12px;
+    }
+    .dialog-tel{
+        height: 150px;
+    }
+    .dialog-tel p{
+        margin-top: -63px;
+        font-size: 16px;
+    }
+}
+/*自动登录mask*/
+.loadMask{
+    width: 100%;
+    height: 100%;
+    /*background: rgba(0,0,0,0.9);*/
+    background: rgba(255,255,255,1);
+    position: fixed;
+    top:0;
+    z-index: 1;
+}
+.mainTips{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9;
+}
+.mainTips p{
+    font-size: 14px;
+    color: #444;
+}
+
+
+/*后期-列表公用部分(例：中组部12380-举报单位)*/
+.btn-box .btnDefault.btn-gray{
+	background: #f9f9f9;
+    border: 1px solid #e8e8e8;
+    color: #777;
+    margin-right: 0.518rem;
+    margin-left: 0;
+}
+.pubListBox{
+	padding: 0.277rem 0.55rem;
+	border-top: 1px solid #edefee;
+}
+.publicListText{
+	width: 8.2rem;
+    height: 1.02rem;
+    line-height: 1.02rem;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    font-size: 0.36rem;
+    margin-bottom: 0.277rem;
+    position: relative;
+}
+.publicListText label{
+	display: inline-block;
+	width: 2.472rem;
+	color: #474747;
+	font-size: 0.36rem;
+	padding-left: 0.27rem;
+	float: left;
+	line-height: 0.95rem;
+}
+.publicListText input,.publicListText span{
+	border: none;
+    font-size: 0.36rem;
+    width: -webkit-calc(100% - 3.252rem);
+    width: -moz-calc(100% - 3.252rem);
+    width: calc(100% - 3.252rem);
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0;
+}
+.publicListText input{
+	height: 0.5rem;
+    line-height: 0.5rem;
+    margin-top: 0.2rem;
+}
+.publicListText span{
+	color: #474747;
+	height: 0.95rem;
+    line-height: 0.95rem;
+}
+.publicListText .icon-delete{
+	width: 0.888rem;
+    height: 0.888rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0.05rem;
+}
+.publicListText .icon-downMenu{
+	width: 0.78rem;
+    height: 0.78rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0.05rem;
+    top: 0.1rem;
+}
+.publicListText.pubListTextSex{
+	border: none;
+}
+.publicListText.pubListTextSex label{
+	color: #474747;
+}
+.publicListText.reportSelect1{
+	border-bottom: 0;
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.publicListText.reportSelect2{
+	border-top: none;
+	border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+/*单选框 start*/
+.radioPicBox span {
+    font-size: 0.388rem;
+    float: left;
+    color: #b2b2b2;
+    border: none;
+    padding: 0;
+    width: auto;
+    margin-right: 1rem;
+}
+.radioPicBox span picture {
+    display: inline-block;
+    vertical-align: middle;width: 0.375rem;
+    height: 0.375rem;
+    margin: -0.03rem 0.138rem 0 0rem;
+}
+.radioPicBox span picture {
+    background: url(../../images/icon-radio24-default.png) no-repeat;
+    background-size: 0.375rem;
+}
+.radioPicBox span picture.active {
+    background: url(../../images/icon-radio24-selected.png) no-repeat;
+    background-size: 0.375rem;
+}
+/*单选框 end*/
+.publicListText.textareaList{
+	height: 2.736rem;
+}
+.publicListText.textareaList textarea{
+	height: 2.68rem;
+	border: none;
+	resize: none;
+	width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    font-family: "微软雅黑";
+    font-size: 0.36rem;
+    padding: 0.32rem 0;
+    line-height: 0.55rem;
+    outline: none;
+}
+.publicListText.publicListCode input{
+	width: -webkit-calc(100% - 4.75rem);
+    width: -moz-calc(100% - 4.75rem);
+    width: calc(100% - 4.75rem);
+}
+.publicListText.publicListCode .img-code{
+	height: 0.833rem;
+    width: 2.277rem;
+    margin-top: 0.06rem;
+    float: right;
+}
+.btn-box.publicBtnBox{
+	margin: 0.14rem 0rem 0.694rem;
+}
+.peccancyQuery.userInfor.onlyStyle .q-r-tit.publicMainTit .icon-downMenu{
+	right: 0.4rem;
+}
+/*按钮*/
+.btn-box .btnDefault {
+    width: 3.7rem;
+    height: 1.22rem;
+    line-height: 1.22rem;
+    text-align: center;
+    font-size: 0.472rem;
+}
+.btn-box .backHome {
+    margin-left: 0.518rem;
+    margin-right: 0.518rem;
+}
+.btn-box .fuhe {
+    margin-right: 0.518rem;
+    margin-left: 0;
+}
+.publicListText.smsVerCode input{
+	width: -webkit-calc(100% - 4.8rem);
+    width: -moz-calc(100% - 4.8rem);
+    width: calc(100% - 4.8rem);
+}
+.publicListText.smsVerCode a{
+	font-size: 0.36rem;
+	color: #068de7;
+	float: right;
+    margin-right: 0.138rem;
+    line-height: 0.95rem;
+}
+/*成功页面*/
+.successAppCode {
+    width: 8.19rem;
+    margin: 0.5rem auto 0;
+    position: relative;
+}
+.icon-semicircle {
+    display: inline-block;
+    width: 0.18rem;
+    height: 0.36rem;
+    background: url(../images/beiJingPassport/semicircle.png) no-repeat;
+    background-size: 0.18rem 0.36rem;
+    position: absolute;
+    top: 1.18rem;
+}
+.semicircleLeft {
+    left: 0;
+}
+.semicircleRight {
+    right: 0;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.icon-appSuccess {
+    display: inline-block;
+    width: 0.527rem;
+    height: 0.555rem;
+    background: url(../images/beiJingPassport/successful.png) no-repeat;
+    background-size: 0.527rem 0.555rem;
+    margin-right: 0.222rem;
+    vertical-align: middle;
+    margin-top: -0.05rem;
+}
+.successTitWord {
+    width: 8.19rem;
+    height: 1.36rem;
+    line-height: 1.36rem;
+    text-align: center;
+    background: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    font-size: 0.416rem;
+    color: #000;
+}
+.successTitWord.appCode {
+    font-size: 0.444rem;
+    color: #000;
+    border-top: none;
+}
+.inquireCode{
+    color: #ff3939;
+    font-size: 0.36rem;
+}
+.inquireTipsCode{
+	font-size: 0.36rem;
+	color: #888;
+}
+.successTitWord.appCode.zzbCode{
+	height: auto;
+	padding: 0.3rem 0.25rem;
+}
+.successTitWord.appCode.zzbCode div{
+	line-height: 0.67rem;
+}
+.successTitWord.appCode.zzbCode div#searchResult{
+	word-wrap: break-word;
+}
+.btn-box.resultBtnBox{
+	margin: 0.833rem 0 0.888rem;
+}
+/*公用查询结果*/
+.feedbackTips{
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	border-radius: 3px;
+	margin: 0.277rem 0.33rem 0;
+	padding: 0.416rem 0 0.32rem 1.91rem;
+}
+.feedbackTips img{
+    width: 0.416rem;
+    height: 0.416rem;
+    margin-top: -0.17rem;
+}
+.wgTipsPicBox{
+	float: left;
+	font-size: 0.416rem;
+}
+.feedbackTips .wgTipsWords{
+	float: left;
+    color: #068de7;
+    font-size: 0.33rem;
+    line-height: 0.5rem;
+    margin-left: 0.277rem;
+}
+.feedbackTips.reportQuery{
+	padding: 0.416rem 0 0.32rem 0.55rem;
+}
+/*公用-同意协议*/
+.publicRadioList{
+	padding: 0.425rem 0.55rem 0rem 0.833rem;
+	border-top: 1px solid #edefee;
+}
+.publicRadioList.active {
+    color: #068de7;
+}
+.publicRadioList.active .icon-radio-default {
+    background: url(../images/icon-radio24-selected.png) no-repeat;
+    background-size: 0.375rem;
+}
+.publicRadioList .icon-radio-default {
+    display: inline-block;
+    width: 0.375rem;
+    height: 0.375rem;
+    background: url(../images/icon-radio24-default.png) no-repeat;
+    background-size: 0.375rem;
+    vertical-align: middle;
+    margin-top: 0.08rem;
+    margin-right: 0.138rem;
+    float: left;
+}
+.publicRadioList span {
+    float: left;
+    width: -webkit-calc(100% - 0.675rem);
+    width: -moz-calc(100% - 0.675rem);
+    width: calc(100% - 0.675rem);
+    color: #6e6e6e;
+    font-size: 0.33rem;
+}
+.notSelectable::-webkit-input-placeholder{
+	color: #474747 !important;
+}
+.notSelectable:-moz-placeholder{
+	color: #474747 !important;
+}
+.notSelectable::-moz-placeholder{
+	color: #474747 !important;
+}
+.notSelectable::-ms-input-placeholder{
+	color: #474747 !important;
+}
+#cityTrigger,#annualTrigger,#countyTrigger,#provinceTrigger{
+	color: #ababae;
+}
+/*radio*/
+.publicSexBox{
+	width: -webkit-calc(100% - 2.48rem);
+    width: -moz-calc(100% - 2.48rem);
+    width: calc(100% - 2.48rem);
+    float: left;
+}
+.publicSexBox span{
+	float: left;
+	position: relative;
+	font-size: 0.388rem;
+}
+.publicSexBox span i{
+    width: .375rem;
+    height: .375rem;
+    display:inline-block;
+    vertical-align: middle;
+    margin-top: -0.06rem;
+    margin-right: 0.166rem;
+}
+.publicSexBox span em{
+	font-style: normal;
+}
+.publicSexBox span i.icon-check,.publicSexBox span i.check-true{
+    background: url("../images/icon-radio24-default.png") no-repeat;
+    background-size:0.375rem 0.375rem;
+}
+.publicSexBox span input[type="radio"],
+.publicSexBox span input[type="checkbox"]{
+	position: absolute;
+    left: -1px;
+    top: 8px;
+    opacity: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0;
+}
+.publicSexBox span input[type="radio"]:checked + i.icon-check,
+.publicSexBox span input[type="checkbox"]:checked + i.icon-check{
+    background: url("../images/icon-radio24-selected.png") no-repeat ;
+    background-size: 0.375rem 0.375rem;
+}
+.publicSexBox.iAgree{
+	width: 100%;
+	padding: 0 0.5rem;
+	font-size: 0.388rem;
+	float: none;
+}
+.publicSexBox.iAgree .icon-default em{
+	color: #474747;
+	font-size: 0.388rem;
+}
+.publicSexBox.iAgree .icon-default{
+	float: none;
+}
+/*公用选择下拉框默认颜色*/
+.publicListText.publicSelectColor input::-webkit-input-placeholder{
+	color: #474747;
+}
+.publicListText.publicSelectColor input:-moz-placeholder{
+	color: #474747;
+}
+.publicListText.publicSelectColor input::-moz-placeholder{
+	color: #474747;
+}
+.publicListText.publicSelectColor input:-ms-input-placeholder{
+	color: #474747;
+}
+/*公用弹框-网络违法犯罪例*/
+.dialog-public{
+	position: fixed;
+	background: #fff;
+	width: 9.333rem;
+	z-index: 100;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top:0;
+	margin: auto;
+	border-radius: 2px;
+}
+.dialog-public.ht302{
+	height: 4.2rem;
+}
+.accText{
+	width: 90%;
+	height: 1rem;
+	border: 1px solid #ddd;
+	font-size: 0.5rem;
+	margin: 0.5rem auto;
+}
+.accText input{
+	width: 100%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	margin-top: 0.22rem;
+	padding:0 0.2rem;
+	border: none;
+	border-radius: 2px;
+}
+.btnCloseBox{
+	font-size: 0.5rem;
+}
+.btnCloseBox a{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 0.5rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	border-top: 1px solid #ddd;
+}
+/*公用列表形式-住房城乡服务为例*/
+/*信息填写（个人、单位）*/
+.housingListBox{
+	padding: 0 0.55rem;
+	border-top: 1px solid #e8e8e8;
+}
+.housingListBox .publicListText.pubListTextSex label{
+	padding-left: 0rem;
+}
+.housingListBox .publicListText.pubListTextSex{
+	border-bottom: 1px solid #e8e8e8;
+	margin-bottom: 0;
+	padding: 0.2rem 0;
+    height: inherit;
+}
+.publicHousingList{
+	border-bottom: 1px solid #e8e8e8;
+	padding:0.472rem 0 0.277rem;
+}
+.publicHousingList .tit{
+	color: #6e6e6e;
+	font-size: 0.361rem;
+	margin-bottom: 0.2rem;
+}
+.publicHousingList .textBox{
+	font-size: 0.361rem;
+	position: relative;
+}
+.publicHousingList .textBox input{
+	font-size: 0.361rem;
+	width: 100%;
+	border: none;
+}
+.textBox .icon-downMenu{
+	position: absolute;
+	right: 0;
+	top: -0.05rem;
+	width: 0.781rem;
+	height: 0.781rem;
+}
+.publicHousingList .textBox textarea{
+	font-size: 0.361rem;
+	width: 100%;
+	border: none;
+	outline: none;
+	resize: none;
+	font-family: "微软雅黑";
+	padding: 0;
+	height: 2rem;
+}
+/*上传图片*/
+.textBox .uploadAttaPic{
+	margin-bottom: 0.194rem;
+}
+.textBox .uploadPicDefault{
+	width: 2.16rem;
+    height: 2.16rem;
+    border: 1px dashed #bbb;
+    float: left;
+    margin-right: 0.25rem;
+    position: relative;
+}
+.textBox .uploadPicDefault .upSuccessPic {
+    line-height: 2.16rem;
+    text-align: center;
+    margin: -1px;
+}
+.textBox .uploadPicDefault .upSuccessPic img {
+    max-width: 100%;
+    max-height: 2.16rem;
+}
+.textBox .uploadPicDefault .upPicDelete {
+    background: url(../images/monitorReport/deleteIcon.png) no-repeat;
+    width: 0.406rem;
+    height: 0.406rem;
+    background-size: 0.406rem 0.406rem;
+    position: absolute;
+    top: -0.15rem;
+    right: -0.15rem;
+}
+.textBox .uploadPicDefault .uploadIcon {
+    background: url(../images/monitorReport/uploadIcon.png) no-repeat;
+    width: 0.625rem;
+    height: 0.515rem;
+    background-size: 0.625rem 0.515rem;
+    margin: 0.33rem auto 0.2rem;
+}
+.textBox .uploadPicDefault .upPicNum{
+	text-align: center;
+}
+.textBox .uploadPicDefault .upPicNum p{
+	color: #adadad;
+	font-size: 0.281rem;
+}
+.uploadPicTips{
+	color: #adadad;
+	font-size: 0.277rem;
+	line-height: 0.472rem;
+}
+.btn-box.font34 input{
+	font-size: 0.472rem;
+}
+.notFound.successFailed{
+	margin-bottom: 0.5rem;
+}
+.notFound.successFailed .img-box img{
+	width: 1.52rem;
+	height: 1.52rem;
+}
+.notFound.successFailed .notF-infor{
+	font-size: 0.437rem;
+}
+/*公用---检查干警为例*/
+/*首页*/
+.dialog-publicBox{
+	width: 9.333rem;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+	z-index: 101;
+	border-radius: 2px;
+}
+.dialog-publicBox.ht895{
+	height: 13.3rem;
+}
+.publicTit{
+	color: #068de7;
+	line-height: 0.972rem;
+	font-size: 0.437rem;
+	font-weight: normal;
+	border-bottom: 1px solid #dadada;
+	text-align: center;
+}
+.dialog-publicClose{
+	position: absolute;
+    right: 0.277rem;
+    top: 0.277rem;
+    width: 0.421rem;
+    height: 0.421rem;
+}
+.publicCon{
+	padding:0.347rem 0.45rem 0.444rem 0.55rem;
+	border-bottom: 1px solid #d4d4d4;
+}
+.publicCon p{
+	font-size: 0.4rem;
+	color: #333;
+	line-height: 0.736rem;
+}
+/*举报信息填写*/
+.publicHousingList .selectDownMenu{
+	position: relative;
+	font-size: 0.361rem;
+}
+.publicHousingList .selectDownMenu span{
+	display: inline-block;
+	font-size: 0.361rem;
+    width: -webkit-calc(100% - 0.781rem);
+    width: -moz-calc(100% - 0.781rem);
+    width: calc(100% - 0.781rem);
+    border: none;
+    color: #6e6e6e;
+}
+.publicHousingList .selectDownMenu img{
+	width: 0.781rem;
+    height: 0.781rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0.05rem;
+    top: -0.08rem;
+}
+.selectTextarea textarea{
+	width: 100%;
+	resize: none;
+	height: 1.944rem;
+	font-family: "微软雅黑";
+	outline: none;
+	border: none;
+}
+.selectCode{
+	margin-bottom: -0.1rem;
+}
+.selectCode input{
+	float: left;
+	font-size: 0.361rem;
+    width: -webkit-calc(100% - 2.8rem);
+    width: -moz-calc(100% - 2.8rem);
+    width: calc(100% - 2.8rem);
+    border: none;
+}
+.selectCode img{
+	width: 2.562rem;
+    height: 0.812rem;
+    float: right;
+    margin-top: -0.1rem;
+}
+/*请选择*/
+.selectTitList{
+	padding: 0.5rem 0.5rem;
+	border-bottom: 1px solid #dadada;
+}
+.dialog-selectRegionList .selectTit{
+	font-size: 0.388rem;
+	color: #333;
+	position: relative;
+	text-align: center;
+	padding: 0.33rem 0;
+}
+.dialog-selectRegionList .selectTit .dialog-close{
+	position: absolute;
+    right: 0.416rem;
+    top: 0.361rem;
+    width: 0.421rem;
+    height: 0.421rem;
+    cursor: pointer;
+}
+.selectTitList ul li{
+	font-size: 0.388rem;
+	color: #333;
+	border-left: 2px solid #1a8fe5;
+	padding-top: 0.52rem;
+}
+.selectTitList ul li:nth-of-type(1){
+	padding-top: 0rem;
+}
+.selectTitList ul li label{
+	display: inline-block;
+	background: #1a8fe5;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-left: -0.15rem;
+	margin-right: 0.55rem;
+}
+.selectTitList ul li.btnSelect{
+	color: #068de7;
+}
+.selectTitList ul li.btnSelect label{
+	background: #fff;
+	border: 2px solid #1a8fe5;
+	cursor: pointer;
+}
+.selectTitList ul li span{
+	display: inline-block;
+	width: -webkit-calc(100% - 10px - 0.55rem);
+	width: -moz-calc(100% - 10px - 0.55rem);
+	width: calc(100% - 10px - 0.55rem);
+	vertical-align: middle;
+}
+.dialog-selectRegionList{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	min-height: 9.16rem;
+	max-height: 12.972rem;
+	z-index: 101;
+	background: #fff;
+}
+.conList{
+	background: #f8fbfb;
+	padding: 0.5rem 0 0rem 0.416rem;
+	overflow: hidden;
+}
+.conList .tit{
+	font-size: 0.305rem;
+	color: #999;
+	margin-bottom: 0.45rem;
+}
+.conList ul{
+	max-height: 6.7rem;
+    overflow-y: auto;
+    padding-right: 0.8rem;
+    width: 10.1rem;
+}
+.conList ul li{
+	font-size: 0.388rem;
+	color: #333;
+	margin-bottom: 0.62rem;
+}
+@media (max-width: 320px) {
+	.selectTitList ul li label{
+		width: 8px;
+		height: 8px;
+	}
+}
+@media (min-width: 414px) {
+	.selectTitList ul li label {
+	    margin-left: -0.13rem;
+	}
+}
+.maskD {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+/*解决苹果手机自带阴影问题*/
+input{
+    appearance:button;
+　　-moz-appearance:button; /* Firefox */
+　　-webkit-appearance:button; /* Safari 和 Chrome */
+}
+/*医院-个人中心-标题换行-江西为例*/
+.warpTit{
+	width: -webkit-calc(100% - 2.72rem);
+	width: -moz-calc(100% - 2.72rem);
+	width: calc(100% - 2.72rem);
+    display: inline-block;
+    font-weight: normal;
+}
+.reservationDetails.borderNot{
+	border-bottom: none;
+}
+/*涉枪涉爆-label宽度*/
+.pubListBox.publicListLabelWH .publicListText label{
+	width: 3.25rem;
+}
+.pubListBox.publicListLabelWH .publicListText.publicListCode input{
+	width: -webkit-calc(100% - 5.6rem);
+    width: -moz-calc(100% - 5.6rem);
+    width: calc(100% - 5.6rem);
+}
+.btn-box.resultBtnBox.marTopNo{
+	margin: 0.1rem 0 0.694rem;
+}
+/*按钮80，成功与失败---设计改变-以非法出版活动举报为例*/
+.uploadFileOne{
+	height: auto;
+	line-height: 0.666rem;
+}
+.uploadFileOne .fileSize{
+	display: inline-block;
+    width: 100%;
+    border-top: 1px solid #edefee;
+    line-height: 0.666rem;
+    color: #b2b2b2;
+    font-size: 0.277rem;
+    padding-left: 0.277rem;
+    margin-top: 0.388rem;
+}
+.btn-box.font80 input{
+	height: 1.111rem;
+	font-size: 0.388rem;
+}
+.notFound.successFailed-file{
+	height: auto;
+	padding-top: 1.08rem;
+}
+.notFound.successFailed-file .img-box img{
+	width: 2.041rem;
+	height: 1.902rem;
+}
+.notFound.successFailed-file .notF-infor{
+	color: #364555;
+	font-size: 0.444rem;	
+}
+.marTB{
+	margin: 1.944rem 0 1rem;
+}
+/*林木种子去掉定位图标*/
+.address.linmu span{
+	background: none;
+}

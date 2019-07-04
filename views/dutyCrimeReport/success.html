@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>最高人民检查院职务犯罪举报中心</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+		<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" language="javascript">
+            var randomKey = "<%= randomKey %>"
+                ,userID = "<%= userID%>"
+                ,clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                cityName = "<%= cityInfo.cityName %>",
+                local_x = "<%= local_x %>"
+                ,local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+		</script>
+	<style>
+		.reportInquireCode span {
+		    font-weight: bold;
+		    font-size: 0.388rem;
+		    color: #ff3939;
+		}
+		.successAppCode.marBom{
+			padding-bottom: 0.694rem;
+		}
+		.queryProcessing {
+		    font-size: 0.36rem;
+		    color: #888;
+		}
+	</style>
+	</head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/dutyCrimeReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">
+					举报结果
+					</h1>
+					<hr class="hrLine">
+					<div class="successAppCode marBom">
+						<i class="icon-semicircle semicircleLeft"></i>
+						<i class="icon-semicircle semicircleRight"></i>
+						<div class="successTitWord networdReport">
+							<i class="icon-appSuccess"></i>举报成功！
+						</div>
+						<div class="successTitWord appCode zzbCode">
+							<div class="reportCode">您的查询码为：</div>
+							<div class="reportInquireCode"><span id="searchCode">A20181127770502c5</span></div>
+							<div class="queryProcessing">查询码用于举报结果查询时使用，请牢记！</div>
+						</div>
+					</div>
+					<div class="btn-box">
+						<input type="button" value="返回首页" id="goHome"/>
+					</div>
+				</div>
+			</div>
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：最高人民检察院举报中心</div>
+		</div>
+		<script src="/js/dutyCrimeReport/success.js"></script>
+	</body>
+</html>

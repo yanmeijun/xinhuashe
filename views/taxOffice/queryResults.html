@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>税务事务所查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/taxOffice/taxOffice.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=o54fbQeQ9y37iubiSbeGcBLqAGnVxvf1"></script>-->
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--税务事务所查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" onclick="back()"/>税务事务所查询</h1>
+				<hr class="hrLine">
+				<h2 class="q-r-tit htTitke"><span></span>查询结果</h2>
+			</div>
+
+			<div id="address"></div>
+			<!--<div class="peccancyQuery userInfor onlyStyle">-->
+				<!--<div class="tab-content inforConfirm">-->
+					<!--<div class="text-list-div iconList clearfix">-->
+						<!--<label>事务所名称：</label>-->
+						<!--<span>北京京都金信税务师事务所有限责任公司</span>-->
+						<!--<img src="/images/icon-downMenu.png" class="icon-downMenu">-->
+					<!--</div>-->
+					<!--&lt;!&ndash;显示与隐藏&ndash;&gt;-->
+					<!--<div class="">-->
+						<!--<div class="text-list-div iconList clearfix">-->
+							<!--<label>所长姓名：</label>-->
+							<!--<span>王秀凤</span>-->
+						<!--</div>-->
+						<!--<div class="text-list-div iconList clearfix">-->
+							<!--<label>地址：</label>-->
+							<!--<span>北京市丰台区文体路乙24号112室</span>-->
+							<!--<img src="/images/taxOffice/icon-address.png" class="icon-address">-->
+						<!--</div>-->
+						<!--<div class="text-list-div iconList clearfix">-->
+							<!--<label>联系方式：</label>-->
+							<!--<span>63826204</span>-->
+							<!--<img src="/images/taxOffice/icon-tel.png" class="icon-tel">-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		</div>
+		<!--联系方式弹框-->
+		<div class="mask" style="display: none;" id="dialogMask"></div>
+		<div class="dialog-tel" style="display: none;" id="dialog">
+			<div class="titTel">63826204</div>
+			<div class="btn-tel">
+				<a href="javascript:;" id="del">取消</a>
+				<a href="tel:63826204">呼叫</a>
+			</div>
+		</div>
+
+		<div style="height: 1.7rem;"></div>
+
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<!--<div id="allmap" class="allmap"></div>-->
+		<div class="data-sources">服务来源：国家税务总局</div>
+	</div>
+	<script src="/js/taxOffice/queryResults.js"></script>
+</body>
+</html>

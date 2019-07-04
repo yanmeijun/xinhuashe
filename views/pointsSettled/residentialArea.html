@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>职住区域</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/pointsSettled/pointsSettled.css" />
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.ageLimt-title {
+			position: relative;
+		}
+		input[type="radio"]{
+			position: absolute;
+			left: -5px;
+			top: -3px;
+			opacity: 0;
+		}
+		input[type="radio"]:checked + i.icon-radio{
+			background: url("../../images/pointsSettled/radio-select.png") no-repeat ;
+			background-size: 0.416rem 0.416rem;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--5.职住区域-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" onclick="back()"/>5.职住区域</h1>
+				<hr class="hrLine">
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="0" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">不满足相关职住区域积分条件</span>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="2" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">居住地由城六区转移到本市其他行政区</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" readonly class="disabled" id="residTrigger"/>-->
+						<span  id="residTrigger" class="disabled">请选择</span>
+						<img src="/images/icon-downMenu.png" class="downMenu" id="resid">
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="3" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">就业地和居住地均由城六区转移到本市其他行政区</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" readonly class="disabled" id="residentsTrigger"/>-->
+						<span  id="residentsTrigger" class="disabled">请选择</span>
+						<img src="/images/icon-downMenu.png" class="downMenu" id="residents">
+					</div>
+				</div>
+				<div class="btn-box btn-newsStyle">
+					<input type="button" value="确定" onclick="search()"/>
+				</div>
+			</div>
+			<!---->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>说明：</h2>
+				<div class="wantLookCon">
+					<p>自本办法施行之日（2017年1月1日）起，您的居住地由城六区(东城区、西城区、朝阳区、海淀区、丰台区、石景山区)转移到本市其他行政区域的，每满1年加2分，最高加6分。</p>
+					<p>您的就业地和居住地均由城六区转移到本市其他行政区域的，每满1年加4分，最高加12分。 累计12个月按满1年积分，不足12个月的不积分。</p>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+	</div>
+	<script src="/js/pointsSettled/residentialArea.js"></script>
+    <script src="/js/all.js"></script>
+</body>
+</html>

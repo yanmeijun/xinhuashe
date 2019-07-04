@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>挂号信息确认</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+    <script  type="text/javascript">
+        const randomKey = "<%= locals.randomKey %>"
+            ,userID = "<%= locals.userID%>"
+            ,clientID = "<%= locals.clientID %>",
+            cityID = "<%= locals.cityID %>",
+			citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= locals.local_x %>"
+            ,local_y = "<%= locals.local_y %>",
+			err = "<%= locals.err %>",
+            localFrom = "<%= locals.localFrom %>";
+  </script>
+	<style>
+		.icon-default1  i{
+			width: .34rem;
+			height: .34rem;
+			display:inline-block;
+			background: url("/assets/images/yaohao/icon-yh-default.png") no-repeat ;
+			background-size: 0.34rem 0.34rem;
+		}
+		.icon-default1  i.icon-check{
+			background: url("/assets/images/yaohao/icon-yh-default.png") no-repeat ;
+			background-size: 0.34rem 0.34rem;
+		}
+		.icon-default1  i.check-true{
+			background: url("/assets/images/yaohao/icon-yh-check.png") no-repeat ;
+			background-size: 0.34rem 0.34rem;
+		}
+		.icon-default1{
+			position: relative;
+		}
+		input[type="radio"]{
+			position: absolute;
+			left: -5px;
+			top: -3px;
+			opacity: 0;
+		}
+		input[type="radio"]:checked + i.icon-check{
+			background: url("/assets/images/yaohao/icon-yh-check.png") no-repeat ;
+			background-size: 0.34rem 0.34rem;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div id="userAvatarBox" class="userAvatarBox">
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+			</div>
+		</div>
+		<!--挂号信息确认-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="backhistory"/>挂号信息确认</h1>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>号源详情</h2>
+				<hr class="hrLine">
+				<div class="tab-content inforConfirm" id="inforConfirm">
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>科室：</label>-->
+						<!--<span>北京大学第一医院-消化内科</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>医生：</label>-->
+						<!--<span>白歌</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>时间：</label>-->
+						<!--<span>2018-03-13  下午</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>医事服务费：</label>-->
+						<!--<span>￥50元</span>-->
+					<!--</div>-->
+				</div>
+			</div>
+
+			<form action="/hospital/register" method="post" id="loginForm">
+				<input type="hidden" name="localFrom" id="localFrom"/>
+				<input type="hidden" name="randomKey" id="randomKey"/>
+				<input type="hidden" name="userID" id="userID"/>
+				<input type="hidden" name="clientID" id="clientID"/>
+				<input type="hidden" name="cityID" id="cityID"/>
+				<input type="hidden" name="local_x" id="local_x"/>
+				<input type="hidden" name="local_y" id="local_y"/>
+				<input type="hidden" name="dutySourceId" id="dutySourceId"/>
+				<input type="hidden" name="type" id="type"/>
+				<input type="hidden" name="doctorId" id="doctorId"/>
+				<input type="hidden" name="departmentId" id="departmentId"/>
+				<input type="hidden" name="hospitalId" id="hospitalId"/>
+				<input type="hidden" name="hospitalCardId" id="hospitalCardId"/>
+				<input type="hidden" name="phonecode" id="phonecode"/>
+				<input type="hidden" name="medicareCardId" id="medicareCardId"/>
+				<input type="hidden" name="patientId" id="patientId"/>
+				<!--<input type="hidden" name="patientName" id="patientName">-->
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>挂号信息</h2>
+					<hr class="hrLine">
+					<div class="tab-content inforConfirm">
+						<div class="text-list-div inforCheck-style">
+							<label>就诊人：</label>
+							<div class="accounts-all clearfix" >
+								<div id="docItem">
+									 <!--<span class="icon-default special-style">-->
+									<!--<i><img src="/images/icon-yh-check.png"></i>张三-->
+									<!--</span>-->
+									<!--<span class="icon-default special-style">-->
+										<!--<i><img src="/images/icon-checkBox-default.png"></i>李四-->
+									<!--</span>-->
+								</div>
+								<div class="addPatient" onclick="addPatient()" style="font-size: 14px;color: #549dfb;">+ 添加就诊人</div>
+							</div>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>就诊卡：</label>
+							<input type="text" placeholder="请输入就诊卡" id="cardNumber">
+						</div>
+						<div class="text-list-div clearfix">
+							<label>医保卡：</label>
+							<input type="text" placeholder="请输入医保卡" id="doctoCar">
+						</div>
+						<div class="text-list-div clearfix">
+							<label>报销类型：</label>
+							<!--<input type="text" placeholder="请输入报销类型">-->
+							<span id="downPlac">请输入报销类型</span>
+							<img src="/images/icon-downMenu.png" class="icon-downMenu" id="downMenu">
+						</div>
+						<div class="text-list-div phone-list-code clearfix">
+							<label>手机验证码</label>
+							<input type="text" placeholder="请输入验证码"  id="vercode"/>
+							<a href="javascript:;" class="get-code" id="getCode">获取验证码</a>
+						</div>
+					</div>
+					<div class="btn-box">
+						<input type="button" value="确认预约" id="getBtn"/>
+					</div>
+				</div>
+		</form>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<!--手机验证提示-->
+		<div id="mask" class="mask" style="display: none"></div>
+		<div id="tips" class="dialog-phone" style="display: none;">
+			<p id="tips_text"></p>
+			<a id="iKnow" href="javascript:;">确定</a>
+		</div>
+
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+
+		<div class="data-sources">服务来源：北京市预约挂号统一平台</div>
+	</div>
+</body>
+</html>
+<script>
+//同意协议、性别按钮切换
+	$("#agreeSelect,#sexBoy picture,#sexGirl picture").on("click",function(){
+	    $(this).toggleClass("active");
+	})
+</script>
+<script src="/js/hospital/informationConfirm.js" ></script>
+<script type="text/javascript" src="/js/all.js"></script>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<title>12318全国文化市场举报平台</title>
+	<link rel="stylesheet" href="/css/news.css" />
+	<link rel="stylesheet" href="/css/monitorReport/monitorReport.css" />
+	<link rel="stylesheet" href="/css/networkCrimeReport/networkCrimeReport.css" />
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/publicInput.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script>
+        var randomKey = "<%= randomKey %>",
+            userID = "<%= userID%>",
+            clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+	<!--banner图-->
+	<div class="banner">
+		<img src="/images/culturalMarketReport/banner.png">
+	</div>
+	<div class="warpBox">
+		<div class="peccancyQuery XLQuery-home">
+			<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="backFrom">举报投诉留言</h1></div>
+		<!--举报人信息  start-->
+		<div class="peccancyQuery userInfor onlyStyle">
+			<h2 class="q-r-tit publicMainTit"><span></span>举报人信息</h2>
+			<div class="pubListBox">
+				<div class="publicListText">
+					<label>您的姓名</label>
+					<input type="text" id="nameInfomant" maxlength="50">
+				</div>
+				<div class="reportTipsBox">您所填写的姓名将用于查询举报处理进度，请牢记！</div>
+				<div class="publicListText">
+					<label>电话</label>
+					<input type="text" id="telephone" maxlength="15">
+				</div>
+				<div class="publicListText">
+					<label>单位</label>
+					<input type="text"  id="company" maxlength="50"/>
+				</div>
+				<div class="publicListText">
+					<label>详细地址</label>
+					<input type="text" id="address" max="100">
+				</div>
+				<div class="publicListText">
+					<label>电子邮箱</label>
+					<input type="text"  id="emails"/>
+				</div>
+				<div class="publicListText textareaDesc">
+					<div class="tit">举报内容</div>
+					<textarea placeholder="请认真填写举报内容，举报内容控制在2000字以内" id="contentReport" maxlength="2000" onblur="reportContentQuery(this.value)"></textarea>
+				</div>
+				<div class="publicListText">
+					<label class="tit">查询码</label>
+					<input type="password" id="queryCode"  minlength="6" maxlength="18" onblur="reportCodeQuery(this.value)"/>
+				</div>
+				<div class="reportTipsBox">您所设置的查询码将用于查询举报处理进度，请牢记！</div>
+				<div class="publicListText">
+					<label class="tit">查询码确认</label>
+					<input type="password" id="queryCodeAgain"/>
+				</div>
+				<div class="publicListText publicListCode">
+                    <label>验证码</label>
+                    <input type="text"  id="verifycode"/>
+                    <img src="/images/yanzm.gif" class="img-code" id="imgVCode">
+                </div>
+			</div>
+			<div class="btn-box publicBtnBox">
+				<input type="button" value="提 交" class="btnDefault backHome" id="submit"/>
+				<input type="button" value="重置信息" class="btnDefault btn-gray"  id="reset"/>
+			</div>
+		</div>
+		<!--举报人信息  end-->
+	</div>
+	<!-- ------------------------------提示语---------------------------------- -->
+	<div class="masktime" id="masktime" style="display:none;"></div>
+
+
+	<div style="height: 1.3rem;"></div>
+	<div class="data-sources">服务来源：中华人民共和国文化和旅游部</div>
+	<script src="/js/culturalMarketReport/complaintMessage.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/*首页查询*/
+.sameNameNum {
+    float: right;
+    margin-right: 0.55rem;
+}
+.sameNameNum b {
+    color: #0083e0;
+    font-weight: normal;
+    margin: 0 0.16rem;
+}
+.bulidEntCertificate .text-list-div label{
+	line-height: 0.5rem;
+}
+.bulidEntCertificate .text-list-div .bulidTextarea{
+	border: none;
+    font-size: 0.38rem;
+    color: #474747;
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    background: #fff;
+    font-family: 'microsoft yahei';
+    resize: none;
+    outline:none;
+    vertical-align: top;
+}
+.resultsList .bulidTable tr th{
+	font-size: 0.36rem;
+	color: #474747;
+	font-weight: normal;
+	height: 1.11rem;
+}
+.resultsList .bulidTable tr td{
+	font-size: 0.33rem;
+	color: #777;
+	border-top: 1px solid #edefee;
+	height: 1.22rem;
+}
+.bulidTable{
+	border-collapse: collapse;
+	width: 100%;
+}
+.bulidTable tr th:nth-of-type(1),
+.bulidTable tr td:nth-of-type(1){
+	padding-left: 0.55rem;
+	text-align: left;
+	width: 60%;
+}
+.bulidTable tr td:nth-of-type(1){
+	border-right: 1px solid #edefee;
+}
+.bulidTable tr th:nth-last-of-type(1),
+.bulidTable tr td:nth-last-of-type(1){
+	padding-right: 0.55rem;
+	text-align: right;
+	width: 40%;
+}
+.bulidTable tr td:nth-last-of-type(1){
+	color: #265fa8;
+}
+.bulidTable tr td:nth-last-of-type(1) p{
+	padding-right: 0.55rem;
+}
+.bulidTable tr td:nth-last-of-type(1) p:nth-last-of-type(1){
+	border-top: 1px solid #edefee;
+}
+.bulidTable tr:nth-of-type(2) td:nth-of-type(2){
+	padding: 0;
+}
+.resultsList .bulidTable tr td.notDate{
+	text-align: center;
+	color: #777;	
+}
+/*查询结果*/
+.resultTable{
+	margin-bottom: 0.388rem;
+    border-bottom: 1px solid #edefee;
+}
+.resultTable tr:nth-of-type(1) td{
+	border-top: none;
+}
+.resultTable tr td:nth-of-type(1){
+	width: 35%;
+	color: #474747;
+	font-size: 0.388rem;
+	padding-right: 0.33rem;
+}
+.resultTable tr td:nth-last-of-type(1){
+	width: 65%;
+	font-size: 0.388rem;
+	color: #797979;
+	padding-left: 0.33rem;
+	text-align: left;
+}
+.resultTable tr td:nth-of-type(1){
+	border-right: none;
+}
+.resultTable tr:nth-of-type(2) td:nth-of-type(2) {
+    padding-right: 0.55rem;
+    padding-left: 0.33rem;
+}
+
+
+/*工程监理企业资质证书*/
+.peccancyQuery.userInfor .text-list-div .supervision-companyTitle{
+	color: #056fb6;
+}
+.supervisionNotDate{
+	text-align: center;
+	color: #777;
+	font-size: 0.33rem;
+	line-height: 1.66rem;
+}
+.borderNot{
+	margin-bottom: 0rem;
+    border-bottom: none;
+}

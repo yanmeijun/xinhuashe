@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>预约挂号</title>
+    <link type="text/css" rel="stylesheet" href="../../css/news.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/hospital/hospital.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/heNanHospital/heNanHospital.css"/>
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>"
+            ,local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox">
+				<a href="javascript:;">
+					<p><img src="../../images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+				<div id="userCenter" class="dialog-userCenter" style="display:none;">
+					<div class="triangle"></div>
+					<ul>
+						<li id="record"><a href="javascript:;"><i class="icon-registeredRecord"></i>挂号记录</a></li>
+						<!--<li id="quit"><a href="javascript:;"><i class="icon-quit"></i>退出</a></li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--科室挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img src="../../images/icon-return.png" class="icon-return" onclick="back()"/>预约挂号</h1>
+				<hr class="hrLine">
+				<div id="HosList"></div>
+				<!--<dl class="hosList hNHosList">-->
+					<!--<dt><a href="javascript:;"><img src="../../images/heNanHospital/photo.jpg" class="photo"></a></dt>-->
+					<!--<dd class="y-g">-->
+						<!--<p class="nameOffice"><span>卫玉荣</span>副主任医师</p>-->
+						<!--<p class="introduce">擅长：主要从事白内障、眼底病及眼部美容整形和青光眼准分子的近视治疗</p>-->
+						<!--<p class="time"><span>2018-04-26</span><span>眼科专家门诊</span><span><em>4.5</em>元</span></p>-->
+					<!--</dd>-->
+				<!--</dl>-->
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>预约挂号</h2>
+				<hr class="hrLine">
+				<div class="tab-content inforConfirm heNanReg">
+					<div class="text-list-div clearfix">
+						<label>就诊时间：</label>
+						<span class="selectDownMenu" id="timeTrigger">请选择就诊时间</span>
+						<img src="../../images/icon-downMenu.png" class="icon-downMenu" id="time">
+					</div>
+					<div class="text-list-div clearfix">
+						<label>初复诊：</label>
+						<span class="selectDownMenu" id="diagnosisTrigger" data_id="1">初诊</span>
+						<img src="../../images/icon-downMenu.png" class="icon-downMenu" id="diagnosis">
+					</div>
+					<div style="display: none" id="selectCon">
+						<div class="text-list-div clearfix">
+							<label>就诊卡类型：</label>
+							<span class="selectDownMenu" id="VisitTrigger" data_id="01">医保卡</span>
+							<img src="../../images/icon-downMenu.png" class="icon-downMenu" id="Visit">
+						</div>
+						<div class="text-list-div clearfix" style="border-bottom: 1px solid #edefee;">
+							<label>就诊卡号</label>
+							<input type="text" placeholder="请输入就诊卡号（非必填）" id="cardPerson"/>
+						</div>
+					</div>
+					<div class="text-list-div inforCheck-style">
+						<label>就诊人：</label>
+						<div class="accounts-all clearfix" id="patient">
+					    	<!--<span class="icon-default" >张三</span>-->
+					    	<!--<div class="y-g-tel">手机：186****2498</div>-->
+					    	<!--<div class="y-g-ID">身份证：4114**********1621</div>-->
+						</div>
+					</div>
+					<div class="text-list-div phone-list-code clearfix">
+						<label>图片验证码</label>
+						<input type="text" placeholder="图片验证码"  id="validate"/>
+						<img src="../../images/code.png" class="img-code" id="veriCodeImg">
+					</div>
+				</div>
+				<div class="reminder">
+					<p id="tipCon">1、挂号费以当天医院取号窗口为准</p>
+					<!--<p>2、实际挂号费由医院收取，请放心使用。如遇专家停诊，您的订单会被取消，我们会以短信通知到您，请保持手机畅通，并及时关注订单状态。</p>-->
+				</div>
+				<div class="btn-box">
+					<input type="button" value="确认预约" onclick="sure()"/>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<!--提示语-->
+		<div class="masktime" id="masktime" style="display:none;">请输入您要举报的号码</div>
+
+		<div class="data-sources">服务来源：河南省预约挂号服务平台</div>
+	</div>
+	<script src="/js/heNanHospital/appointmenRegistration.js"></script>
+</body>
+</html>

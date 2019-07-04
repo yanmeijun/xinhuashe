@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>企业所得税</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/taxCalculation/taxCalculation.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--企业所得税-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">企业所得税</h1>
+				<div class="text-list-div">
+					<label>应纳税所得额</label>
+					<input v-model="corporateValue" type="number" placeholder="请输入应纳税所得额" id="taxAmount" />
+				</div>
+				<div class="btn-box">
+					<input @click="calc" type="button" value="计算" id="btnCalculation" />
+				</div>
+				<div class="viewSample"><a href="javascript:;" @click="checkEg(true)">查看示例</a></div>
+			</div>
+			<!--计算结果-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle" v-if="calcResult">
+				<h2 class="q-r-tit"><span></span>计算结果</h2>
+				<div class="calculationResult">
+					<div class="text-list-div clearfix">
+						<label>应纳税额</label>
+						<span class="numberResults">{{calcResult}}</span>
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="noteResult">注：以上结果，仅供参考</div>
+				</div>
+			</div>
+			<!--说明-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle">
+				<div class="promptCon">
+					<p>说明：</p>
+					<p>1、<a class="basePage" @click="jump">企业所得税</a>的基本规定</p>
+					<p>2、企业所得税应纳税所得额：纳税人每一纳税年度的收入总额减去准予扣除项目后的余额为应纳税所得额。</p>
+					<p class="taxTitle">计算公式：</p>
+					<p>企业所得税应纳税所得额＝收入总额－准予扣除项目金额</p>
+					<p>企业所得税应纳税额＝应纳税所得额×25%</p>
+				</div>
+			</div>
+		</div>
+		<!--提示语-->
+		<div class="masktime" id="masktime" v-if="masktime">{{masktime}}</div>
+		<div style="height:1.5rem"></div>
+		<div class="data-sources">服务来源：北京市地方税务局</div>
+		<!--示例-->
+		<div class="mask" v-if="egFlag"></div>
+		<div class="dialog-examples dialog-property dialog-calculation" v-if="egFlag">
+			<p>示例：某房地产开发公司2005年实现销售收入15000万元，缴纳流转税金825万元，准予扣除的项目有：</p>
+			<p>1、直接投入开发成本8900万元</p>
+			<p class="textIndex">2、销售费用1200万元</p>
+			<p class="textIndex">3、管理费用900万元</p>
+			<p class="textIndex">4、财务费用1000万元，计算应纳税所得额及应纳税额。</p>
+			<p class="numResult">
+				<label>应纳税所得额=</label>
+				<span>15000-（15000*5.5%）-（<br>8900+1200+900+1000）<br>=15000-825-12000=2175万元</span>
+			</p>
+			<p>应纳税额=2175*25%=543.75万元。</p>
+			<div class="btn-close-box">
+				<a @click="checkEg(false)">好的，我明白了</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/corporateTax/corporateTax.js"></script>
+</body>
+</html>

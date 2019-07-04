@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>商务法规查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/user.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+            	localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script type="text/javascript" src="/js/mofcom/mofcom.js"></script>
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--商务法规查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">商务法规查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>关键字</label>
+					<input id="keyword" type="text" placeholder="请输入关键字" />
+				</div>
+				<div class="btn-box">
+					<input id="search" type="button" value="查询" />
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div id="park_result_err" class="login-tips font28" style="display: none;">
+				<span></span>提示：没有符合条件的数据
+			</div>
+			<div id="results_div"></div>
+			<div id="results_div_temp" style="display: none">
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit clearfix"><span></span>
+					<b class="h-Title">【文号】${fwzh}</b>
+					<img src="/images/icon-downMenu.png" class="icon-downMenu" id="tab-tit-${id}"/>
+				</h2>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-${id}">
+					<div class="text-list-div rule-wh clearfix">
+						<label>法规名称：</label>
+						<span>${title}</span>
+					</div>
+					<div class="text-list-div rule-wh clearfix">
+						<label>发布日期：</label>
+						<span>${fdate}</span>
+					</div>
+					<div class="text-list-div rule-wh clearfix">
+						<label>实施日期：</label>
+						<span>${sdate}</span>
+					</div>
+					<div class="text-list-div rule-wh clearfix">
+						<label>具体内容：</label>
+						<span><a href="${url}">点击查看具体内容</a></span>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中华人民共和国商务部</div>
+	</div>
+</body>
+</html>

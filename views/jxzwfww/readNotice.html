@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>阅读须知</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/jxzwfww/jxzwfww.css"/>
+	<script type="text/javascript" src="/js/all.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/banner.png">
+			<div class="address linmu"><span>林木种子生产经营许可在线办理</span></div>
+		</div>
+		<!--阅读须知-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home heNanReg">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" onclick="goNext('login')"/>阅读须知</h1>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="jxSltj">
+					<label>受理条件：</label>
+					<span>（您本次网上申报的办件、工作人员将在受理之后联系您。）</span>
+				</div>
+				<div class="jxNote">注意：办理该项业务，需满足以下申请条件才能进行业务的办理，请自检是否满足。</div>
+				<div class="jxTips">予以批准的条件; 1.申请材料真实、有效、完整，符合申请要求； 2.申请取得种子生产经营许可证的，应当具有与种子生产经营相适应的生产经营设施、设备及专业技术人员，以及法规和国务院农业、林业主管部门规定的其他条件。 3.从事种子生产的，还应当同时具有繁殖种子的隔离和培育条件，具有无检疫性有害生物的种子生产地点或者县级以上人民政府林业主管部门确定的采种林。 4.申请领取具有植物新品种权的种子生产经营许可证的，应当征得植物新品种权所有人的书面同意。不予批准的情形 1.不符合申请条件的； 2.提供虚假申报材料或隐瞒有关情况的； 3.法律法规另有规定的。</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="jxSltj marBotNot">
+					<label>申报材料：</label>
+					<span>（注：本人对办理该事项所提交的申报材料内容真实性负责。）</span>
+				</div>
+				<div id="jxzwTable"></div>
+				<!--<table class="jxzwTable" >-->
+					<!--<tr>
+						<th width="20%">序号</th>
+						<th width="80%">申报材料名称</th>
+					</tr>-->
+					<!--<tr>
+						<td>1</td>
+						<td>林木种子生产经营许可证申请表</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>营业执照或者法人证书（经营范围和方式应覆盖申报的种类）</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>身份证件</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>单位章程（须加盖企业公章）</td>
+					</tr>-->
+					<!--<tr>
+						<td>5</td>
+						<td>林木种子生产、加工、检验、储藏等设施和仪器设备的所有权或者使用权说明材料以及照片</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>林木种子生产、加工、检验、储藏等技术人员基本情况的说明材料以及劳动合同</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>从事林木种子生产的，还应当提供生产地点无检疫性有害生物证明。其中从事籽粒、果实等有性繁殖材料生产的，还应当提供具有安全隔离条件的说明材料、县级以上人民政府林业主管部门确定的采种林分证明以及照片</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>经营场所、生产用地权属证明材料以及生产用地的用途证明材料</td>
+					</tr>-->
+				<!--</table>-->
+				<div class="btn-box">
+					<input type="button" value="下一步" onclick="goNext('infoFill')" />
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：江西政务服务网</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function goNext(name){
+		window.location.href = "/jxzwfww?page=" + name;
+	};
+    // ajax函数将返回Promise对象:
+    function ajax(method, url, data) {
+        var request = new XMLHttpRequest();
+        return new Promise(function (resolve, reject) {
+            request.onreadystatechange = function () {
+                if (request.readyState === 4) {
+                    if (request.status === 200) {
+                        resolve(request.responseText);
+                    } else {
+                        reject(request.status);
+                    }
+                }
+            };
+
+            request.open(method, url,true);
+            //post请求一定要添加请求头才行不然会报错
+            request.setRequestHeader("Content-type","application/json");
+            request.send(data);
+        });
+    };
+    var datas = {
+        randomKey: sessionStorage.getItem('randomKey'),
+        userID: sessionStorage.getItem('userID'),
+        clientID: sessionStorage.getItem('clientID'),
+        cityID: sessionStorage.getItem('cityID'),
+        local_x: sessionStorage.getItem('local_x'),
+        local_y: sessionStorage.getItem('local_y'),
+        localFrom: sessionStorage.getItem('localFrom')
+    };
+    var p = ajax('POST', '/jxzwfww/readNotice',JSON.stringify(datas));
+    p.then(function (data) { // 如果AJAX成功，获得响应内容
+		var dataList = JSON.parse(data);
+		if(dataList.retCode == "000000"){
+            var dataListArr = dataList.responseBody.applicationMaterials;
+            var NewNode =document.createElement('table');
+            NewNode.className = "jxzwTable";
+            var html="";
+            html+="<tr>" +
+                "<th width=\"20%\">序号</th>" +
+                "<th width=\"80%\">申报材料名称</th>" +
+                "</tr>";
+			for(var i in dataListArr){
+                html+="<tr>" +
+                    "<td>"+(Number(i)+Number(1))+"</td>" +
+                    "<td>"+dataListArr[i][Number(i)+Number(1)]+"</td>" +
+                    "</tr>";
+			}
+            NewNode.innerHTML = html;
+           document.getElementById('jxzwTable').appendChild(NewNode)
+		}
+    }).catch(function (status) { // 如果AJAX失败，获得响应代码
+        console.error(status)
+    });
+</script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中小学教师资格考试合格证明（NTCE）查询结果</title>
+    <link rel="stylesheet" href="../../css/news.css" />
+    <link rel="stylesheet" href="../../css/teacherQualification/teacherQualification.css">
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script>
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				cityName = "<%= cityInfo.cityName %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.btn-box a{
+			font-size: 0.41rem;
+			background: #549dfb;
+			border-radius: 3px;
+			color: #fff;
+			text-align: center;
+			height: 1.25rem;
+			border: none;
+			margin: 0 0.55rem;
+			width: -webkit-calc(100% - (0.55rem * 2));
+			width: -moz-calc(100% - (0.55rem * 2));
+			width: calc(100% - (0.55rem * 2));
+			display: inline-block;
+			line-height:1.25rem;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<!--<div class="banner">
+			<img id="citySRC" src="">
+		</div>-->
+		<% include ../header.html %>
+		<!--中小学教师资格考试合格证明（NTCE）查询结果-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="../../images/icon-return.png" class="icon-return" onclick="back()"/>中小学教师资格考试合格证明（NTCE）查询结果</h1>
+				<hr class="hrLine">
+				<div class="tab-content gjj-list certificateList">
+					<div class="certificatePic clearfix">
+						<div class="certificate-lf">
+							<div class="userName"><span id="username">陈楠</span>参加中小学教师资格考试成绩合格。</div>
+							<div class="userCer">TNATIONAL  TEACHER  CERTIFICATION</div>
+						</div>
+						<div class="avatarBox"><img src="../../images/avatar.png" id="imgPer"></div>
+					</div>
+
+					<div id="userText">
+						<!--<div class="text-list-div clearfix">
+							<label>
+								<div>证书编号：</div>
+								<div class="font18">Certificate Number</div>
+							</label>
+							<span>2017412048861</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>
+								<div>考试省份：</div>
+								<div class="font18">Entry Province</div>
+							</label>
+							<span>
+								<div>河南</div>
+								<div class="font18">HENAN</div>
+							</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>
+								<div>考试类别：</div>
+								<div class="font18">Certificate Number</div>
+							</label>
+							<span>
+								<div>小学（语文）</div>
+								<div class="font18">Prinary School (Chinese)</div>
+							</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>
+								<div>身份证号：</div>
+								<div class="font18">Certificate Number</div>
+							</label>
+							<span>41142119940011001</span>
+						</div>-->
+					</div>
+
+				</div>
+				<!--<div class="btn-box">-->
+					<!--&lt;!&ndash;<input type="button" value="下载NTCE证书（PDF格式）" />&ndash;&gt;-->
+					<!--<a href="" id="pdf">下载NTCE证书（PDF格式）</a>-->
+				<!--</div>-->
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中国教育考试网</div>
+	</div>
+	<script src="/js/teacherQualification/qualificationResults.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中小学教师资格证考试成绩查询结果</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/teacherQualification/teacherQualification.css">
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				cityName = "<%= cityInfo.cityName %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" v-cloak id="max">
+		<!--banner图-->
+		<div class="banner">
+			<img :src="citySRC">
+		</div>
+		<!--笔试成绩：-->
+		<div class="warpBox">
+			<div v-if="this.flag==true">
+				<div class="peccancyQuery" v-for="item in bsc" v-bind:key='item.id' v-if="bscjbzxx">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back"/>笔试成绩：{{item.bscj_km}}</h1>
+					<hr class="hrLine">
+					<div class="tab-content">
+						<div class="text-list-div clearfix">
+							<label>报告分：</label>
+							<span>{{item.bscj_bgf}}分</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>合格与否：</label>
+							<span>{{item.bscj_hgyf}}</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>准考证号：</label>
+							<span>{{item.bscj_zkzh}}</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>考试批次：</label>
+							<span>{{item.bscj_kspc}}</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>有效期限：</label>
+							<span>{{item.bscj_yxqx}}</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>考试省份：</label>
+							<span>{{item.bscj_kssf}}</span>
+						</div>
+					</div>
+				</div>
+				<!--备注-->
+				<div class="login-tips font22" v-if="bscjbzxx">
+					&nbsp;&nbsp;{{bscjbzxx}}
+				</div>
+			</div>
+
+			<div v-if="this.flags==true">
+				<div class="peccancyQuery" v-for="item in mscj" v-bind:key='item.id' v-if="mscjbzxx">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back"/>面试成绩：{{item.mscj_km}}</h1>
+					<hr class="hrLine">
+					<div class="tab-content">
+						<div class="text-list-div clearfix">
+							<label>合格与否：</label>
+							<span>{{item.mscj_hgyf}}</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>准考证号：</label>
+							<span>{{item.mscj_zkzh}}</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>考试批次：</label>
+							<span>{{item.mscj_kspc}}</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>考试省份：</label>
+							<span>{{item.mscj_kssf}}</span>
+						</div>
+					</div>
+				</div>
+				<!--备注-->
+				<div class="login-tips font22" v-if="mscjbzxx">
+					&nbsp;&nbsp;{{mscjbzxx}}
+				</div>
+			</div>
+
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中小学教师资格考试</div>
+	</div>
+	<script src="/js/teacherQualification/writtenTestScore.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

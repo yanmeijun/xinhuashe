@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>登录</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script  type="text/javascript">
+		var randomKey = sessionStorage.getItem('randomKey'),
+				userID = sessionStorage.getItem('userID'),
+				clientID = sessionStorage.getItem('clientID'),
+				cityID = sessionStorage.getItem('cityID'),
+				local_x = sessionStorage.getItem('local_x'),
+				local_y = sessionStorage.getItem('local_y'),
+				localFrom = sessionStorage.getItem('localFrom');
+	</script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="login">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/banner.png">
+			<div class="address linmu"><span>林木种子生产经营许可在线办理</span></div>
+		</div>
+		<!--登录-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home heNanReg">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="render('jxzwfww')"/>登录</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>用户名</label>
+					<input type="text" placeholder="请输入用户名" v-model="userName" />
+				</div>
+				<div class="text-list-div">
+					<label>密码</label>
+					<input type="password" placeholder="请输入密码" v-model="password" />
+				</div>
+				<div class="text-list-div phone-list-code">
+					<label>验证码</label>
+					<input type="text" placeholder="请输入验证码" v-model="veryCode"/>
+					<img :src="verySrc" class="img-code" @click="getVeryCode">
+				</div>
+				<div class="btn-box">
+					<input type="button" value="登录" @click="submit" />
+				</div>
+			</div>
+		</div>
+		<div class="masktime" v-if="masktime">{{masktime}}</div>
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;" id="dialogMask" v-if="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="dialogMask">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>请求中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：江西政务服务网</div>
+	</div>
+</body>
+<script type="text/javascript" src="/js/jxzwfww/login.js"></script>
+</html>

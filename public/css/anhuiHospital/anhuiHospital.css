@@ -1,0 +1,640 @@
+/*首页-搜索框*/
+.headSearchBox {
+    width: 8.194rem;
+    margin: 0.527rem auto;
+    font-size: 0.416rem;
+    position: relative;
+    background: #edf7fa;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    height: 1.055rem;
+}
+.headSearchBox input {
+	border: none;
+	background: none;
+    font-size: 0.416rem;
+    color: #4d5b67;
+    padding: 0rem;
+    width:-webkit-calc(100% - 2.9rem);
+    width:-moz-calc(100% - 2.9rem);
+    width:calc(100% - 2.9rem);
+    height: 0.5rem;
+    line-height: 0.5rem;
+    margin-top: 0.25rem;
+}
+.headSearchBox img {
+    position: absolute;
+    right: 0.32rem;
+    top: 0.27rem;
+    width: 0.527rem;
+    height: 0.527rem;
+    cursor: pointer;
+}
+/*首页列表*/
+.anhuiHosList{
+	width: -webkit-calc(100% - 0.6rem);
+    width: -moz-calc(100% - 0.6rem);
+    width: calc(100% - 0.6rem);
+}
+.anhuiHosList .address{
+	width: auto;
+	white-space: normal;
+}
+.anhuiHosList .address i{
+	float: left;
+}
+.anhuiHosList .address span{
+	float: left;
+	width: -webkit-calc(100% - 0.36rem);
+	width: -moz-calc(100% - 0.36rem);
+	width: calc(100% - 0.36rem);
+}
+.hosList.hNHosList.anhuiHosList dd .time{
+	margin: 0.2rem 0;
+	white-space: normal;
+	overflow: inherit;
+}
+.hosList.hNHosList dd .time span.sX-yy-num{
+	margin: 0rem;
+    border-right: none;
+}
+.icon-userCenter,.icon-anhuiQuit,.icon-intr{
+	display: inline-block;
+    vertical-align: middle;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: -0.05rem 0.194rem 0;
+}
+.icon-userCenter{
+    background: url(../../images/anhuiHospital/icon-user.png) no-repeat;
+    background-size: 0.5rem;
+}
+.icon-anhuiQuit{
+	background: url(../../images/anhuiHospital/icon-quit.png) no-repeat;
+    background-size: 0.5rem;
+}
+/*首页-按医院搜索*/
+.hosList.hNHosList.anhuiHosList .wh100{
+	width: -webkit-calc(100% - 0.4rem);
+    width: -moz-calc(100% - 0.4rem);
+    width: calc(100% - 0.4rem);
+}
+.title .level3{
+	color: #ef8935;
+	font-size: 0.3rem;
+}
+.title .marTit{
+	margin-right: 0.25rem;
+}
+.icon-intr{
+	background: url(../../images/anhuiHospital/icon-intr.png) no-repeat;
+	width: 0.25rem;
+    height: 0.222rem;
+    background-size: 0.25rem 0.222rem;
+    margin: 0.1rem 0.138rem 0 0;
+    float: left;
+}
+.searchIntr{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+	margin-top: 0.23rem;
+	margin-bottom: 0.23rem;
+}
+.searchIntr i{
+    float: left;
+}
+.searchIntr span{
+    float: left;
+    width: -webkit-calc(100% - 0.39rem);
+    width: -moz-calc(100% - 0.39rem);
+    width: calc(100% - 0.39rem);
+}
+
+/*选择科室-预约挂号*/
+.hosList.anhuiSelectList{
+	width: -webkit-calc(100% - 0.2rem);
+    width: -moz-calc(100% - 0.2rem);
+    width: calc(100% - 0.2rem);
+    margin: 0.45rem 0 0rem !important;
+}
+.hosList.anhuiSelectList .department .title{
+	color: #474747;
+	font-size: 0.416rem;
+}
+.hosList.anhuiSelectList .department .address{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+	white-space: normal;
+	line-height: 0.472rem;
+	margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+.hosList.anhuiSelectList .department .address i{
+	float: left;
+}
+.hosList.anhuiSelectList .department .address span{
+	float: left;
+	width: -webkit-calc(100% - 0.4rem);
+    width: -moz-calc(100% - 0.4rem);
+    width: calc(100% - 0.4rem);
+}
+.icon-address{
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/heNanHospital/icon-address.png) no-repeat;
+	width: 0.222rem;
+	height: 0.263rem;
+	background-size: 0.222rem 0.263rem;
+	margin: 0.1rem 0.138rem 0 0;
+	float: left;
+}
+.hosList.anhuiSelectList .department .tel{
+	font-size: 0.277rem;
+	color: #8d8d8d;
+}
+.hosList.anhuiSelectList .department .tel .icon-tel{
+	background: url(../../images/heNanHospital/icon-tel.png) no-repeat;
+    width: 0.25rem;
+    height: 0.25rem;
+    background-size: 0.25rem 0.25rem;
+    margin: 0.07rem 0.138rem 0 0;
+    display: inline-block;
+    float: left;
+}
+.intro{
+	color: #8d8d8d;
+    font-size: 0.277rem;
+    white-space: normal;
+    margin-bottom: 0.55rem;
+    line-height: 0.55rem;
+}
+.intro p{
+	margin-bottom: 0.55rem;
+}
+.departmentCon .tabConBox p {
+    width: 50%;
+    float: left;
+}
+
+/*首页-按医生搜索*/
+.nameJob{
+	font-size: 0.416rem;	
+}
+.nameJob .name{
+	color: #0083e0;
+	font-size: 0.416rem;	
+}
+.nameJob .job{
+	color: #333;
+	font-size: 0.3rem;
+}
+.hospitalTit{
+	color: #333;
+	font-size: 0.33rem;
+	margin-top: 0.347rem;
+	margin-bottom: 0.277rem;
+}
+.intrGray{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+}
+.intrGray.intrDepartment{
+	margin-bottom: 0.277rem;
+}
+/*搜索为空*/
+.searchEmptyBox{
+	text-align: center;
+	border-top: 1px solid #e6e6e6;
+	padding-top: 0.83rem;
+	padding-bottom: 0.694rem;
+}
+.searchEmptyBox .words{
+	color: #8d8d8d;
+	font-size: 0.3rem;
+	margin-top: 0.694rem;
+}
+.searchEmptyBox .emptyPic img{
+	width: 2.513rem;
+	height: 2.097rem;
+}
+
+/*挂号-医生详情*/
+.numBlue{
+	color: #0083e0;
+	font-size: 0.222rem;
+}
+.hospitalName {
+    color: #474747;
+    font-size: 0.333rem;
+    margin-bottom: 0.2rem;
+}
+.sDTableDiv {
+    margin: 0 0.194rem 0.32rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+}
+.hosList.hNHosList.sXHosList dd {
+    width: -webkit-calc(100% - 1.75rem);
+    width: -moz-calc(100% - 1.75rem);
+    width: calc(100% - 1.75rem);
+}
+.sDTableData th {
+    background: #f6f8fa;
+    border-bottom: 1px solid #edefee;
+}
+.hosList.hNHosList.sXHosList dd .nameOffice {
+    margin: 0rem 0 0.2rem;
+}
+.sDTableData tr td.stopZ span, 
+.sDTableData tr td.stopY span, 
+.sDTableData tr td.byAppointment span {
+    display: inline-block;
+    width: 0.833rem;
+    height: 0.486rem;
+    line-height: 0.486rem;
+    border-radius: 2px;
+}
+.sXHosList {
+    width: -webkit-calc(100% - 1.1rem);
+    width: -moz-calc(100% - 1.1rem);
+    width: calc(100% - 1.1rem);
+}
+/*预约时间选择*/
+.hospitalBranch{
+	border-top: 1px solid #edefee;
+	padding: 0.09rem 0.55rem 0.1rem;
+}
+.hospitalBranch .q-r-tit span{
+	margin-left: 0;
+}
+.OutpatientDepartments{
+	color: #797979;
+	font-size: 0.36rem;
+	border-top: 1px solid #edefee;
+	line-height: 1.138rem;
+	margin: 0 0.55rem;
+	padding-left: 0.33rem;
+}
+/*没有医生坐诊*/
+.searchEmptyBox.noDoctors{
+	border-top: none;
+}
+
+/*注册*/
+.publicStyleBox {
+    padding: 0.5rem 0.55rem 0.12rem;
+}
+.publicStyleList {
+    position: relative;
+    margin-bottom: 0.36rem;
+}
+.publicStyleList label {
+    font-size: 0.36rem;
+    color: #474747;
+    width: 2.35rem;
+    line-height: 0.888rem;
+    float: left;
+}
+.publicStyleList span, .publicStyleList input {
+    float: left;
+    display: inline-block;
+    width: -webkit-calc(100% - 2.35rem);
+    width: -moz-calc(100% - 2.35rem);
+    width: calc(100% - 2.35rem);
+    height: 0.888rem;
+    line-height: 0.888rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-size: 0.333rem;
+    color: #797979;
+    padding: 0 0.75rem 0 0.138rem;
+}
+.publicStyleList.phone-list-code input.registerText {
+    width: 3rem;
+    padding: 0 0.138rem;
+}
+.publicStyleList .get-code.getSMSCode {
+    display: inline-block;
+    background: #549dfb;
+    width: 2.7rem;
+    height: 0.888rem;
+    line-height: 0.888rem;
+    text-align: center;
+    font-size: 0.33rem;
+    color: #fff;
+    border-radius: 3px;
+    float: right;
+}
+.publicStyleList .accounts-all {
+    display: inline-block;
+    width: -webkit-calc(100% - 2.35rem);
+    width: -moz-calc(100% - 2.35rem);
+    width: calc(100% - 2.35rem);
+    float: left;
+}
+.publicStyleList .accounts-all span {
+    font-size: 0.388rem;
+    float: left;
+    color: #b2b2b2;
+    border: none;
+    padding: 0;
+    width: auto;
+}
+.publicStyleList .accounts-all span:nth-of-type(1) {
+    margin-right: 0.7rem;
+}
+.publicStyleList .accounts-all span picture {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.34rem;
+    height: 0.34rem;
+    background: url(../../images/icon-checkBox-default.png) no-repeat;
+    background-size: 0.34rem 0.34rem;
+    margin: -0.03rem 0.2rem 0 0rem;
+}
+.publicStyleList .accounts-all span picture.active {
+    background: url(../../images/icon-yh-check.png) no-repeat;
+    background-size: 0.34rem 0.34rem;
+}
+.publicStyleList .icon-downMenu{
+	width: 0.694rem;
+    height: 0.694rem;
+	position: absolute;
+    right: 0;
+    top: 0.1rem;
+}
+.publicStyleList .icon-date {
+    width: 0.569rem;
+    height: 0.555rem;
+    position: absolute;
+    right: 0.138rem;
+    top: 0.152rem;
+}
+.goLoginBox.sDGoReg {
+    text-align: left;
+}
+/*预约失败*/
+.goLoginBox.sDGoReg .goRegister {
+    float: right;
+}
+.notFound.appFailed .img-box img{
+	width: 0.972rem;
+	height: 1.027rem;
+}
+.notFound.appFailed .notF-infor{
+	font-size: 0.388rem;
+	color: #f39d24;
+}
+
+/*预约挂号单*/
+.nameTitle{
+	color: #474747;
+	font-size: 0.33rem;
+}
+.keshi{
+	color: #f5a623;
+	font-size: 0.33rem;
+	margin-bottom: 0.25rem;
+}
+.timeMz{
+	color: #848484;
+	font-size: 0.277rem;
+	margin-bottom: 0.16rem;
+}
+.timeMz span{
+	display: inline-block;
+	width: 1.527rem;
+}
+.timeMz em{
+	font-style: normal;
+}
+.timeMz em b{
+	font-weight: normal;
+	color: #f5a623;
+	margin-left: 0.02rem;
+	margin-right: 0.07rem;
+}
+.hosList.hNHosList.anhuiRegList{
+	width: -webkit-calc(100% - 1.1rem);
+    width: -moz-calc(100% - 1.1rem);
+    width: calc(100% - 1.1rem);
+    margin-bottom: 0rem;
+}
+.hosList.hNHosList.anhuiRegList dd{
+	width: -webkit-calc(100% - 1.75rem);
+    width: -moz-calc(100% - 1.75rem);
+    width: calc(100% - 1.75rem);
+}
+.hosList.hNHosList.anhuiRegList dd .nameOffice{
+	margin: 0 ;
+}
+.hosList.hNHosList.anhuiRegList dd .nameTitle{
+	margin: 0.277rem 0 0.138rem;
+}
+.text-list-div.otherList{
+	border-bottom: none;
+}
+.peccancyQuery.userInfor .text-list-div.otherList label{
+	line-height: 0.902rem;
+}
+.peccancyQuery.userInfor .text-list-div.otherList span{
+	height: 0.902rem;
+	line-height: 0.902rem;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+	padding-left: 0.166rem;
+}
+.peccancyQuery.userInfor .text-list-div.otherList .icon-downMenu{
+	margin-top: 0.12rem;
+    margin-right: 0.06rem;
+}
+.text-list-div.otherList.marTop{
+	padding-top: 0.11rem;
+}
+.text-list-div.otherList .accounts-all{
+	width: -webkit-calc(100% - 2.78rem);
+    width: -moz-calc(100% - 2.78rem);
+    width: calc(100% - 2.78rem);
+}
+.text-list-div.otherList .jiuZList{
+	border: 1px dashed #e3e3e3;
+	border-radius: 2px;
+	padding: 0.1rem 0.166rem 0.15rem;
+	position: relative;
+	margin-bottom: 0.36rem;
+}
+.text-list-div.otherList .jiuZList.active{
+	border: 1px solid #5199e8;
+}
+.text-list-div.otherList .jiuZList.active .selectPic{
+	display: inline-block;
+	background: url(../../images/anhuiHospital/select.png) no-repeat;
+	width: 0.7rem;
+	height: 0.68rem;
+	background-size: 0.7rem 0.68rem;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.text-list-div.otherList .jiuZList.active span,
+.text-list-div.otherList .jiuZList.active div{
+	color: #5199e8;
+}
+.text-list-div.otherList .jiuZList.padTop{
+	margin-top: 0.36rem;
+}
+.peccancyQuery.userInfor .text-list-div.otherList .jiuZList .icon-default{
+	width: 100%;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.text-list-div.otherList .addPatient{
+	border: 1px dashed #e3e3e3;
+	border-radius: 2px;
+	height: 0.902rem;
+    line-height: 0.902rem;
+    color: #8d8d8d;
+    padding: 0 0.166rem;
+    font-size: 0.277rem;
+}
+.text-list-div.otherList .addPatient b{
+	font-size: 0.5rem;
+    float: left;
+    margin-top: -0.05rem;
+    margin-right: 0.138rem;
+}
+/*预约成功*/
+.notFound.appFailed .notF-infor.successWord{
+	color: #0083e0;
+}
+.tab-content.inforConfirm.color666 .text-list-div span{
+	color: #666;
+}
+.tab-content.inforConfirm.color84 .text-list-div label,
+.tab-content.inforConfirm.color84 .text-list-div span{
+	color: #848484;
+}
+.tab-content.inforConfirm.color666 .text-list-div label,
+.tab-content.inforConfirm.color84 .text-list-div label{
+	width: 2.388rem;
+}
+.tab-content.inforConfirm.color666 .text-list-div span,
+.tab-content.inforConfirm.color84 .text-list-div span{
+	width: -webkit-calc(100% - 2.388rem);
+    width: -moz-calc(100% - 2.388rem);
+    width: calc(100% - 2.388rem);
+}
+/*个人中心*/
+.smallWord{
+	font-size: 0.277rem;
+	font-weight: normal;
+}
+.peccancyQuery.userInfor.onlyStyle .q-r-tit.anhuiUserCenter{
+	padding: 0.37rem 0.55rem;
+}
+.anhuiUserCenter b{
+	color: #068de7;
+	font-weight: normal;
+}
+.anhuiUserCenter a{
+	float: right;
+}
+.anhuiUserCenter em{
+	float: right;
+	color: #333;
+	font-style: normal;
+}
+.publicStyleList .getHt{
+	height: 0.888rem;
+}
+.btn-box.btn-anhuiCX{
+	margin: 0rem 0rem 0.55rem;
+}
+
+/*验证码*/
+#captcha{
+	border: none;
+    padding: 0;
+}
+.gt_ajax_tip.gt_ready,
+.gt_ajax_tip.gt_error,
+.gt_ajax_tip.gt_fail,
+.gt_ajax_tip.gt_forbidden,
+.gt_ajax_tip.gt_success,
+.gt_ajax_tip.gt_lock{
+	display: none !important;
+	opacity: 0 !important;
+}
+#captchaCon{
+	width: 261px;
+	margin: 0 auto 0.2rem !important;
+}
+/*首页-医生/医院搜索下拉菜单*/
+.hospital-downMenu{
+	float: left;
+	position: relative;
+}
+.hospital-downMenu .tit{
+	/*width: 1.94rem;*/
+}
+.hospital-downMenu .tit span{
+	line-height: 0.98rem;
+	padding-left: 0.32rem;
+	color: #364555;
+	font-size: 0.416rem;
+	float: left;
+}
+.downMenuIcon{
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/anhuiHospital/downMenuIcon.png) no-repeat;
+	width: 0.78rem;
+	height: 0.78rem;
+	background-size: 0.78rem 0.78rem;
+	float: left;
+	margin-top: 0.15rem;
+}
+.hospital-downMenu .dialog-userCenter{
+	width: 2.25rem;
+	box-shadow: 0rem 0.1rem 0.2rem #aaa;
+	top: 1rem;
+	right: inherit;
+	padding: 0 0.04rem;
+}
+.hospital-downMenu .dialog-userCenter ul li a{
+	text-align: center;
+	color: #364555;
+}
+.hospital-downMenu .dialog-userCenter .triangle{
+    border-bottom: 0.25rem solid #e6e6e6;
+    top: -0.25rem;
+    right: initial;
+    left: 50%;
+    margin-left: -0.125rem;
+}
+.hospital-downMenu .dialog-userCenter .triangle .triangle{
+	border-bottom: 0.25rem solid #fff;
+	top: 0.04rem;
+    right: initial;
+    left: -0.12rem;
+}
+@media (max-width:375px ) {
+	.timeMz span {
+	    width: 1.6rem;
+	}
+}
+@media (max-width:320px ) {
+	.timeMz span {
+	    width: 1.9rem;
+	}
+	.hosList.hNHosList.anhuiRegList {
+	    width: -webkit-calc(100% - 0.8rem);
+	    width: -moz-calc(100% - 0.8rem);
+	    width: calc(100% - 0.8rem);
+	}
+	/*验证码*/
+	#captchaCon{
+		margin: 0 auto 0.3rem  !important;
+	}
+}

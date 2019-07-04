@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>纪检监察机关举报</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+        <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+        <script type="text/javascript" src="/js/all.js"></script>
+        <script type="text/javascript" language="javascript">
+            var randomKey = "<%= randomKey %>"
+                    ,userID = "<%= userID%>"
+                    ,clientID = "<%= clientID %>",
+                    cityID = "<%= cityID %>",
+                    citySRC = "<%= cityInfo.citySRC %>",
+                    local_x = "<%= local_x %>"
+                    ,local_y = "<%= local_y %>",
+                    localFrom = "<%= locals.localFrom %>";
+        </script>
+    </head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<% include ../header.html %>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">举报结果</h1>
+					<hr class="hrLine">
+					<div class="successAppCode">
+						<i class="icon-semicircle semicircleLeft"></i>
+						<i class="icon-semicircle semicircleRight"></i>
+						<div class="successTitWord">
+							<i class="icon-appSuccess"></i>举报提交成功！
+						</div>
+						<div class="successTitWord appCode zzbCode">
+							<!--<div class="monitorTitWord">您的举报信已提交成功，请妥善保存查询码：</div>
+							<div class="inquireCode">B5ECB03G5JHCHLWSS1AK</div>
+							<div class="inquireTipsCode">以便查询举报信息</div>-->
+                            <div class="inquireTipsCode" id="searchResult">查询码一旦丢失，将无法查询</div>
+						</div>
+						
+					</div>
+					<div class="btn-box resultBtnBox">
+						<input type="button" value="返回首页" class="btnDefault backHome" id="backHome"/>
+						<input type="button" value="举报查询" class="btnDefault fuhe" id="btnDefault"/>
+					</div>
+				</div>
+			</div>
+			<div style="height: 2.2rem;"></div>
+			<div class="data-sources">服务来源：
+			 <p id="copyright"></p>
+			</div>
+		</div>
+        <script src="/js/monitorReport/reportSuccess.js"></script>
+	</body>
+</html>

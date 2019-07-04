@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>住房城乡建设违法举报</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/housingReport/housingReport.css" />
+		<link rel="stylesheet" href="/css/corruptionReport/corruptionReport.css"/>
+		<link rel="stylesheet" href="/css/mobileSelect.css"/>
+		<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+		<script type="text/javascript" src="/lib/vue.min.js"></script>
+		<script type="text/javascript" src="/lib/axios.js"></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script type="text/javascript" src="/js/hospital/mobileSelect.js"></script>
+		<script type="text/javascript" language="javascript">
+			var randomKey = "<%= randomKey %>"
+					, userID = "<%= userID%>"
+					, clientID = "<%= clientID %>",
+					cityID = "<%= cityID %>",
+					citySRC = "<%= cityInfo.citySRC %>",
+					cityName = "<%= cityInfo.cityName %>",
+					local_x = "<%= local_x %>"
+					, local_y = "<%= local_y %>",
+					localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	<body bgcolor="#f3f9f9">
+	<div class="max" id="realName">
+		<!--banner图-->
+		<% include ../header.html %>
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">举报信息填写</h1>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>被举报人或单位信息</h2>
+				<div class="housingListBox">
+					<div class="publicListText pubListTextSex clearfix">
+						<label>被举报主体</label>
+						<div class="publicSexBox">
+							<span class="icon-default">
+							     <input type="radio"  name="smsradio" value="false" id="reportPerson" checked>
+							     <i class="icon-check"></i><em>个人</em>
+							 </span>
+							 <span class="icon-default">
+							     <input type="radio"  name="smsradio" value="false" id="reportUnit">
+							     <i class="icon-check"></i><em>单位</em>
+							 </span>
+						</div>
+					</div>
+					<input type="hidden" id="drop_FIsAnonymous" VALUE="0"/>
+					<!--个人 start-->
+					<div class="" >
+						<div class="publicHousingList">
+							<div class="tit">涉及项目名称</div>
+							<div class="textBox"><input type="text" id="project" placeholder="请填写涉及项目名称" ></div>
+						</div>
+						<div class="publicHousingList" id="personname">
+							<div class="tit">被举报人名称</div>
+							<div class="textBox"><input type="text" id="name" placeholder="请填写被举报人名称" ></div>
+						</div>
+						<div class="publicHousingList" id="personaddress">
+							<div class="tit">被举报人地址</div>
+							<div class="textBox"><input type="text" id="address" placeholder="请填写被举报人地址" ></div>
+						</div>
+
+						<!--单位-->
+						<div class="publicHousingList" style="display: none;" id="nameunit">
+							<div class="tit">被举报单位名称</div>
+							<div class="textBox"><input type="text" placeholder="请填写被举报单位名称" id="unitname1" ></div>
+						</div>
+						<div class="publicHousingList" style="display: none;" id="addressunit">
+							<div class="tit">被举报单位地址</div>
+							<div class="textBox"><input type="text" placeholder="请填写被举报单位地址" id="unitaddress"></div>
+						</div>
+						<!--单位-->
+
+						<div class="publicHousingList" @click="select">
+							<label @click.stop class="tit">被举报事项所在行政区</label>
+							<div class="textBox">
+								<span id="area" data_id="">请选择被举报事项所在行政区</span>
+								<img src="/images/icon-downMenu.png" class="icon-downMenu">
+
+							</div>
+						</div>
+						<div class="publicHousingList" @click="selectArea">
+							<div class="tit" @click.stop>涉及领域</div>
+							<div class="textBox">
+								<span id="questionArea" data_id="">请选择涉及领域</span>
+								<img src="/images/icon-downMenu.png" class="icon-downMenu">
+							</div>
+						</div>
+						<div class="publicHousingList">
+							<div class="tit">举报标题</div>
+							<div class="textBox"><input id="title" type="text" placeholder="请填写举报标题" ></div>
+						</div>
+						<div class="publicHousingList">
+							<div class="tit">举报内容</div>
+							<div class="textBox">
+								<textarea id="content"  placeholder="请详细说明时间、地点、违法事实和违规主体等情况,200~2000字。
+住房城乡建设部稽查办公室保留对恶意举报、重复举报和非本系统受理范围举报等删除的权力。"></textarea>
+							</div>
+						</div>
+						<div class="publicHousingList uploadPicList" >
+							<div class="tit">相关附件</div>
+							<div class="textBox">
+								<div class="clearfix">
+									<div class="uploadAttaPic clearfix"  id="uploadify">
+										<div class="z_photo" style="float: left;"></div>
+									</div>
+									<div class="uploadAttaPic clearfix">
+										<div class="uploadPicDefault" id="uploadPicDefault">
+											<div class="uploadIcon"></div>
+											<div class="upPicNum"><em id="uploadSum">0</em>/2</div>
+												<input type="file" name="file" id="file" value="" accept="image/*;capture=camera" onchange="imgChange('z_photo','z_file');"
+													   style="width: 100%;height: 100%;position: absolute;top: 0px;opacity: 0;right: 0px;">
+
+										</div>
+									</div>
+								</div>
+								<div class="uploadPicTips">附件类型为：jpg、jpeg、gif、bmp</div>
+								<div class="uploadPicTips">上传的附件总大小不能超过10M，附件内容须与举报事项有关。</div>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" id="__EVENTTARGET" VALUE="1">
+					<input type="hidden" id="bn_save" VALUE="提交">
+					<!--个人 end-->
+				</div>
+				<div class="btn-box font34">
+					<input type="button" value="提 交" id="reportSubmit"/>
+				</div>
+			</div>
+		</div>
+
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+
+		<!-- ------------------------------提示语---------------------------------- -->
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<div class="mask" id="dialogMasking" style="display: none"></div>
+
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中华人民共和国住房和城乡建设部</div>
+	</div>
+	<script type="text/javascript" src="/js/housingReport/questionArea.js"></script>
+	<script type="text/javascript" src="/js/housingReport/area.js"></script>
+	<script type="text/javascript" src="/js/housingReport/housingReport.js"></script>
+	<script type="text/javascript" src="/js/housingReport/infoFill.js"></script>
+	</div>
+	</body>
+</html>

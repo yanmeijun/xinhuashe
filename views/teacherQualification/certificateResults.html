@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中小学教师资格证考试成绩查询结果</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/teacherQualification/teacherQualification.css">
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				cityName = "<%= cityInfo.cityName %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" v-cloak id="app">
+		<!--banner图-->
+		<div class="banner">
+			<img :src="citySRC">
+		</div>
+		<!--中小学教师资格证考试成绩查询结果-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back"/>中小学教师资格证考试成绩查询结果</h1>
+				<hr class="hrLine">
+				<div class="tab-content gjj-list" v-for="item in cerResult" v-bind:key='item.id'>
+					<div class="text-list-div clearfix">
+						<label>姓名</label>
+						<span style="float: right;">{{item.name}}</span>
+						<!--<input type="text" placeholder="请输入姓名" />-->
+					</div>
+					<div class="text-list-div clearfix">
+						<label>证件号码</label>
+						<span style="float: right;">{{item.licenseNumber}}</span>
+						<!--<input type="text" placeholder="请输入证件号" />-->
+					</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>笔试成绩</h2>
+				<hr class="hrLine">
+				<div class="tab-content gjj-list" >
+					<div class="text-list-div clearfix" v-for="(item,index) in cerbscj" v-bind:key='item.id'>
+						<label>科目</label>
+						<img src="/images/icon-rightArrow.png" class="icon-rightArrow">
+						<span class="increase-red" @click="cerPage(index)">{{item.bscj_km}}</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>面试成绩</h2>
+				<hr class="hrLine">
+				<div class="tab-content gjj-list">
+					<div class="text-list-div clearfix" v-for="(item,index) in cermscj" v-bind:key='item.id'>
+						<label>科目</label>
+						<img src="/images/icon-rightArrow.png" class="icon-rightArrow">
+						<span class="increase-red" @click="mscPage(index)">{{item.mscj_km}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>考试合格证明</h2>
+				<hr class="hrLine">
+				<div class="tab-content gjj-list" v-for="item in kshgzm" v-bind:key='item.id'>
+					<div class="text-list-div clearfix">
+						<label>考试类别</label>
+						<span class="increase-red">{{item.kslb}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>证明编号</label>
+						<span class="increase-red">{{item.zmbh}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>有效期限</label>
+						<span class="increase-red">{{item.yxqx}}</span>
+					</div>
+					<div class="lookBox">
+						{{item.kshgzmtsxx}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中小学教师资格考试</div>
+	</div>
+	<script src="/js/teacherQualification/certificateResults.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

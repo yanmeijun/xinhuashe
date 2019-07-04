@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中国高等教育学历证书查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				cityName = "<%= cityInfo.cityName %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+    <script type="text/javascript" src="/js/education/education.js"></script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--中国高等教育学历证书查询结果-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit">中国高等教育学历证书查询</h1>
+				<form id="searchForm" action="/education/search" method="post">
+				<div class="text-list-div">
+					<label>证书编号</label>
+					<input id="zsbh" type="text" placeholder="学历证书或学历证书编号" />
+				</div>
+				<div class="text-list-div">
+					<label>姓名</label>
+					<input id="name" type="text" placeholder="学历证书上的姓名" />
+				</div>
+				<div class="text-list-div text-list-code">
+					<label>验证码</label>
+					<input id="verifycode" type="text" placeholder="请输入验证码" />
+					<img id="image" src="/images/refreshCode.png" class="img-code">
+				</div>
+				<div class="text-list-div">
+					<label>手机号码</label>
+					<input id="mphone" type="text" placeholder="请输入手机号码" />
+				</div>
+				<div class="text-list-div phone-list-code">
+					<label>短信验证码</label>
+					<input name="phoneCode" id="phoneCode" type="text" placeholder="短信验证码" />
+					<button id="getCode" href="javascript:;" class="get-code">获取验证码</button>
+				</div>
+				<%if(locals.error){%>
+				<div class="site-error-tips"><%=locals.error%></div>
+				<%}%>
+				<input name="randomKey" type="text" placeholder="randomKey" value="<%=locals.randomKey%>" style="display: none"/>
+				<input name="userID" type="text" placeholder="userID" value="<%=locals.userID%>" style="display: none"/>
+				<input name="cityID" type="text" placeholder="cityID" value="<%=locals.cityID%>" style="display: none"/>
+				<input name="local_x" type="text" placeholder="local_x" value="<%=locals.local_x%>" style="display: none"/>
+				<input name="local_y" type="text" placeholder="local_y" value="<%=locals.local_y%>" style="display: none"/>
+				<input name="clientID" type="text" placeholder="clientID" value="<%=locals.clientID%>" style="display: none"/>
+				<input name="localFrom" type="text" placeholder="localFrom" value="<%=locals.localFrom%>" style="display: none"/>
+				<div class="btn-box">
+					<input id="xlSearch" type="button" value="查询" />
+				</div>
+				</form>
+			</div>
+		</div>
+		<div class="login-tips XL-query">
+			<p><img src="../images/icon-tips.png">注意:</p>
+			<p>1、学历证书和证明书由各高校自行印制，证书编号通常为18位。不知道证书编号的，可咨询发证学校。</p>
+			<p>2、查询学历证书需经权属人同意。</p>
+			<p>3、学历证查询结果不得用于违背权属人意愿之用途。</p>
+			<p>4、查询学历证书免费。</p>
+			<p>5、服务咨询热线：010-82199588，邮箱：kefu#chsi.com.cn
+(将#替换为@)</p>
+		</div>
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div class="data-sources">服务来源：中国高等教育学生信息网（学信网）</div>
+		<!--<footer>-->
+			<!--<img src="../images/footer.png">-->
+		<!--</footer>-->
+	</div>
+	<!-- 查询动画提示开始-->
+	<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+	<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+		<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+		<p>加载中</p>
+	</div>
+	<!-- 查询动画提示结束-->
+	<!--手机验证提示-->
+	<div id="mask" class="mask" style="display: none"></div>
+	<div id="tips" class="dialog-phone" style="display: none;">
+		<p id="tips_text">短信已发送到您手机上，如果1分钟内没有收到短信验证码，请点击按钮重新获取，此服务免费。</p>
+		<a id="iKnow" href="javascript:;">知道了</a>
+	</div>
+</body>
+</html>

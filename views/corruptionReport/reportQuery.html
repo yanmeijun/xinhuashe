@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>反腐败国际追逃追赃</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+		<script type="text/javascript" src="/js/publicInput.js"></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+		<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" language="javascript">
+            var randomKey = "<%= randomKey %>"
+                ,userID = "<%= userID%>"
+                ,clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                local_x = "<%= local_x %>"
+                ,local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/corruptionReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">举报查询</h1>
+					<div class="pubListBox feedbackList">
+						<div class="publicListText">
+							<label>查询码</label>
+							<input type="text" placeholder="请输入查询码" id="reportRand"/>
+						</div>
+						<div class="publicListText publicListCode">
+							<label>验证码</label>
+							<!--<input type="text" placeholder="验证码区分大小写" />
+							<img src="/images/code.png" class="img-code">-->
+							<input type="text" id="reportImg" placeholder="验证码区分大小写"/>
+							<img src="/images/yanzm.gif" class="img-code" id="verification">
+						</div>
+					</div>
+					<div class="btn-box marBtnBox">
+						<input type="button" value="查 询" id="search"/>
+					</div>
+				</div>
+				<!--点击查询后出现的提示-->
+				<div class="feedbackTips  monitor clearfix" style="display: none;padding-left: .3rem;" id="monitor">
+					<span class="wgTipsPicBox"><img src="/images/wgrzhjl/tips.png"></span>
+					<span class="wgTipsWords" id="monitorText">您反映问题的电子邮件本平台已收到!</span>
+				</div>
+			</div>
+
+			<!-- ------------------------------提示语---------------------------------- -->
+			<div class="masktime" id="masktime" style="display:none;"></div>
+
+
+			<!-- 查询动画提示开始-->
+			<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+			<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+				<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+				<p>加载中</p>
+			</div>
+			<!-- 查询动画提示结束-->
+
+			<div style="height: 2.2rem;"></div>
+			<div class="data-sources">服务来源：
+				<br>中共中央纪律检查委员会
+				<br>中华人民共和国国家监察委员会
+			</div>
+		</div>
+		<script src="/js/corruptionReport/reportQuery.js"></script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>城市列表</title>
+    <link rel="stylesheet" href="/css/news.css" />
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityInfo = "<%= cityInfo %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>"
+            ,comeForm = "<%= comeForm %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body>
+	<div class="max" id="max" v-cloak>
+		<div class="cityTitle"><img @click="back" src="/images/icon-return.png" class="icon-return"/ CSIP>内蒙古自治区</div>
+		<div class="cityListBox">
+			<h1 class="cityLisTit">城市列表</h1>
+			<ul @click="selCity($event)" CSIP>
+				<li data-code="152900" data-id="a753cb94743a4736aa20cb0a7d6e988c">阿拉善盟</li>
+				<li data-code="150800" data-id="26cc109dc5fc410a9e8a84b4ac772c02">巴彦淖尔市</li>
+				<li data-code="150200" data-id="6f0c2355ab9b47068e34f1eed220424c">包头市</li>
+				<li data-code="150400" data-id="dea0bb21ab324071992dd17671f9c550">赤峰市</li>
+				<li data-code="150600" data-id="ed386c015a3b4f4b9d2c51acbed875e3">鄂尔多斯市</li>
+				<li data-code="150100" data-id="a09b14337c254ad9804d228d841b2635">呼尔浩特市</li>
+				<li data-code="150700" data-id="c3217162a97149fc8c985b46c8225c9f">呼伦贝尔市</li>
+				<li data-code="150500" data-id="a2b334d905954a0ea894f00c61c91d36">通辽市</li>
+				<li data-code="150300" data-id="f11f02795f744e12b714c5670c37b0e3">乌海市</li>
+				<li data-code="150900" data-id="968c2678351f4d4a936b66ba02a3eb14">乌兰察布市</li>
+			</ul>
+		</div>
+	</div>
+	<script src="/lib/vue.min.js"></script>
+	<script src="/lib/axios.js"></script>
+	<script src="/js/nmgHospital/cityList.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市预约挂号</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+    <script  type="text/javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>"
+            ,USERNAME = "<%= locals.userName %>"
+            ,PASSWORD = "<%= locals.password %>",
+            localFrom = "<%= locals.localFrom %>";
+		if(USERNAME){
+			sessionStorage.setItem('hospital_USERNAME',USERNAME);
+		}
+		if(PASSWORD){
+			sessionStorage.setItem('hospital_PASSWORD',PASSWORD);
+		}
+  </script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div id="userAvatarBox" class="userAvatarBox">
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+			</div>
+		</div>
+		<!--北京市预约挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit">北京市预约挂号</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>医院名称</label>
+					<input type="text" placeholder="请输入医院名称" id="hospitalName"/>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="查询" id="queryService"/>
+				</div>
+			</div>
+
+			<div id="hospitalInfo">
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>热门医院</h2>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<dl class="hosList">
+						<dt><a href="javascript:;" target='_blank' onclick="dapartment(1)"><img src="/images/hospital/hotImg1.png"></a></dt>
+						<dd class="title" target='_blank' onclick="dapartment(1)">北京协和医院</dd>
+						<dd class="time"><span>三级甲等</span><span>每天08:30放号</span></dd>
+						<dd class="tel">医院总机查号台：69156114</dd>
+					</dl>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<dl class="hosList">
+						<dt><a href="javascript:;" target='_blank' onclick="dapartment(142)"><img src="/images/hospital/third.jpg"></a></dt>
+						<dd class="title" target='_blank' onclick="dapartment(142)">北京大学第三医院</dd>
+						<dd class="time"><span>三级甲等</span><span>每天08:30放号</span></dd>
+						<dd class="tel">医院总机查号台：69156114</dd>
+					</dl>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<dl class="hosList">
+						<dt><a href="javascript:;" target='_blank' onclick="dapartment(12)"><img src="/images/hospital/first.jpg"></a></dt>
+						<dd class="title" target='_blank' onclick="dapartment(12)">北京大学第一医院</dd>
+						<dd class="time"><span>三级甲等</span><span>每天8:45放号</span></dd>
+						<dd class="tel">医院总机查号台：010-83572211、010-66551056(院办)</dd>
+					</dl>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<dl class="hosList">
+						<dt><a href="javascript:;" target='_blank' onclick="dapartment(120)"><img src="/images/hospital/ming.jpg"></a></dt>
+						<dd class="title" target='_blank' onclick="dapartment(120)">北京大学人民医院</dd>
+						<dd class="time"><span>三级甲等</span><span>每天0:00放号</span></dd>
+						<dd class="tel">医院总机查号台：010-88325141,010-88325219,010-88325220</dd>
+					</dl>
+				</div>
+			</div>
+            <!--查询结果-->
+			<div id="queryResultInfo" >
+				<!--<div class="peccancyQuery userInfor onlyStyle">-->
+					<!--<dl class="hosList">-->
+						<!--<dt><a href="javascript:;"><img src="/images/hospital/hotImg1.png"></a></dt>-->
+						<!--<dd class="title"><a href="javascript:;"></a>北京中诺口腔医院</dd>-->
+						<!--<dd class="time"><span>三级专科</span><span>每天09:30放号</span></dd>-->
+						<!--<dd class="tel">医院总机查号台：69156114</dd>-->
+					<!--</dl>-->
+				<!--</div>-->
+			</div>
+
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京市预约挂号统一平台</div>
+        <!--提示语-->
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<!-- ---------------------------------------查询动画提示开始------------------------------------------ -->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束------------------------------------------- -->
+
+	</div>
+	<script type="text/javascript" src="/js/hospital/hospital.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+
+</html>

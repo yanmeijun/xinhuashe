@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>全国行政区划信息查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/administrativeDivisions/administrativeDivisions.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" src="/lib/mobileSelect.js" ></script>
+
+	<script>
+		var randomKey = "<%=locals.randomKey%>",
+				userID = "<%= locals.userID%>",
+				clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				local_x = "<%= locals.local_x %>",
+				local_y = "<%= locals.local_y %>",
+				err = "<%= locals.err %>",
+            	localFrom = "<%= locals.localFrom %>";
+		if(err){
+			alert(err)
+		}
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="administrativeDivisions">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/administrativeDivisions/banner.png">
+			<div class="bannerTitle">全国行政区划信息查询</div>
+		</div>
+		<!--全国行政区划信息查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">全国行政区划信息查询</h1>
+				<ul class="gjj-tab clearfix" style="display: none">
+					<!--<li id="code_show"  class="active" @click="tabSwitch(true)"><a href="javascript:;">地区选择查询</a><span></span></li>
+					<li id="code_hide"  @click="tabSwitch(true)" style="display: none"><a href="javascript:;">地区选择查询</a></li>
+					<li id="keyword_hide"  @click="tabSwitch()"><a href="javascript:;">关键字查询</a></li>
+					<li id="keyword_show" class="active" @click="tabSwitch()" style="display: none"><a href="javascript:;">关键字查询</a><span></span></li>-->
+				</ul>
+			</div>
+			<!---地区选择查询 start-->
+			<div id="code_content" class="gjj-tab-con">
+				<div class="peccancyQuery spacTop">
+					<div id="province" class="text-list-div downMenu-style">
+						<span id="provinceTrigger">省、自治区、直辖市</span>
+	                	<img src="/images/icon-downMenu.png" class="icon-downMenu">
+					</div>
+					<div id="city" class="text-list-div downMenu-style">
+						<span id="cityTrigger" data_id="-1">地级市、地区、州、盟</span>
+	                	<img src="/images/icon-downMenu.png" class="icon-downMenu">
+					</div>
+					<div id="county" class="text-list-div downMenu-style">
+						<span id="countyTrigger" data_id="-1">市辖区、县级市、县</span>
+	                	<img src="/images/icon-downMenu.png" class="icon-downMenu">
+					</div>
+					<div class="btn-box">
+						<input type="button" value="查询" @click="renderCode()"/>
+					</div>
+				</div>
+			</div>
+			<!---地区选择查询 end-->
+			<!---关键字查询 start-->
+			<div id="keyword_content"  class="gjj-tab-con" style="display: none">
+				<div class="peccancyQuery spacTop">
+					<div class="text-list-div keyTxt">
+						<input type="text" placeholder="请输入地区名字关键字" v-model='keyword' />
+					</div>
+					<div class="btn-box">
+						<input type="button" value="查询" @click="renderKeyword()" />
+					</div>
+				</div>
+			</div>
+			<!---关键字查询 end-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>说明</h2>
+				<div class="promptCon">
+					<p>1.地级市下列的县级市系由省、自治区直辖，地级市代管。</p>
+					<p>2.行政区划代码为国家公布的六位县级以上行政区划代码。</p>
+					<p>3.邮政编码为县级以上行政区域人民政府或行政公署驻地的邮政编码。</p>
+					<p>4.县级以上行政区域的人口数为2012年度公安部的统计数据，其中2013年以来行政区域发生变化的区、县、市的人口数字由当地人民政府提供。</p>
+					<p>5.县级以上行政区域陆地面积数据由各地提供，仅供参考。</p>
+					<p>6.县级政府驻地根据地方上报的2014年底情况整理。</p>
+				</div>
+			</div>
+		</div>
+		<!--提示-->
+		<!--<div class="prompt">该地区没有信息</div>-->
+		<div class="masktime" id="masktime" v-if="this.masktimeFalse==true">{{masktime}}</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：民政部全国行政区划信息查询平台</div>
+	</div>
+	<script type="text/javascript" src="/js/administrativeDivisions/administrativeDivisions.js"></script>
+	<script type="text/javascript" src="/js/administrativeDivisions/select.js"></script>
+</body>
+</html>

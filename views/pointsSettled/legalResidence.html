@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>合法稳定住所</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/pointsSettled/pointsSettled.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+		.masktimes{
+			line-height: 24px;
+			opacity: 1;
+			padding: 0 10px;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" v-cloak id="legalResudebce">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--3.合法稳定住所-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back()"/>3.合法稳定住所</h1>
+				<hr class="hrLine">
+				<div class="textList">
+					<div class="ageLimt-title"><i class="icon-check" :class="{'active':select}"
+												  @click="selects"></i>在自有产权住所连续居住月数</div>
+					<div class="ageLimt-text">
+						<input type="text" placeholder="请输入整数" v-model="haveProperty"  v-bind:readonly="!select"/>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title"><i class="icon-check" :class="{'active':selected}"
+												  @click="selecteds"></i>合法租赁住所连续居住月数</div>
+					<div class="ageLimt-text">
+						<input type="text" placeholder="请输入整数" v-model="legalLease" v-bind:readonly="!selected"/>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title"><i class="icon-check" :class="{'active':selecteding}"
+												                 @click="selectedings()"></i>在单位宿舍连续居住月数</div>
+					<div class="ageLimt-text">
+						<input type="text" placeholder="请输入整数" v-model="unitDormitory" v-bind:readonly="!selecteding"/>
+					</div>
+				</div>
+				<div class="btn-box btn-newsStyle">
+					<input type="button" value="确定" v-on:click="search()"/>
+				</div>
+				<div class="examples">如果您担心填写有误，请点我查看<a href="javascript:;" v-on:click="showTip=true">示例</a>哦~</div>
+			</div>
+			<!---->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>说明：</h2>
+				<div class="wantLookCon">
+					<p>这点需要注意啦，此项指标计算时间截止到积分落户申报工作启动的上一年度12月31日。</p>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+
+		<!--示例-->
+		<div class="mask" v-if="this.showTip==true"></div>
+		<div class="dialog-examples dialog-legalResidence exampleFix" v-if="this.showTip==true">
+			<div class="title">示例<a href="javascript:;" v-on:click="showTip=false"></a></div>
+			<p class="examplesCon">您在每类住所合法稳定居住的月数之和除以12,即为该类住所合法稳定居住年限。这点您需要注意哦，同一时间自有住所、单位宿舍或租赁住所不重复计算积分。如果您连续居住年限多于在京合法稳定就业年限，则以您在京合法稳定就业年限作为连续居住年限，并优先计算自有住所积分~</p>
+			<div class="tableCon">
+				<div class="examplesTit">例：小王在京合法稳定居住108个月，具体情况如下:</div>
+				<table class="tableBox1">
+					<tr>
+						<th>居住起始年月</th>
+						<th>居住终止年月</th>
+						<th>居住年限</th>
+						<th>居住类型</th>
+					</tr>
+					<tr>
+						<td>2009年1月</td>
+						<td>2009年8月</td>
+						<td>8个月</td>
+						<td>自由住所</td>
+					</tr>
+					<tr>
+						<td>2009年9月</td>
+						<td>2009年5月</td>
+						<td>9个月</td>
+						<td>合法租赁</td>
+					</tr>
+					<tr>
+						<td>2010年1月</td>
+						<td>2010年7月</td>
+						<td>14个月</td>
+						<td>单位宿舍</td>
+					</tr>
+					<tr>
+						<td>2011年9月</td>
+						<td>2011年4月</td>
+						<td>9个月</td>
+						<td>合法租赁</td>
+					</tr>
+					<tr>
+						<td>2012年1月</td>
+						<td>2012年12月</td>
+						<td>8个月</td>
+						<td>单位宿舍</td>
+					</tr>
+					<tr>
+						<td>2013年1月</td>
+						<td>2013年5月</td>
+						<td>29个月</td>
+						<td>合法租赁</td>
+					</tr>
+					<tr>
+						<td>2015年6月</td>
+						<td>2015年4月</td>
+						<td>11个月</td>
+						<td>自由住所</td>
+					</tr>
+					<tr>
+						<td>2016年5月</td>
+						<td>2016年11月</td>
+						<td>7个月</td>
+						<td>合法租赁</td>
+					</tr>
+					<tr>
+						<td>2016年12月</td>
+						<td>2016年12月</td>
+						<td>13个月</td>
+						<td>自由住所</td>
+					</tr>
+				</table>
+				<div class="noteCon">
+					<i class="downArrow"></i>
+					<p>如小王在京合法稳定就业110个月，</p>
+					<p>则其合法稳定住所指标得分为：</p>
+					<p>（四舍五入，保留小数点后2位）</p>
+				</div>
+				<div class="exampleListBox">
+					<div class="listDiv">
+						<p><span>自由住所累计居住年限</span><span>8+11+13=32个月</span></p>
+						<p><span>自由住所居住积分</span><span>32÷12×1≈2.67</span></p>
+					</div>
+					<div class="listDiv">
+						<p><span>单位宿舍累计居住年限</span><span>14+8=22个月</span></p>
+						<p><span>单位宿舍居住积分</span><span>22÷12×0.5≈0.92</span></p>
+					</div>
+					<div class="listDiv">
+						<p><span>合法租赁累计居住年限</span><span>9+9+29+7=54个月</span></p>
+						<p><span>合法租赁居住积分</span><span>54÷12×0.5≈2.25</span></p>
+					</div>
+					<div class="listDiv">
+						<p><span>合法稳定住所总积分</span><span>2.67+0.92+2.25=5.84</span></p>
+					</div>
+				</div>
+				<div class="noteCon">
+					<p>如小王在京合法稳定就业84个月，</p>
+					<p>则其合法稳定住所指标得分为：</p>
+					<p>（四舍五入，保留小数点后2位）</p>
+				</div>
+				<div class="exampleListBox">
+					<div class="listDiv">
+						<p><span>自由住所累计居住年限</span><span>8+11+13=32个月</span></p>
+						<p><span>自由住所居住积分</span><span>32÷12×1≈2.67</span></p>
+					</div>
+					<div class="listDiv">
+						<p><span>单位宿舍/合法租赁居住积分</span><span>(84-32)÷12×0.5≈2.17</span></p>
+					</div>
+					<div class="listDiv">
+						<p><span>合法稳定住所总积分</span><span>2.67+0.92+2.25=5.84</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="btn-box btn-newsStyle">
+				<input type="button" value="好的，我明白了" v-on:click="showTip=false"/>
+			</div>
+		</div>
+
+
+		<div class="masktime" :class="{'masktimes':maskShow}" id="masktime" v-if="masktime">{{masktime}}</div>
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+	</div>
+	<script src="/js/pointsSettled/legalResidence.js"></script>
+    <script src="/js/all.js"></script>
+</body>
+</html>

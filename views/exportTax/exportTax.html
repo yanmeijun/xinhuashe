@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>出口退税率查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+    <style>
+    	.q-r-tit .success{
+		    float: right;
+		    font-size: 0.36rem;
+		    color: #474747;
+		    margin-right: 0.55rem;
+		}
+		.q-r-tit .success.smallColor{
+			color: #b2b2b2;
+		}
+		/*[v-cloak] {*/
+			/*display: none;*/
+		/*}*/
+    </style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+<script src="/js/exportTax/exportTax.js"></script>
+	<div class="max" id="exportTax">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--出口退税率查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit">出口退税率查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>商品代码</label>
+					<input type="text" placeholder="请输入商品代码" v-model="Commoditycode" @focus="focus()"/>
+				</div>
+				<div class="text-list-div">
+					<label>商品名称</label>
+					<input type="text" placeholder="请输入商品名称" v-model="Commodityname" @focus="focu()"/>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="查询" @click="search"/>
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" v-if="noDate">
+				<h2 class="q-r-tit"><span></span>{{errorImg}}</h2>
+			</div>
+
+
+			<!--查询结果-->
+			<div  v-if="this.dataMgs">
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>查询结果<small class="success">出口退税率信息{{pagetotal}}条数据</small></h2>
+				</div>
+				<div v-for="(item,index) in list" v-bind:key='item.id'>
+					<div class="peccancyQuery userInfor onlyStyle">
+						<h2 class="q-r-tit"><span></span>商品编码<small class="success smallColor">{{item.spbm}}</small></h2>
+						<hr class="hrLine">
+						<div class="tab-content">
+							<div class="text-list-div clearfix">
+								<label>商品名称:</label>
+								<span>{{list[index].Stringspmc}}</span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>计量单位：</label>
+								<span>{{item.Stringjldw}}</span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>增值税退税率%：</label>
+								<span>{{item.Stringzzstsl}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<div class="peccancyQuery userInfor onlyStyle">-->
+				<!--<h2 class="q-r-tit"><span></span>商品编码<small class="success smallColor">0101210010</small></h2>-->
+				<!--<hr class="hrLine">-->
+				<!--<div class="tab-content">-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>商品名称:</label>-->
+						<!--<span>改良种用濒危野马</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>计量单位：</label>-->
+						<!--<span>千克／头</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>增值税退税率%：</label>-->
+						<!--<span>0.0</span>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		</div>
+		<div style="height: 1.3rem;"></div>
+
+		<div class="masktime" id="masktime" v-if="masktime">{{masktime}}</div>
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;" id="dialogMask" v-if="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="dialogMask">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+		<div class="data-sources">服务来源：国家税务总局</div>
+	</div>
+	<script src="/js/exportTax/exportTax.js"></script>
+<script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

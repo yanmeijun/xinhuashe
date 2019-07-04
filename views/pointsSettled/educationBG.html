@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>教育背景</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/pointsSettled/pointsSettled.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	<style>
+		.ageLimt-title {
+			position: relative;
+		}
+		input[type="radio"]{
+			position: absolute;
+			left: -5px;
+			top: -3px;
+			opacity: 0;
+		}
+		input[type="radio"]:checked + i.icon-radio{
+			background: url("../../images/pointsSettled/radio-select.png") no-repeat ;
+			background-size: 0.416rem 0.416rem;
+		}
+	</style>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--4.教育背景-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img src="../../images/icon-return.png" class="icon-return" onclick="back()"/>4.教育背景</h1>
+				<hr class="hrLine">
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="0" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">不满足教育背景积分条件</span>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="10.5" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">大学专科(含高职)</span>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<!--<i class="icon-radio active"></i>-->
+						<input type="radio" value="15" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">大学本科学历并取得学士学位</span>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="26" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">研究生学历并取得硕士学位</span>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="37" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">研究生学历并取得博士学位</span>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<span class="conditionTit">取得学历(学位)期间在京连续缴纳社会保险年限（累计月数）</span>
+					</div>
+					<div class="ageLimt-text">
+						<input type="text" placeholder="请输入整数"  id="read"/>
+					</div>
+				</div>
+				<div class="btn-box btn-newsStyle">
+					<input type="button" value="确定" onclick="sure()"/>
+				</div>
+			</div>
+			<!---->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>说明：</h2>
+				<div class="wantLookCon">
+					<p>这点需要注意啦，此项指标计算时间截止到积分落户申报工作启动的上一年度12月31日。</p>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+	</div>
+	<script src="/js/pointsSettled/educationBG.js"></script>
+    <script src="/js/all.js"></script>
+</body>
+</html>

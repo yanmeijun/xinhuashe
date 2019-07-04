@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>全国增值税普通发票查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+	<script src="/js/heNanHospital/laydate.js"></script>
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+		.text-list-div input.laydate-icon {
+			border: none;
+			background: url("../../images/icon-downMenu.png") no-repeat center;
+			background-image: url("../../images/icon-downMenu.png");
+			background-size: 0.694rem 0.694rem !important;
+			background-position: right center;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" v-cloak id="taxInvoiceCheck">
+		<!--banner图-->
+		<div class="banner">
+			<img :src="citySrc">
+			<div class="address"><span><%= cityInfo.cityName %></span></div>
+		</div>
+		<!--全国增值税普通发票查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit">全国增值税普通发票查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>发票代码</label>
+					<input type="text" placeholder="请输入发票代码" v-model="fpdm" @focus="sessionNumber"/>
+				</div>
+				<div class="text-list-div">
+					<label>发票号码</label>
+					<input type="text" placeholder="请输入发票号码" v-model="fphm" maxlength="8" @focus="sessionNumber"/>
+				</div>
+				<div class="text-list-div downMenu-style">
+					<label>开票日期</label>
+					<input type="text" placeholder="请输入开票日期" v-model="kprq" readonly id="end" class="laydate-icon"/>
+					<!--<img src="/images/icon-downMenu.png" class="icon-downMenu laydate-icon">-->
+				</div>
+				<div class="text-list-div">
+					<label>校验码</label>
+					<input type="text" placeholder="请输入校验码后六位" v-model="fpje" @blur="focus()" maxlength="6" @focus="sessionNumber"/>
+				</div>
+				<div class="text-list-div phone-list-code" v-if="verification">
+					<label>验证码</label>
+					<input type="text" placeholder="请输入验证码" v-model="verificat" @focus="verCode"/>
+					<!--/images/yanz.png-->
+					<img :src="verificationImg" class="img-code" @click="verificationCode">
+				</div>
+				<div class="btn-box">
+					<input type="button" value="查询" @click="search()"/>
+				</div>
+			</div>
+		</div>
+		<!--默认提示-->
+		<div class="login-tips XL-query">
+			<p><img src="/images/icon-tips.png">说明:</p>
+			<p>1、当日开具发票最快可于次日进行查验。</p>
+			<p>2、发票每天最多可查验5次。</p>
+			<p>3、可查验最近1年内增值税发票管理新系统开具的发票。</p>
+			<p>4、纳税咨询服务，可拨打12366。</p>
+			<p>5、本平台仅提供所查询发票票面信息的查验结果。如对查验结果有疑议，请持发票原件至当地税务机关进行鉴定。</p>
+		</div>
+		<!--提示-->
+		<div class="prompt" style="display: none;">发票代码为必填项</div>
+		<div class="masktime" id="masktime" v-if="masktime">{{masktime}}</div>
+		<!---取消的行政审批事项 end-->
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;" id="dialogMask" v-if="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="dialogMask">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：国家税务总局全国增值税发票查验平台</div>
+	</div>
+	<script>
+        sessionStorage.removeItem("endTime");
+		new Vue({
+		   data:{
+               masktime:"",
+               dialogMask:"",
+               fpdm:"",//发票代码
+               verification:"",
+               verificationImg:"",
+               verificat:"",
+               fpje:"",
+               kprq:"",
+               fphm:"",
+			   citySrc:citySRC || "/images/beijing.png"
+		   },
+			created:function(){
+			},
+			mounted:function(){
+                this.kprq=""
+                this.fnSize();
+                window.addEventListener('resize',this.fnSize,false);
+				this.verificationImg="/images/yanz.png";
+				this.laydate();
+                let endTime=sessionStorage.getItem( "endTime");
+                if(endTime){
+                    this.kprq=endTime;
+                }
+			},
+			methods:{
+                fnSize:function() {
+                    document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth/10 +'px';
+                },
+                /*
+				*输入不正确的查询语句提示语
+				*/
+                maskFn(mgs){
+                    this.masktime=mgs;
+                    setTimeout(() => {
+                        this.masktime="";
+                    }, 1500);
+                    return;
+
+                },
+                search(){
+                    let endTime=sessionStorage.getItem( "endTime");
+                    if(endTime){
+                        this.kprq=endTime;
+					}
+                    if(!this.fpdm){
+                        this.maskFn("请输入发票代码");
+                        return;
+					}
+                    if(!this.fphm){
+                        this.maskFn("请输入发票号码");
+                        return;
+                    }else{
+                        if(this.fphm.length!=8){
+                            this.maskFn("发票号码有误!");
+                            return;
+						}
+					}
+                    if(!this.kprq){
+                        this.maskFn("请输入开票日期");
+                        return;
+                    }
+                    if(!this.fpje) {
+                        this.maskFn("请输入校验码");
+                        return;
+                    }else{
+                        if(this.fpje.length!=6){
+                            this.maskFn("校验码有误!");
+                            return;
+						}
+					};
+                    if(this.fpdm || this.fphm || this.kprq || this.fpje){
+                        this.verification=true;
+                    }
+                    if(!this.verificat){
+                        this.maskFn("请输入验证码");
+                        return;
+                    };
+                    this.getDate();
+				},
+				getDate(){
+                    let parameters={
+                        randomKey:randomKey,
+                        userID:userID,
+                        clientID:clientID,
+                        cityID:cityID,
+                        local_x:local_x,
+                        local_y:local_y,
+                        fphm:this.fphm,//发票代码
+                        kprq:this.kprq,//开票日期
+                        fpje:this.fpje,//开票金额/校验码（待完善）
+                        yzm:this.verificat//验证码
+                    };
+                    console.log(parameters)
+                    axios({
+                        headers: {"Content-Type": "application/json"},
+                        method: 'post',
+                        url: '/taxInvoiceCheck/taxInvoiceCheckSearch',
+                        data: JSON.stringify(parameters),
+                        async:true,
+                        contentType: 'application/json'
+                    }).then(res=>{
+                        console.log(res)
+						if(res.data.ret){
+                            if(res.data.ret == "001"){
+                                sessionStorage.setItem("fphm",this.fphm);
+                                sessionStorage.setItem("fpdm",this.fpdm);
+                                let taxInvoicResult=JSON.stringify(res.data);
+                                sessionStorage.setItem("taxResult",taxInvoicResult);
+                                let url="/taxInvoiceCheck?page=result&randomKey="+randomKey+"&userID="+userID+"&clientID="+clientID+"&cityID="+cityID+"&local_x="+local_x+"&local_y="+local_y;
+                                window.location.href=url;
+                            }
+						}
+						if(res.data.retCode){
+                            if(res.data.retCode !="000000"){
+                                //let url="/taxInvoiceCheck?page=result2&randomKey="+randomKey+"&userID="+userID+"&clientID="+clientID+"&cityID="+cityID+"&local_x="+local_x+"&local_y="+local_y;
+                                /// window.location.href=url;
+                                //return;
+                               this.maskFn(res.data.responseBody.errorMsg);
+                               return;
+                            }
+						}
+
+
+
+                    }).catch(err=>{
+                        console.log(err)
+                    })
+				},
+                verificationCode(){
+                    let endTime=sessionStorage.getItem( "endTime");
+                    if(endTime){
+                        this.kprq=endTime;
+                    }
+                    let parameters={
+                        randomKey:randomKey,
+                        userID:userID,
+                        clientID:clientID,
+                        cityID:cityID,
+                        local_x:local_x,
+                        local_y:local_y,
+                        fpdm:this.fpdm.trim()
+                    };
+                    axios({
+                        headers: {"Content-Type": "application/json"},
+                        method: 'post',
+                        url: '/taxInvoiceCheck/taxInvoiceCheckVerification',
+                        data: JSON.stringify(parameters),
+                        async:true,
+                        contentType: 'application/json'
+                    }).then(res=>{
+						if(res.data.retCode=="000000"){
+                            this.verificationImg="http://47.96.254.45/service/"+res.data.responseBody.img;
+                            if(res.data.responseBody.key=="01"){
+                                this.verificat="请输入红色验证码";
+							}else if(res.data.responseBody.key=="03"){
+                                this.verificat="请输入蓝色验证码"
+							}else if(res.data.responseBody.key=="02"){
+                                this.verificat="请输入黄色验证码"
+							}else if(res.data.responseBody.key=="00"){
+                                this.verificat="请输入验证码"
+                            }
+						}else{
+                            this.maskFn("发票代码错误");
+                            return;
+						}
+                    }).catch(err=>{
+                        console.log(err)
+                    })
+				},
+                focus(){
+                    if(this.fpje){
+                        this.verification=true;
+					};
+                    let endTime=sessionStorage.getItem( "endTime");
+                    if(endTime){
+                        this.kprq=endTime;
+                    }
+
+				},
+                /*
+				*日历插件  日期范围限制
+				*/
+                laydate(){
+                    var end = {
+                        elem: '#end',
+                        format: 'YYYY-MM-DD',
+                        min:"",
+                        max: '2099-06-16',
+                        istime: true,
+                        istoday: false,
+                        choose: function(datas){
+                            //end.min = datas; //开始日选好后，重置结束日的最小日期
+                            //end.start = new Date() //将结束日的初始值设定为开始日
+                           // start.max = datas; //结束日选好后，充值开始日的最大日期
+							let time=document.getElementById('end').value.split("-")[0]+document.getElementById('end').value.split("-")[1]+document.getElementById('end').value.split("-")[2]
+                            document.getElementById('end').value=time;
+							sessionStorage.setItem("fptime",document.getElementById('end').value)
+							sessionStorage.setItem( "endTime",time);
+                        }
+                    };
+                    laydate(end);
+                    //this.kprq = document.getElementById('end').html();
+                    document.getElementById('end').onclick=function () {
+                        document.getElementById('laydate_box').style.left=2+"rem";
+                    }
+
+				},
+                verCode(){
+                    this.verificat=""
+				},
+                sessionNumber(){
+                    let endTime=sessionStorage.getItem( "endTime");
+                    if(endTime){
+                        this.kprq=endTime;
+                    }
+				}
+
+			}
+		}).$mount("#taxInvoiceCheck");
+	</script>
+</body>
+</html>

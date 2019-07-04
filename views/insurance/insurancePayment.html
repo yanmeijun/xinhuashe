@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>个人缴费信息查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link type="text/css" rel="stylesheet" href="/css/user.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script type="text/javascript" src="/js/insurance/insuranceLogin.js"></script>
+	<script type="text/javascript" src="/js/insurance/insurancePayment.js"></script>
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9"> 
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--个人缴费信息查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return"/>个人缴费信息查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>查询年份：</label>
+					<!--<a href="javascript:;" class="peccancy_car" >请选择年份</a>-->
+					<input id="searchYear" type="text" placeholder="请输入年份（如：2018）" />
+					<!--<img src="../images/icon-downMenu.png" class="icon-downMenu" id="icon-downMenu" />-->
+				</div>
+				<div class="text-list-div clearfix" id="icon-downMenu">
+					<label>险种：</label>
+					<a id="type" href="javascript:;" class="peccancy_car" >请选择险种</a>
+					<img src="/images/icon-downMenu.png" class="icon-downMenu" />
+				</div>
+				<div class="btn-box">
+					<input id="paymentSearch" type="button" value="查询" />
+				</div>
+			</div>
+			<div id="results_title" class="peccancyQuery userInfor onlyStyle" style="display: none">
+				<div class="tab-content">
+					<div class="text-list-div clearfix">
+						<label>姓名：</label>
+						<span id="xm"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>公民身份证号：</label>
+						<span id="sfzh"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>单位：</label>
+						<span id="dw">元（保留两位小数）</span>
+					</div>
+				</div>
+			</div>
+			<div id="results_div"></div>
+			<div id="results_div_temp" style="display: none">
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>${jfny}<img src="/images/icon-downMenu.png" class="icon-downMenu"
+																 id="tab-tit-${id}"/></h2>
+					<hr class="hrLine">
+					<div class="tab-content" id="tab-content-${id}">${item}
+
+					</div>
+				</div>
+			</div>
+			<div id="results_div_temp_item" style="display: none">
+				<div class="text-list-div clearfix">
+					<label>缴费类型：</label>
+					<span>${jflb}</span>
+				</div>
+				<div class="text-list-div clearfix">
+					<label>缴费基数：</label>
+					<span>${jfjs}</span>
+				</div>
+				<div class="text-list-div clearfix">
+					<label>单位缴费：</label>
+					<span>${dwjf}</span>
+				</div>
+				<div class="text-list-div clearfix">
+					<label>个人缴费：</label>
+					<span>${grjf}</span>
+				</div>
+				<div class="text-list-div clearfix">
+					<label>缴费单位名称：</label>
+					<span>${jfdwmc}</span>
+				</div>
+			</div>
+		</div>
+		<div id="masktime" class="masktime" style="display: none"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+	</div>
+	<div class="mask" style="display: none;"></div>
+	<div class="downMenu" id="downMenu">
+		<h2>请选择险种</h2>
+		<p>养老保险</p>
+		<p>失业保险</p>
+		<p>工伤保险</p>
+		<p>生育保险</p>
+		<p>医疗保险</p>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#peccancy_car,#icon-downMenu").on("click",function(){
+				$("#downMenu, .mask").show()
+			})
+			$(".mask").on("click",function(){
+				$("#downMenu, .mask").hide()
+			})
+		})
+	</script>
+</body>
+</html>

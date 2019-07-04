@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中国国家博物馆网上预约</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/museum/museum.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+            	localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="onlineBookingSelection" v-cloak>
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/beijing.png">
+		</div>
+		<!--中国国家博物馆网上预约-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="returnPage"/>中国国家博物馆网上预约</h1>
+				<hr class="hrLine"><!--:id='item.xh_item.id'-->
+				<div v-for="(item,index) in dateList" :id='item.xh+"_"+item.id'>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit timeTit"><span></span><time>{{item.cgrq}}</time></h2>
+					<hr class="hrLine">
+					<div class="seleteTimeList clearfix">
+						<p class="number">{{item.zt}}</p>
+						<p v-if="item.ifCanBook" class="btn-reserve disabled"><a href="javascript:;">预约</a></p>
+						<p v-else class="btn-reserve"><a href="javascript:;" @click="toNextPage(item.cgrq+'_'+item.id)">预约</a></p>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中国国家博物馆</div>
+	</div>
+	<script type="text/javascript" src="/js/museum/museum.js"></script>
+    <script>
+        fnSize()
+        window.addEventListener('resize',fnSize,false)
+        function fnSize () {
+            if(document.documentElement.offsetWidth>1024){
+                document.getElementsByTagName('html')[0].style.fontSize = 375/10 +'px';
+                document.getElementsByClassName("max")[0].style.width="375px";
+                document.getElementsByClassName("max")[0].style.margin ="0 auto";
+                document.getElementsByClassName("data-sources")[0].style.width ="375px";
+                return;
+            }else{
+                document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth/10 +'px';
+                document.getElementsByClassName("max")[0].style.width="100%";
+                document.getElementsByClassName("data-sources")[0].style.width ="100%";
+                return;
+            }
+
+        }
+    </script>
+</body>
+</html>

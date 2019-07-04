@@ -1,0 +1,2834 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>服务首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑", arial;
+            font-size: 12px;
+        }
+
+        /*服务列表*/
+        .tableIndex {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .tableIndex th, .tableIndex td {
+            border: 1px solid #efefef;
+            padding: 0 10px;
+            line-height: 45px;
+        }
+
+        .tableIndex th {
+            background: #549dfb;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .tableIndex tr:nth-of-type(odd) {
+            background: #fff;
+        }
+
+        .tableIndex tr:nth-of-type(even) {
+            background: #f3f9f9;
+        }
+
+        .tableIndex tr .firstBg {
+            background: #fff !important;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .tableIndex tr td form input {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tableIndex tr td form input.submit {
+            color: #54a8ec;
+        }
+
+        .tableIndex tr td form input.test {
+            color: #008000;
+        }
+
+        .tableIndex tr td.ucapName {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .ucapLogo-title {
+            text-align: center;
+            font-size: 18px;
+            line-height: 60px;
+        }
+
+        .ucapLogo-title span {
+            margin-right: 20px;
+            font-size: 18px;
+        }
+
+        /*登录*/
+        .loginBox {
+            width: 350px;
+            height: 300px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -175px;
+            margin-top: -150px;
+        }
+        .loginBox .title {
+            color: #3a85e3;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 30px;
+        }
+        .loginText input {
+            width: 338px;
+            height: 40px;
+            line-height: 40px;
+            padding: 4px 0px 4px 10px;
+            margin-bottom: 20px;
+            outline: none;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            background: #fff;
+        }
+		.loginText input:focus{
+			border: 1px solid #2caee4;
+		}
+        .loginText input.btn-submit{
+            background: #2caee4;
+            width: 100%;
+            height: 50px;
+            font-size: 16px;
+            color: #fff;
+            border: 0px none;
+            cursor: pointer;
+            margin-bottom: 32px;
+            padding: 0px;
+            font-family: '微软雅黑';
+            cursor: pointer;
+        }
+        .service-btnLink{
+        	color: #008000;
+        	text-decoration: none;
+        	font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!---登录--->
+<div class="loginBox" style="display:none;">
+    <div class="title">账号登录</div>
+    <div class="loginText">
+        <input type="text" id="user" placeholder="请输入用户名"/>
+        <input type="password" id="pass" placeholder="请输入密码"/>
+        <input type="button" class="btn-submit" id="submit_check" value="提交"/>
+    </div>
+</div>
+<!---服务列表--->
+<div class="serviceList-box" style="display: block;">
+    <div class="ucapLogo-title"><span>开普云</span>公共服务项目-服务列表</div>
+    <table class="tableIndex">
+        <tr>
+            <th>服务分类</th>
+            <th>服务名称</th>
+            <th>发布环境</th>
+            <th>当前状态</th>
+            <th>更新时间</th>
+            <th>服务说明</th>
+            <th>服务来源</th>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="5">频道页</td>
+            <td>新华社北京市频道页</td>
+            <td>
+                <form method="post" action="/indexPage">
+                    <input type="text" name="localFrom" value="xinhuashe_app" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试中" class="submit"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>频道页</td>
+            <td>频道页</td>
+        </tr>
+        <tr>
+            <td>四川项目成都市频道页</td>
+            <td>
+                <form method="post" action="/indexPage">
+                    <input type="text" name="localFrom" value="sichuan_app" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="510100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试中" class="submit"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>频道页</td>
+            <td>频道页</td>
+        </tr>
+        <tr>
+            <td>杭州市频道页</td>
+            <td>
+                <form method="post" action="/indexPage">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="330100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试中" class="submit"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>频道页</td>
+            <td>频道页</td>
+        </tr>
+        <tr>
+            <td>上海市频道页</td>
+            <td>
+                <form method="post" action="/indexPage">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="310000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试中" class="submit"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>频道页</td>
+            <td>频道页</td>
+        </tr>
+        <tr>
+            <td>海口市频道页</td>
+            <td>
+                <form method="post" action="/indexPage">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="460100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试中" class="submit"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>频道页</td>
+            <td>频道页</td>
+        </tr>
+        <tr>
+            <td class="firstBg">交通</td>
+            <td>驾照扣分查询</td>
+            <td>
+                <form method="post" action="/deduction">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>服务于全国31个省；持驾驶证的驾驶人在全国各地的交通违法记录查询服务。</td>
+            <td>公安部互联网交通安全综合服务管理平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg">交通</td>
+            <td>北京车辆违章查询</td>
+            <td>
+                <form method="post" action="/infraction">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>已发布生产</td>
+            <td>2018-02-07</td>
+            <td>服务于全国31个省；机动车在全国范围内的违章记录查询服务</td>
+            <td>公安部互联网交通安全综合服务管理平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="8">北京社保</td>
+            <td>登录服务</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td>基本信息查询服务</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td>医保信息查询服务</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td>医疗保险查询</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td>失业保险查询</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td>工商保险查询</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td>生育保险查询</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td>养老保险查询</td>
+            <td>
+                <form method="post" action="/insuranceLogin">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-07</td>
+            <td>查询北京市行政区域内职工社保信息，可查询社保缴纳基本信息等</td>
+            <td>北京市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">教育</td>
+            <td>学历证书查询</td>
+            <td>
+                <form method="post" action="/education">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="生产环境" class="submit"/>
+                </form>
+            </td>
+            <td>已发布生产</td>
+            <td>2018-02-07</td>
+            <td>查询国家承认的高等教育学籍学历信息</td>
+            <td>中国高等教育学生信息网（学信网）</td>
+        </tr>
+        <tr>
+            <td class="firstBg">法律</td>
+            <td>商务法规查询</td>
+            <td>
+                <form method="post" action="/mofcom">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-09</td>
+            <td>用于查询所有法律、法规、部门法规已发布的相关法规信息</td>
+            <td>中华人民共和国商务部</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="4">交通</td>
+            <td>火车票起售时间查询</td>
+            <td>
+                <form method="post" action="/trainSellTime">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-09</td>
+            <td>用于查询火车时刻表信息、各地车站车票起售时间、火车票余票数据等</td>
+            <td>中国铁路信息技术中心</td>
+        </tr>
+        <tr>
+            <td>火车时刻表查询</td>
+            <td>
+                <form method="post" action="/trainTimetable">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-09</td>
+            <td>用于查询火车时刻表信息、各地车站车票起售时间、火车票余票数据等</td>
+            <td>中国铁路信息技术中心</td>
+        </tr>
+        <tr>
+            <td>火车余票查询</td>
+            <td>
+                <form method="post" action="/trainYupiao">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-09</td>
+            <td>用于查询火车时刻表信息、各地车站车票起售时间、火车票余票数据等</td>
+            <td>中国铁路信息技术中心</td>
+        </tr>
+        <tr>
+            <td>火车晚点查询</td>
+            <td>
+                <form method="post" action="/trainLate">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-02-09</td>
+            <td>用于查询火车时刻表信息、各地车站车票起售时间、火车票余票数据等</td>
+            <td>中国铁路信息技术中心</td>
+        </tr>
+        <tr>
+            <td class="firstBg">交通</td>
+            <td>北京市停车场位查询</td>
+            <td>
+                <form method="post" action="/parking">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-16</td>
+            <td>查询北京市的备案停车场信息</td>
+            <td>北京市交通委员会</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="6">交通</td>
+            <td>北京市小客车摇号查询</td>
+            <td>
+                <form method="post" action="/carYaohao">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-16</td>
+            <td>目前仅支持个人用户的中签查询</td>
+            <td>北京市小客车指标调控管理系统</td>
+        </tr>
+        <tr>
+            <td>天津市小客车摇号查询</td>
+            <td>
+                <form method="post" action="/carYaohao">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="120000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-16</td>
+            <td>目前仅支持个人用户的中签查询</td>
+            <td>天津市小客车指标调控管理系统</td>
+        </tr>
+        <tr>
+            <td>杭州市小客车摇号查询</td>
+            <td>
+                <form method="post" action="/carYaohao">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="330100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-16</td>
+            <td>目前仅支持个人用户的中签查询</td>
+            <td>杭州市小客车总量调控管理系统</td>
+        </tr>
+        <tr>
+            <td>深圳市小客车摇号查询</td>
+            <td>
+                <form method="post" action="/carYaohao">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="440300" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-16</td>
+            <td>目前仅支持个人用户的中签查询</td>
+            <td>深圳市小汽车增量调控管理信息系统</td>
+        </tr>
+        <tr>
+            <td>广州市小客车摇号查询</td>
+            <td>
+                <form method="post" action="/carYaohao">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="440100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-16</td>
+            <td>目前仅支持个人用户的中签查询</td>
+            <td>广州市中小客车指标调控管理信息系统</td>
+        </tr>
+        <tr>
+            <td>贵阳市小客车摇号查询</td>
+            <td>
+                <form method="post" action="/carYaohao">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="520100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-20</td>
+            <td>目前仅支持个人用户的中签查询</td>
+            <td>贵阳市小客车专段号牌管理信息系统</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="4">北京公积金</td>
+            <td>登录服务</td>
+            <td>
+                <form method="post" action="/bjGJJ">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-03-22</td>
+            <td>查询北京市行政区域内职工公积金信息</td>
+            <td>北京住房公积金管理中心</td>
+        </tr>
+        <tr>
+            <td>基本信息查询服务</td>
+            <td>
+                <form method="post" action="/bjGJJ">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-03-22</td>
+            <td>查询北京市行政区域内职工公积金信息</td>
+            <td>北京住房公积金管理中心</td>
+        </tr>
+        <tr>
+            <td>总账信息查询服务</td>
+            <td>
+                <form method="post" action="/bjGJJ">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-03-22</td>
+            <td>查询北京市行政区域内职工公积金信息</td>
+            <td>北京住房公积金管理中心</td>
+        </tr>
+        <tr>
+            <td>公积金明细查询服务</td>
+            <td>
+                <form method="post" action="/bjGJJ">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-03-22</td>
+            <td>查询北京市行政区域内职工公积金信息</td>
+            <td>北京住房公积金管理中心</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="6">不良信息举报</td>
+            <td>举报垃圾短信</td>
+            <td>
+                <form method="post" action="/unhealthyReportMessage">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-28</td>
+            <td>网络不良信息与垃圾信息举报服务</td>
+            <td>12321网络不良与垃圾短信信息举报受理中心</td>
+        </tr>
+        <tr>
+            <td>举报诈骗电话</td>
+            <td>
+                <form method="post" action="/unhealthySwindlePhone">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-28</td>
+            <td>网络不良信息与垃圾信息举报服务</td>
+            <td>12321网络不良与垃圾短信信息举报受理中心</td>
+        </tr>
+        <tr>
+            <td>举报骚扰电话</td>
+            <td>
+                <form method="post" action="/unhealthyHarassPhone">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-28</td>
+            <td>网络不良信息与垃圾信息举报服务</td>
+            <td>12321网络不良与垃圾短信信息举报受理中心</td>
+        </tr>
+        <tr>
+            <td>举报网站</td>
+            <td>
+                <form method="post" action="/unhealthyWebsite">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-28</td>
+            <td>网络不良信息与垃圾信息举报服务</td>
+            <td>12321网络不良与垃圾短信信息举报受理中心</td>
+        </tr>
+        <tr>
+            <td>举报个人信息泄露</td>
+            <td>
+                <form method="post" action="/unhealthyPersonInfo">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-28</td>
+            <td>网络不良信息与垃圾信息举报服务</td>
+            <td>12321网络不良与垃圾短信信息举报受理中心</td>
+        </tr>
+        <tr>
+            <td>举报短信进度查询</td>
+            <td>
+                <form method="post" action="/unhealthyMessage">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-28</td>
+            <td>网络不良信息与垃圾信息举报服务</td>
+            <td>12321网络不良与垃圾短信信息举报受理中心</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="2">投诉举报</td>
+            <td>旅游投诉</td>
+            <td>
+                <form method="post" action="/tourism">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-03-28</td>
+            <td>为游客提供7x24专业、高效的旅游投诉服务</td>
+            <td>全国旅游投诉举报和案件办理管理系统</td>
+        </tr>
+        <tr>
+            <td>投诉查询</td>
+            <td>
+                <form method="post" action="/tourism">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-28</td>
+            <td>为游客提供7x24专业、高效的旅游投诉服务</td>
+            <td>全国旅游投诉举报和案件办理管理系统</td>
+        </tr>
+        <tr>
+            <td class="firstBg">医院挂号</td>
+            <td>北京市预约挂号</td>
+            <td>
+                <form method="post" action="/hospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-03-16</td>
+            <td>可查询北京市的医院信息，为用户提供便民的网上预约挂号服务</td>
+            <td>北京市预约挂号统一平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg">学位查询</td>
+            <td>学位查询</td>
+            <td>
+                <form method="post" action="/degree">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-13</td>
+            <td>查询国家承认的高等教育学籍学位证书信息。</td>
+            <td>中国学位与研究生教育信息网</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="5">信用中国</td>
+            <td>统一社会信用代码查询</td>
+            <td>
+                <form method="post" action="/code">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-09</td>
+            <td>对统一社会信用代码进行查询</td>
+            <td>信用中国</td>
+        </tr>
+        <tr>
+            <td>企业经营异常名录</td>
+            <td>
+                <form method="post" action="/enterprise">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-09</td>
+            <td>对企业经营异常名录进行查询</td>
+            <td>信用中国</td>
+        </tr>
+        <tr>
+            <td>失信被执行人查询</td>
+            <td>
+                <form method="post" action="/lostTrusteeInquiry">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-09</td>
+            <td>对失信被执行人进行查询</td>
+            <td>信用中国</td>
+        </tr>
+        <tr>
+            <td>重大税收违法案件当事人名单查询</td>
+            <td>
+                <form method="post" action="/taxIllegalInquiry">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-09</td>
+            <td>对重大税收违法案件当事人名单进行查询</td>
+            <td>信用中国</td>
+        </tr>
+        <tr>
+            <td>政府采购严重违法失信名单查询</td>
+            <td>
+                <form method="post" action="/governmentProcurementInquiry">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-13</td>
+            <td>对政府采购严重违法失信名单进行查询</td>
+            <td>信用中国</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="2">教育</td>
+            <td>普通话考试成绩查询</td>
+            <td>
+                <form method="post" action="/scoreSearch">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-10</td>
+            <td>可查询全国普通话考试成绩查询结果</td>
+            <td>全国普通话培训测试信息资源网</td>
+
+        <tr>
+            <td>普通话考试证书查询</td>
+            <td>
+                <form method="post" action="/certificateSearch">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-10</td>
+            <td>可查询全国普通话考试成绩查询结果</td>
+            <td>全国普通话培训测试信息资源网</td>
+        </tr>
+        <tr>
+            <td class="firstBg">婚姻</td>
+            <td>北京市婚姻登记预约</td>
+            <td>
+                <form method="post" action="/marriage">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-10</td>
+            <td>可查询婚姻登记信息</td>
+            <td>北京民政局</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="2">教育</td>
+            <td>中小学教师资格证考试成绩查询</td>
+            <td>
+                <form method="post" action="/examResultInquiry">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-17</td>
+            <td>可查询中小学教师资格考试成绩与证书查询</td>
+            <td>中小学教师资格考试，中国教育考试网</td>
+        </tr>
+        <tr>
+	        <td>中小学教师资格考试合格证明（NTCE）查询</td>
+	        <td>
+	            <form method="post" action="/qualificationCertificate">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+	                <input type="text" name="vDate" value="2515745339000" style="display: none;">
+	                <input type="text" name="info[userID]" value="123456" style="display: none;">
+	                <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+	                <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+	                <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+	                <input type="text" name="local[local_x]" value="11" style="display: none;">
+	                <input type="text" name="local[local_y]" value="22" style="display: none;">
+	                <input type="submit" value="测试环境" class="test"/>
+	            </form>
+	        </td>
+	        <td>测试APP</td>
+	        <td>2018-04-17</td>
+	        <td>可查询中小学教师资格考试成绩与证书查询</td>
+	        <td>中小学教师资格考试，中国教育考试网</td>
+        </tr>
+        <tr>
+            <td class="firstBg">出口退税率</td>
+            <td>出口退税率查询</td>
+            <td>
+                <form method="post" action="/exportTax">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-17</td>
+            <td>可查询出口退税率</td>
+            <td>国家税务总局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">博物馆</td>
+            <td>中国国家博物馆网上预约</td>
+            <td>
+                <form method="post" action="/museum">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-17</td>
+            <td>可网上预约中国国家博物馆免费参观券</td>
+            <td>服务来源：中国国家博物馆</td>
+        </tr>
+        <tr>
+            <td class="firstBg">12315</td>
+            <td>全国12315互联网平台</td>
+            <td>
+                <form method="post" action="/internetPlatform">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-13</td>
+            <td>可投诉或举报互联网经营者</td>
+            <td>全国12315互联网平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg">教育</td>
+            <td>全国计算机等级考试（NCRE）查询</td>
+            <td>
+                <form method="post" action="/ncre">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-17</td>
+            <td>可查询全国计算机等级考试信息</td>
+            <td>中国教育考试网</td>
+        </tr>
+        <tr>
+            <td class="firstBg">婚姻</td>
+            <td>上海市结婚登记网上预约</td>
+            <td>
+                <form method="post" action="/shangHaiMarriage">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="310000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-19</td>
+            <td>可查询结婚登记预约信息</td>
+            <td>上海民政局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">旅游</td>
+            <td>北京A级景区虚拟旅游</td>
+            <td>
+                <form method="post" action="/beiJingTourism">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-19</td>
+            <td>可查询旅游信息</td>
+            <td>北京市A级景区虚拟旅游</td>
+        </tr>
+        <tr>
+            <td class="firstBg">交通</td>
+            <td>车检计算器</td>
+            <td>
+                <form method="post" action="/carInspectionCalculator">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-26</td>
+            <td>可查询车检信息</td>
+            <td>公安部交通管理局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">医院</td>
+            <td>异地定点医疗机构查询</td>
+            <td>
+                <form method="post" action="/remoteHosp">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-26</td>
+            <td>可查询异地定点医疗机构信息</td>
+            <td>人力资源和社会保障部 社会保险网上查询系统</td>
+        </tr>
+        <tr>
+            <td class="firstBg">医院</td>
+            <td>异地就医经办机构查询</td>
+            <td>
+                <form method="post" action="/seekMedicalAdvice">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-26</td>
+            <td>可查询异地就医经办机构信息</td>
+            <td>人力资源和社会保障部 社会保险网上查询系统</td>
+        </tr>
+        <tr>
+            <td class="firstBg">交通</td>
+            <td>机动车报废查询</td>
+            <td>
+                <form method="post" action="/carScrapped">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>可查询车辆报废信息</td>
+            <td>公安部交通管理局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">税务</td>
+            <td>税务事务所查询</td>
+            <td>
+                <form method="post" action="/taxOffice">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>可查询税务信息</td>
+            <td>国家税务总局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">教育</td>
+            <td>研究生考试查询</td>
+            <td>
+                <form method="post" action="/postgraduate">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>可查询研究生考试信息</td>
+            <td>中国研究生招生信息网</td>
+        </tr>
+        <tr>
+            <td class="firstBg">社会保障</td>
+            <td>上海市人力资源和社会保障局</td>
+            <td>
+                <form method="post" action="/shangHaiInsurance">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="310000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试APP</td>
+            <td>2018-04-26</td>
+            <td>可查询人力资源和社保等信息</td>
+            <td>上海市人力资源和社会保障局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">医疗</td>
+            <td>全国医疗机构查询</td>
+            <td>
+                <form method="post" action="/nationalMedical">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>可查询医疗机构信息</td>
+            <td>中华人民共和国国家卫生健康委员会</td>
+        </tr>
+        <!--<tr>
+            <td class="firstBg">最高检</td>
+            <td>12309最高检</td>
+            <td>
+                <form method="post" action="/supremeProcuratorate">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-27</td>
+            <td>可查询最高检信息</td>
+            <td>12309最高检</td>
+        </tr>-->
+        <tr>
+            <td class="firstBg">旅游</td>
+            <td>5A旅游景区查询</td>
+            <td>
+                <form method="post" action="/touristAttraction5A">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>可查询旅游景区信息</td>
+            <td>中华人民共和国文化和旅游部</td>
+        </tr>
+        <tr>
+            <td class="firstBg">社会保障</td>
+            <td>北京市积分入户</td>
+            <td>
+                <form method="post" action="/pointsSettled">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-04</td>
+            <td>以科技贡献、专业技能、在京时间等指标为考核项，计算非京籍人才的“积分”，积分达标即可落户北京</td>
+            <td>北京市积分落户服务专栏</td>
+        </tr>
+        <tr>
+            <td class="firstBg">医院</td>
+            <td>河南省预约挂号平台</td>
+            <td>
+                <form method="post" action="/heNanHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="410100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-10</td>
+            <td>可挂号、预约</td>
+            <td>河南省预约挂号服务平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg">贵州省网上办事大厅</td>
+            <td>贵州省网上办事大厅</td>
+            <td>
+                <form method="post" action="/GzOnlineWork">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="520000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-04-18</td>
+            <td>可查询贵州预约信息</td>
+            <td>贵州省网上办事大厅</td>
+        </tr>
+        <tr>
+            <td class="firstBg">交通</td>
+            <td>青海客运班线信息查询</td>
+            <td>
+                <form method="post" action="/QhPassengerTransport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="630000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-14</td>
+            <td>可查询客运班线信息</td>
+            <td>青海省人民政府行政服务和公共资源交易中心</td>
+        </tr>
+        <tr>
+            <td class="firstBg">交通</td>
+            <td>河南省高速公路通行费查询</td>
+            <td>
+                <form method="post" action="/heNanHighwayTolls">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="410000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-14</td>
+            <td>可查询调整公路通行费用等信息</td>
+            <td>河南省交通运输厅</td>
+        </tr>
+        <tr>
+            <td class="firstBg">行政区划</td>
+            <td>全国行政区划信息查询</td>
+            <td>
+                <form method="post" action="/administrativeDivisions">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-16</td>
+            <td>可查询全国行政区划信息</td>
+            <td>民政部全国行政区划信息查询平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="5">重名查询</td>
+            <td>河南省重名查询</td>
+            <td>
+                <form method="post" action="/sameName">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="410000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-16</td>
+            <td>可查询重名信息</td>
+            <td>河南省公安交通警察总队</td>
+        </tr>
+        <tr>
+            <td>海南省重名查询</td>
+            <td>
+                <form method="post" action="/sameName">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="460000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-16</td>
+            <td>可查询重名信息</td>
+            <td>海南省公安厅</td>
+        </tr>
+        <tr>
+            <td>山西省重名查询</td>
+            <td>
+                <form method="post" action="/sameName">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="140000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-16</td>
+            <td>可查询重名信息</td>
+            <td>山西省公安厅</td>
+        </tr>
+        <tr>
+            <td>江苏省重名查询</td>
+            <td>
+                <form method="post" action="/sameName">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="320000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-16</td>
+            <td>可查询重名信息</td>
+            <td>江苏省公安厅</td>
+        </tr>
+        <tr>
+            <td>吉林省重名查询</td>
+            <td>
+                <form method="post" action="/sameName">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="220000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-16</td>
+            <td>可查询重名信息</td>
+            <td>吉林“互联网+公安”综合服务平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg">税务</td>
+            <td>湖南省个税计算器</td>
+            <td>
+                <form method="post" action="/huNanTax">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="430000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-16</td>
+            <td>可查询湖南省个税信息</td>
+            <td>湖南省地方税务局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">侵权</td>
+            <td>侵权盗版举报</td>
+            <td>
+                <form method="post" action="/infringementPiracy">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-21</td>
+            <td>可查询侵权盗版举报信息</td>
+            <td>中国政府网</td>
+        </tr>
+        <tr>
+            <td class="firstBg">企业资质</td>
+            <td>建筑业企业资质审批结果查询</td>
+            <td>
+                <form method="post" action="/buildEntApproval">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-22</td>
+            <td>可查询建筑业企业资质审批结果信息</td>
+            <td>北京市住房和城乡建设委员会</td>
+        </tr>
+        <tr>
+            <td class="firstBg">教育</td>
+            <td>建设工程企业资质证书查询</td>
+            <td>
+                <form method="post" action="/buildEntCertificate">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-22</td>
+            <td>可查询建设工程企业资质证书信息</td>
+            <td>北京市住房和城乡建设委员会</td>
+        </tr>
+        <tr>
+            <td class="firstBg">教育</td>
+            <td>工程监理企业资质证书查询</td>
+            <td>
+                <form method="post" action="/supervisionCertificate">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-23</td>
+            <td>可查询工程监理企业资质证书信息</td>
+            <td>北京市住房和城乡建设委员会</td>
+        </tr>
+        <tr>
+            <td class="firstBg">政策服务</td>
+            <td>国务院已公布取消的职业资格许可和认定事项查询</td>
+            <td>
+                <form method="post" action="/adminCancelPermit">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-23</td>
+            <td>可查询国务院已公布取消的职业资格许可和认定事项信息</td>
+            <td>中国政府网</td>
+        </tr>
+        <tr>
+            <td class="firstBg">政策服务</td>
+            <td>国务院取消和下放的行政审批事项</td>
+            <td>
+                <form method="post" action="/cancelPermit">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-22</td>
+            <td>可查询国务院取消和下放的行政审批事项信息</td>
+            <td>中国政府网</td>
+        </tr>
+        <!--<tr>
+            <td class="firstBg">发票</td>
+            <td>全国增值税普通发票查询</td>
+            <td>
+                <form method="post" action="/taxInvoiceCheck">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-24</td>
+            <td>可查询全国增值税普通发票信息</td>
+            <td>国家税务总局全国增值税发票查验平台</td>
+        </tr>-->
+        <tr>
+            <td class="firstBg">司法</td>
+            <td>司法所查询</td>
+            <td>
+                <form method="post" action="/judicialOffice">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-24</td>
+            <td>可查询司法所信息</td>
+            <td>北京市司法局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">税务</td>
+            <td>房产税</td>
+            <td>
+                <form method="post" action="/propertyTax">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="620000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-30</td>
+            <td>可查询、可计算房产信息</td>
+            <td>北京市地方税务局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">税务</td>
+            <td>企业税</td>
+            <td>
+                <form method="post" action="/corporateTax">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-05-30</td>
+            <td>可查询、可计算企业信息</td>
+            <td>北京市地方税务局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">税务</td>
+            <td>个人所得税</td>
+            <td>
+                <form method="post" action="/personalTax">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-06-01</td>
+            <td>可查询、可计算个人所得税信息</td>
+            <td>北京市地方税务局</td>
+        </tr>
+        <tr>
+            <td class="firstBg">税务</td>
+            <td>营业税</td>
+            <td>
+                <form method="post" action="/businessTax">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-06-01</td>
+            <td>可查询、可计算营业税信息</td>
+            <td>北京市地方税务局</td>
+        </tr>
+        <tr>
+            <td class="firstBg" rowspan="7">医疗</td>
+            <td>山东挂号</td>
+            <td>
+                <form method="post" action="/sDHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="370000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-07-18</td>
+            <td>可查询山东挂号信息</td>
+            <td>山东省预约诊疗服务系统</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg">医疗</td>-->
+            <td>甘肃挂号</td>
+            <td>
+                <form method="post" action="/gsHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="620000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+        <td>测试中</td>
+        <td>2018-07-23</td>
+        <td>可查询甘肃挂号信息</td>
+        <td>甘肃省预约诊疗服务系统</td>
+    </tr>
+        <tr>
+            <!--<td class="firstBg">医疗</td>-->
+            <td>陕西挂号</td>
+            <td>
+                <form method="post" action="/shanxiHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="610000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+        <td>测试中</td>
+        <td>2018-07-18</td>
+        <td>可查询陕西挂号信息</td>
+        <td>陕西省预约诊疗服务系统</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg">医疗</td>-->
+            <td>江西挂号</td>
+            <td>
+                <form method="post" action="/JXHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="360100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-07-18</td>
+            <td>可查询江西挂号信息</td>
+            <td>江西省预约诊疗服务系统</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg">医疗</td>-->
+            <td>内蒙古挂号</td>
+            <td>
+                <form method="post" action="/nmgHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="150100" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-09-12</td>
+            <td>可查询内蒙古挂号信息</td>
+            <td>内蒙古预约诊疗服务系统</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg">医疗</td>-->
+            <td>山西挂号</td>
+            <td>
+                <form method="post" action="/sXHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="140000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-09-27</td>
+            <td>可查询山西省挂号信息</td>
+            <td>山西省预约诊疗服务系统</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg">医疗</td>-->
+            <td>安徽挂号</td>
+            <td>
+                <form method="post" action="/anhuiHospital">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="340000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-09-27</td>
+            <td>可查询安徽挂号信息</td>
+            <td>安徽挂号预约诊疗服务系统</td>
+        </tr>
+        <tr>
+            <td class="firstBg">社会保障</td>
+            <td>上海公积金</td>
+            <td>
+                <form method="post" action="/shangHaiFund">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="310000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-07-19</td>
+            <td>可查询上海公积金信息</td>
+            <td>上海住房公积金网</td>
+        </tr>
+        <tr>
+            <td class="firstBg"  rowspan="4">出入境办理服务</td>
+            <td>海南出入境办理服务</td>
+            <td>
+                <form method="post" action="/passport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="460000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-10-09</td>
+            <td>可办理出入境服务</td>
+            <td>公安出入境网上办事平台</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg"  rowspan="4">出入境办理服务</td>-->
+            <td>四川出入境办理服务</td>
+            <td>
+                <form method="post" action="/passport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="510000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-10-09</td>
+            <td>可办理出入境服务</td>
+            <td>公安出入境网上办事平台</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg"  rowspan="4">出入境办理服务</td>-->
+            <td>陕西出入境办理服务</td>
+            <td>
+                <form method="post" action="/passport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="610000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-10-09</td>
+            <td>可办理出入境服务</td>
+            <td>公安出入境网上办事平台</td>
+        </tr>
+        <tr>
+            <!--<td class="firstBg"  rowspan="4">出入境办理服务</td>-->
+            <td>贵州出入境办理服务</td>
+            <td>
+                <form method="post" action="/passport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="520000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-10-09</td>
+            <td>可办理出入境服务</td>
+            <td>公安出入境网上办事平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg">海南省社保缴费计算</td>
+            <td>海南省社保缴费计算</td>
+            <td>
+                <form method="post" action="/haiNanInsuranceCalculator">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="460000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-10-09</td>
+            <td>可办理出入境服务</td>
+            <td>公安出入境网上办事平台</td>
+        </tr>
+        <!--海南省景区查询-->
+        <tr>
+            <td class="firstBg">海南省景区查询</td>
+            <td>海南省景区查询</td>
+            <td>
+                <form method="post" action="/haiNanTourism">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="460000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-10-09</td>
+            <td>可办理出入境服务</td>
+            <td>海南省景区查询</td>
+        </tr>
+        <!--外国人在华居留证初审-->
+        <tr>
+            <td class="firstBg">外国人在华居留证初审</td>
+            <td>外国人在华居留证初审</td>
+            <td>
+                <form method="post" action="/chainCard">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-10-09</td>
+            <td>可办理出入境服务</td>
+            <td>外国人在华居留证初审</td>
+        </tr>
+        <tr>
+            <td class="firstBg">中组部举报</td>
+            <td>中组部举报</td>
+            <td>
+                <form method="post" action="/organizationReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-11-16</td>
+            <td>中组部举报服务</td>
+            <td>中组部举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">纪检监察机关举报</td>
+            <td>纪检监察机关举报</td>
+            <td>
+                <form method="post" action="/monitorReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-11-16</td>
+            <td>纪检监察机关举报</td>
+            <td>纪检监察机关举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">全国文化市场举报平台</td>
+            <td>全国文化市场举报平台</td>
+            <td>
+                <form method="post" action="/culturalMarketReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-20</td>
+            <td>全国文化市场举报平台</td>
+            <td>全国文化市场举报平台</td>
+        </tr>
+        <tr>
+            <td class="firstBg">反腐败国际追逃追赃举报</td>
+            <td>反腐败国际追逃追赃</td>
+            <td>
+                <form method="post" action="/corruptionReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-20</td>
+            <td>反腐败国际追逃追赃举报</td>
+            <td>反腐败国际追逃追赃举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">网络违法犯罪举报</td>
+            <td>网络违法犯罪</td>
+            <td>
+                <form method="post" action="/networkCrimeReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-20</td>
+            <td>网络违法犯罪举报</td>
+            <td>网络违法犯罪举报</td>
+        </tr>
+
+        <tr>
+            <td class="firstBg">境外非政府组织办事违法举报</td>
+            <td>境外非政府组织办事违法举报</td>
+            <td>
+                <form method="post" action="/overseasNgoReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-24</td>
+            <td>境外非政府组织办事违法举报</td>
+            <td>境外非政府组织办事违法举报</td>
+        </tr>
+
+        <tr>
+            <td class="firstBg">检察干警违法违纪举报</td>
+            <td>检察干警违法违纪举报</td>
+            <td>
+                <form method="post" action="/policemenReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2018-12-27</td>
+            <td>检察干警违法违纪举报</td>
+            <td>检察干警违法违纪举报</td>
+        </tr>
+
+        <tr>
+            <td class="firstBg">恢复中国国籍审批初审</td>
+            <td>恢复中国国籍审批初审</td>
+            <td>
+                <form method="post" action="/hfzggjspcs">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-24</td>
+            <td>恢复中国国籍审批初审</td>
+            <td>恢复中国国籍审批初审</td>
+        </tr>
+        <tr>
+            <td class="firstBg">加入中国国籍审批初审</td>
+            <td>加入中国国籍审批初审</td>
+            <td>
+                <form method="post" action="/jrzggjspcs">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-24</td>
+            <td>加入中国国籍审批初审</td>
+            <td>加入中国国籍审批初审</td>
+        </tr>
+        <tr>
+            <td class="firstBg">退出中国国籍审批初审</td>
+            <td>退出中国国籍审批初审</td>
+            <td>
+                <form method="post" action="/exitChinaNation">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-25</td>
+            <td>退出中国国籍审批初审</td>
+            <td>退出中国国籍审批初审</td>
+        </tr>
+        <tr>
+            <td class="firstBg">住房城乡建设领域违法违规行为网上举报</td>
+            <td>住房城乡建设领域违法违规行为网上举报</td>
+            <td>
+                <form method="post" action="/housingReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>测试中</td>
+            <td>2018-12-27</td>
+            <td>住房城乡建设领域违法违规行为网上举报</td>
+            <td>住房城乡建设领域违法违规行为网上举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">最高人民检察院职务犯罪举报</td>
+            <td>最高人民检察院职务犯罪举报</td>
+            <td>
+                <form method="post" action="/dutyCrimeReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2018-12-28</td>
+            <td>最高人民检察院职务犯罪举报</td>
+            <td>最高人民检察院职务犯罪举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">中国互联网违法不良信息举报</td>
+            <td>中国互联网违法不良信息举报</td>
+            <td>
+                <form method="post" action="/zywxReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2018-12-24</td>
+            <td>中国互联网违法不良信息举报</td>
+            <td>中国互联网违法不良信息举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">打击涉枪涉爆犯罪举报</td>
+            <td>打击涉枪涉爆犯罪举报</td>
+            <td>
+                <form method="post" action="/gunviolenceReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2018-01-09</td>
+            <td>打击涉枪涉爆犯罪举报</td>
+            <td>打击涉枪涉爆犯罪举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">非法出版活动举报</td>
+            <td>非法出版活动举报</td>
+            <td>
+                <form method="post" action="/publishedReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2019-01-10</td>
+            <td>非法出版活动举报</td>
+            <td>非法出版活动举报</td>
+        </tr>
+        <tr>
+            <td class="firstBg">知识产权投诉举报</td>
+            <td>知识产权投诉举报</td>
+            <td>
+                <form method="post" action="/knowledgeReport">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2019-01-15</td>
+            <td>知识产权投诉举报</td>
+            <td>知识产权投诉举报</td>
+        </tr>
+
+        <tr>
+            <td class="firstBg">国（境）外学历学位认证证书查询</td>
+            <td>国（境）外学历学位认证证书查询</td>
+            <td>
+                <form method="post" action="/fdegreeCertification">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2019-01-14</td>
+            <td>国（境）外学历学位认证证书查询</td>
+            <td>国（境）外学历学位认证证书查询</td>
+        </tr>
+        <tr>
+            <td class="firstBg">律师事务所查询</td>
+            <td>律师事务所查询</td>
+            <td>
+                <form method="post" action="/lawfirmEnquiries">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2019-01-16</td>
+            <td>国（境）外学历学位认证证书查询</td>
+            <td>国（境）外学历学位认证证书查询</td>
+        </tr>
+        <tr>
+            <td class="firstBg">领事保护应急电话查询</td>
+            <td>领事保护应急电话查询</td>
+            <td>
+                <form method="post" action="/emergencyPhone">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="110000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2019-01-16</td>
+            <td>领事保护应急电话查询</td>
+            <td>领事保护应急电话查询</td>
+
+        </tr>
+        <tr>
+            <td class="firstBg">林木种子生产经营许可证申请</td>
+            <td>林木种子生产经营许可证申请</td>
+            <td>
+                <form method="post" action="/jxzwfww">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="360000" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2019-03-22</td>
+            <td>林木种子生产经营许可证申请</td>
+            <td>林木种子生产经营许可证申请</td>
+
+        </tr>
+        <tr>
+            <td class="firstBg">韶关市公积金</td>
+            <td>韶关市公积金</td>
+            <td>
+                <form method="post" action="/gdsgGJJ">
+                    <input type="text" name="localFrom" value="ucap_web" style="display: none;">
+                    <input type="text" name="vDate" value="2515745339000" style="display: none;">
+                    <input type="text" name="info[userID]" value="123456" style="display: none;">
+                    <input type="text" name="info[tel]" value="13011110835" style="display: none;">
+                    <input type="text" name="info[clientID]" value="123456q" style="display: none;">
+                    <input type="text" name="local[cityNum]" value="440200" style="display: none;">
+                    <input type="text" name="local[local_x]" value="11" style="display: none;">
+                    <input type="text" name="local[local_y]" value="22" style="display: none;">
+                    <input type="submit" value="测试环境" class="test"/>
+                </form>
+            </td>
+            <td>开发中</td>
+            <td>2019-04-25</td>
+            <td>韶关市公积金</td>
+            <td>韶关市公积金</td>
+
+        </tr>
+    </table>
+</div>
+</body>
+<script type="text/javascript" src="/lib/zepto.min.js"></script>
+<script type="text/javascript">
+    $("#submit_check").click(function () {
+        var user = $("#user").val(), pass = $("#pass").val();
+        if (user == "") {
+            alert("请输入用户名！")
+            return;
+        } else if (user.trim() != "admin") {
+            alert("用户名输入错误，请重新输入！")
+            return;
+        }
+        if (pass == "") {
+            alert("请输入密码！")
+            return;
+        } else if (pass.trim() != "admin") {
+            alert("密码输入错误，请重新输入！")
+            return;
+        }
+        $(".loginBox").hide();
+        $(".serviceList-box").show();
+    });
+</script>
+</html>

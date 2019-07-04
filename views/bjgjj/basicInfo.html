@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市公积金查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+	<link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/heNanHospital/heNanHospital.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/bjgjj/bjgjj.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>",
+            userID = "<%= userID%>",
+            clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            local_y = "<%= local_y %>",
+            cityName = "<%= locals.cityInfo.cityName %>",
+            citySRC = "<%= locals.cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox">
+				<a id="userCenter" href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+				<div id="userCenterList" class="dialog-userCenter" style="display:none;">
+					<div class="triangle"></div>
+					<ul>
+						<li id="quit" onclick="back()"><a href="javascript:;"><i class="icon-quit"></i>切换账户</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--北京市公积金查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery userInfor bjgjjCon">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" onclick="back()"/>个人基本信息</h1>
+				<hr class="hrLine">
+				<!--<div class="text-list-div clearfix">-->
+					<!--<label>预留手机号：</label>-->
+					<!--<span>未查询到相关信息</span>-->
+				<!--</div>-->
+				<!--<div class="text-list-div clearfix">-->
+					<!--<label>证件号码：</label>-->
+					<!--<span>41272519930302788X01</span>-->
+				<!--</div>-->
+				<!--<div class="text-list-div clearfix">-->
+					<!--<label>公积金账号：</label>-->
+					<!--<span>GJJ019272618</span>-->
+				<!--</div>-->
+				<!--<div class="text-list-div clearfix">-->
+					<!--<label>用户状态：</label>-->
+					<!--<span>普通用户</span>-->
+				<!--</div>-->
+				<div id="housingFund"></div>
+			</div>
+			<div class="btn-box bjgjj">
+				<input type="button" value="住房公积金账户信息" onclick="next()"/>
+				<input type="button" value="住房公积金业务信息查询" onclick="aginnext()"/>
+			</div>
+		</div>
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+
+		<!-- -----------------------------------------------查询动画提示开始---------------------------------- -->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- -----------------------------------------------查询动画提示结束--------------------------------- -->
+
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京住房公积金管理中心</div>
+		
+	</div>
+	<script src="/js/bjgjj/basicInfo.js"></script>
+</body>
+</html>

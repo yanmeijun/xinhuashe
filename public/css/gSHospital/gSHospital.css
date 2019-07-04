@@ -1,0 +1,366 @@
+/*甘肃挂号*/
+/*首页*/
+.address.gSAddress,.tel.gSAddress{
+	white-space: normal;
+}
+.address.gSAddress .icon-address{
+	margin-bottom: 0.17rem;
+}
+.tel.gSAddress .icon-tel{
+	margin-bottom: 0.19rem;
+}
+.hosList.hNHosList dd .time span.sX-yy-num{
+	line-height: 0.347rem;
+    border-right: none;
+}
+.aloneStyle{
+    width: calc(100% - 5.5rem)!important;
+}
+/*个人中心*/
+.dialog-userCenter.gSUser{
+	width: 2.387rem;
+}
+/*搜索结果*/
+.gSResultList{
+	padding: 0.416rem 0.55rem 0.33rem;
+}
+.hospitalNameTel{
+	color: #0083e0;
+	font-size: 0.416rem;
+}
+.hospitalNameTel span{
+	display: inline-block;
+}
+.hospitalNameTel span em{
+	font-style: normal;
+	color: #ef8935;
+}
+.hospitalNameTel span.tel{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+	margin-left: 0.277rem;
+}
+.hospitalNameTel span.tel .icon-tel{
+	background: url(../../images/heNanHospital/icon-tel.png) no-repeat;
+    width: 0.25rem;
+    height: 0.25rem;
+    background-size: 0.25rem 0.25rem;
+    margin: 0.07rem 0.138rem 0 0;
+    display: inline-block;
+    float: left;
+}
+.gSResultList .address{
+	color: #474747;
+	font-size: 0.277rem;
+	margin-bottom: 0.15rem;
+    margin-top: 0.4rem;
+}
+.gSResultList .address .icon-address {
+    background: url(../../images/heNanHospital/icon-address.png) no-repeat;
+    width: 0.222rem;
+    height: 0.263rem;
+    background-size: 0.222rem 0.263rem;
+    margin: 0.07rem 0.138rem 0 0;
+    display: inline-block;
+    float: left;
+}
+.gSIntro{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+	line-height: 0.527rem;
+}
+.gSIntro span{
+	color: #ef8935;
+}
+/*选择科室*/
+.intro {
+    color: #8d8d8d;
+    font-size: 0.277rem;
+    line-height: 0.5rem;
+    margin-bottom: 0.36rem;
+}
+.icon-intro {
+    display: inline-block;
+    background: url(../../images/sXHospital/icon-intro.png) no-repeat;
+    width: 0.25rem;
+    height: 0.25rem;
+    background-size: 0.25rem;
+    margin-right: 0.11rem;
+}
+.icon-gs-intro{
+    background: url(../../images/gSHospital/icon-gs-intro.png) no-repeat;
+    width: 0.25rem;
+    height: 0.25rem;
+    background-size: 0.25rem;
+    margin: 0.1rem 0.138rem 0 0;
+    display: inline-block;
+    float: left;
+}
+.peccancyQuery .hosList.gSDlList{
+	display: inherit;
+	width: auto;
+	margin: 0.45rem 0 0.2rem;
+}
+.hosList.hNHosList.gSDlList dd .time{
+	margin: 0.18rem 0rem 0.15rem;
+}
+.hosList.gSDlList .address{
+	width: 100%;
+	margin-bottom: 0.1rem;
+}
+.outpatient{
+	display: inline-block;
+    color: #0083e0;
+    font-size: 0.15rem;
+    text-align: center;
+    line-height: 0.34rem;
+    padding: 0.027rem;
+    border: 1px solid #0083e0;
+    background: #fff;
+    margin: 0 0.083rem 0 0.22rem;
+}
+.tabConBox.gSConList p{
+	width: 100%;
+}
+.hos_intro{
+    color: #0083e0;
+    font-size: 0.277rem;
+    margin-left: 0.333rem;
+}
+/*医院简介*/
+.gSIntro{
+	font-size: 0.277rem;
+	color: #8d8d8d;
+	line-height: 0.5rem;
+	padding: 0.33rem 0.52rem 0.72rem;
+
+}
+.gSIntro p,.gSIntro span{
+    font-size: 0.277rem!important;
+    color: #8d8d8d!important;
+    line-height: 0.5rem!important;
+    padding:0!important;
+
+}
+.gSIntro.index{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height:1.88rem;
+}
+/*挂号*/
+.color0083e0 {
+    color: #0083e0;
+}
+/*挂号---日期*/
+.sDTableDiv{
+	margin: 0 0.194rem 0.32rem;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+	position: relative;
+}
+.sDTableData th{
+	background: #f6f8fa;
+	border-bottom: 1px solid #edefee;
+}
+.reservationList.sDTableData tr td{
+	height: 1.11rem;
+	padding: 0;
+}
+.sDTableData tr td.stopZ span,
+.sDTableData tr td.stopY span,
+.sDTableData tr td.byAppointment span{
+	display: inline-block;
+	width: 0.833rem;
+	height: 0.486rem;
+	line-height: 0.486rem;
+	border-radius: 2px;
+}
+.remainingNumber{
+	font-size: 0.222rem;
+	color: #0083e0;
+}
+.regSort{
+	color: #fd9018;
+	font-size: 0.25rem;
+}
+/*挂号-暂无排班信息*/
+.reservationList.sDTableData tr td.notInfo{
+	height: 2.25rem;
+	background: #fafafa;
+	color: #afafaf;
+	font-size: 0.25rem;
+}
+
+/*预约挂号*/
+.hosList.hNHosList.sXHosList dd .nameOffice {
+    margin: 0rem 0 0.2rem;
+}
+.hospitalName {
+    color: #474747;
+    font-size: 0.333rem;
+    margin-bottom: 0.2rem;
+}
+.hospitalName span{
+	margin-left: 0.36rem;
+}
+.lookOver-userCen{
+	color: #0083e0;
+}
+/*预约详情*/
+.gSBtnBox .btn-userCen,.gSBtnBox .btn-home{
+	width: 3.888rem;
+	height: 1.222rem;
+	line-height: 1.222rem;
+	margin: 0;
+}
+/*.gSBtnBox .btn-userCen{
+	margin: 0 0.763rem 0 0.347rem;
+}*/
+.btn-box.gSBtnBox{
+	text-align: center;
+}
+.gSBtnBox .btn-home{
+	margin-right:0.347rem;
+	color: #747474;
+	background: #f0f0f0;
+	border: 1px solid #e6e6e6;
+}
+.reservationDetails ul li.wh188 label{
+	width: auto;
+    min-width: 2.61rem;
+}
+.reservationDetails ul li.wh188 span{
+	width:auto;
+    color: #ef8935;
+}
+/*预约失败*/
+.notFound {
+    font-size: 0.3rem;
+    color: #6e6e6e;
+    text-align: center;
+    height: 3.33rem;
+    padding-top: 0.83rem;
+    border-top: 1px solid #edefee;
+    margin: 0 0.55rem;
+}
+.notFound .img-box img {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-bottom: 0.41rem;
+}
+.login-tips.XL-query.notF-tips {
+    padding: 0 0.22rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+/*个人中心*/
+.reserve-title.successMsg-remind span{
+	margin-left: 0;
+}
+.sDTit .alreadyReserved {
+    float: right;
+    font-style: normal;
+    margin-right: 0.277rem;
+}
+.sDTit .alreadyReserved.colorBlue{
+    color: #0083e0;
+}
+.reservationDetails ul li span b.colorBlue{
+	color: #0083e0;
+}
+.reservationDetails ul li.wh188 span.color47{
+	color: #474747;
+}
+.reservationDetails.notBorder{
+	border-bottom: none;
+}
+.alreadyReserved.colorRed{
+	color: #ff0808;
+}
+/*取消预约弹框*/
+.dialog-tel {
+    background: #fff;
+    margin: 0 0.33rem;
+    height: 2.55rem;
+    position: fixed;
+    top: 50%;
+    margin-top: -1.275rem;
+    z-index: 101;
+    width: -webkit-calc(100% - 0.66rem);
+    width: -moz-calc(100% - 0.66rem);
+    width: calc(100% - 0.66rem);
+    border-radius: 5px;
+}
+.dialog-tel .titTel {
+    height: 1.44rem;
+    line-height: 1.44rem;
+    font-size: 0.416rem;
+    color: #474747;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.dialog-tel .btn-tel {
+    font-size: 0;
+}
+.dialog-tel .btn-tel a {
+    display: inline-block;
+    width: 50%;
+    height: 1.083rem;
+    line-height: 1.083rem;
+    color: #329dfc;
+    font-size: 0.416rem;
+    text-align: center;
+}
+.dialog-tel .btn-tel a:nth-of-type(1) {
+    border-right: 1px solid #ececec;
+    color: #a1a9ac;
+}
+/*登录*/
+.goLoginBox.sDGoReg{
+	text-align: left;
+}
+.goLoginBox.sDGoReg .goRegister{
+	float: right;
+}
+/*挂号遮罩层---下一周*/
+.zhezhao-right{
+	background: rgba(255,255,255,0.9);
+    width: 0.6rem;
+    height: 100%;
+    border-left: 1px solid #eee;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.zhezhao-left{
+    background: rgba(255,255,255,0.9);
+    width: 0.6rem;
+    height: 100%;
+    border-left: 1px solid #eee;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/*实名认证*/
+.certificationDescription{
+	background: #edf1f5;
+    border-top: 1px solid #dee2e6;
+    padding: 0.2rem 0.55rem 0.277rem;
+}
+.certificationDescription p{
+	font-size: 0.3rem;
+	color: #868789;
+	line-height: 0.5rem;
+}
+.certificationDescription .indent{
+	text-indent: 0.6rem;
+}
+.regWH.heNanReg .text-list-div.phone-list-code input{
+	width: -webkit-calc(100% - 4.9rem);
+    width: -moz-calc(100% - 4.9rem);
+    width: calc(100% - 4.9rem);
+}

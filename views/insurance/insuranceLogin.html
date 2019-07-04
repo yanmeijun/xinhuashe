@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市社保网上查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>"
+				,USERNAME = "<%= locals.userName %>"
+				,PASSWORD = "<%= locals.password %>"
+				,localFrom = "<%= locals.localFrom %>",
+            localFrom = "<%= locals.localFrom %>";
+		if(USERNAME){
+			sessionStorage.setItem('insurance_USERNAME',USERNAME);
+		}
+		if(PASSWORD){
+			sessionStorage.setItem('insurance_PASSWORD',PASSWORD);
+		}
+	</script>
+    <script type="text/javascript" src="/js/insurance/insuranceLogin.js"></script>
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--头部-->
+		<!--<header>-->
+			<!--<ul>-->
+				<!--<li><a href="javascript:;"><img src="../images/logo.png" class="img-logo"></a></li>-->
+				<!--<li class="active"><a href="javascript:;">公共服务</a></li>-->
+				<!--<li><a href="javascript:;">推荐</a></li>-->
+				<!--<li><a href="javascript:;">现场云</a></li>-->
+				<!--<li><a href="javascript:;">北京</a></li>-->
+				<!--<li><a href="javascript:;"><img src="../images/icon-add.png" class="img-add"></a></li>-->
+			<!--</ul>-->
+		<!--</header>-->
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--北京市社保网上查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">北京市社保网上查询</h1>
+				<hr class="hrLine">
+				<h2 class="q-r-tit"><span></span>城镇职工用户登录</h2>
+				<div class="text-list-div">
+					<label>身份证号码</label>
+					<input id="cardno" type="text" placeholder="请输入身份证号码" />
+				</div>
+				<div class="text-list-div">
+					<label>密码</label>
+					<input id="password" type="password" placeholder="请输入密码" />
+				</div>
+				<div class="text-list-div text-list-code">
+					<label>附加码</label>
+					<input id="validcod" type="text" placeholder="请输入验证码" />
+					<img id="shebao_image" src="/images/yanzm.gif" class="img-code">
+				</div>
+				<div class="text-list-div msg-list-code">
+					<label>短信验证码</label>
+					<input id="i_phone" type="text" placeholder="短信验证码" />
+					<button id="getCode" href="javascript:;" class="get-code">获取验证码</button>
+				</div>
+				<div class="btn-box">
+					<input id="login" type="button" value="登录" />
+				</div>
+			</div>
+		</div>
+		<div class="login-tips">
+			<img src="../images/icon-tips.png">注意：用户应须在北京市社会保险网上服务平台注册后方可登录
+		</div>
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+		<!--<footer>-->
+			<!--<img src="../images/footer.png">-->
+		<!--</footer>-->
+	</div>
+	<div id="mask" class="mask" style="display: none"></div>
+	<!-- 查询动画提示开始-->
+	<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+	<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+		<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+		<p>加载中</p>
+	</div>
+	<!-- 查询动画提示结束-->
+	<div id="tips" class="dialog-phone" style="display: none;">
+		<p id="tips_text">短信已发送到您手机上，如果1分钟内没有收到短信验证码，请点击按钮重新获取，此服务免费。</p>
+		<a id="iKnow" href="javascript:;">知道了</a>
+	</div>
+</body>
+<script type="text/javascript">
+	if(localFrom == "xinhuashe_app"){
+		document.getElementById('cardno').value = USERNAME || sessionStorage.getItem('insurance_USERNAME');
+		document.getElementById('password').value = PASSWORD || sessionStorage.getItem('insurance_PASSWORD');
+	}
+</script>
+</html>

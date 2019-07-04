@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>侵权盗版举报</title>
+    <link type="text/css" rel="stylesheet" href="../../css/news.css" />
+    <link rel="stylesheet" href="../../css/infringementPiracy/infringementPiracy.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="infringementReportMax">
+		<!--banner图-->
+		<div class="banner">
+			<img src="../../images/infringementPiracy/banner.png">
+			<div class="bannerTitle">侵权盗版举报</div>
+		</div>
+		<!--侵权盗版举报-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="../../images/icon-return.png" class="icon-return" @click="back">侵权盗版举报</h1>
+			</div>
+			<!--举报人信息-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit" @click="upDownSlides('1')" >
+					<span></span>
+					举报人信息
+					<img src="/images/credit/icon-upMenu.png" alt="" v-if="this.upDownSlide1==true" class="icon-upMenu">
+					<img src="/images/icon-downMenu.png" class="icon-upMenu" v-else>
+				</h2>
+				<hr class="hrLine">
+				<div class="tab-content reportList" v-if="this.upSlide1">
+					<div class="text-list-div clearfix">
+						<b class="required">*</b>
+						<label>真实姓名：</label>
+						<input type="text" placeholder="请输入真实姓名" v-model="realName"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>化名：</label>
+						<input type="text" placeholder="请输入化名" v-model="organization"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required">*</b>
+						<label>联系电话：</label>
+						<input type="text" placeholder="请输入联系电话" v-model="phone"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required">*</b>
+						<label>电子邮件：</label>
+						<input type="text" placeholder="请输入电子邮件" v-model="email"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>通讯地址：</label>
+						<input type="text" placeholder="请输入通讯地址" v-model="address"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>邮政编码：</label>
+						<input type="text" placeholder="请输入邮政编码" v-model="postCode"/>
+					</div>
+				</div>
+			</div>
+			<!--举报对象-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit" @click="upDownSlides('2')">
+					<span></span>
+					举报对象
+					<img src="/images/credit/icon-upMenu.png" alt="" v-if="this.upDownSlide==true" class="icon-upMenu">
+					<img src="/images/icon-downMenu.png" class="icon-upMenu" v-else>
+				</h2>
+				<hr class="hrLine">
+				<div class="tab-content reportList" v-if="this.upSlide">
+					<div class="text-list-div clearfix">
+						<b class="required">*</b>
+						<label>单位或个人：</label>
+						<input type="text" placeholder="请输入真实姓名" v-model="privateOrCompany"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>所属省份：</label>
+						<input type="text" placeholder="请输入所属省份"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>联系电话：</label>
+						<input type="text" placeholder="请输入联系电话" v-model="fax"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>详细地址：</label>
+						<input type="text" placeholder="请输入详细地址" v-model="dxdz"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>网站名称及网址：</label>
+						<input type="text" placeholder="请输入网站名称及网址" v-model="wzmcjwz"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<b class="required"></b>
+						<label>网站备案信息：</label>
+						<input type="text" placeholder="请输入网站备案信息" v-model="wzbaxx"/>
+					</div>
+				</div>
+			</div>
+			<!--举报内容-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit" @click="upDownSlides('3')">
+					<span></span>
+					举报内容
+					<img src="/images/credit/icon-upMenu.png" alt="" v-if="this.upDownSlide3==true" class="icon-upMenu">
+					<img src="/images/icon-downMenu.png" class="icon-upMenu" v-else>
+				</h2>
+				<hr class="hrLine">
+				<div class="tab-content reportList" v-if="this.upSlide3">
+					<div class="text-list-div attachment clearfix">
+						<b class="required">*</b>
+						<label>事实与线索：</label>
+						<textarea class="jb-textarea" placeholder="请输入事实与线索" v-model="factOrClue"></textarea>
+					</div>
+					<div class="text-list-div attachment upFile clearfix">
+						<b class="required"></b>
+						<label>附件：</label>
+						<div class="upload clearfix">
+							<input type="text" class="upTxt" v-model="uploadName" name="logoImage" readonly="readonly"/>
+							<a href="javascript:void(0)" class="uploadAttachment file">
+                                <!--<input type="file" multiple value="上传附件" class="fileNone" id="file" @change="beforeUpload('file')"/>-->
+                                <input type="file" multiple value="上传附件"
+                                       accept="image/*;capture=camera"
+                                       style="opacity: 0;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(opacity=0)'"
+                                       id="file" @change="beforeUpload('file')"/>
+                                上传附件
+                            </a>
+						</div>
+						<p class="attachmentFormat">附件最大允许为2M,格式只能为：jpg、txt、doc、xls、ppt、pdf、zip、rar</p>
+						
+					</div>
+					<div class="text-list-div phone-list-code">
+						<b class="required">*</b>
+						<label>验证码：</label>
+						<input  type="text" placeholder="请输入验证码" v-model="VerificatCode" />
+						<img :src="veriCodeSrc" class="img-code" @click="getveriCode()">
+					</div>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="提交" @click="submitReport()"/>
+				</div>
+			</div>
+		</div>
+		<div class="masktime" id="masktime" v-if="masktime">{{masktime}}</div>
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;" id="dialogMask" v-if="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="dialogMask">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+		<!--提示-->
+		<div class="prompt leftAlignment" style="display: none;">您的信息已经提交成功，相关部门会尽快处理！</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：国家广播电视总局</div>
+	</div>
+	<script src="/js/infringementPiracy/report.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

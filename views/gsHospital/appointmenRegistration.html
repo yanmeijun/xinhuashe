@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>预约挂号</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/heNanHospital/heNanHospital.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/gSHospital/gSHospital.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/mobileSelect.css"/>
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+        var hoskey=sessionStorage.getItem("hos_key");
+        var deptKey=sessionStorage.getItem("deptKey");
+        var deptName=sessionStorage.getItem("deptName");
+        var HOS_NAME=sessionStorage.getItem("HOS_NAME");
+        var userKey=sessionStorage.getItem("userKey");
+        var doctorKey=sessionStorage.getItem("doctorKey");
+        var orderDate=sessionStorage.getItem("orderDate");
+        var orderSort=sessionStorage.getItem("orderSort");
+        var doctorName=sessionStorage.getItem("doctorName");
+        var rankName=sessionStorage.getItem("rankName");
+        var userName=sessionStorage.getItem("userName");
+        var imagId=sessionStorage.getItem("imagId");
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox" @click="checkUser()" v-cloak>
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+				<div class="dialog-userCenter gSUser" v-if="pesCenterFlag" v-cloak>
+					<div class="triangle"></div>
+					<ul>
+						<li><a href="javascript:;" @click="jumpPerson()">个人中心</a></li>
+						<li><a href="javascript:;" @click="exitBtn()">退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--科室挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img @click="back()" v-cloak src="/images/icon-return.png" class="icon-return"/>预约挂号</h1>
+				<hr class="hrLine">
+				<dl class="hosList hNHosList sXHosList">
+					<dt><a href="javascript:;"><img v-cloak :src="doctorImage?doctorImage:'/images/gSHospital/gsDoc.png'" class="photo"></a></dt>
+					<dd>
+						<p class="nameOffice"><span v-cloak>{{docName}}</span>{{docType}}</p>
+						<p class="hospitalName" v-cloak>{{hosName}}<span>{{deptName}}</span></p>
+						<p class="introduce" v-cloak>{{time}}&nbsp;{{ampm}}&nbsp;{{day}}</p>
+					</dd>
+				</dl>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>预约信息</h2>
+				<hr class="hrLine">
+				<div class="tab-content inforConfirm heNanReg">
+					<div class="text-list-div clearfix" ref="clickStart" @click="mobile()">
+						<label>就诊时间：</label>
+						<span class="selectDownMenu" v-cloak id="schedule">{{scheduleTxt?scheduleTxt:'请选择就诊时间'}}</span>
+						<img id="start" src="/images/icon-downMenu.png" class="icon-downMenu">
+					</div>
+					<div class="text-list-div inforCheck-style">
+						<label>就诊人：</label>
+						<div class="accounts-all clearfix">
+							<div class="jiuZList">
+						    	<span class="icon-default" v-cloak>
+						    		<i><img src="/images/icon-yh-check.png"></i>{{userName}}
+						    	</span>
+						    	<div class="y-g-tel" v-cloak>手机：{{userTel}}</div>
+						    	<div class="y-g-ID" v-cloak>身份证：{{userCardCode}}</div>
+					   		</div>
+						</div>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>就诊卡号：</label>
+						<input v-model="visitCard" type="text" placeholder="有助于您在医院快速就诊！"  v-cloak/>
+					</div>
+					<div class="text-list-div phone-list-code clearfix">
+						<label>验证码</label>
+						<input v-model="capCode" type="text" placeholder="请填写验证码"  v-cloak/>
+						<img :src="imgSrc" @click="getImg()" ref="imgClick" class="img-code" v-cloak>
+					</div>
+				</div>
+				<div class="reminder">
+					<p>温馨提醒：</p>
+					<p>预约成功后我们将会以短信的方式将预约号码发送至您的手机请注意查收！</p>
+					<p>(目前只支持省内电信、联通用户，其他用户可在<span class="lookOver-userCen">个人中心>我的预约</span> 中查看预约信息)</p>
+				</div>
+				<div class="btn-box">
+					<input @click="checkOrder()" type="button" value="确认预约" v-cloak/>
+				</div>
+			</div>
+		</div>
+		<!--取消预约弹框-->
+		<div class="dialog-tel" v-if="noCardFlag" v-cloak>
+			<div class="titTel">您没有填写就诊卡，确认无卡预约吗？</div>
+			<div class="btn-tel">
+				<a href="javascript:;" @click="cancelOrder()">取消</a>
+				<a href="javascript:;" @click="order()">确定</a>
+			</div>
+		</div>
+		<div class="mask" v-if="noCardFlag" v-cloak></div>
+		<!--退出弹框-->
+		<div class="dialog-tel" v-if="exitFlag" v-cloak>
+			<div class="titTel">您确定要退出登录吗？</div>
+			<div class="btn-tel">
+				<a href="javascript:;" @click="cancelExit()">取消</a>
+				<a href="javascript:;" @click="exit()">确定</a>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：健康甘肃</div>
+		<div class="masktime" id="masktime" ref="masktime" v-if="masktime" v-cloak>{{masktime}}</div>
+	</div>
+	<script src="/lib/vue.min.js"></script>
+	<script src="/lib/axios.js"></script>
+	<script src="/lib/jquery.min.js"></script>
+	<script src="/lib/mobileSelect.js"></script>
+	<script src="/js/gsHospital/appointmenRegist.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

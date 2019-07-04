@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市预约挂号</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link type="text/css" rel="stylesheet" href="/css/hospital/hospital.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+    <script  type="text/javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>"
+            ,comeFrom= "<%= locals.comeFrom %>",
+            localFrom = "<%= locals.localFrom %>";
+  </script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox" id="userAvatarBox">
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+			</div>
+		</div>
+		<!--北京市预约挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back"/>北京市预约挂号</h1>
+				<div class="query-date-title reserve-title">
+					<span id="reservehos">北京大学第三医</span>
+					<span id="reservekeshi">中医科门诊</span>
+				</div>
+				<div id="listhtmls"></div>
+				<!--<div class="reserveList clearfix">-->
+					<!--<div class="reserveLeft">-->
+						<!--<p class="name">普通门诊<span>50</span>元</p>-->
+						<!--<p class="time">2018-03-06<span>下午</span> 周二</p>-->
+					<!--</div>-->
+					<!--<div class="reserveRight spacTop">-->
+						<!--<p class="btn-reserve"><a href="javascript:;">预约</a></p>-->
+						<!--<p class="remainingNumber">剩余1个</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="reserveList clearfix">-->
+					<!--<div class="reserveLeft">-->
+						<!--<p class="name">副主任医师<span>60</span>元</p>-->
+						<!--<p class="time">2018-03-06<span>下午</span> 周二</p>-->
+						<!--<p class="field">消化、心脑、甲减、情绪</p>-->
+					<!--</div>-->
+					<!--<div class="reserveRight">-->
+						<!--<p class="btn-reserve"><a href="javascript:;">预约</a></p>-->
+						<!--<p class="remainingNumber">剩余12个</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="reserveList clearfix">-->
+					<!--<div class="reserveLeft">-->
+						<!--<p class="name">和岚 知名专家<span>100</span>元</p>-->
+						<!--<p class="time">2018-03-06<span>下午</span> 周二</p>-->
+						<!--<p class="field">呼吸、运动、内科杂症、针灸</p>-->
+					<!--</div>-->
+					<!--<div class="reserveRight">-->
+						<!--<p class="btn-reserve"><a href="javascript:;" class="active">约满</a></p>-->
+						<!--<p class="remainingNumber">剩余0个</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="reserveList clearfix">-->
+					<!--<div class="reserveLeft">-->
+						<!--<p class="name">霍则军 知名专家<span>100</span>元</p>-->
+						<!--<p class="time">2018-03-06<span>下午</span> 周二</p>-->
+						<!--<p class="field">运动、神经、杂病、针灸</p>-->
+					<!--</div>-->
+					<!--<div class="reserveRight">-->
+						<!--<p class="btn-reserve"><a href="javascript:;">预约</a></p>-->
+						<!--<p class="remainingNumber">剩余12个</p>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+
+		<div class="data-sources">服务来源：北京市预约挂号统一平台</div>
+	</div>
+	<script src="/js/hospital/reserve.js"></script>
+</body>
+</html>

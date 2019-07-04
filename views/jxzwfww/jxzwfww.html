@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>林木种子生产经营许可在线办理</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link type="text/css" rel="stylesheet" href="/css/jxzwfww/jxzwfww.css" />
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script  type="text/javascript">
+		var randomKey = sessionStorage.getItem('randomKey') || "<%= locals.randomKey %>",
+				userID = sessionStorage.getItem('userID') || "<%= locals.userID%>",
+				clientID = sessionStorage.getItem('clientID') || "<%= locals.clientID %>",
+				cityID = sessionStorage.getItem('cityID') || "<%= locals.cityID %>",
+				local_x = sessionStorage.getItem('local_x') || "<%= locals.local_x %>",
+				local_y = sessionStorage.getItem('local_y') || "<%= locals.local_y %>",
+				localFrom = sessionStorage.getItem('localFrom') || "<%= locals.localFrom %>";
+		sessionStorage.setItem('randomKey',randomKey);
+		sessionStorage.setItem('userID',userID);
+		sessionStorage.setItem('clientID',clientID);
+		sessionStorage.setItem('cityID',cityID);
+		sessionStorage.setItem('local_x',local_x);
+		sessionStorage.setItem('local_y',local_y);
+		sessionStorage.setItem('localFrom',localFrom);
+	</script>
+</head>
+<body bgcolor="#f3f9f9">
+<div id="jxzwfww">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/banner.png">
+			<div class="address linmu"><span>林木种子生产经营许可在线办理</span></div>
+		</div>
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">林木种子生产经营许可</h1>
+				<hr class="hrLine">
+				<div class="btn-box">
+					<input type="button" value="在线办理" @click="render()" />
+				</div>
+			</div>
+			<!--基本信息-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>基本信息：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('basicInfo')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="basicInfo">
+						<div class="text-list-div clearfix">
+							<label>事项实施编码：</label>
+							<span>1100083000-360100000000014504269100</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>事项类型：</label>
+							<span>行政许可</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>办事对象：</label>
+							<span>个人、法人、其他组织</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>实施机构名称：</label>
+							<span>南昌市行政审批局</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>责任处（科）室：</label>
+							<span>农林水务审批服务处</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>实施主体性质：</label>
+							<span>法定机关</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>联办机构：</label>
+							<span>无联办机构</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>办件类型：</label>
+							<span>承诺件</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>受理期限：</label>
+							<span>0个工作日</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>法定办结时限：</label>
+							<span>20个工作日</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>承诺办结时限：</label>
+							<span>3工作日</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>数量限制：</label>
+							<span>0</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>特殊程序名称：</label>
+							<span>勘察</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>特殊程序办理人：</label>
+							<span>市林木种苗管理站</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>特殊程序建议时间：</label>
+							<span>5个工作日</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>通办范围：</label>
+							<span>不支持通办</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>行使层级：</label>
+							<span>市（州）级</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>行使类型：</label>
+							<span>本级保留</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--权限划分-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content">
+					<div class="text-list-div iconList clearfix">
+						<label>权限划分：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('permission')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="permission">
+						<div class="pubFontCon">县区负责本辖区范围内的林木种子生产经营许可证核发的办理，市行政审批局负责跨县区及市城区、开发区、新区行林木种子生产经营许可证核发的办理。</div>
+					</div>
+				</div>
+			</div>
+			<!--行使内容-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content">
+					<div class="text-list-div iconList clearfix">
+						<label>行使内容：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('action')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="action">
+						<div class="pubFontCon">市行政审批局负责跨县区及市城区、开发区、新区行林木种子生产经营许可证核发的办理。</div>
+					</div>
+				</div>
+			</div>
+			<!--办理流程-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>办理流程：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('steps')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="steps">
+						<div class="text-list-div clearfix">
+							<label>预约：</label>
+							<span>【预约电话】：0791-83987518、0791-83987568、0791-83987599</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>申请：</label>
+							<span>【窗口提交】 接受申请机构：南昌市行政审批局农林水务审批服务处 接受地址：南昌市红谷滩新区丰和中大道1318号市行政审批局二楼农林水务审批服务处窗口 【工作时间】 周一至周五上午9：00-12：00 下午13：30-17：00。（法定节假日除外）</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>受理：</label>
+							<span>1.农林水务审批服务处窗口接收并初步审查申请人提交的申请材料。 2.申请材料不齐全或者不符合要求的，说明原因，告知申请人并退回申请材料。 3.初审符合要求的报窗口农林水务审批服务处处长审批。</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>实人认证：</label>
+							<span>不需要实人认证</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>审核：</label>
+							<span>受理后在承诺的时限内对申请材料进行实质性审查</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>审批：</label>
+							<span>根据审核的结果，作出是否准予许可的决定</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>办理进程查询：</label>
+							<span>办事对象可现场或电话0791-83987082查询事项办理进程。</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>办理结果：</label>
+							<span>核发《林木种子生产经营许可证》正本、副本，《林木种子生产经营许可证》有效期5年或者《不予行政许可决定书》</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>送达方式：</label>
+							<span>现场领取、支持快递送达。 领取地址：南昌市红谷滩新区丰和中大道1318号市行政审批局二楼农林水务审批服务处窗口。 工作时间：周一至周五 上午9:00-12:00 下午:13:30-17:00（法定节假日除外）。 结果公示：在江西政务服务网（http://www.jxzwfww.gov.cn/）上公开办理结果。</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>到窗口次数：</label>
+							<span>2次</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--设定依据-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>设定依据：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('sets')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="sets">
+						<div class="listAll">
+							<div class="text-list-div clearfix">
+								<label>法律法规名称：</label>
+								<span>《江西省林木种子条例》（《江西省林木种子条例》）</span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>条款名称：</label>
+								<span>《江西省林木种子条例》第二十一条第二款</span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>条款具体内容：</label>
+								<span>《江西省林木种子条例》第二十一条第二款：跨县级以上行政区域生产经营的，申请人可以向其共同的上一级人民政府林业主管部门申请核发林木种子生产经营许可证。</span>
+							</div>
+						</div>
+						<div class="listAll">
+							<div class="text-list-div clearfix">
+								<label>法律法规名称：</label>
+								<span>《中华人民共和国种子法》（《中华人民共和国种子法》）</span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>条款名称：</label>
+								<span>《中华人民共和国种子法》第三十一条第三款</span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>条款具体内容：</label>
+								<span>《中华人民共和国种子法》第三十一条第三款：前两款规定以外的其他种子的生产经营许可证，由生产经营者所在地县级以上地方人民政府农业、林业主管部门核发。</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--流程图-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>流程图：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('stepPic')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="stepPic" @click="showSwitch('seeStepPic')">
+						<div class="btn-box">
+							<input type="button" value="查看流程图"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--受理条件-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content">
+					<div class="text-list-div iconList clearfix">
+						<label>受理条件：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('requires')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="requires">
+						<div class="pubFontCon">予以批准的条件; 1.申请材料真实、有效、完整，符合申请要求； 2.申请取得种子生产经营许可证的，应当具有与种子生产经营相适应的生产经营设施、设备及专业技术人员，以及法规和国务院农业、林业主管部门规定的其他条件。 3.从事种子生产的，还应当同时具有繁殖种子的隔离和培育条件，具有无检疫性有害生物的种子生产地点或者县级以上人民政府林业主管部门确定的采种林。 4.申请领取具有植物新品种权的种子生产经营许可证的，应当征得植物新品种权所有人的书面同意。不予批准的情形 1.不符合申请条件的； 2.提供虚假申报材料或隐瞒有关情况的； 3.法律法规另有规定的。</div>
+					</div>
+				</div>
+			</div>
+			<!--办理材料-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>办理材料：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('files')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="files">
+						<table class="guoWYTList addminCancel">
+							<tr>
+								<th width="50%">材料名称</th>
+								<th width="30%">形式附件</th> 
+								<th width="20%">操作</th>
+							</tr> 
+							<tr>
+								<td>林木种子生产经营许可证申请表</td> 
+								<td align="center">
+									<a href="http://nc.jxzwfww.gov.cn/jxzwtb/360100000000/site/attach/20190/267882//示范样本--《林木种子生产经营许可证》申请表.docx" class="modelText">示范文本</a>
+									<a href="http://nc.jxzwfww.gov.cn/jxzwtb/360100000000/site/attach/20190/264924//格式样本--《林木种子生产经营许可证》申请表.docx" class="modelText">格式文本</a>
+								</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles')">详细内容</a>
+								</td>
+							</tr>
+							<tr>
+								<td>营业执照或者法人证书（经营范围和方式应覆盖申报的种类）</td>
+								<td align="center">无形式附件</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles2')">详细内容</a>
+								</td>
+							</tr>
+							<tr>
+								<td>身份证件</td>
+								<td align="center">无形式附件</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles3')">详细内容</a>
+								</td>
+							</tr>
+							<tr>
+								<td>单位章程（须加盖企业公章）</td>
+								<td align="center">无形式附件</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles4')">详细内容</a>
+								</td>
+							</tr>
+							<tr>
+								<td>林木种子生产、加工、检验、储藏等设施和仪器设备的所有权或者使用权说明材料以及照片</td>
+								<td align="center">无形式附件</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles5')">详细内容</a>
+								</td>
+							</tr>
+							<tr>
+								<td>林木种子生产、加工、检验、储藏等技术人员基本情况的说明材料以及劳动合同</td>
+								<td align="center">无形式附件</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles6')">详细内容</a>
+								</td>
+							</tr>
+							<tr>
+								<td>从事林木种子生产的，还应当提供生产地点无检疫性有害生物证明。其中从事籽粒、果实等有性繁殖材料生产的，还应当提供具有安全隔离条件的说明材料、县级以上人民政府林业主管部门确定的采种林分证明以及照片</td>
+								<td align="center">无形式附件</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles7')">详细内容</a>
+								</td>
+							</tr>
+							<tr>
+								<td>经营场所、生产用地权属证明材料以及生产用地的用途证明材料</td>
+								<td align="center">无形式附件</td>
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeFiles8')">详细内容</a>
+								</td>
+							</tr>
+						</table>
+						<div class="jxzwfwConList">
+							<div class="tit">申请材料形式标准</div>
+							<div class="pubFontCon">1、由申请人编写的文件按A4规格纸张打印； 2、申请表中各项内容填写清晰、明了，与实际情况一致； 3、申请材料的复印件应清晰。</div>
+						</div>
+						<div class="jxzwfwConList">
+							<div class="tit">审查要点</div>
+							<div class="pubFontCon">料真实、有效、完整，符合申请要求。</div>
+						</div>
+						<div class="jxzwfwConList">
+							<div class="tit">收费情况</div>
+							<div class="pubFontCon">不收费</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--行政相对人权利-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content">
+					<div class="text-list-div iconList clearfix">
+						<label>行政相对人权利：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('rights')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="rights">
+						<div class="pubFontCon">符合法定条件、标准的，申请人有依法取得行政许可的平等权利，行政机关不得歧视。 公民、法人或者其他组织对行政机关实施行政许可，享有陈述权、申辩权；有权依法申请行政复议或者提起行政诉讼；其合法权益因行政机关违法实施行政许可受到损害的，有权依法要求赔偿。公民、法人或者其他组织依法取得的行政许可受法律保护，行政机关不得擅自改变已经生效的行政许可。 行政许可所依据的法律、法规、规章修改或者废止，或者准予行政许可所依据的客观情况发生重大变化的，为了公共利益的需要，行政机关可以依法变更或者撤回已经生效的行政许可。由此给公民、法人或者其他组织造成财产损失的，行政机关应当依法给予补偿。</div>
+					</div>
+				</div>
+			</div>
+			<!--行政相对人义务-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content">
+					<div class="text-list-div iconList clearfix">
+						<label>行政相对人义务：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('duty')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="duty">
+						<div class="pubFontCon">应当如实向行政机关提交有关材料和反映真实情况，并对其申请材料实质内容的真实性负责。</div>
+					</div>
+				</div>
+			</div>
+			<!--咨询途径-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>咨询途径：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('ask')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="ask">
+						<div class="text-list-div clearfix">
+							<label>窗口名称：</label>
+							<span>农林水务审批服务处</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>窗口地址：</label>
+							<span>南昌市红谷滩新区丰和中大道1318号市行政审批局二楼农林水务审批服务处窗口</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>工作时间：</label>
+							<span>周一至周五上午9：00-12：00 下午13：30-17：00。（法定节假日除外）</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--监督投诉-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>监督投诉：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('watch')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="watch">
+						<div class="text-list-div clearfix">
+							<label>窗口名称：</label>
+							<span>农林水务审批服务处</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>窗口地址：</label>
+							<span>南昌市红谷滩新区丰和中大道1318号市行政审批局二楼农林水务审批服务处窗口</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>工作时间：</label>
+							<span>周一至周五上午9：00-12：00 下午13：30-17：00。（法定节假日除外）</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>电话号码：</label>
+							<span>0791-83987518</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--结果样本-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>结果样本：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('result')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="result">
+						<table class="guoWYTList addminCancel">
+							<tr>
+								<th width="70%">结果名称</th> 
+								<th width="30%">结果样本</th>
+							</tr> 
+							<tr>
+								<td>林木种子生产经营许可证核发</td> 
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeResultPic1')">结果样本</a>
+								</td>
+							</tr>
+							<tr>
+								<td>林木种子生产经营许可证核发</td> 
+								<td align="center">
+									<a href="javascript:;" @click="showSwitch('seeResultPic2')">结果样本</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--常见问题-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<div class="tab-content jxzwfwwCon">
+					<div class="text-list-div iconList clearfix">
+						<label>常见问题：</label>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" @click="showSwitch('question')">
+					</div>
+					<!--显示与隐藏-->
+					<div v-if="question">
+						<div class="text-list-div clearfix">
+							<label>问题：</label>
+							<span>在办林木种子生产经营许可证时填申请书应注意什么</span>
+						</div>
+						<div class="text-list-div clearfix">
+							<label>答案：</label>
+							<span>1、申请书上所需填写内容必须填写完整，不要漏填； 2、填写的注册地址和经营地址与营业执照上的注册地址和经营地址相符 3、苗木生产地点多个时，每个生产地点必须一一填写。</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：江西政务服务网</div>
+	</div>
+	<div v-if="seeStepPic">
+		<div class="mask"></div>
+		<!--查看流程图-->
+		<div class="dialogPicShow">
+			<div class="picTit"><img src="/images/close.png" @click="showSwitch('seeStepPic')"></div>
+			<img src="/images/jxzwfww/flowChart.jpg" class="picShowBg">
+		</div>
+	</div>
+	<div v-if="seeResultPic1">
+		<div class="mask"></div>
+		<!--结果样本1-->
+		<div class="dialogPicShow" style="height: 8rem;">
+			<div class="picTit"><img src="/images/close.png" @click="showSwitch('seeResultPic1')"></div>
+			<img src="/images/jxzwfww/sample.jpg" class="picShowBg">
+		</div>
+	</div>
+	<div v-if="seeResultPic2">
+		<div class="mask"></div>
+		<!--结果样本2-->
+		<div class="dialogPicShow" style="height: 8rem;">
+			<div class="picTit"><img src="/images/close.png" @click="showSwitch('seeResultPic2')"></div>
+			<img src="/images/jxzwfww/sample2.jpg" class="picShowBg">
+		</div>
+	</div>
+	<!--办理材料明细-弹框-->
+	<div v-if="seeFiles">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>林木种子生产经营许可证申请表</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>申请人自备</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>3</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>内容与事实相符，内容填写完整、准确.经市林木良种管理站审核，并签字、盖章</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-if="seeFiles2">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles2')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>营业执照或者法人证书（经营范围和方式应覆盖申报的种类）</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>工商部门核发</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>2</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>无需开具证明，营业执照由窗口人员登录工商系统核验并打印，个人身份证明由申请人提供身份证原件，窗口工作人员核验并复印</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-if="seeFiles3">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles3')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>身份证件</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>公安部门核发</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>2</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>无需开具证明，营业执照由窗口人员登录工商系统核验并打印，个人身份证明由申请人提供身份证原件，窗口工作人员核验并复印</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-if="seeFiles4">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles4')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>单位章程（须加盖企业公章）</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>工商部门核发</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>3</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>应真实有效，须加盖公章</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-if="seeFiles5">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles5')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>林木种子生产、加工、检验、储藏等设施和仪器设备的所有权或者使用权说明材料以及照片</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>申请人自备</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>2</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>提供购买种子烘干机、风选机、精选机等生产设备发票。如租赁的需提交租赁合同。经营林木种子以及花卉种球的储藏设备为冷库，经营草坪草种子为常温库。生产经营籽粒、果实的需提供恒温培养箱、光照培养箱、干燥箱、扦样器、天平、冰箱等的发票或合同。生产经营苗木、穗条的需提供游标卡尺、钢卷尺的发票或合同。委托检验的，需提交委托检验书原件及受委托种苗质量检验机构资质证明复印件并加盖公章。</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-if="seeFiles6">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles6')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>林木种子生产、加工、检验、储藏等技术人员基本情况的说明材料以及劳动合同</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>申请人自备</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>2</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>林木种苗相关专业中专以上学历、初级以上技术职称或同等技术水平说明三者具备其中之一即可。同等技术水平说明提供从事林木种苗工作的年限或参加相关林木种苗技术培训经历的证明。聘用的人员不能是行政管理机构工作人员。</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-if="seeFiles7">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles7')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>从事林木种子生产的，还应当提供生产地点无检疫性有害生物证明。其中从事籽粒、果实等有性繁殖材料生产的，还应当提供具有安全隔离条件的说明材料、县级以上人民政府林业主管部门确定的采种林分证明以及照片</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>勘察现场查看</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>2</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>勘察现场时由勘察人员现场查验</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div v-if="seeFiles8">
+		<div class="mask"></div>
+		<div class="dialog-project">
+			<div class="title">办理材料明细<i class="close" @click="showSwitch('seeFiles8')"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>材料名称：</label>
+					<span>经营场所、生产用地权属证明材料以及生产用地的用途证明材料</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>申请人材料来源：</label>
+					<span>窗口服务</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>原件份数：</label>
+					<span>0</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>复印件份数：</label>
+					<span>2</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否必备材料：</label>
+					<span>是</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>是否需要电子材料：</label>
+					<span>否</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>形式标准要求：</label>
+					<span>无需开具证明，由申请人提供经营场所、生产用地的不动产权证或者租赁合同，窗口复印</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--个人用户登录-弹框-->
+</div>
+</body>
+<script type="text/javascript" src="/js/jxzwfww/jxzwfww.js"></script>
+</html>

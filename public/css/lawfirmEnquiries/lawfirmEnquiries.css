@@ -1,0 +1,113 @@
+.emergencyPhone{
+	border-top: 1px solid #edefee;
+	padding: 0.513rem 0 0;
+}
+.searchBox{
+	border: 1px solid #d2d2d2;
+	background: #fafafa;
+	border-radius: 3px;
+	width: 8.25rem;
+	height: 1.083rem;
+	font-size: 0.416rem;
+	position: relative;
+	margin: 0 auto;
+}
+.searchBox input.textSearch{
+	border: none;
+	height: 0.5rem;
+	background: #fafafa;
+	padding: 0 0 0 0.277rem;
+	margin-top: 0.26rem;
+	font-size: 0.416rem;
+	width: 7.3rem;
+}
+.icon-search{
+	width: 0.444rem;
+	height: 0.444rem;
+	position: absolute;
+	top: 0.305rem;
+	right: 0.277rem;
+}
+.selectCity{
+	font-size: 0.388rem;
+	padding: 0.5rem 0.55rem 0.4rem;
+}
+.selectCity label{
+	color: #616161;
+	font-size: 0.388rem;
+	float: left;
+}
+.selectCity span{
+	float: right;
+	text-align: right;
+	color: #333;
+	font-size: 0.388rem;
+	width: -webkit-calc(100% - 3rem);
+	width: -moz-calc(100% - 3rem);
+	width: calc(100% - 3rem);
+}
+.selectCity .icon-rightArrow{
+	width: 0.694rem;
+	height: 0.694rem;
+	float: right;
+	margin-top: -0.08rem;
+}
+.selectCity .cityPosi{
+	width: 0.25rem;
+	height: 0.333rem;
+    margin-top: 0.12rem;
+    float: left;
+    margin-right: 0.138rem;
+}
+.addListBox{
+	border-top: 1px solid #edefee;
+	padding: 0.14rem 0;
+}
+.addressList{
+	font-size: 0.388rem;
+	margin: 0 0.55rem;
+	padding: 0.25rem 0;
+	border-bottom: 1px solid #edefee;
+}
+.addressList.bodNo{
+	border-bottom: none;
+}
+.addressList .cityPosi-gray{
+	width: 0.333rem;
+	height: 0.375rem;
+	float: left;
+	margin-right: 0.42rem;
+	margin-top: 0.08rem;
+}
+.addressList .tel{
+	width: 0.319rem;
+	height: 0.319rem;
+	float: left;
+	margin-right: 0.42rem;
+	margin-top: 0.08rem;
+}
+.addressList span{
+	float: left;
+	width: -webkit-calc(100% - 0.76rem);
+	width: -moz-calc(100% - 0.76rem);
+	width: calc(100% - 0.76rem);
+	color: #616161;
+	font-size: 0.388rem;
+	line-height: 0.55rem;
+}
+.noDataBox{
+	color: #6f7881;
+	font-size: 0.388rem;
+	background: #fff;
+	margin: 0.277rem 0.33rem 0;
+	border-radius: 3px;
+	padding: 0.5rem;
+	border: 1px solid #e6e6e6;
+}
+.noData{
+	width: 0.388rem;
+	height: 0.416rem;
+	float: left;
+	margin-right: 0.277rem;
+	margin-top: 0.07rem;
+}

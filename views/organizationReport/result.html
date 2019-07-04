@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>中组部12380举报平台</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/organizationReport/organizationReport.css" />
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	   <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+        <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+        <script type="text/javascript" src="/js/all.js"></script>
+        <script>
+            var randomKey = "<%= randomKey %>",
+                    userID = "<%= userID%>",
+                    clientID = "<%= clientID %>",
+                    cityID = "<%= cityID %>",
+                    local_x = "<%= local_x %>",
+                    citySRC = "<%= cityInfo.citySRC %>",
+                    cityName = "<%= cityInfo.cityName %>",
+                    local_y = "<%= local_y %>",
+                    localFrom = "<%= locals.localFrom %>";
+        </script>
+    </head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/organizationReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">举报结果</h1>
+					<hr class="hrLine">
+					<div class="successAppCode">
+						<i class="icon-semicircle semicircleLeft"></i>
+						<i class="icon-semicircle semicircleRight"></i>
+						<div class="successTitWord">
+							<i class="icon-appSuccess"></i>举报提交成功！
+						</div>
+						<div class="successTitWord appCode zzbCode">
+							<!--<div id="searchResult">返回给您的查询码为：</div>-->
+							<!--<div class="inquireCode" >BF71351D3EB5DC7902B88341266CAB7</div>-->
+							<div class="inquireTipsCode" id="searchResult">查询码一旦丢失，将无法查询</div>
+						</div>
+						
+					</div>
+					<div class="btn-box resultBtnBox">
+						<input type="button" value="返回首页" class="btnDefault backHome" id="backHome"/>
+						<input type="button" value="反馈查询" class="btnDefault fuhe" id="feedback"/>
+					</div>
+				</div>
+			</div>
+            <!-- ------------------------------提示语---------------------------------- -->
+            <div class="masktime" id="masktime" style="display:none;"></div>
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：中共中央组织部举报中心</div>
+		</div>
+        <script src="/js/organizationReport/result.js"></script>
+	</body>
+</html>

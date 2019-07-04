@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>旅游投诉</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/tourism.css"/>
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max" id="agreeText" style="display:none;">
+	<!--旅游服务协议-->
+	<div class="lvyou-title"><img id="agreeBack" src="/images/icon-return.png" class="icon-return"/>自助投诉举报协议</div>
+	<div class="ts-agreement">
+		<p>感谢您的投诉举报。您所反映的情况我们非常重视，请您按照下列要求填写有关信息， 对符合投诉举报受理范围的，我们将及时处理。</p>
+		<p>1.请实名投诉举报并填写相关联系方式。</p>
+		<p>2.请如实填写投诉举报表单，投诉举报内容力求详尽，   对所投诉举报事件发生的 时间、地点、主要证据、    涉及人员等要填写清楚。</p>
+		<p>3.投诉举报人应据实进行投诉举报，不得捏造事实、制   造假证、诬告陷害他人。 对借投诉举报诬告陷害他人的，依照有关规定严肃处理；构成犯罪的，移送司  法 机关依法处理。</p>
+		<p>4.国家旅游局保留删除恶意投诉举报单的权利。</p>
+		<p>5.国家旅游局对投诉举报人提供的信息严格保密。</p>
+	</div>
+</div>
+	<div class="max" id="complainBox">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/jubao-banner.png">
+		</div>
+		<!--旅游投诉-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img id="back_icon" src="/images/icon-return.png" class="icon-return"/>旅游投诉</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>姓名</label>
+					<input id="name" type="text" placeholder="请填写真实姓名" />
+				</div>
+				<div class="text-list-div">
+					<label>性别</label>
+					<div class="accounts-all">
+						<span id="sexBoy"><picture></picture><i style="font-style:normal;">男</i></span>
+				    	<span id="sexGirl"><picture></picture><i style="font-style:normal;">女</i></span>
+					</div>
+				</div>
+				<div class="text-list-div">
+					<label>手机号码</label>
+					<input id="phoneNum" type="text" placeholder="请输入您的手机号码" />
+				</div>
+				<div class="text-list-div phone-list-code">
+					<label>短信验证码</label>
+					<input id="verifycode" type="text" placeholder="短信验证码" />
+					<a id="getVel" href="javascript:;" disabled="disabled" class="get-code">获取验证码</a>
+				</div>
+				<div class="text-list-div">
+					<label>被投诉方</label>
+					<input id="respondent" type="text" placeholder="请输入被投诉方" />
+					<p class="sufanTips">（以合同或发票盖章单位为准）</p>
+				</div>
+				<div class="text-list-div messageBox-list clearfix">
+					<label>投诉事由</label>
+					<textarea id="complaints" name="" rows="" cols="" placeholder="请填写投诉事由（最多500字）"></textarea>
+				</div>
+				<div class="text-list-div uploadVoucher">
+					<label>上传凭证</label>
+					<span class="upload-Box">
+						<a id="imgUpload" href="javascript:;" class="pic-uploadV z_photo clearfix">
+							<div class="z_file" style="background:url('/images/tourism/pic-uploadVoucher.png') center no-repeat;background-size:33px 26px;">
+								<input type="file" name="file"
+                                       id="file" value=""
+                                       multiple
+                                       accept="image/*;capture=camera"
+                                       onchange="imgChange('z_photo','z_file');"
+                                       style="width:100%;height:100%;opacity:0;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(opacity=0)'">
+							</div>
+						</a>
+						<p class="uploadTips">可上传合同、发票、票据、行程单、图片文件等，大小不超过10MB</p>
+					</span>
+				</div>
+				<div class="agreeOK"><span id="agreeSelect"></span>同意<a id="agreeBtn" href="javascript:;">协议内容</a></div>
+				<div class="btn-box">
+					<input id="complainSubmit" type="button" value="提交投诉事由" />
+				</div>
+			</div>
+		</div>
+
+        <!--提示语-->
+        <div class="masktime" id="masktime" style="display:none;"></div>
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;display:none;" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display:none;" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>请求中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">受理单位：12301 旅游网络投诉举报平台</div>
+	</div>
+</body>
+</html>
+<script src="/js/tourism/touristComplaint.js"></script>
+<script type="text/javascript" src="/js/all.js"></script>
+

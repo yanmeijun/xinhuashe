@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>中组部12380举报平台</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/organizationReport/organizationReport.css" />
+        <link rel="stylesheet" href="/css/mobileSelect.css" />
+        <script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+        <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+        <script type="text/javascript" src="/js/publicInput.js"></script>
+        <script type="text/javascript" src="/js/all.js"></script>
+        <script>
+            var randomKey = "<%= randomKey %>",
+                    userID = "<%= userID%>",
+                    clientID = "<%= clientID %>",
+                    cityID = "<%= cityID %>",
+                    local_x = "<%= local_x %>",
+                    citySRC = "<%= cityInfo.citySRC %>",
+                    cityName = "<%= cityInfo.cityName %>",
+                    local_y = "<%= local_y %>",
+                    localFrom = "<%= locals.localFrom %>";
+        </script>
+    </head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/organizationReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">举报个人</h1></div>
+				<!--被举报人信息  start-->
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit publicMainTit"><span></span>被举报人信息<img src="/images/icon-downMenu.png" class="icon-downMenu"></h2>
+					<div class="pubListBox">
+						<div class="publicListText publicWH">
+							<label>被举报人姓名</label>
+							<input type="text" id="reportedname"/>
+							<img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+						</div>
+						<div class="publicListText pubListTextSex">
+							<label>性别：</label>
+							<div class="publicSexBox">
+							<span class="icon-default">
+                                <input type="radio" value="1" name="smsradios">
+                                <i class="icon-check"></i><em>男</em>
+                            </span>
+                            <span class="icon-default">
+                                <input type="radio" value="2" name="smsradios">
+                                <i class="icon-check"></i><em>女</em>
+                            </span>
+							</div>
+						</div>
+						<div class="publicListText">
+							<label>政治面貌</label>
+							<span id="politicalcodeTrigger"></span>
+							<img src="/images/icon-downMenu.png" class="icon-downMenu" id="politicalcode">
+						</div>
+						<div class="publicListText">
+							<label>所在单位</label>
+							<input type="text" id="reportedunit"/>
+							<img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+						</div>
+						<div class="publicListText">
+							<label>职务</label>
+							<span id="reportedutycodeTrigger"></span>
+							<img src="/images/icon-downMenu.png" class="icon-downMenu" id="reportedutycode">
+						</div>
+						<div class="publicListText">
+							<label>级别</label>
+							<span id="dutylevelTrigger"></span>
+							<img src="/images/icon-downMenu.png" class="icon-downMenu" id="dutylevel">
+						</div>
+						<div class="publicListText">
+							<label>所在地区</label>
+							<span id="cityTrigger"></span>
+							<img src="/images/icon-downMenu.png" class="icon-downMenu" id="city">
+						</div>
+						<div class="publicListText textareaList">
+							<label>主要问题</label>
+							<textarea placeholder="请写清楚问题发生的时间、地点、情节、后果等，字数限定在800字以内" id="textarea"></textarea>
+						</div>
+						<!--<div class="publicListText publicListCode">
+							<label>认证码</label>
+							<input type="text" />
+							<img src="/images/code.png" class="img-code">
+						</div>-->
+					</div>
+				</div>
+				<!--被举报人信息  end-->
+				<!--举报人信息  start-->
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit publicMainTit"><span></span>举报人信息（选填）<img src="/images/icon-downMenu.png" class="icon-downMenu"></h2>
+					<div class="pubListBox">
+						<div class="publicListText">
+							<label>举报人姓名</label>
+							<input type="text" id="peopleidnumber"/>
+							<img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+						</div>
+						<div class="publicListText pubListTextSex">
+							<label>性别：</label>
+							<div class="publicSexBox">
+								<span class="icon-default">
+                                <input type="radio" value="1" name="smsradio">
+                                <i class="icon-check"></i><em>男</em>
+                            </span>
+                            <span class="icon-default">
+                                <input type="radio" value="2" name="smsradio">
+                                <i class="icon-check"></i><em>女</em>
+                            </span>
+							</div>
+						</div>
+                        <div class="publicListText">
+                            <label>所在单位</label>
+                            <input type="text" id="peopleunit"/>
+                            <img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+                        </div>
+                        <div class="publicListText">
+                            <label>职务</label>
+                            <!--<input type="text" id="dutycode"/>-->
+                            <span id="dutycodeTrigger"></span>
+                            <img src="/images/icon-downMenu.png" class="icon-downMenu" id="dutycode">
+                        </div>
+                        <div class="publicListText">
+                            <label>身份证号</label>
+                            <input type="text" id="card"/>
+                            <img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+                        </div>
+                        <div class="publicListText">
+                            <label>邮政编码</label>
+                            <input type="text" id="peoplepostalcode"/>
+                            <img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+                        </div>
+                        <div class="publicListText">
+                            <label >所在地区</label>
+                            <span id="regincodeTrigger"></span>
+                            <img src="/images/icon-downMenu.png" class="icon-downMenu" id="regincode">
+                        </div>
+                        <div class="publicListText">
+                            <label>联系地址</label>
+                            <input type="text" id="peopleaddress"/>
+                            <img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+                        </div>
+                        <div class="publicListText">
+                            <label>联系电话</label>
+                            <input type="text" id="phone"/>
+                            <img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+                        </div>
+                        <div class="publicListText">
+                            <label>手机</label>
+                            <input type="text" id="mobilephone"/>
+                            <img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+                        </div>
+                        <div class="publicListText">
+                            <label>E-mail</label>
+                            <input type="text" id="email"/>
+                            <img src="/images/organizationReport/delete.png" class="icon-delete" style="display: none">
+                        </div>
+					</div>
+					<div class="btn-box publicBtnBox">
+						<input type="button" value="我要提交" id="submit"/>
+						<!--<input type="button" value="我要重写" class="btnDefault btn-gray" id="angin"/>-->
+					</div>
+				</div>
+				<!--举报人信息  end-->
+			</div>
+            <!-- ------------------------------提示语---------------------------------- -->
+            <div class="masktime" id="masktime" style="display:none;"></div>
+
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：中共中央组织部举报中心</div>
+		</div>
+        <script src="/lib/area.js"></script>
+        <script src="/js/organizationReport/reportPersonal.js"></script>
+	</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>添加就诊人</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" href="/css/heNanHospital/heNanHospital.css"/>
+    <link rel="stylesheet" href="/css/NMGHospital/NMGHospital.css" />
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityInfo = "<%= cityInfo %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>"
+            ,comeForm = "<%= locals.comeForm %>"||"nmgHospital",
+            localFrom = "<%= locals.localFrom %>";
+		var pid=window.localStorage.getItem('patientId')
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max" v-cloak>
+		<!--banner图-->
+		<div class="banner">
+            <% include ../header.html %>
+			<div class="userAvatarBox" @click="toUserCenter()">
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+				<div class="dialog-userCenter NMGUser" v-show="userCenterFlag" v-cloak>
+					<div class="triangle"></div>
+					<ul>
+						<li><a href="javascript:;" @click="goPersonCenter()">挂号信息</a></li>
+						<li><a href="javascript:;" @click="goVisit()">就诊人管理</a></li>
+						<li><a href="javascript:;" @click="goPersonInfo">个人信息</a></li>
+						<!--<li><a href="javascript:;">密码修改</a></li>-->
+						<li><a href="javascript:;" @click="exitBtn($event)">退出登录</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--注册-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH NMGReg">
+				<h1 class="p-q-tit"><img @click="back" src="/images/icon-return.png" class="icon-return"/>添加就诊人</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>姓名</label>
+					<input v-model="realname" type="text" placeholder="请输入真实姓名" />
+				</div>	
+				<div class="text-list-div">
+					<label>性别</label>
+					<div class="accounts-all">
+						<span><picture class="active" @click="selSex($event,1)"></picture>男</span>
+						<span><picture @click="selSex($event,2)"></picture>女</span>
+					</div>
+				</div>
+				<div class="text-list-div">
+					<label>手机号码</label>
+					<input v-model="phone" type="text" placeholder="请输入手机号码" />
+				</div>
+				<div class="text-list-div">
+					<label>身份证号</label>
+					<input v-model="cardid" type="text" placeholder="请输入身份证号" />
+				</div>
+				<div class="text-list-div regTime clearfix" id="proSele">
+					<label>现居住地：</label>
+					<span class="selectDownMenu" id="province" data_id="150000" ref="province">内蒙古自治区</span>
+					<img src="/images/icon-downMenu.png" class="icon-downMenu" >
+				</div>
+				<div class="text-list-div regTime clearfix" id="city">
+					<label></label>
+					<span id="citySele" class="selectDownMenu" data_id="150100" ref="citySele">呼和浩特市</span>
+					<img src="/images/icon-downMenu.png" class="icon-downMenu">
+				</div>
+				<div class="text-list-div regTime clearfix" id="county">
+					<label></label>
+					<span id="xianSele" class="selectDownMenu" data_id="150102" ref="xianSele">新城区</span>
+					<img src="/images/icon-downMenu.png" class="icon-downMenu">
+				</div>
+				<div class="text-list-div">
+					<label>详细地址</label>
+					<input v-model="addressDetail" type="text" placeholder="如：新康家园1号楼2单元" />
+				</div>
+				<div class="btn-box">
+					<input @click="addPatient" type="button" value="确定" />
+				</div>
+			</div>
+			<div class="login-tips XL-query">
+				<p class="zjsxTit"><img src="/images/icon-tips.png">注意事项：</p>
+				<p>请输入正确的身份证!若是儿童就诊请填写监护人身份证.</p>
+			</div>
+		</div>
+        <!--退出弹框-->
+        <div style="z-index: 101" class="dialog-tel" v-if="exitFlag" v-cloak>
+            <div class="titTel">您确定要退出登录吗？</div>
+            <div class="btn-tel">
+                <a href="javascript:;" @click="cancelExit()">取消</a>
+                <a href="javascript:;" @click="exit()">确定</a>
+            </div>
+        </div>
+		<div style="height: 1.3rem;"></div>
+		<!--遮盖层-->
+		<div class="mask" v-show="maskFlag"></div>
+		<div class="masktime" id="masktime" v-if="masktime" ref="masktime">{{masktime}}</div>
+		<div class="data-sources">服务来源：内蒙古卫生计生委统一预约诊疗应用系统</div>
+	</div>
+	<script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js"></script>
+	<script src="/lib/vue.min.js"></script>
+	<script src="/lib/axios.js"></script>
+	<script>
+        $(function(){
+            //选择省份
+            $("#proSele").on("click", function(){
+                $(".mobileSelect").remove();
+                var weekdayArr = [
+                    {"id":"110000","name":"北京市"},
+                    {"id":"120000","name":"天津市"},
+                    {"id":"130000","name":"河北省"},
+                    {"id":"140000","name":"山西省"},
+                    {"id":"150000","name":"内蒙古自治区"},
+                    {"id":"210000","name":"辽宁省"},
+                    {"id":"220000","name":"吉林省"},
+                    {"id":"230000","name":"黑龙江省"},
+                    {"id":"310000","name":"上海市"},
+                    {"id":"320000","name":"江苏省"},
+                    {"id":"330000","name":"浙江省"},
+                    {"id":"340000","name":"安徽省"},
+                    {"id":"350000","name":"福建省"},
+                    {"id":"360000","name":"江西省"},
+                    {"id":"370000","name":"山东省"},
+                    {"id":"410000","name":"河南省"},
+                    {"id":"420000","name":"湖北省"},
+                    {"id":"430000","name":"湖南省"},
+                    {"id":"440000","name":"广东省"},
+                    {"id":"450000","name":"广西壮族自治区"},
+                    {"id":"460000","name":"海南省"},
+                    {"id":"500000","name":"重庆市"},
+                    {"id":"510000","name":"四川省"},
+                    {"id":"520000","name":"贵州省"},
+                    {"id":"530000","name":"云南省"},
+                    {"id":"540000","name":"西藏自治区"},
+                    {"id":"610000","name":"陕西省"},
+                    {"id":"620000","name":"甘肃省"},
+                    {"id":"630000","name":"青海省"},
+                    {"id":"640000","name":"宁夏回族自治区"},
+                    {"id":"650000","name":"新疆维吾尔自治区"}
+                ];
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '#province',
+                    title: '--省--',
+                    wheels: [{data: weekdayArr}]
+                })
+                $(".mobileSelect").addClass("mobileSelect-show");
+            });
+            //选择省份
+            $("#proSele").on("click", function(){
+                $(".mobileSelect").remove();
+                var weekdayArr = [
+                    {"id":"110000","name":"北京市"},
+                    {"id":"120000","name":"天津市"},
+                    {"id":"130000","name":"河北省"},
+                    {"id":"140000","name":"山西省"},
+                    {"id":"150000","name":"内蒙古自治区"},
+                    {"id":"210000","name":"辽宁省"},
+                    {"id":"220000","name":"吉林省"},
+                    {"id":"230000","name":"黑龙江省"},
+                    {"id":"310000","name":"上海市"},
+                    {"id":"320000","name":"江苏省"},
+                    {"id":"330000","name":"浙江省"},
+                    {"id":"340000","name":"安徽省"},
+                    {"id":"350000","name":"福建省"},
+                    {"id":"360000","name":"江西省"},
+                    {"id":"370000","name":"山东省"},
+                    {"id":"410000","name":"河南省"},
+                    {"id":"420000","name":"湖北省"},
+                    {"id":"430000","name":"湖南省"},
+                    {"id":"440000","name":"广东省"},
+                    {"id":"450000","name":"广西壮族自治区"},
+                    {"id":"460000","name":"海南省"},
+                    {"id":"500000","name":"重庆市"},
+                    {"id":"510000","name":"四川省"},
+                    {"id":"520000","name":"贵州省"},
+                    {"id":"530000","name":"云南省"},
+                    {"id":"540000","name":"西藏自治区"},
+                    {"id":"610000","name":"陕西省"},
+                    {"id":"620000","name":"甘肃省"},
+                    {"id":"630000","name":"青海省"},
+                    {"id":"640000","name":"宁夏回族自治区"},
+                    {"id":"650000","name":"新疆维吾尔自治区"}
+                ];
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '#province',
+                    title: '--省--',
+                    wheels: [{data: weekdayArr}],
+                    callback:function(indexArr, data){//点击选择按钮触发的回调函数,indexArr(选中的选项索引)、data(选中的数据)
+                    	$('#province').css("color","#474747")
+                        console.log(data);
+                        if(data[0].name!=='内蒙古自治区'){
+                            $("#citySele").text("请选择市")
+                            $("#xianSele").text("请选择县")
+                        }
+                    }
+                })
+                $(".mobileSelect").addClass("mobileSelect-show");
+
+            });
+            //选择城市
+            $("#city").on("click", function() {
+                var provinceId = $("#province").attr("data_id");
+                if (!provinceId) {
+                    return;
+                }
+                $(".mobileSelect").remove();
+                var data = {
+                    provinceId: provinceId,
+                    randomKey: randomKey,
+                    userID: userID,
+                    clientID: clientID,
+                    cityID: cityID,
+                    local_x: local_x ,localFrom:localFrom,
+                    local_y: local_y
+                };
+                $.ajax({
+                    async: true,
+                    type: 'post',
+                    data: JSON.stringify(data),
+                    url: '/hospital/getCity',
+                    contentType: 'application/json'
+                }).done(function(data) {
+                    $("#xianSele").text("请选择县")
+                    if (data.retCode == '000000') {
+                        $(".mobileSelect").remove();
+                        var weekdayArr = [];
+                        var list = data.responseBody.list;
+                        list.forEach(function(item, index) {
+                            weekdayArr.push({
+                                name: item.name,
+                                id: item.cityId
+                            })
+                        });
+                        var mobileSelect1 = new MobileSelect({
+                            trigger: '#citySele',
+                            title: '--市--',
+                            wheels: [{data: weekdayArr}],
+							callback: function () {
+							  $('#citySele').css("color","#474747")
+							}
+                        })
+                        $(".mobileSelect").addClass("mobileSelect-show");
+                    }
+                })
+                event.preventDefault();
+            });
+            //选择区县
+            $("#county").on("click", function() {
+                var cityId = $("#citySele").attr("data_id");
+                if (!cityId) {
+                    return;
+                }
+                var data = {
+                    cityId: cityId,
+                    randomKey: randomKey,
+                    userID: userID,
+                    clientID: clientID,
+                    cityID: cityID,
+                    local_x: local_x ,localFrom:localFrom,
+                    local_y: local_y
+                };
+                $.ajax({
+                    async: true,
+                    type: 'post',
+                    data: JSON.stringify(data),
+                    url: '/hospital/getCounty',
+                    contentType: 'application/json'
+                }).done(function(data) {
+                    if(data.retCode == '000000'){
+                        $(".mobileSelect").remove();
+                        var weekdayArr = [];
+                        var list = data.responseBody.list;
+                        list.forEach(function(item, index) {
+                            weekdayArr.push({
+                                name: item.name,
+                                id: item.countryId
+                            })
+                        });
+                        var mobileSelect1 = new MobileSelect({
+                            trigger: '#xianSele',
+                            title: '--县--',
+                            wheels: [{data: weekdayArr}],
+							callback: function () {
+							  $('#xianSele').css("color","#474747")
+							}
+                        })
+                        $(".mobileSelect").addClass("mobileSelect-show");
+                    }
+                })
+                event.preventDefault();
+            });
+
+        })
+
+
+	</script>
+	<script src="/js/nmgHospital/addPatient.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

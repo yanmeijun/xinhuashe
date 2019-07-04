@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>服务查询运维管理系统</title>
+	<link rel="stylesheet" href="/css/system.css" />
+	<link rel="stylesheet" href="/css/datatables.min.css" />
+	<link rel="stylesheet" href="/css/jquery.dataTables_themeroller.css" />
+	<script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/lib/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="/lib/datatables.min.js" ></script>
+	<script type="text/javascript" src="/lib/datatables.js" ></script>
+	<script type="text/javascript" src="/lib/fnReloadAjax.js" ></script>
+	<script type="text/javascript" src="/js/system/system.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script>
+		$(function(){
+			$('#tab-nav ul li').click(function() {
+				var i = $(this).index();//下标
+				$(this).addClass('active').siblings().removeClass('active');
+				$('#tab-con-box .outerLayer').eq(i).show().siblings().hide();
+			});
+		})
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body>
+<div class="userContent clearfix">
+	<div class="tab-nav" id="tab-nav">
+		<ul>
+			<li class="active"><a href="javascript:;">服务管理</a></li>
+			<!--<li><a href="javascript:;">用户管理</a></li>-->
+		</ul>
+	</div>
+	<div class="tab-con-box" id="tab-con-box">
+		<div class="outerLayer">
+			<div class="newAdd-service"><a id="fw_add" href="javascript:;">新增服务</a></div>
+			<div id="main" class="tab-con" style="display: block;">
+				<table class="table_style dataTable" aria-describedby="user_table_info" id="fw_table">
+					<thead>
+					<tr>
+						<!--<th>序号</th>-->
+						<th>服务ID</th>
+						<th>服务名称</th>
+						<th>服务地址</th>
+						<th>服务简介</th>
+						<th>服务logo</th>
+						<th>服务城市</th>
+						<th>服务序号</th>
+						<th>是否上线</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<!--<td>1</td>-->
+						<td>驾照扣分查询</td>
+						<td>000001</td>
+						<td>https://fw.kaipuyun.cn/deduction</td>
+						<td>持驾驶证的驾驶人在全国各地的交通违法记录查询服务</td>
+						<td>01001000011</td>
+						<td>北京</td>
+						<td><a href="javascript:;">修改</a>
+							<a href="javascript:;">删除</a>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="outerLayer" style="display: none;">
+			<!--<div class="newAdd-service"><a href="javascript:;">新增服务</a></div>-->
+			<div class="tab-con" style="display: block;">
+				<table id="user_table" class="table_style dataTable" aria-describedby="user_table_info">
+					<thead>
+					<tr>
+						<!--<th>序号</th>-->
+						<th>用户ID</th>
+						<th>手机号</th>
+						<th>设备号</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<!--<td>1</td>-->
+						<td>01001000011</td>
+						<td>13615532358</td>
+						<td>13615532358</td>
+						<td><a href="/system/getUser">详情</a></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modify_mask" class="mask" style="display: none;"><!--这是半透明遮盖层--></div>
+<div id="create_new_fw" class="get-loginPwd" style="display: none;">
+	<h4 class="dialog-title">添加新服务</h4>
+	<div class="createSite">
+		<div class="site-rl-box">
+			<div class="step3-list">
+				<label>服务名称：</label>
+				<input id="create_fw_name" type="text" name="" placeholder="请输入服务名称" />
+            <span class="site-error-tips" style="display: none;">
+              站点代号不能为空
+            </span>
+			</div>
+			<div class="step3-list">
+				<label>服务ID：</label>
+				<input id="create_fw_id" type="text" name="" placeholder="请输入服务ID" />
+            <span class="site-error-tips" style="display: none;">
+              站点名称不能为空
+            </span>
+			</div>
+			<div class="step3-list">
+				<label>服务地址：</label>
+				<input id="create_fw_url" type="text" name="" placeholder="请输入服务地址"  />
+			</div>
+			<div class="step3-list">
+				<label>服务简介：</label>
+				<input id="create_fw_summary" type="text" name="" placeholder="请输入服务简介"  />
+			</div>
+			<div class="step3-list">
+				<label>服务logo：</label>
+				<input id="create_fw_logo" type="text" name="" placeholder="请输入服务logo"  />
+			</div>
+			<div class="step3-list">
+				<label>服务城市：</label>
+				<input id="create_fw_city" type="text" name="" placeholder="请输入服务城市"  />
+			</div>
+			<div class="step3-list">
+				<label>服务序号：</label>
+				<input id="create_index_city" type="text" name="" placeholder="请输入服务序号"  />
+			</div>
+			<div class="step3-list">
+				<label>是否上线：</label>
+				<input id="create_online" type="text" name=""  placeholder="请输入true或false" />
+			</div>
+		</div>
+		<div class="btn-foot-box">
+			<a id="create_fw" href="javascript:;" class="btn-default btn-bolder">保 存</a>
+			<a id="create_fw_close" href="javascript:;" class="btn-default">取 消</a>
+		</div>
+	</div>
+</div>
+<div id="fw_modify_div" class="get-loginPwd" style="display: none;">
+	<h4 class="dialog-title">修改</h4>
+	<div class="createSite">
+		<div class="site-rl-box">
+			<div class="step3-list">
+				<label>服务名称：</label>
+				<input id="fw_serviceName" type="text" name="" />
+            <span class="site-error-tips" style="display: none;">
+              站点代号不能为空
+            </span>
+			</div>
+			<div class="step3-list">
+				<label>服务ID：</label>
+				<input id="fw_serviceID" type="text" name="" />
+            <span class="site-error-tips" style="display: none;">
+              站点名称不能为空
+            </span>
+			</div>
+			<div class="step3-list">
+				<label>服务地址：</label>
+				<input id="fw_url" type="text" name=""  />
+			</div>
+			<div class="step3-list">
+				<label>服务简介：</label>
+				<input id="fw_summary" type="text" name=""  />
+			</div>
+			<div class="step3-list">
+				<label>服务logo：</label>
+				<input id="fw_logo" type="text" name=""  />
+			</div>
+			<div class="step3-list">
+				<label>服务城市：</label>
+				<input id="fw_city" type="text" name=""  />
+			</div>
+			<div class="step3-list">
+				<label>服务序号：</label>
+				<input id="fw_index" type="text" name=""  />
+			</div>
+			<div class="step3-list">
+				<label>是否上线：</label>
+				<input id="fw_online" type="text" name=""  />
+			</div>
+		</div>
+		<div class="btn-foot-box">
+			<a id="fw_modify" href="javascript:;" class="btn-default btn-bolder">保 存</a>
+			<a id="modify_cancel" href="javascript:;" class="btn-default">取 消</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

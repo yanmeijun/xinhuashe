@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>高速公路通行费查询</title>
+    <link type="text/css" rel="stylesheet" href="../../css/news.css" />
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js"></script>
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+			citySRC = "<%= cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+    <style>
+	    .wantLookCon {
+		    border-top: 1px solid #e6e6e6;
+		    padding: 0.416rem 0.55rem;
+		}
+    	.wantLookCon .bolder{
+    		color: #474747;
+    		font-size: 0.36rem;
+    	}
+    	.wantLookCon .bolder b{
+    		color: #f43737;
+    	}
+    	.text-list-div.phone-list-code{
+			padding-top: 0.2rem;
+		}
+		.downMenu-style .spanWrapper{
+			font-size: 0.37rem;
+			color: #474747;
+			display: inline-block;
+			height: 0.37rem;
+			line-height: 0.37rem;
+			width: -webkit-calc(100% - 3.5rem);
+			width: -moz-calc(100% - 3.5rem);
+			width: calc(100% - 3.5rem);
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		.downMenu-style .spanWrapper span{
+			width:100%!important;
+		}
+		.text-list-div.downMenu-style .spanWrapper{
+			height: 0.5rem;
+		    line-height: 0.5rem;
+		    vertical-align: top;
+		}
+    </style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+		</div>
+		<!--高速公路通行费查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit">高速公路通行费查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div downMenu-style">
+					<label>入口收费站：</label>
+					<span class="spanWrapper" id="clickEntry">
+						<span id="entry">请选择入口收费站</span>
+                	<img src="../../images/icon-downMenu.png" class="icon-downMenu">
+					</span>
+				</div>
+				<div class="text-list-div downMenu-style">
+					<label>出口收费站：</label>
+					<span class="spanWrapper" id="clickOut">
+						<span id="out">请选择出口收费站</span>
+                	<img src="../../images/icon-downMenu.png" class="icon-downMenu">
+					</span>
+				</div>
+				<div class="text-list-div downMenu-style">
+					<label>车辆类型：</label>
+					<span class="spanWrapper" id="clickCarType">
+						<span id="carType">请选择车辆类型</span>
+                	<img src="../../images/icon-downMenu.png" class="icon-downMenu">
+					</span>
+				</div>
+				<div class="btn-box">
+					<input id="searchBtn" type="button" value="查询" />
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div id="searchResult" class="peccancyQuery userInfor onlyStyle" style="display:none;">
+				<h2 class="q-r-tit"><span></span>查询结果</h2>
+				<div class="wantLookCon">
+					<p class="bolder">收费额：<b id="money">95</b>元！</p>
+				</div>
+			</div>
+		</div>
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+		<!--提示-->
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：河南省交通运输厅</div>
+	</div>
+</body>
+<script type="text/javascript" src="/js/heNanHighwayToll/heNanHighwayToll.js"></script>
+</html>

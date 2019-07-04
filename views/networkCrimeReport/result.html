@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>网络违法犯罪举报</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/networkCrimeReport/networkCrimeReport.css" />
+		<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" language="javascript">
+            var randomKey = "<%= randomKey %>"
+                , userID = "<%= userID%>"
+                , clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                cityName = "<%= cityInfo.cityName %>",
+                local_x = "<%= local_x %>"
+                , local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/networkCrimeReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">举报结果</h1>
+					<hr class="hrLine">
+					<div class="successAppCode networdSemicircle">
+						<i class="icon-semicircle semicircleLeft"></i>
+						<i class="icon-semicircle semicircleRight"></i>
+						<div class="successTitWord networdReport">
+							<i class="icon-appSuccess"></i>举报成功！感谢您对公安机关工作的支持！
+						</div>
+						<div class="successTitWord appCode zzbCode">
+							<div class="reportCode">举报编号：<span id="code"></span></div>
+							<div class="reportInquireCode">查询码：<span id="searchCode"></span></div>
+						</div>
+						
+					</div>
+					<div class="btn-box resultBtnBox">
+						<input type="button" value="继续举报" class="btnDefault backHome" id="aginReport" />
+						<input type="button" value="返回首页" class="btnDefault fuhe" id="backHome"/>
+					</div>
+				</div>
+			</div>
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：公安部网络安全保卫局</div>
+		</div>
+		<script src="/js/networkCrimeReport/result.js"></script>
+	</body>
+</html>

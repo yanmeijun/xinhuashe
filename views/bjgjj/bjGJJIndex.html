@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市公积金查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/bjgjj.css"/>
+    <script type="text/javascript" src="/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script type="text/javascript" src="/js/bjgjj/bjgjj.js"></script>
+    <script>
+        var randomKey = "<%= randomKey %>",
+            userID = "<%= userID%>",
+            clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            local_y = "<%= local_y %>",
+            cityName = "<%= locals.cityInfo.cityName %>",
+            citySRC = "<%= locals.cityInfo.citySRC %>",
+            accountStatus = "<%= data.data.accountStatus %>",
+            localFrom = "<%= locals.localFrom %>";
+    </script>
+    <script type="text/javascript" src="/js/bjgjj/bjGJJIndex.js"></script>
+    <style>
+        .icon-downMenu {
+            transition: all 0.7s ease;
+        }
+
+        .gjj-list .text-list-div label,
+        .gjj-list .text-list-div span {
+            width: auto !important;
+        }
+
+        .gjj-tab-title {
+            margin-bottom: -0.33rem;
+        }
+
+        .gjj-tab {
+            font-size: 0;
+            padding-bottom: 0.36rem;
+        }
+
+        .gjj-tab li {
+            width: 50%;
+            text-align: center;
+            float: left;
+            position: relative;
+        }
+
+        .gjj-tab li a {
+            color: #364555;
+            font-size: 0.388rem;
+            display: inline-block;
+        }
+
+        .gjj-tab li.active a {
+            color: #549dfb;
+        }
+
+        .gjj-tab li span {
+            width: 0.388rem;
+            height: 0.083rem;
+            border-radius: 20px;
+            display: inline-block;
+            position: absolute;
+            background: #549dfb;
+            bottom: -0.2rem;
+            left: 50%;
+            margin-left: -0.194rem;
+        }
+
+        .peccancyQuery.userInfor .text-list-div span.increase-red {
+            color: #ff6f58;
+        }
+
+        .peccancyQuery.userInfor .text-list-div.detailDiv span {
+            margin-right: 0.6rem;
+        }
+
+        .query-date-title {
+            background: #edefee;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0;
+        }
+
+        .query-date-title span {
+            display: inline-block;
+            color: #737474;
+            font-size: 0.388rem;
+            padding: 0 0.55rem;
+        }
+
+        .query-date-title span:nth-last-of-type(1) {
+            float: right;
+        }
+
+        .peccancyQuery.userInfor .text-list-div img.icon-rightArrow {
+            width: 0.694rem;
+            height: 0.694rem;
+            position: absolute;
+            right: -0.1rem;
+            top: 0.6rem;
+        }
+
+        /*.gjj-tab-con .gjj-list .text-list-div .icon-downMenu{
+            margin-top: 0.17rem;
+            margin-left: 0.4rem;
+        }*/
+        .lookBox {
+            color: #a1a9ac;
+            font-size: 0.3rem;
+            margin: 0.388rem 0.55rem;
+        }
+
+        .dialog-zdmx.dialog-car-box ul li:nth-of-type(1) a {
+            height: 0.89rem;
+            line-height: 0.89rem;
+            display: inherit;
+        }
+
+        .dialog-zdmx.dialog-car-box ul li:nth-of-type(1) {
+            margin-bottom: 0.2rem;
+        }
+
+        .dialog-zdmx.dialog-car-box ul li:nth-last-of-type(1) {
+            margin-bottom: 0.41rem;
+        }
+
+        .dialog-zdmx.dialog-car-box ul li {
+            margin: 0 0.55rem;
+            height: 0.89rem;
+            line-height: 0.89rem;
+        }
+
+        .dialog-zdmx span {
+            font-size: 0.388rem;
+            color: #474747;
+        }
+
+        .dialog-zdmx span:nth-of-type(1) {
+            float: left;
+        }
+
+        .dialog-zdmx span:nth-last-of-type(1) {
+            float: right;
+        }
+
+        /*请选择时间*/
+        .timeSelect {
+            height: 6.86rem;
+        }
+
+        .timeSelect .timeTitle {
+            font-size: 0.41rem;
+            color: #329dfc;
+            line-height: 0.98rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .timeSelect .timeCon {
+            margin-top: 0.4rem;
+        }
+
+        .timeSelect .timeCon .dateBox {
+            font-size: 0.486rem;
+            color: #000;
+            line-height: 0.98rem;
+            width: 50%;
+            text-align: center;
+            float: left;
+            height: 4.7rem;
+            overflow: hidden;
+        }
+
+        .timeSelect .timeCon .dateBox .selectStatus {
+            color: #329dfc;
+            font-size: 0.55rem;
+        }
+    </style>
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+    <!--banner图-->
+    <% include ../header.html %>
+    <!--北京市公积金查询-->
+    <div class="warpBox">
+        <div class="peccancyQuery userInfor gjj-tab-title">
+            <h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" style="display:block;"/>北京市公积金查询
+            </h1>
+            <hr class="hrLine">
+            <ul class="gjj-tab clearfix">
+                <li class="active" data-index="0"><a href="javascript:;">个人总账信息</a><span></span></li>
+                <li data-index="1" class="detailAcc"><a href="javascript:;">个人明细账单</a><span
+                        style="display:none;"></span></li>
+            </ul>
+        </div>
+        <!---个人总账信息 start-->
+        <div id="personalAccInfo" class="gjj-tab-con">
+            <div class="peccancyQuery userInfor onlyStyle">
+                <h2 class="q-r-tit slideDown"><span></span>个人信息<img src="/images/icon-downMenu.png"
+                                                                    class="icon-downMenu"/></h2>
+                <hr class="hrLine">
+                <div class="tab-content gjj-list slideDown">
+                    <div class="text-list-div clearfix">
+                        <label>姓名：</label>
+                        <span><%= data.data.customName %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>个人登记号：</label>
+                        <span><%= data.data.fundCode %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>证件类型：</label>
+                        <span><%= data.data.idType %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>证件号：</label>
+                        <span><%= data.data.idCode %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>个人编号：</label>
+                        <span><%= data.data.CustomNumber %></span>
+                    </div>
+                </div>
+            </div>
+            <div class="peccancyQuery userInfor onlyStyle">
+                <h2 class="q-r-tit  slideUp"><span></span>当前单位信息<img src="/images/icon-downMenu.png"
+                                                                     class="icon-downMenu"/></h2>
+                <hr class="hrLine">
+                <div class="tab-content gjj-list slideUp" style="display:none;">
+                    <div class="text-list-div clearfix">
+                        <label>单位登记号：</label>
+                        <span><%= data.data.companyCode %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>单位名称：</label>
+                        <span><%= data.data.companyName %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>所属管理部编号：</label>
+                        <span><%= data.data.belongUnitCode %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>所属管理部名称：</label>
+                        <span><%= data.data.belongUnitName %></span>
+                    </div>
+                </div>
+            </div>
+            <div class="peccancyQuery userInfor onlyStyle">
+                <h2 class="q-r-tit slideUp"><span></span>当前账户信息<img src="/images/icon-downMenu.png"
+                                                                    class="icon-downMenu"/></h2>
+                <hr class="hrLine">
+                <div class="tab-content gjj-list slideUp" style="display:none;">
+                    <div class="text-list-div clearfix">
+                        <label>当前余额：</label>
+                        <span><%= data.data.balance %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>账户状态：</label>
+                        <span id="accountStatus"></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>当年缴存余额：</label>
+                        <span><%= data.data.store %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>当年提取余额：</label>
+                        <span><%= data.data.draw %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>上年结转月额：</label>
+                        <span><%= data.data.customName %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>最后业务日期：</label>
+                        <span><%= data.data.lastSaveMonth %></span>
+                    </div>
+                    <div class="text-list-div clearfix">
+                        <label>转出金额：</label>
+                        <span><%= data.data.expend %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---个人总账信息 end-->
+        <!---个人明细账单 start-->
+        <div class="gjj-tab-con" style="display: none;">
+            <div class="peccancyQuery userInfor onlyStyle">
+                <h2 class="q-r-tit"><span></span>查询结果</h2>
+                <div class="query-date-title">
+                    <span>到账日期</span>
+                    <span>增减金额(元)</span>
+                </div>
+                <div id="gjj-list" class="tab-content gjj-list">
+                </div>
+            </div>
+        </div>
+        <!---个人明细账单 start-->
+    </div>
+    <div style="height: 1.3rem;"></div>
+    <div class="data-sources">服务来源：北京住房公积金管理中心</div>
+
+    <!--账单明细-->
+    <div class="mask" style="display:none;"></div>
+    <div id="detailBox" class="dialog-car-box dialog-zdmx" style="display: none;">
+        <ul>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

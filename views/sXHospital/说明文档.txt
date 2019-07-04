@@ -1,0 +1,25 @@
+sXHospital.html   首页，查询无结果，搜索相关医生
+
+selectDepartment.html   选择科室
+
+details.html    医院详情
+
+doctorDetails.html   医生详情
+
+appointmenTimeSelect.html    预约时间选择
+
+registeredConfirm.html   挂号单确认
+
+addPatient.html    添加就诊人
+
+appointmentFailed.html   预约失败
+
+appointmentDetails.html   预约成功，取消预约弹框
+
+register.html    注册
+
+register2.html  注册2
+
+login.html   登录
+
+forgetPwd.html   密码找回

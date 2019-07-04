@@ -1,0 +1,293 @@
+/*首页*/
+.peccancyQuery.XLQuery-home .text-list-div.text100 input{
+	width: 100%;
+}
+.hosList.hNHosList dd .time span.sX-yy-num{
+	line-height: 0.347rem;
+    border-right: none;
+}
+.btn-guahao{
+	background: #549dfb;
+	color: #fff;
+	padding: 0.02rem 0.138rem 0.05rem;
+	text-align: center;
+	font-size: 0.277rem;
+	border-radius: 2px;
+	float: right;
+	margin-right: 0.6rem;
+}
+/*医生-搜索结果*/
+.sXHosList{
+	width: -webkit-calc(100% - 1.1rem);
+    width: -moz-calc(100% - 1.1rem);
+    width: calc(100% - 1.1rem);
+}
+.hosList.hNHosList.sXHosList dd{
+	width: -webkit-calc(100% - 1.75rem);
+    width: -moz-calc(100% - 1.75rem);
+    width: calc(100% - 1.75rem);
+}
+.hosList.hNHosList.sXHosList dd .btn-guahao{
+	margin-right: 0;
+}
+.hospitalName{
+	color: #474747;
+	font-size: 0.333rem;
+	margin-bottom: 0.2rem;
+}
+.hospitalName span{
+	color: #ef8935;
+	font-size: 0.3rem;
+	float: right;
+}
+.hosList.hNHosList.sXHosList dd .nameOffice{
+	margin: 0rem 0 0.2rem;
+}
+/*医院详情*/
+.titSpan{
+	color: #ef8935;
+	font-size: 0.3rem;
+	margin-left: 0.277rem;
+}
+.hosList.hNHosList.sXDefaultList dt{
+	height: 1.85rem;
+}
+.hosList.hNHosList.sXDefaultList dd{
+	float: none;
+	width: 100%;
+}
+.hosList.hNHosList.sXDefaultList dd p{
+	width: auto;
+}
+.hosList.hNHosList.sXDefaultList dd .address{
+	margin-bottom: 0.13rem;
+    margin-top: 0.138rem;
+}
+.hosList.hNHosList.sXDefaultList dd .tel{
+	margin-bottom: 0.11rem;
+}
+.intro{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+	line-height: 0.52rem;
+}
+.icon-intro{
+	display: inline-block;
+	background: url(../../images/sXHospital/icon-intro.png) no-repeat;
+	width: 0.25rem;
+    height: 0.25rem;
+    background-size: 0.25rem;
+    margin-right: 0.11rem;
+}
+/*挂号---日期*/
+.sDTableDiv{
+	margin: 0 0.194rem 0.32rem;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+}
+.sDTableData th{
+	background: #f6f8fa;
+	border-bottom: 1px solid #edefee;
+}
+.reservationList.sDTableData tr td{
+	height: 1.11rem;
+	padding: 0;
+}
+.sDTableData tr td.stopZ span,
+.sDTableData tr td.stopY span,
+.sDTableData tr td.byAppointment span{
+    color: #ccc;
+    background: none;
+}
+.sDTableData tr td.youSou span{
+    display: inline-block;
+    width: 0.833rem;
+    height: 0.486rem;
+    line-height: 0.486rem;
+    border-radius: 2px;
+    color:#fff;
+    background: #4588f9;
+}
+.sDTableData tr td.youSou p{
+    color: #ec9f0d;
+}
+.sDTableData tr td span.zjh span{
+    display: inline-block;
+    width: 0.833rem;
+    height: 0.486rem;
+    line-height: 0.486rem;
+    border-radius: 2px;
+    color:#fff;
+    background: #4588f9;
+}
+.remainingNumber{
+	font-size: 0.222rem;
+	color: #0083e0;
+}
+.regSort{
+	color: #fd9018;
+	font-size: 0.25rem;
+}
+
+/*挂号选择时间*/
+.regTimeTabBox{
+}
+.regTimeTabBox table{
+	border-collapse: collapse;
+	width: 100%;
+}
+.regTimeTabBox table tr th{
+	height: 0.847rem;
+	font-size: 0.333rem;
+	background: #edf1f5;
+	font-weight: normal;
+	color: #737476;
+}
+.regTimeTabBox table tr td{
+	padding-top: 0.5rem;
+	padding-bottom: 0.3rem;
+	font-size: 0.333rem;
+	border-bottom: 1px solid #edefee;
+}
+.regTimeTabBox table tr td.time{
+	color: #474747;
+}
+.regTimeTabBox table tr td.residualSource{
+	color: #797979;
+}
+.regTimeTabBox table tr td.residualSource span{
+	color: #fd9018;
+}
+.regTimeTabBox table tr td.regFee{
+	color: #ff0808;
+}
+.regTimeTabBox table tr th:nth-of-type(1),
+.regTimeTabBox table tr td:nth-of-type(1){
+	padding-left: 0.55rem;
+}
+.regTimeTabBox table tr td.regFee{
+	text-align: center;
+}
+.regTimeTabBox table tr th:nth-last-of-type(1),
+.regTimeTabBox table tr td:nth-last-of-type(1){
+	text-align: right;
+    padding: 0.5rem 0 0.3rem;
+}
+.regTimeTabBox table tr:nth-last-of-type(1) td{
+	border-bottom: none;
+}
+.text-left{
+	text-align: left;
+}
+.regTimeTabBox table tr.noNumber td,
+.regTimeTabBox table tr.noNumber td span{
+	color: #c3c3c3;
+}
+.regTimeTabBox table tr.noNumber td .btn-guahao{
+	background: #b2b2b2;
+}
+/*挂号单确认*/
+.peccancyQuery.userInfor .sXRegConfirm .text-list-div  span{
+	color: #797979;
+}
+.peccancyQuery.userInfor .sXRegConfirm .text-list-div  span .coloref8935{
+	color: #cf8935;
+	font-style: normal;
+	margin-right: 0.166rem;
+}
+.introduce.color47{
+    color: #474747;
+}
+.peccancyQuery.userInfor .text-list-div.borderHava {
+    border-bottom: 1px solid #edefee;
+}
+.jiuZList{
+    padding-bottom: 0.15rem;
+}
+.jiuZList.padTop {
+    padding-top: 0.15rem;
+}
+/*预约成功与失败*/
+.reserve-title.successMsg-remind span.spacLf{
+	margin-left: 0.138rem;
+}
+.notFound {
+    font-size: 0.3rem;
+    color: #6e6e6e;
+    text-align: center;
+    height: 3.33rem;
+    padding-top: 0.83rem;
+    border-top: 1px solid #edefee;
+    margin: 0 0.55rem;
+}
+.notFound .img-box img {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-bottom: 0.41rem;
+}
+.login-tips.XL-query.notF-tips {
+    padding: 0 0.22rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+/*个人中心*/
+.reserve-title.successMsg-remind span{
+	margin-left: 0;
+}
+.sDTit .alreadyReserved {
+    float: right;
+    font-style: normal;
+    margin-right: 0.277rem;
+}
+.sDTit .alreadyReserved.colorBlue{
+    color: #0083e0;
+}
+.reservationDetails ul li span b.colorBlue{
+	color: #0083e0;
+}
+.reservationDetails ul li.wh188 span.color47{
+	color: #474747;
+}
+.reservationDetails.notBorder{
+	border-bottom: none;
+}
+.alreadyReserved.colorRed{
+	color: #ff0808;
+}
+.color0083e0{
+	color: #0083e0;
+}
+.btn-box.btnRegBox{
+	text-align: right;
+}
+.btn-box.btnRegBox input{
+	width: 2.5rem;
+	height: 0.833rem;
+	color: #0083e0;	
+	border: 1px solid #0083e0;
+	font-size: 0.388rem;
+	background: #fff;
+}
+/*登录*/
+.goLoginBox.sDGoReg{
+	text-align: left;
+}
+.goLoginBox.sDGoReg .goRegister{
+	float: right;
+}
+/*首页列表宽度*/
+.hosList.hNHosList.shanxiDlWh{
+	width: -webkit-calc(100% - 0.8rem);
+    width: -moz-calc(100% - 0.8rem);
+    width: calc(100% - 0.8rem);
+}
+.hosList.hNHosList.shanxiDlWh.userPicAuto dt img{
+	object-fit: cover;
+	width: 1.472rem;
+    height: 1.833rem;
+}
+.hosList.hNHosList.shanxiDlWh.userPicAuto dd{
+	width: -webkit-calc(100% - 2rem);
+    width: -moz-calc(100% - 2rem);
+    width: calc(100% - 2rem);
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>税务事务所查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/taxOffice/taxOffice.css" />
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.timeM{
+			width: 103px;
+			height: 82px;
+			background: #000;
+			opacity: .4;
+			left: 50%;
+			margin-left: -50px;
+			margin-top: -1.07rem;
+		}
+		.timeM p{
+			color: #fff;
+			font-size: 0.37rem;
+			line-height: .7rem;
+			text-align: center;
+
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--税务事务所查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit">税务事务所查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>事务所名称</label>
+					<input type="text" placeholder="请输入事务所名称" id="thing"/>
+				</div>
+				<div class="text-list-div">
+					<label>所长名称</label>
+					<input type="text" placeholder="请输入所长名称" id="name"/>
+				</div>
+				<div class="text-list-div downMenu-style">
+					<label>所在地区</label>
+					<!--<input type="text" placeholder="请选择" id="cityTrriger"/>-->
+					<span id="cityTrriger">请选择</span>
+					<img src="/images/icon-downMenu.png" class="icon-downMenu" id="city">
+				</div>
+				<div class="text-list-div downMenu-style">
+					<label>性质</label>
+					<!--<input type="text" placeholder="请选择" id="NatureTrriger"/>-->
+					<span id="NatureTrriger">请选择</span>
+					<img src="/images/icon-downMenu.png" class="icon-downMenu" id="Nature">
+				</div>
+				<div class="text-list-div phone-list-code" id="veriCode" style="display: none">
+					<label>验证码</label>
+					<input id="getCode" type="text" placeholder="请输入图片验证码" />
+					<img id="veriCodeImg" src="" class="img-code">
+				</div>
+				<div class="btn-box">
+					<input type="button" value="查询" onclick="search()"/>
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" style="display: none;" id="onDate">
+				<h2 class="q-r-tit"><span></span> <em id="errData">很抱歉，未查询到数据，请检查输入是否有误！</em></h2>
+			</div>
+
+		</div>
+
+		<div class="mask" style="display: none;opacity:0;" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="display: none;text-align: center;" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+
+
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：国家税务总局</div>
+	</div>
+	<script src="/js/taxOffice/taxOffice.js"></script>
+</body>
+</html>

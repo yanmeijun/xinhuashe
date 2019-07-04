@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>预约挂号</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" href="/css/heNanHospital/heNanHospital.css"/>
+    <link rel="stylesheet" href="/css/sDHospital/sDHospital.css"/>
+    <link rel="stylesheet" href="/css/NMGHospital/NMGHospital.css">
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityInfo = "<%= cityInfo %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+        var RHospitalId=window.localStorage.getItem('hosId');
+        var RRegionId=window.localStorage.getItem('cityid');
+        var hosName=window.localStorage.getItem('hosName');
+        var hosGrade=window.localStorage.getItem('hosGrade');
+        var deptId=window.localStorage.getItem('deptId');
+        var docId=window.localStorage.getItem('docId');
+        var deptName=window.localStorage.getItem('deptName');
+        var dateStr=window.localStorage.getItem('dateStr');
+        var ampm=window.localStorage.getItem('ampm');
+        </script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max" v-cloak>
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox" @click="toUserCenter()">
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+				<div class="dialog-userCenter NMGUser" v-show="userCenterFlag">
+					<div class="triangle"></div>
+					<ul>
+						<li><a href="javascript:;" @click="goPersonCenter()">挂号信息</a></li>
+						<li><a href="javascript:;" @click="goVisit()">就诊人管理</a></li>
+						<li><a href="javascript:;" @click="goPersonInfo">个人信息</a></li>
+						<li style="display:none;"><a href="javascript:;" >密码修改</a></li>
+						<li><a href="javascript:;" @click="exitBtn($event)">退出登录</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--科室挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img @click="back" src="/images/icon-return.png" class="icon-return"/>预约挂号</h1>
+				<hr class="hrLine">
+				<dl class="hosList hNHosList NMGHosList">
+					<dt><a href="javascript:;"><img :src="'http://110.16.70.24:8080'+data.docImg" class="photo"></a></dt>
+					<dd class="y-g">
+						<p class="nameOffice"><span>{{data.docName}}</span>{{deptName}} {{data.docGrade}}</p>
+						<p class="nameTitle">{{data.hosName}}</p>
+						<p class="time"><span>{{nyr}}</span><span>诊查费：<em>{{data.money}}</em></span></p>
+					</dd>
+				</dl>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>预约信息</h2>
+				<hr class="hrLine">
+				<div class="tab-content inforConfirm heNanReg">
+					<div class="text-list-div clearfix" id="timerTag">
+						<label>就诊时间：</label>
+						<span class="selectDownMenu" id="time" ref="timestampName">请选择就诊时间</span>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu">
+					</div>
+					<div class="text-list-div inforCheck-style">
+						<label>就诊人：</label>
+						<div class="accounts-all clearfix">
+							<div class="jiuZList" v-for="(item,index) in person">
+						    	<span class="icon-default" data-id="{{item.id}}" @click="checkPerson($event,index)">
+						    		<i><img :src="item.checked=='1'?'/images/icon-yh-check.png':'/images/icon-checkBox-default.png'"></i>{{item.visitName}}
+						    	</span>
+						    	<div class="y-g-tel">手机：{{item.visitPhone}}</div>
+						    	<div class="y-g-ID">身份证：{{item.visitCardId}}</div>
+					    	</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="确认预约" @click="order()"/>
+				</div>
+			</div>
+			<!--默认提示-->
+			<div class="login-tips XL-query">
+				<p class="zjsxTit"><img src="/images/icon-tips.png">注意事项:</p>
+				<p>1、系统每日凌晨2：00后自动更新信息，并只提供一周之内医生出诊信息查询和预约服务，请您务必要提前一天进行预约挂号操作。</p>
+				<p>2、预约时务必提供本人或其他就诊人员的真实姓名、身份证号、手机号等真实信息，如有信息输入错误请及时更正，否则后果自负。</p>
+				<p>3、预约成功后，请您凭有效证件（身份证、社保卡、就诊卡等）按时到挂号窗口缴费（无卡用户缴费时办卡）取号，过时预约号不予保留。取号时间段为：上午8:00-11:00，下午14:30-15:00。各医院取号窗口开放时间以医院通知为准。</p>
+				<p>4、如您因特殊原因不能按时取号就诊，请您务必于就诊前一天取消预约，否则将视为爽约。如爽约累计超过两次，半年内将不能通过该系统进行预约。</p>
+				<p>5、因医院进行随机抢号，预约成功的号源如果不符合您的需求，请您及时取消预约，以方便其他用户预约。</p>
+				<p>6、预约就诊序号以当天就诊医院序号为准。</p>
+			</div>
+		</div>
+		<div class="mask" v-if="maskFlag" ></div>
+		<!--退出弹框-->
+		<div class="dialog-tel" v-if="exitFlag">
+			<div class="titTel">您确定要退出登录吗？</div>
+			<div class="btn-tel">
+				<a href="javascript:;" @click="cancelExit()">取消</a>
+				<a href="javascript:;" @click="exit()">确定</a>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="masktime" id="masktime" v-if="masktime" ref="masktime">{{masktime}}</div>
+		<div class="data-sources">服务来源：内蒙古卫生计生委统一预约诊疗应用系统</div>
+	</div>
+	<script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js"></script>
+	<script src="/lib/vue.min.js"></script>
+	<script src="/lib/axios.js"></script>
+	<script src="/js/nmgHospital/appointmenRegistration.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+<script>
+	$(function(){
+        //选择省份
+
+        $("#timerTag").on("click", function(){
+            console.log(timeArr);
+            $(".mobileSelect").remove();
+            var mobileSelect1 = new MobileSelect({
+                trigger: '#time',
+                title: '请选择就诊时间',
+                wheels: [{data: timeArr}],
+				callback: function () {
+				  $('#time').css("color","#474747")
+				}
+            })
+            $(".mobileSelect").addClass("mobileSelect-show");
+        });
+	})
+</script>
+</body>
+</html>

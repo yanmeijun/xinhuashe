@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>网络违法犯罪举报</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/monitorReport/monitorReport.css" />
+		<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+		<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" language="javascript">
+            var randomKey = "<%= randomKey %>"
+                ,userID = "<%= userID%>"
+                ,clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                cityName = "<%= cityInfo.cityName %>",
+                local_x = "<%= local_x %>"
+                ,local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/networkCrimeReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit">举报须知</h1>
+					<div class="webJBNotice reportNotice">
+						<p>一、受理范围</p>
+						<p>《网络违法犯罪举报平台》不具备现场、紧急报警的受理功能，如您的情况紧急，请立即拨打报警电话“110”。</p>
+						<p>本平台受理涉嫌违反《全国人民代表大会常务委员会关于维护互联网安全的决定》、《中华人民共和国刑法》、《中华人民共和国治安管理处罚法》、《互联网信息服务管理办法》等法律法规有关条款规定，利用互联网或针对网络信息系统从事违法犯罪行为的线索，具体行为包括：</p>
+						<p>1、侵入国家事务、国防建设、尖端科学技术领域的计算机信息系统；</p>
+						<p>2、故意制作、传播计算机病毒等破坏性程序，攻击计算机系统及通信网络，致使计算机系统及通信网络遭受损害；</p>
+						<p>3、利用互联网进行邪教组织活动的；</p>
+						<p>4、利用互联网捏造或者歪曲事实、散布谣言，扰乱社会秩序的；</p>
+						<p>5、利用互联网建立淫秽色情平台、网页，提供淫秽站点链接，传播淫秽色情信息，组织网上淫秽色情的；</p>
+						<p>6、利用互联网引诱、介绍他人卖淫的；</p>
+						<p>7、利用互联网进行诈骗的；</p>
+						<p>8、利用互联网进行赌博的；</p>
+						<p>9、利用互联网贩卖枪支、弹药、毒品等违禁物品以及管制刀具的；</p>
+						<p>10、利用互联网贩卖居民身份证、假币、假发票、假证，组织他人出卖人体器官的；</p>
+						<p>此外，本平台欢迎并鼓励广大网民积极举报网上含有宣扬“暴力夺取政权、建立东突国家”、“对异教徒圣战”等暴力恐怖思想和宗教极端思想，传授制枪、制爆、制毒方法，教唆、煽动实施暴力恐怖活动等音视频信息。</p>
+						<p>二、提交举报</p>
+						<p>举报人每次可举报一条线索。 举报人点击“我要举报”图标，按照提示填写被举报网站的名称、地址、违法行为描述、举报人信息等相关表项后提交。</p>
+						<p>三、隐私保护</p>
+						<p>本平台鼓励实名举报。为便于提供有针对性的指导帮助，请详细填写联系方式。举报人填写的所有举报信息将依法受到保护。</p>
+					</div>
+					<div class="publicSexBox iAgree">
+						<span class="icon-default">
+                            <input type="checkbox" value="true" name="smsradio">
+                            <i class="icon-check"></i><em>我已阅读举报须知并同意相关内容</em>
+                        </span>
+					</div>
+					<div class="btn-box">
+						<input type="button" value="我要举报" class="btnDefault backHome"  onclick="report('report')"/>
+						<input type="button" value="反馈查询" class="btnDefault fuhe" onclick="report('search')"/>
+					</div>
+				</div>
+			</div>
+
+			<!-- ------------------------------提示语---------------------------------- -->
+			<div class="masktime" id="masktime" style="display:none;"></div>
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：公安部网络安全保卫局</div>
+		</div>
+		<script src="/js/networkCrimeReport/networkCrimeReport.js"></script>
+	</body>
+</html>

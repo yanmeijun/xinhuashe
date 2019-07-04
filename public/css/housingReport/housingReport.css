@@ -1,0 +1,114 @@
+/*信息填写（个人、单位）*/
+.housingListBox{
+	padding: 0 0.55rem;
+	border-top: 1px solid #e8e8e8;
+}
+.housingListBox .publicListText.pubListTextSex label{
+	padding-left: 0rem;
+}
+.housingListBox .publicListText.pubListTextSex{
+	border-bottom: 1px solid #e8e8e8;
+	margin-bottom: 0;
+	padding: 0.2rem 0;
+    height: inherit;
+}
+.publicHousingList{
+	border-bottom: 1px solid #e8e8e8;
+	padding:0.472rem 0 0.277rem;
+}
+.publicHousingList .tit{
+	color: #6e6e6e;
+	font-size: 0.361rem;
+	margin-bottom: 0.2rem;
+}
+.publicHousingList .textBox{
+	font-size: 0.361rem;
+	position: relative;
+}
+.publicHousingList .textBox input{
+	font-size: 0.361rem;
+	width: 100%;
+	border: none;
+}
+.textBox .icon-downMenu{
+	position: absolute;
+	right: 0;
+	top: -0.05rem;
+	width: 0.781rem;
+	height: 0.781rem;
+}
+.publicHousingList .textBox textarea{
+	font-size: 0.361rem;
+	width: 100%;
+	border: none;
+	outline: none;
+	resize: none;
+	font-family: "微软雅黑";
+	padding: 0;
+	height: 2rem;
+}
+
+/*上传图片*/
+.textBox .uploadAttaPic{
+	margin-bottom: 0.194rem;
+}
+.textBox .uploadPicDefault{
+	width: 2.16rem;
+    height: 2.16rem;
+    border: 1px dashed #bbb;
+    float: left;
+    margin-right: 0.25rem;
+    position: relative;
+}
+.textBox .uploadPicDefault .upSuccessPic {
+    line-height: 2.16rem;
+    text-align: center;
+    margin: -1px;
+}
+.textBox .uploadPicDefault .upSuccessPic img {
+    max-width: 100%;
+    max-height: 2.16rem;
+}
+.textBox .uploadPicDefault .upPicDelete {
+    background: url(../../images/monitorReport/deleteIcon.png) no-repeat;
+    width: 0.406rem;
+    height: 0.406rem;
+    background-size: 0.406rem 0.406rem;
+    position: absolute;
+    top: -0.15rem;
+    right: -0.15rem;
+}
+.textBox .uploadPicDefault .uploadIcon {
+    background: url(../../images/monitorReport/uploadIcon.png) no-repeat;
+    width: 0.625rem;
+    height: 0.515rem;
+    background-size: 0.625rem 0.515rem;
+    margin: 0.33rem auto 0.2rem;
+}
+.textBox .uploadPicDefault .upPicNum{
+	text-align: center;
+}
+.textBox .uploadPicDefault .upPicNum p{
+	color: #adadad;
+	font-size: 0.281rem;
+}
+.uploadPicTips{
+	color: #adadad;
+	font-size: 0.277rem;
+	line-height: 0.472rem;
+}
+/*放到news.css  按钮*/
+
+.btn-box.font34 input{
+	font-size: 0.472rem;
+}
+.notFound.successFailed{
+	margin-bottom: 0.5rem;
+}
+.notFound.successFailed .img-box img{
+	width: 1.52rem;
+	height: 1.52rem;
+}
+.notFound.successFailed .notF-infor{
+	font-size: 0.437rem;
+}

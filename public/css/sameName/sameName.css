@@ -1,0 +1,22 @@
+.tab-content.inforConfirm{
+	border-top: 1px solid #edefee;
+}
+.tab-content.inforConfirm .text-list-div label {
+    width: 2rem;
+    padding-left: 0.33rem;
+}
+.tab-content.inforConfirm .text-list-div span {
+    width: -webkit-calc(100% - 2.1rem);
+    width: -moz-calc(100% - 2.1rem);
+    width: calc(100% - 2.1rem);
+    text-align: left;
+    float: left;
+}
+.sameNameNum{
+	float: right;
+	margin-right: 0.55rem;
+}
+.sameNameNum b{
+	color: #0083e0;
+	font-weight: normal;
+}

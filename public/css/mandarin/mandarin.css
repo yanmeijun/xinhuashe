@@ -1,0 +1,61 @@
+.font22{
+	font-size: 0.3rem;
+}
+.peccancyQuery .htTitke{
+	padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+.tab-content.inforConfirm .text-list-div label {
+    width: 2.78rem;
+}
+.tab-content.inforConfirm .text-list-div span,
+.tab-content.inforConfirm .text-list-div input{
+    width: -webkit-calc(100% - 2.78rem);
+    width: -moz-calc(100% - 2.78rem);
+    width: calc(100% - 2.78rem);
+    text-align: left;
+    float: left;
+}
+.mandarinDetails{
+	color: #0083e0 !important;
+}
+.detailsMenu{
+	margin: 0 -0.55rem;
+	background: #f9f9f9;
+	border-top: 1px solid #ececec;
+}
+.detailsListTit{
+	height: 0.8rem;
+}
+.detailsMenu .base-avatar{
+	padding-top: 0rem;
+}
+.peccancyQuery .detailsMenu .baseInfor{
+	margin-bottom: -0.33rem;
+}
+.peccancyQuery .detailsMenu .text-list-div:nth-last-child(1){
+	border-bottom: 1px solid #edefee;
+}
+.peccancyQuery.userInfor .detailsMenu .text-list-div label {
+    width: 2.78rem;
+}
+.peccancyQuery.userInfor .mandarinConBox.text-list-div:nth-last-child(1) {
+   margin-bottom: 0rem;
+   padding-bottom: 0rem;
+}
+.peccancyQuery.userInfor .mandarinConBox.text-list-div .text-list-div:nth-last-child(1){
+	margin-bottom: 0rem;
+	border-bottom: none;
+	padding-bottom: 0.55rem;
+}
+.icon-upMenu{
+	float: right;
+    margin-top: 0.4rem;
+	width: 0.388rem;
+	height: 0.222rem;
+}
+.lookBox {
+    color: #a1a9ac;
+    font-size: 0.3rem;
+    margin: 0.388rem 0.55rem;
+}

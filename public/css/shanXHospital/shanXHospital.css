@@ -1,0 +1,138 @@
+/*选择科室*/
+.hosList.hNHosList dd .time span.noBorder{
+	border-right: none;
+}
+.hosList.hNHosList.sXDefaultList dd {
+    float: none;
+    width: 100%;
+}
+.hosList.hNHosList.sXDefaultList dd p {
+    width: auto;
+}
+.hosList.hNHosList.sXDefaultList dd .address {
+    margin-bottom: 0.13rem;
+    margin-top: 0.138rem;
+}
+.icon-intro {
+    display: inline-block;
+    background: url(../../images/sXHospital/icon-intro.png) no-repeat;
+    width: 0.25rem;
+    height: 0.25rem;
+    background-size: 0.25rem;
+    margin-right: 0.11rem;
+}
+.intro {
+    color: #8d8d8d;
+    font-size: 0.277rem;
+    line-height: 0.52rem;
+}
+.titSpan {
+    color: #ef8935;
+    font-size: 0.3rem;
+    margin-left: 0.277rem;
+}
+/*医院详情*/
+.hospitalDetails{
+	margin: 0 0.5rem;
+	padding: 0.12rem 0 0.75rem;
+	border-top: 1px solid #edefee;
+}
+.hospitalDetails .detailsTit{
+	font-size: 0.277rem;
+	color: #474747;
+	margin-top: 0.33rem;
+	margin-bottom: 0.166rem;
+}
+.hospitalDetails p{
+	font-size: 0.277rem;
+	color: #8d8d8d;
+	line-height: 0.5rem;
+}
+.hospitalDetails p.indent{
+	text-indent: 0.583rem;
+}
+.hosList.hNHosList.sXDefaultList dd .address.shanXAaddress{
+	margin-top: 0.4rem;
+}
+/*医生详情*/
+.hosList.hNHosList.sXHosList.shanXHosList{
+	float: left;
+}
+.moreDetails{
+	padding: 0 0.55rem 0.33rem;
+}
+.moreDetails p{
+	font-size: 0.277rem;
+	color: #8d8d8d;
+	line-height: 0.5rem;
+}
+/*挂号单确认*/
+.introduce.color47 .color-fa6e08{
+	color: #fa6e08;
+}
+.agreeOK.xieYiBox span.xieYiselect{
+	float: left;
+}
+.agreeOK.xieYiBox .xieYiWord{
+	float: left;
+	width: -webkit-calc(100% - 1.5rem);
+	width: -moz-calc(100% - 1.5rem);	
+	width: calc(100% - 1.5rem);	
+}
+/*预约时间选择*/
+.shanXTableDiv{
+	margin-top: 0.32rem;
+}
+.yy-remaining{
+	font-size: 0.25rem !important;
+	color: #333 !important;
+}
+.introduce.timeSelect{
+	width: 5rem;
+}
+.doctorsInfo.yyTimeS .nameOffice{
+	margin-bottom: 0.1rem !important;
+}
+.doctorsInfo.yyTimeS .hospitalName{
+	margin-bottom: 0.09rem;
+}
+.btn-guahao.tingYue{
+	background: #fd9018;
+}
+.btn-guahao.yyGray{
+	background: #c7c7c7;
+}
+.reservationDate.sDTableDiv{
+	position: relative;
+}
+.zhezhao {
+    background: rgba(255,255,255,0.9);
+    width: 0.6rem;
+    height: 100%;
+    border-left: 1px solid #eee;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/*添加就诊人*/
+.selectDownMenu {
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    font-size: 0.37rem;
+    line-height: 0.5rem;
+}
+.regTime label {
+    line-height: 0.5rem;
+    height: 0.5rem;
+}
+.login-tips.XL-query p.zjsxTit img {
+    margin-left: 0rem !important;
+}
+/*个人中心*/
+.reservationDetails.noBorder{
+	border-bottom: none;
+}
+.goLoginBox.sDGoReg .goRegister{
+	float: left;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>预约申请失败</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/passport/passport.css"/>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script type="text/javascript">
+			var randomKey = "<%= locals.randomKey%>"
+					, userID = "<%= locals.userID%>"
+					, clientID = "<%= locals.clientID %>",
+					cityID = "<%= locals.cityID %>",
+					citySRC = "<%= cityInfo.citySRC %>",
+					local_x = "<%= locals.local_x %>"
+					, local_y = "<%= locals.local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+//			fnSize()
+//			window.addEventListener('resize', fnSize, false)
+//			function fnSize() {
+//				document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth / 10 + 'px';
+//			}
+		</script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+		<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	</head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<% include ../header.html %>
+			<!--预约详情-->
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home regWH">
+					<h1 class="p-q-tit" id="title"></h1>
+					<!--预约失败 start-->
+					<div class="notFound applyTips">
+						<div class="img-box"><img src="/images/failed.png"></div>
+						<div class="notF-infor">很抱歉，您本次预约申请失败，请重新预约！</div>
+					</div>
+					<hr class="hrLine">
+					<div class="btn-box">
+						<input id="goFirst" type="button" value="返回首页" />
+					</div>
+				</div>
+			</div>
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：国家移民管理局</div>
+		</div>
+	</body>
+<script type="text/javascript">
+	document.getElementById("citySRC").setAttribute("src",citySRC || "/images/banner.png");
+	document.getElementById("title").innerHTML = '<img id="back" src="/images/icon-return.png" class="icon-return"/>'+window.localStorage.getItem("provinceName")+'出入境办理';
+	document.getElementById("back").onclick = function(){
+		window.location.href = window.location.href='/passport?&page=infoConfirm&randomKey='+randomKey+"&userID="+userID+"&clientID="+clientID+"&cityID="+cityID
+				+"&local_x="+local_x+"&local_y="+local_y;
+	}
+	document.getElementById("goFirst").onclick = function(){
+		window.location.href = window.location.href='/passport?&page=passport&randomKey='+randomKey+"&userID="+userID+"&clientID="+clientID+"&cityID="+cityID
+				+"&local_x="+local_x+"&local_y="+local_y;
+	}
+
+</script>
+</html>

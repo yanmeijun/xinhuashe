@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中国高等教育学历证书查询结果</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				cityName = "<%= cityInfo.cityName %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+            	localFrom = "<%= locals.localFrom %>";
+	</script>
+    <!--<script type="text/javascript" src="/js/education/education.js"></script>-->
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--中国高等教育学历证书查询结果-->
+		<div class="warpBox">
+			<div class="peccancyQuery userInfor">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return"/>中国高等教育学历证书查询结果</h1>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-1">
+					<div class="baseInfor clearfix">
+						<div class="baseLeft">
+							<div class="text-list-div clearfix">
+								<label>姓名：</label>
+								<span id="xlName"><%= data.name %></span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>性别：</label>
+								<span id="gender"><%= data.gender %></span>
+							</div>
+							<div class="text-list-div text-list-only clearfix">
+								<label>出生日期：</label>
+								<span id="birthDay"><%= data.birthDay %></span>
+							</div>
+						</div>
+						<div class="base-avatar">
+							<img id="picUrl" src="<%= data.img %>">
+						</div>
+					</div>
+					<hr class="hrLine hrLineOnly">
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>学历信息</h2>
+				<hr class="hrLine">
+				<div class="tab-content">
+					<div class="text-list-div clearfix">
+						<label>入学日期:</label>
+						<span id="startDate"><%= data.startDate %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>毕（结）业日期：</label>
+						<span id="awardDate"><%= data.awardDate %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>学校名称：</label>
+						<span id="schoolName"><%= data.schoolName %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>专业：</label>
+						<span id="major"><%= data.major %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>学历类别：</label>
+						<span id="eduCategory"><%= data.eduCategory %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>学制：</label>
+						<span id="system"><%= data.system %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>学习形式：</label>
+						<span id="learnForm"><%= data.learnForm %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>层次：</label>
+						<span id="arrangement"><%= data.arrangement %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>毕（结）业：</label>
+						<span id="award"><%= data.award %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>校（院）长姓名：</label>
+						<span id="schoolmaster"><%= data.schoolmaster %></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>证书编号：</label>
+						<span id="certNumber"><%= data.certNumber %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="login-tips XL-query">
+			<p>声明:</p>
+			<p>1、未经学历信息权属人同意，不得将本材料用于违背权属人意愿之用途。学历信息内容标注“*”号，表示该内容不详。学历信息如有修改，请以网站在线查询内容为基准。</p>
+			<p>2、学历证书查询结果仅供查询人使用，不具有再验证功能。如需向第三方提供学习信息，建议使用具有验证功能的学历证书电子注册备案表。</p>
+		</div>
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+		<div class="data-sources">服务来源：中国高等教育学生信息网（学信网）</div>
+	</div>
+<script>
+	$(function(){
+		$(".icon-return").click(function(){
+			window.location.href = "/education?page=education&randomKey="+randomKey+"&userID="+userID+
+					"&clientID="+clientID+"&cityID="+cityID+"&local_x="+local_x+"&local_y="+local_y
+		});
+	})
+
+</script>
+</body>
+</html>

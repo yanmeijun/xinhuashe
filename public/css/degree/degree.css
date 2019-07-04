@@ -1,0 +1,106 @@
+.detailsNet{
+	color: #549dfb;
+}
+.textList-wh .text-list-div label,.textList-wh .text-list-div span{
+	width: auto !important;
+}
+.notFound{
+	font-size: 0.3rem;
+	color: #6e6e6e;
+	text-align: center;
+	height: 3.33rem;
+	padding-top: 0.83rem;
+	border-bottom: 1px solid #edefee;
+	margin: 0 0.55rem;
+}
+.notFound .img-box img{
+	width: 0.75rem;
+	height: 0.75rem;
+	margin-bottom: 0.41rem;
+}
+.login-tips.XL-query.notF-tips{
+	padding: 0 0.22rem;
+	border: none;
+	margin-bottom: 1rem;
+}
+
+.query-date-title {
+    background: #edefee;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0;
+}
+.query-date-title span {
+    display: inline-block;
+    color: #737474;
+    font-size: 0.33rem;
+    padding: 0 0.55rem;
+}
+.query-date-title span:nth-last-of-type(1) {
+    float: right;
+}
+.peccancyQuery.XLQuery-home .text-list-div img.icon-rightArrow {
+    width: 0.694rem;
+    height: 0.694rem;
+    position: absolute;
+    right: -0.1rem;
+    top: 0.4rem;
+}
+.degree-title{
+	padding: 0 0.55rem;
+}
+.degree-title span{
+	padding: 0;
+}
+.degree-title span:nth-of-type(1),
+.degreeList span:nth-of-type(1){
+	width: 15%;
+}
+.degree-title span:nth-of-type(2),
+.degreeList span:nth-of-type(2){
+	width: 55%;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 0.35rem;
+}
+.degree-title span:nth-of-type(3),
+.degreeList span:nth-of-type(3){
+	text-align: right;
+	width: 30%;
+}
+.degreeList span:nth-of-type(1),
+.degreeList span:nth-of-type(3){
+	color: #797979;
+}
+.degreeList{
+	padding-top: 0.61rem;
+    padding-bottom: 0.25rem;
+    margin: 0 0.55rem;
+    line-height: 0;
+    border-bottom: 1px solid #edefee;
+    font-size: 0;
+}
+.degreeList:nth-last-of-type(1){
+	border-bottom: none;
+}
+.degreeList span{
+    display: inline-block;
+    font-size: 0.33rem;
+    color: #474747;
+}
+.degreeTabList .text-list-div label{
+	width: auto;
+}
+.ccc{
+	background:#ccc!important;
+}
+.banner .title {
+	font-size: 0.4rem!important;
+	width: 100%!important;
+	text-align: center!important;
+}
+a:hover{
+	text-decoration:none;
+	outline:none;
+}

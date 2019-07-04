@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>火车时刻表查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/user.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		const randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script type="text/javascript" src="/js/train/train.js"></script>
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--火车时刻表查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">火车时刻表查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div clearfix">
+					<label>车次：</label>
+					<input id="timetable_ticketNo" type="text" placeholder="请输入车次，如G101" />
+				</div>
+				<div class="text-list-div clearfix">
+					<label>日期：</label>
+					<a id="timetable_DateDiv"><input type="text" placeholder="请选择出行日期" id="timetable_date" disabled class="disabled" /></a>
+				</div>
+				<div class="btn-box">
+					<input id="timetable_search" type="button" value="查询" />
+				</div>
+			</div>
+			<div id="timetable_results_title" class="peccancyQuery userInfor onlyStyle" style="display: none">
+				<h2 id="timetable_ci_h" class="q-r-tit"><span></span>G1 <small>(高速，无空调)</small><label>2018-01-29</label></h2>
+				<hr class="hrLine">
+				<div class="con-box clearfix">
+					<span>
+						<p id="timetable_sfsj" class="colorBlue">09:00</p>
+						<p id="timetable_sfz">北京南</p>
+					</span>
+					<span>
+						<p id="timetable_ci">G1</p>
+						<p><b></b><b></b></p>
+						<p id="timetable_yxsc">04小时28分钟</p>
+					</span>
+					<span>
+						<p id="timetable_dzsj">13:28</p>
+						<p id="timetable_zdz">上海虹桥</p>
+					</span>
+				</div>
+			</div>
+			<div id="timetable_results_div" class="peccancyQuery userInfor onlyStyle" style="display: none">
+				<table class="trainTable">
+					<thead>
+						<tr>
+							<th></th>
+							<th>站名</th>
+							<th>到时</th>
+							<th>发时</th>
+							<th>停留</th>
+						</tr>
+					</thead>
+					<tbody id="timetable_dataList">
+						<tr class="colorBlue">
+							<td>01</td>
+							<td>北京南</td>
+							<td>----</td>
+							<td>09:00</td>
+							<td>----</td>
+						</tr>
+						<tr>
+							<td>02</td>
+							<td>济南西</td>
+							<td>10:22</td>
+							<td>10:24</td>
+							<td>2分钟</td>
+						</tr>
+						<tr>
+							<td>03</td>
+							<td>南京南</td>
+							<td>12:23</td>
+							<td>12:25</td>
+							<td>2分钟</td>
+						</tr>
+						<tr class="colorBlue">
+							<td>04</td>
+							<td>上海虹桥</td>
+							<td>13:00</td>
+							<td>----</td>
+							<td>----</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中国铁路信息技术中心</div>
+	</div>
+	<table style="display: none" class="trainTable">
+		<tbody id="timetable_dataList_template">
+		<tr>
+			<td>${xh}</td>
+			<td>${zm}</td>
+			<td>${ds}</td>
+			<td>${fs}</td>
+			<td>${tl}</td>
+		</tr>
+		</tbody>
+	</table>
+	<!-- 查询动画提示开始-->
+	<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+	<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+		<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+		<p>加载中</p>
+	</div>
+	<!-- 查询动画提示结束-->
+	<div class="masktime" id="masktime" style="display:none;"></div>
+</body>
+</html>

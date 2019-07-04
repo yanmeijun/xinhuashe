@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>医院详情</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/heNanHospital/heNanHospital.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/sDHospital/sDHospital.css"/>
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script  type="text/javascript">
+		var randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+        		citySRC = "<%= cityInfo.citySRC %>"
+				,hospitalCode = "<%= locals.hospitalCode %>" || localStorage.getItem('hospitalCode')
+				,branchId = "<%= locals.branchId %>" || localStorage.getItem('branchId')
+				,hospitalID = "<%= locals.hospitalID %>" || localStorage.getItem('hospitalID')
+				,comeFrom2 = "<%= locals.comeFrom2 %>" || localStorage.getItem('comeFrom2'),
+            	localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script type="text/javascript" src="/js/sDHospital/details.js" ></script>
+	<script type="text/javascript" src="/js/sDHospital/toUserCenter.js" ></script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox">
+				<a onclick="toUserCenter('details')" href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+			</div>
+		</div>
+		<!--选择科室-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img id="back" src="/images/icon-return.png" class="icon-return"/><span id="NAME_title"></span></h1>
+				<hr class="hrLine">
+				<div class="peccancyQuery userInfor onlyStyle clearfix">
+					<dl class="hosList hNHosList sDHosList">
+						<dt><a href="javascript:;"><img src="/images/heNanHospital/hospitalPic.jpg"></a></dt>
+						<dd class="department sDDetails">
+							<p class="title" id="NAME"></p>
+							<p class="time"><span id="LVL"></span><span id="TYPE"></span><span id="NUMS"></span></p>
+							<p class="details" id="showAll_p">
+								<span id="detail"></span>
+								<a href="javascript:;" id="showAll">更多&gt;</a>
+							</p>
+							<p class="details" style="display: none;" id="hideAll_p">
+								<span id="detail_all">部直属重点大学——山东大学的附属医院。在2016年11月发布的复旦大学中国最佳医院综合排行榜上，医院跻身全国前20强，位居华东地区第3位。医院现有临床医技科室68个，其中国家重点学科和临床重点专科建设项目学科18个。在复旦大学中国最佳专科声誉排行榜上，妇产科、神经外科、急诊医学科、血液病科、康复医学科、检验医学科等6个学科位列全国十强，心血管内科、消化内科、内分泌科、老年病科、风湿科、普外科、神经内科、耳鼻喉科、病理科、超声医学科等10个学科获得十强提名。医院现有济南中心院区、济南东院区、青岛院区3个院区，实际开放床位4500张，最高日门急诊服务量17000人次。2015年度全院年门诊量317.2万人次，出院病人16.8万人次，手术量7.9万台次。</span>
+							<a href="javascript:;" id="hideAll">收起&lt;</a>
+							</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle clearfix">
+				<div class="tabTitle">
+						<ul id="result_ul">
+
+					</ul>
+					<ul id="result_template_ul" style="display: none">
+						<!--<li class="active"><a href="javascript:;">内科</a></li>-->
+						<li id="category_${id}" onclick="switchTab(${id})"><a href="javascript:;">${categoryName}</a></li>
+					</ul>
+				</div>
+				<div class="depar-tabCon departmentCon" id="result_div">
+
+				</div>
+				<div id="result_template_div" style="display: none">
+					<div id="depart_${id}" class="tabConBox">
+						<!--<p></p>-->
+					</div>
+
+				</div>
+				<div id="result_template_p" style="display: none">
+					<p onclick="renderTo('${renderID}')">${deptName}</p>
+				</div>
+			</div>
+		</div>
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：山东省预约诊疗服务系统</div>
+	</div>
+</body>
+</html>

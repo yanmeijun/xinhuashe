@@ -1,0 +1,289 @@
+
+
+/*
+ * Table
+ */
+table.dataTable {
+    margin: 0;
+    clear: both;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/*
+ * 标题栏
+ */
+table.dataTable thead th {
+    padding: 3px 0px 3px 10px;
+    cursor: pointer;
+    *cursor: hand;
+    border-collapse:separate;
+    border-spacing:1px;
+    background: #c8e6fd;
+ /*   color: #fff; */
+    font-size:14px;
+    border: 1px solid #ccc;
+    height:30px;
+    line-height:30px;
+}
+
+table.dataTable tfoot th {
+    padding: 3px 10px;
+}
+
+table.dataTable td {
+    padding: 5px 10px;
+    border: 1px solid #e9e9e9;
+}
+
+table.dataTable td.center,
+table.dataTable td.dataTables_empty {
+    text-align: center;
+}
+
+table.dataTable tr.odd { background-color: white; }
+table.dataTable tr.even { background-color: #EFF6FA; }
+
+/*table.dataTable tr.odd td.sorting_1 { background-color: #D3D6FF; }*/
+/*table.dataTable tr.odd td.sorting_2 { background-color: #DADCFF; }*/
+/*table.dataTable tr.odd td.sorting_3 { background-color: #E0E2FF; }*/
+/*table.dataTable tr.even td.sorting_1 { background-color: #EAEBFF; }*/
+/*table.dataTable tr.even td.sorting_2 { background-color: #F2F3FF; }*/
+/*table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }*/
+
+/*
+ * 排序图标
+ */
+table.dataTable .ui-icon {display:inline-block; width:10px;height:12px;background:url(/boxpro/images/arrow.png) no-repeat;}
+table.dataTable .ui-icon-triangle-1-n { background-position: -2px 0; }
+table.dataTable .ui-icon-carat-2-n-s { background-position: -39px 0; }
+table.dataTable .ui-icon-triangle-1-s { background-position: -22px 0; }
+
+/*
+ * 翻页信息
+ */
+.paging_full_numbers .ui-button {
+    color: #333333 !important;
+    cursor: pointer;
+    margin: 0;
+    padding: 2px 6px;
+}
+
+.dataTables_paginate .ui-button {
+    margin-right: -0.1em !important;
+}
+
+.ui-button {
+    margin-left: 0;
+    margin-right: -0.3em;
+}
+
+.ui-buttonset {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.ui-button {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.1em;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    background-image: none;
+    opacity: 0.35;
+    background-color:rgb(0, 0, 0);
+    filter:alpha(opacity=35);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=35);
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: repeat-x scroll 50% 50% #F6F6F6;
+    border: 1px solid #CCCCCC;
+    color: #1C94C4;
+    font-weight: bold;
+}
+.ui-state-disabled {
+    cursor: default !important;
+}
+
+/*
+ * Table wrapper
+ */
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+    *zoom: 1;
+}
+.dataTables_wrapper .ui-widget-header {
+    font-weight: normal;
+    color:#fff;
+}
+.dataTables_wrapper .ui-toolbar {
+    padding: 5px;
+}
+
+
+/*
+ * Page length menu
+ */
+.dataTables_length {
+    float: left;
+    padding-top:10px;
+}
+.dataTables_length label {
+    font: normal 12px / 1.5em "微软雅黑";
+}
+.dataTables_length select {
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 5px 5px 5px 5px;
+    height:22px;
+    font: normal 12px 微软雅黑, verdana, sans-serif;
+}
+.dataTables_length select:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0 none;
+}
+
+/*
+ * Filter
+ */
+.dataTables_filter {
+    /* float: right;
+     text-align: right;
+     margin-top: -57px;*/
+}
+.dataTables_filter_TopSpac{
+    margin-top:-56px !important;
+}
+.left_dataTables_filter{ float: none; margin-left: 10px; text-align: left; margin-top: 0px;}
+.dataTables_filter label {
+    font-size:14px;
+}
+.dataTables_filter input{
+    border: 1px solid #cccccc;
+    color: #3E3E3E;
+    font-family: 'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 4px;
+    margin: 7px 0 7px 7px;
+    width:200px;
+    height:23px;
+    line-height:23px;
+}
+.dataTables_filter input:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow:0px 0px;
+    outline: 0 none;
+}
+
+/*
+ * Table information
+ */
+.dataTables_info {
+    padding-top: 13px;
+    float: left;
+    font: normal 12px / 1.5em "微软雅黑";
+    margin-left: 10px;
+}
+
+
+/*
+ * Pagination
+ */
+.dataTables_paginate {
+    float: right;
+    text-align: right;
+    margin: 10px 0 0;
+}
+
+
+/*
+ * Processing indicator
+ */
+.dataTables_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 30px;
+    margin-left: -125px;
+    margin-top: -15px;
+    padding: 14px 0 2px 0;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    background-color: white;
+    z-index: 10;
+}
+
+/*
+ * Sorting
+ */
+table.dataTable thead th div.DataTables_sort_wrapper {
+    position: relative;
+    padding-right: 20px;
+    font: bold 14px "微软雅黑", verdana, sans-serif;
+}
+
+table.dataTable thead th div.DataTables_sort_wrapper span {
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    padding-right: 5px;
+    right: 0;
+}
+
+table.dataTable th:active {
+    outline: none;
+}
+
+
+/*
+ * Scrolling
+ */
+.dataTables_scroll {
+    clear: both;
+}
+
+.dataTables_scrollBody {
+    *margin-top: -1px;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+div#user{
+    margin-left: 150px;
+}
+
+
+.centerTitle{
+    text-align: center;
+}
+
+
+div#user_table_wrapper #user_table_info{
+    margin-left: 100px;
+}
+div#group_table_wrapper #group_table_info{
+    margin-left: 100px;
+}
+div#outer_user_table_wrapper #outer_user_table_info{
+    margin-left: 100px;
+}
+
+/*日志审计信息*/
+div#audit_report_wrapper #audit_report_info{
+    margin-left: 120px;
+    padding-bottom: 10px;
+}

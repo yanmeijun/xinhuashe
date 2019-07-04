@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>机动车违法查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+	<link rel="stylesheet" href="/css/carScrapped/carScrapped.css" />
+	<!--<link rel="stylesheet" href="/css/mobileSelect.css" />-->
+    <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<!--<script type="text/javascript" src="/lib/mobileSelect.js" ></script>-->
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,carNum = ""
+				,engineNum = ""
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>"
+				,sfCode = "<%= locals.sfCode %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+    <script type="text/javascript" src="/js/infraction/infraction.js"></script>
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--头部-->
+		<!--<header>-->
+			<!--<ul>-->
+				<!--<li><a href="javascript:;"><img src="../images/logo.png" class="img-logo"></a></li>-->
+				<!--<li class="active"><a href="javascript:;">公共服务</a></li>-->
+				<!--<li><a href="javascript:;">推荐</a></li>-->
+				<!--<li><a href="javascript:;">现场云</a></li>-->
+				<!--<li><a href="javascript:;">北京</a></li>-->
+				<!--<li><a href="javascript:;"><img src="../images/icon-add.png" class="img-add"></a></li>-->
+			<!--</ul>-->
+		<!--</header>-->
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--机动车违法查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">机动车违法查询</h1>
+				<!--<div class="text-list-div">-->
+					<!--<label>号牌种类</label>-->
+					<!--<span class="peccancy_car" id="carTrigger" data_id="02" style="width: 64%;display: inline-block;">小型汽车</span>-->
+					<!--<img src="/images/icon-downMenu.png" class="icon-downMenu" id="car"/>-->
+				<!--</div>-->
+				<div class="text-list-div">
+					<label>机动车牌号</label>
+					<span class="car-num" id="car-num">京</span>
+					<input id="peccancy_data1" type="text" placeholder="请输入车牌号码" class="text-car-number"  />
+				</div>
+				<div class="text-list-div">
+					<label>发动机号</label>
+					<input id="peccancy_data2" type="text" placeholder="请输入发动机号" />
+				</div>
+				<div class="text-list-div text-list-code">
+					<label>验证码</label>
+					<input id="peccancy_data3" type="text" placeholder="请输入验证码" />
+					<img id="peccancy_image" src="/images/refreshCode.png" class="img-code">
+				</div>
+				<div class="btn-box">
+					<input id="peccancy_submit" type="button" value="查询" />
+				</div>
+			</div>
+		</div>
+		<div class="queryResult" id="peccancy_result" style="display: none">
+			<h2 class="q-r-tit"><span></span>查询结果</h2>
+			<!--<p>该机动车非现场处理违法记录共计<span>2</span>条。其中，牌证发放地违法记录 <span>1</span>条，跨省违法<span>1</span>条。</p>-->
+			<p id="peccancy_line"></p>
+		</div>
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height:1.5rem"></div>
+		<div class="data-sources">服务来源：公安部交通安全综合服务管理平台</div>
+		<!--<footer>-->
+			<!--<img src="../images/footer.png">-->
+		<!--</footer>-->
+		<!--请选择机动车类型-->
+		<div class="mask" style="display: none;"></div>
+		<!--<div class="dialog-car-box" id="dialog-car-box" style="display: none;">-->
+			<!--<ul id="peccancy_choice_car">-->
+				<!--<li><a href="javascriptjavascript:;">请选择机动车类型</a></li>-->
+				<!--<li><a href="javascript:;">大型汽车</a></li>-->
+				<!--<li><a href="javascript:;">小型汽车</a></li>-->
+				<!--<li><a href="javascript:;">使馆汽车</a></li>-->
+				<!--<li><a href="javascript:;">领馆汽车</a></li>-->
+				<!--<li><a href="javascript:;">境外汽车</a></li>-->
+				<!--<li><a href="javascript:;">外籍汽车</a></li>-->
+				<!--<li><a href="javascript:;">香港入出境车</a></li>-->
+				<!--<li><a href="javascript:;">澳门入出境车</a></li>-->
+			<!--</ul>-->
+		<!--</div>-->
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+		<!--机动车牌号-->
+		<div class="dialog-carNum-box clearfix" id="dialog-carNum-box" style="display: none;">
+			<ul id="peccancy_choice_carNum">
+				<li><a href="javascript:;">京</a></li>
+				<li><a href="javascript:;">津</a></li>
+				<li><a href="javascript:;">沪</a></li>
+				<li><a href="javascript:;">渝</a></li>
+				<li><a href="javascript:;">蒙</a></li>
+				<li><a href="javascript:;">新</a></li>
+				<li><a href="javascript:;">藏</a></li>
+				<li><a href="javascript:;">宁</a></li>
+				<li><a href="javascript:;">桂</a></li>
+				<li><a href="javascript:;">黑</a></li>
+				<li><a href="javascript:;">吉</a></li>
+				<li><a href="javascript:;">辽</a></li>
+				<li class="active"><a href="javascriptjavascript:;">晋</a></li>
+				<li><a href="javascript:;">冀</a></li>
+				<li><a href="javascript:;">青</a></li>
+				<li><a href="javascript:;">鲁</a></li>
+				<li><a href="javascript:;">豫</a></li>
+				<li><a href="javascript:;">苏</a></li>
+				<li><a href="javascript:;">皖</a></li>
+				<li><a href="javascript:;">浙</a></li>
+				<li><a href="javascript:;">闽</a></li>
+				<li><a href="javascript:;">赣</a></li>
+				<li><a href="javascript:;">湘</a></li>
+				<li><a href="javascript:;">鄂</a></li>
+				<li><a href="javascript:;">粤</a></li>
+				<li><a href="javascript:;">琼</a></li>
+				<li><a href="javascript:;">甘</a></li>
+				<li><a href="javascript:;">陕</a></li>
+				<li><a href="javascript:;">贵</a></li>
+				<li><a href="javascript:;">云</a></li>
+				<li><a href="javascript:;">川</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

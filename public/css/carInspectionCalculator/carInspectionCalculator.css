@@ -1,0 +1,118 @@
+.check-style .accounts-all {
+    display: inline-block;
+    width: -webkit-calc(100% - 3rem);
+    width: moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+}
+.check-style label {
+    padding-top: 0.1rem;
+    float: left;
+    height: 0.38rem;
+}
+.aloneStyle {
+    display: inline-block;
+    font-size: 0.38rem;
+    color: #797979;
+    line-height: 0.5rem;
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    vertical-align: top;
+}
+.accounts-all span {
+    font-size: 0.38rem;
+    color: #474747;
+    /*margin-right: 0.69rem;*/
+}
+.accounts-all span i{
+    width: .34rem;
+    height: .34rem;
+    display:inline-block;
+    background: url("/assets/images/yaohao/icon-yh-default.png") no-repeat ;
+    background-size: 0.34rem 0.34rem;
+}
+.accounts-all span i.icon-check{
+    background: url("/assets/images/yaohao/icon-yh-default.png") no-repeat ;
+    background-size: 0.34rem 0.34rem;
+}
+.accounts-all span i.check-true{
+    background: url("/assets/images/yaohao/icon-yh-check.png") no-repeat ;
+    background-size: 0.34rem 0.34rem;
+}
+.accounts-all span.icon-default{
+    position: relative;
+}
+input[type="radio"]{
+    position: absolute;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+}
+input[type="radio"]:checked + i.icon-check{
+    background: url("/assets/images/yaohao/icon-yh-check.png") no-repeat ;
+    background-size: 0.34rem 0.34rem;
+}
+.icon-default em {
+    margin-left: 0.1rem;
+    font-style: normal;
+}
+.check-style .accounts-all span.icon-default {
+    color: #b2b2b2;
+}
+.check-style .accounts-all span:nth-of-type(2n+1) {
+    margin-right: 0.55rem;
+}
+.check-style .accounts-all span {
+    font-size: 0.38rem;
+    color: #474747;
+    float: left;
+    display: inline-block;
+    margin-bottom: 0.55rem;
+}
+.check-style .accounts-all span img {
+    width: 0.34rem;
+    height: 0.34rem;
+    margin-right: 0.22rem;
+}
+.downMenu-style {
+    position: relative;
+}
+.downMenu-style .icon-downMenu {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    bottom: 0.16rem;
+}
+.inquireTips {
+    font-size: 0.28rem;
+    color: #6e6e6e;
+    margin: 0.416rem 0.55rem 0rem 1.175rem;
+}
+.inquireTips p:nth-of-type(1) {
+    text-indent: -0.625rem;
+}
+.inquireTips p {
+    line-height: 0.6rem;
+    color: #a1a9ac;
+}
+.inquireTips p.textIndent{
+	text-indent: 0.45rem;
+}
+.inquireTips p.textIndent2{
+	text-indent: 0.7rem;
+}
+.listCon{
+	border-top: 1px solid #edefee;
+	padding: 0.2rem 0.55rem;
+}
+.listCon p{
+	padding: 0;
+	line-height: 0.694rem;
+	font-size: 0.277rem;
+}
+.listCon p span{
+	color: #0083e0;
+}
+.queryResult.parkingQuery .q-r-tit {
+    padding-bottom: 0.33rem;
+}

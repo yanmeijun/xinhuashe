@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>出入境办理</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/passport/passport.css" />
+    <script type="text/javascript" src="/lib/vue.min.js"></script>
+    <script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script src="/js/passport/setCookie.js"></script>
+    <script>
+        var randomKey = "<%= locals.randomKey%>"
+                , userID = "<%= locals.userID%>"
+                , clientID = "<%= locals.clientID %>",
+                cityID = "<%= locals.cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                local_x = "<%= locals.local_x %>"
+                , local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+    </script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--出入境办理-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back"/>出入境网上预约申请查询</h1>
+				<hr class="hrLine">
+				<div class="hnSearchList">
+					<div class="text-list-div clearfix">
+						<label>身份证后四位：</label>
+						<input type="text" placeholder="" v-model="card"/>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>申请密码：</label>
+						<input type="password" placeholder="" v-model="password"/>
+					</div>
+					<div class="btn-box">
+						<input type="button" value="查询" @click="search()"/>
+					</div>
+				</div>
+			</div>
+			<!--查询结果-->
+			<div class="peccancyQuery userInfor onlyStyle" v-if="haveData">
+                <!---->
+				<h2 class="q-r-tit"><span></span>查询结果<a href="javascript:;" class="cancelYY" @click="cancelYY()">取消预约</a></h2>
+				<div class="searchResult" v-for="(item,index) in userInfor" >
+					<div class="text-list-div clearfix">
+						<label>姓名：</label>
+						<span>{{item.ZWXM}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>预约时间：</label>
+						<span><em>{{item.WSYYRQ.substring(0,4)}}</em>年<em>{{item.WSYYRQ.substring(4,6)}}</em>月<em>{{item.WSYYRQ.substring(6)}}</em>日{{item.WSYYSJ}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>受理单位：</label>
+						<span>{{item.SLDWMC}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>办证地点：</label>
+						<span>{{item.SLDWDZ}}</span>
+					</div>
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" v-if="noData">
+				<h2 class="q-r-tit"><span></span>没有找到记录,请确认你的输入信息是否正确!</h2>
+			</div>
+		</div>
+
+        <!--加载动画开始-->
+        <div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+            <img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+            <p>加载中</p>
+        </div>
+        <!--加载动画结束-->
+
+        <!--遮盖层-->
+        <div class="masktime" v-if="masktime" id="masktime" ref="masktime">{{masktime}}</div>
+        <!--确认提交弹框开始-->
+		<div class="mask"  v-if="cancel"></div>
+		<div class="dialog-tel" v-if="cancel">
+			<div class="titTel">确认要取消预约吗？</div>
+			<div class="btn-tel">
+				<a href="javascript:;" @click="cancelsq">取消</a>
+				<a href="javascript:;"  @click="sure()">确认</a>
+			</div>
+		</div>
+        <!--确认提交弹框结束-->
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：国家移民管理局</div>
+	</div>
+    <script type="text/javascript" src="/js/passport/appointmentInquire.js"></script>
+</body>
+</html>

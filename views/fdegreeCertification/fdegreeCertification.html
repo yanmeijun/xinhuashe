@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>国（境）外学历学位认证查询</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/fdegreeCertification/fdegreeCertification.css">
+		<link rel="stylesheet" href="/css/mobileSelect.css">
+		<script type="text/javascript" src="/lib/zepto.min.js"></script>
+		<script type="text/javascript" src="/js/publicInput.js"></script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" src="/lib/zepto.min.js"></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script type="text/javascript" src="/js/hospital/mobileSelect.js"></script>
+		<script>
+			var randomKey = "<%= randomKey %>",
+					userID = "<%= userID%>",
+					clientID = "<%= clientID %>",
+					cityID = "<%= cityID %>",
+					local_x = "<%= local_x %>",
+					citySRC = "<%= cityInfo.citySRC %>",
+					cityName = "<%= cityInfo.cityName %>",
+					local_y = "<%= local_y %>",
+					localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/fdegreeCertification/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit">查询信息填写</h1>
+					<div class="pubListBox degreeLableWH">
+						<div class="publicListText">
+							<label>姓名：</label>
+							<input type="text" id="queryName" maxlength="50">
+							<!--<img src="/images/organizationReport/delete.png" class="icon-delete" >-->
+						</div>
+						<div class="publicListText ">
+							<label>证书编号：</label>
+							<div class="moreInput">
+								<span>教留服认</span>
+								<input type="text" maxlength="10" id="txtCountry">
+								<div class="codeTime">
+									<b>【</b>
+									<input type="text" maxlength="4" id="txtYear">
+									<b>】</b>
+								</div>
+								<input type="text" maxlength="5" id="txtNumber">
+								号
+							</div>
+						</div>
+						<div class="publicListText">
+							<label>认证类别</label>
+							<span id="AuthType_span" data_id="1" style="cursor:
+                    pointer;">国外</span>
+							<img src="/images/icon-downMenu.png" class="icon-downMenu" id="AuthType_img">
+						</div>
+						<div class="publicListText publicListCode">
+							<label>验证码</label>
+							<input type="text" placeholder=""  id="verification_input"/>
+							<img src="/images/yanzm.gif" class="img-code" id="verificationCode">
+						</div>
+					</div>
+					<div class="btn-box">
+						<input type="button" value="查询"  id="queryButoon"/>
+					</div>
+				</div>
+			</div>
+			<!--说明信息  end-->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit publicMainTit"><span></span>说明</h2>
+				<div class="DescriptionInfr">
+					<p class="tit">国（境）外学历学位认证书（以下简称“认证书”）在线查询范围：</p>
+					<p>1、2006年8月之后出具的国外学历学位认证书；</p>
+					<p>2、2008年8月之后出具的港澳台地区学历学位认证书；</p>
+					<p>3、2013年（含）之后出具的中外合作办学学历学位认证书。</p>
+					<p class="remarks">注：有可能存在此时间段内的部分认证书无法在线查询到的情况，如有问题可发邮件至renzheng@cscse.edu.cn咨询。</p>
+					<p>4、以上填写内容需与所查询认证书保持一致。“认证书编号”处的三个关键字段（如下述示例中的下划线标注部分）分别填入在线查询的三个空白处，如：<span>教留服认 美【2010】00001号</span>，合作办学则填写 <span>教留服认  合美【2010】00001号</span>。请确认上述信息全部填写正确后进行查询，否则将影响查询的准确性。</p>
+				</div>
+			</div>
+			<!--说明信息  end-->
+			<!-- 查询动画提示开始-->
+			<div class="maskD" style="opacity: 0;display: none" id="dialogMask"></div>
+			<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+				<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+				<p>加载中</p>
+			</div>
+
+			<!-- ------------------------------提示语---------------------------------- -->
+			<div class="masktime" id="masktime" style="display:none;"></div>
+			<div style="height: 1.3rem;"></div>
+			<!--下拉框-->
+			<div class="mobileSelect">
+				<div class="grayLayer"></div>
+				<div class="content">
+					<div class="btnBar">
+						<div class="fixWidth">
+							<div class="cancel">取消</div>
+							<div class="title">验证方式</div>
+							<div class="ensure">完成</div>
+						</div>
+					</div>
+					<div class="panel">
+						<div class="fixWidth">
+							<div class="wheels">
+								<div class="wheel" style="width: 100%;">
+									<ul class="selectContainer"
+										style="transform: translate3d(0px, 80px, 0px);">
+										<li data-id="5">联名卡号</li>
+										<li data-id="1">身份证</li>
+									</ul>
+								</div>
+							</div>
+							<div class="selectLine"></div>
+							<div class="shadowMask"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="data-sources">服务来源：教育部留学服务中心</div>
+			<script type="text/javascript" src="/js/fdegreeCertification/fdegreeCertification.js"></script>
+
+
+
+
+
+		</div>
+	</body>
+</html>

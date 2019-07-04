@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中小学教师资格考试合格证明（NTCE）查询</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/teacherQualification/teacherQualification.css">
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script>
+        var randomKey = "qualificationCertificate_" + Math.random().toString(36).substr(2)
+            ,userID = "<%= locals.userID%>"
+            ,clientID = "<%= locals.clientID %>",
+            cityID = "<%= locals.cityID %>",
+			citySRC = "<%= cityInfo.citySRC %>",
+			cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= locals.local_x %>"
+            ,local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.masktimes{
+			line-height: 22px;
+			padding-top: 3px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--中小学教师资格考试合格证明（NTCE）查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">中小学教师资格考试合格证明（NTCE）查询</h1>
+				<hr class="hrLine">
+				<div class="tab-content">
+					<div class="text-list-div clearfix">
+						<label>考试时间</label>
+						<span id="selecText" style="display: inline-block;width: 63%">2017年下半年</span>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" id="selec">
+					</div>
+					<div class="text-list-div clearfix">
+						<label>报考省份</label>
+						<span id="country" data_id="01" style="display: inline-block;width: 63%">全国</span>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" id="count">
+					</div>
+					<div class="text-list-div clearfix">
+						<label>报考级别</label>
+						<span id="countryjb" data_id="1">教师资格考试合格证明</span>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu" id="countjb">
+					</div>
+					<div class="text-list-div clearfix">
+						<label>准考证号</label>
+						<input type="text" placeholder="请输入准考证号"  id="placehold"/>
+					</div>
+					<div class="text-list-div">
+						<label>姓名</label>
+						<input type="text" placeholder="请输入姓名"  id="name"/>
+					</div>
+					<div class="text-list-div">
+						<label>证件号</label>
+						<input type="text" placeholder="请输入证件号码"  id="idcard"/>
+					</div>
+					<div class="text-list-div text-list-code">
+						<label>验证码</label>
+						<input type="text" placeholder="请输入验证码" id="veriCode"/>
+						<img src="/images/yanzm.gif" class="img-code" id="veriCodeImage">
+					</div>
+					<div class="lookBox">
+						注：准考证号、姓名和报考时的身份证号码至少输入两项
+					</div>
+					<div class="btn-box">
+						<input type="button" value="查询" onclick="search()"/>
+					</div>
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" style="display: none" id="nodata">
+				<h2 class="q-r-tit"><span></span><em style="font-style: normal;" id="errorImg"></em></h2>
+			</div>
+			<!--v-bind:style="{height: heightData+'px'}"-->
+			<div class="masktime" id="masktime" style="display:none;"></div>
+
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<!-- -----------------------------------------------查询动画提示开始---------------------------------- -->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- -----------------------------------------------查询动画提示结束--------------------------------- -->
+		<div class="data-sources">服务来源：中国教育考试网</div>
+	</div>
+	<script src="/js/teacherQualification/qualificationCertificate.js"></script>
+</body>
+</html>

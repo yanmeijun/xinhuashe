@@ -1,0 +1,113 @@
+.regAddress label {
+    width: 2.5rem;
+    float: left;
+    line-height: initial;
+}
+em{
+    font-style: normal;
+}
+.regListBox {
+    width: -webkit-calc(100% - 2.63rem);
+    width: -moz-calc(100% - 2.63rem);
+    width: calc(100% - 2.63rem);
+    display: inline-block;
+    padding-top: 0.11rem;
+}
+.regAddress .regAddList:nth-of-type(1), .regAddress .regAddList:nth-of-type(2) {
+    padding-right: 0.14rem;
+}
+.regAddress .regAddList {
+    float: left;
+    font-size: 0.38rem;
+    line-height: 0.38rem;
+    width: 50%;
+    position: relative;
+}
+.regAddress .regAddList span {
+    display: inline-block;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    white-space: nowrap;
+    width: -webkit-calc(100% - 0.32rem);
+    width: -moz-calc(100% - 0.32rem);
+    width: calc(100% - 0.32rem);
+}
+.text-list-div .icon-downMenu {
+    width: 0.694rem;
+    height: 0.694rem;
+    position: absolute;
+    margin-top: -0.1rem;
+    right: 0.1rem;
+    top: 0;
+}
+.tab-content.inforConfirm .text-list-div label {
+    width: 2.9rem;
+}
+.tab-content.inforConfirm .text-list-div span{
+    width: -webkit-calc(100% - 2.9rem);
+    width: -moz-calc(100% - 2.9rem);
+    width: calc(100% - 2.9rem);
+    text-align: left;
+    float: left;
+}
+.text-list-div.textListTit{
+	margin: 0;
+	padding: 0.61rem 0.55rem 0.25rem;
+}
+.tab-content.inforConfirm .text-list-div.textListTit span{
+	color: #0083e0;
+}
+.nameList .level{
+	font-size: 0.3rem;
+    color: #ef8935;
+    text-align: right;
+    float: right;
+    line-height: 0.5rem;
+    font-style: normal;
+}
+.tab-content.inforConfirm .text-list-div.nameList span {
+    width: -webkit-calc(100% - 4.5rem);
+    width: -moz-calc(100% - 4.5rem);
+    width: calc(100% - 4.5rem);
+    text-align: left;
+    float: left;
+}
+.peccancyQuery .htTitke {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+/*异地就医*/
+.addListBox .regAddList{
+	width: 33.3%;
+}
+/*省市区联动修改*/
+.multilevelList{
+	border-bottom: none;
+}
+.multilevelList .regListBox {
+    width: -webkit-calc(100% - 2.93rem);
+    width: -moz-calc(100% - 2.93rem);
+    width: calc(100% - 2.93rem);
+}
+.multilevelList .regListBox .regAddList{
+	border-bottom: 1px solid #edefee;
+	position: relative;
+	float: left;
+    font-size: 0.38rem;
+    line-height: 0.38rem;
+    width: 100%;
+    position: relative;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
+}
+.multilevelList .regListBox .regAddList:nth-last-of-type(1){
+	margin-bottom: -0.4rem;
+}
+.multilevelList label {
+    width: 2.5rem;
+    float: left;
+    line-height: initial;
+}
+.regAddList span{
+	color: #ababae;;
+}

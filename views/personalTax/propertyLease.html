@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>个人所得税--财产租赁所得</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/personalTax/personalTax.css" />
+	<script type="text/javascript" src="/lib/vue.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script>
+		var randomKey = "<%=locals.randomKey%>",
+				userID = "<%= locals.userID%>",
+				clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>",
+				local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="propertyLease">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--个人所得税--财产租赁所得-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="goBack()"/>个人所得税--财产租赁所得</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>所属财产</label>
+					<div class="accounts-all propertyLease">
+				    	<span v-if="house"><picture class="active" @click="radioSwitch(true)"></picture>住房</span>
+						<span v-else=""><picture @click="radioSwitch(true)"></picture>住房</span>
+						<span v-if="house"><picture @click="radioSwitch()"></picture>其他财产</span>
+						<span v-else=""><picture class="active" @click="radioSwitch()"></picture>其他财产</span>
+
+					</div>
+				</div>
+				<div class="text-list-div">
+					<label>收入金额</label>
+					<input ref="inputNum" type="number" placeholder="请输入收入金额" />
+				</div>
+				<div class="textNote">注：请输入扣除税费，租金，修缮费用后的金额</div>
+				<div class="btn-box">
+					<input @click="calculate()" type="button" value="计算" />
+				</div>
+			</div>
+			<!--计算结果-->
+			<div v-if="result>=0" class="peccancyQuery queryResult userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>计算结果</h2>
+				<div class="calculationResult">
+					<div class="text-list-div clearfix">
+						<label>您的应纳税额为</label>
+						<span class="numberResults">{{result}}</span>
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="noteResult">注：以上结果，仅供参考</div>
+				</div>
+			</div>
+			<!--说明-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle">
+				<div class="personalPrompt">
+					<p><img src="/images/icon-tips.png" class="icon-tips">说明：</p>
+					<p>1：财产租赁所得：指个人出租建筑物、土地使用权、机器设备、车船以及其他财产取得的所得。</p>
+					<p>2：税率： 财产租赁所得适用20%的比例税率 ，但对个人按市场价格出租的居民住房取得的所得，自2001年1月1日起，暂减按10%的税率征收个人所得税。</p>
+					<p class="taxTitle">计算方法：</p>
+					<p>财产租赁所得个人所得税税前依次可以扣除以下税费</p>
+					<p>1. 财产租赁过程中缴纳的税费</p>
+					<p>2. 向出租方支付的租金</p>
+					<p>3. 由纳税人负担的租赁财产实际开支的修缮费用（有合法票据证明由出租人负担的修缮费用 准予从税前据实扣除。允许扣除的修缮费以每次800元为限，一次扣除不完的，准予在下一次继续扣除，直至扣完为止。）</p>
+					<p>4. 税法规定的费用扣除标准（租赁收入不超过4000元的，减除800元费用，4000元以上的， 减除20%的费用。）</p>
+				</div>
+			</div>
+		</div>
+		<!--提示语-->
+		<div v-if="noData" class="masktime" id="masktime">{{maskTips}}</div>
+		<div style="height:1.5rem"></div>
+		<div class="data-sources">服务来源：北京市地方税务局</div>
+	</div>
+	<script src="/js/personalTax/propertyLease.js"></script>
+</body>
+</html>

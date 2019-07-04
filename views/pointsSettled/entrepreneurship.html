@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>创新创业</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/pointsSettled/pointsSettled.css" />
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.ageLimt-title {
+			position: relative;
+		}
+		input[type="radio"]{
+			position: absolute;
+			left: -5px;
+			top: -3px;
+			opacity: 0;
+		}
+		input[type="radio"]:checked + i.icon-radio{
+			background: url("../../images/pointsSettled/radio-select.png") no-repeat ;
+			background-size: 0.416rem 0.416rem;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--6.创新创业-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img src="../../images/icon-return.png" class="icon-return" onclick="back()"/>6.创新创业</h1>
+				<hr class="hrLine">
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="0" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">不满足创新创业积分条件</span>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="1" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">在科技、文化领域获得国家级或本市市级奖项</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" disabled class="disabled" />-->
+						<span class="disabled" id="scienceTrigger">请选择</span>
+						<img src="../../images/icon-downMenu.png" class="downMenu" id="science">
+						<div class="promptRemarks font28" id="cond" style="display:none;">*获国家级奖项的最高加12分，获本市市级奖项的最高加6分</div>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="2" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit font28">在创新创业大赛获得国家级或本市市级奖项</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" disabled class="disabled" />-->
+						<span class="disabled" id="CountryTrigger">请选择</span>
+						<img src="../../images/icon-downMenu.png" class="downMenu" id="Country">
+						<div class="promptRemarks font28" id="cond2" style="display:none;">*获国家级奖项的最高加12分，获本市市级奖项的最高加6分</div>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="3" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">在创新创业大赛获得国家级或本市市级奖项</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" disabled class="disabled" />-->
+						<span class="disabled" id="OverYearTrigger">请选择</span>
+						<img src="../../images/icon-downMenu.png" class="downMenu" id="OverYear">
+						<div class="promptRemarks font28" id="cond3" style="display:none;">*工作每满1年加2分，最高加6分。</div>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="4" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">在国家高新技术企业担任高级管理人员、核心技术人员且符合相关条件</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" disabled class="disabled" />-->
+						<span class="disabled" id="TwoYearsTrigger">请选择</span>
+						<img src="../../images/icon-downMenu.png" class="downMenu" id="TwoYears">
+						<div class="promptRemarks font28" id="cond4" style="display:none;">*工作每满1年加2分，最高加6分。</div>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="5" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">在经认定的科技企业孵化器及众创空间中符合一定条件的创业企业投资或就业且符合相关条件</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" disabled class="disabled" />-->
+						<span class="disabled" id="AuthentTrigger">请选择</span>
+						<img src="../../images/icon-downMenu.png" class="downMenu" id="Authent">
+						<div class="promptRemarks font28" id="cond5" style="display:none;">*每满1年加2分，最高加6分。</div>
+					</div>
+				</div>
+				<div class="textList">
+					<div class="ageLimt-title clearfix">
+						<input type="radio" value="6" name="smsradio">
+						<i class="icon-radio"></i>
+						<span class="conditionTit">在经认定的科技企业孵化器及众创空间、技术转移服务机构、专业科技服务机构投资或就业且符合相关条件</span>
+					</div>
+					<div class="ageLimt-text">
+						<!--<input type="text" placeholder="请选择" disabled class="disabled" />-->
+						<span class="disabled" id="technologyTrigger">请选择</span>
+						<img src="../../images/icon-downMenu.png" class="downMenu" id="technology">
+						<div class="promptRemarks font28" id="cond6" style="display:none;">*每满1年加1分，最高加3分。</div>
+					</div>
+				</div>
+				<div class="btn-box btn-newsStyle">
+					<input type="button" value="确定"  onclick="sure()"/>
+				</div>
+			</div>
+			<!---->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>说明：</h2>
+				<div class="wantLookCon">
+					<p>在创新创业指标各项中，加分是不累计的，如果您同时符合多项加分条件的，只能计最高分~</p>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+	</div>
+	<script src="/js/pointsSettled/entrepreneurship.js"></script>
+    <script src="/js/all.js"></script>
+</body>
+</html>

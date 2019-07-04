@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>中央网信举报中心</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/monitorReport/monitorReport.css" />
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+		<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<style>
+			.webJBNotice.overNot{
+			height: auto;
+		}
+		</style>
+		<script  type="text/javascript">
+			var randomKey = sessionStorage.getItem('randomKey') || "<%= locals.randomKey %>",
+					userID = sessionStorage.getItem('userID') || "<%= locals.userID%>",
+					clientID = sessionStorage.getItem('clientID') || "<%= locals.clientID %>",
+					cityID = sessionStorage.getItem('cityID') || "<%= locals.cityID %>",
+					local_x = sessionStorage.getItem('local_x') || "<%= locals.local_x %>",
+					local_y = sessionStorage.getItem('local_y') || "<%= locals.local_y %>",
+					localFrom = sessionStorage.getItem('localFrom') || "<%= locals.localFrom %>";
+			sessionStorage.setItem('randomKey',randomKey);
+			sessionStorage.setItem('userID',userID);
+			sessionStorage.setItem('clientID',clientID);
+			sessionStorage.setItem('cityID',cityID);
+			sessionStorage.setItem('local_x',local_x);
+			sessionStorage.setItem('local_y',local_y);
+			sessionStorage.setItem('localFrom',localFrom);
+		</script>
+	</head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/zywxReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit">举报须知</h1>
+					<div class="webJBNotice overNot">
+						<p>一、欢迎举报互联网违法和不良信息，举报前请先认真阅读“举报须知”内容。</p>
+						<p>二、举报主体可通过本平台以匿名、实名两种方式进行举报。</p>
+						<p>匿名举报无需填写个人信息；实名举报在举报和注册时需要填写个人信息并验证。</p>
+						<p>举报主体进入“举报入口”，按照提示填写被举报网站的名称、网址、违法和不良内容描述、举报主体信息等相关内容后提交。</p>
+						<p>三、举报主体在正式提交举报之前，请确认所举报内容与事实一致。因不实举报造成的一切后果由举报主体自行承担。</p>
+					</div>
+					<div class="btn-box">
+						<input type="button" value="我要举报" onclick="goNext()"/>
+					</div>
+				</div>
+			</div>
+			
+			<div style="height: 2.3rem;"></div>
+			<div class="data-sources">服务来源：<br />中央网信办（国家互联网信息办公室）<br>违法和不良信息举报中心</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function goNext(){
+			window.location.href = "/zywxReport?page=reportSelect";
+		}
+	</script>
+</html>

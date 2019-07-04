@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>举报不良信息</title>
+    <link type="text/css" rel="stylesheet" href="css/news.css"/>
+    <script type="text/javascript">
+        var randomKey = "<%= randomKey %>"
+                , userID = "<%= userID%>"
+                , clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                local_x = "<%= local_x %>"
+                , local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+    </script>
+    <script type="text/javascript" src="/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script language="JavaScript">var _trackDataType = 'web';
+    var _trackData = _trackData || [];</script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615"
+            src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+    <!--banner图-->
+    <div class="banner">
+        <!-- <img id="citySRC" :src="citysrc" v-if='this.citysrc'/> -->
+        <img id="citySRC" src="/images/jubao-banner.png"/>
+    </div>
+    <!--举报不良信息首页-->
+    <div class="warpBox">
+        <div class="peccancyQuery">
+            <h1 class="p-q-tit">净化信息环境 保护网民权益</h1>
+            <hr class="hrLine">
+            <div class="btn-box bj-insuranceSystem">
+                <input type="button" value="举报垃圾短信" id="reportMessage"/>
+                <input type="button" value="举报诈骗电话" id="reportSwindle"/>
+                <input type="button" value="举报骚扰电话" id="harassPhone"/>
+                <input type="button" value="举报网站" id="website"/>
+                <input type="button" value="举报个人信息泄露" id="personInfo"/>
+                <input type="button" value="举报短信进度查询" id="message"/>
+            </div>
+        </div>
+    </div>
+    <div style="height: 1.3rem;"></div>
+    <div class="data-sources">受理单位：12321网络不良与垃圾信息举报受理中心</div>
+</div>
+<script>
+    $('#reportMessage').on('click', function () {
+        var url = "/unhealthy/unhealthyReportMessage?randomKey=" + randomKey + "&userID=" + userID + "&clientID=" + clientID + "&cityID=" + cityID + "&citySRC=" + citySRC + "&local_x=" + local_x + "&localFrom=" + localFrom + "&local_y=" + local_y;
+        window.location.href = url;
+    })
+    $('#reportSwindle').on('click', function () {
+        var url = "/unhealthy/unhealthySwindlePhone?randomKey=" + randomKey + "&userID=" + userID + "&clientID=" + clientID + "&cityID=" + cityID + "&citySRC=" + citySRC + "&local_x=" + local_x + "&localFrom=" + localFrom + "&local_y=" + local_y;
+        window.location.href = url;
+    })
+    $('#harassPhone').on('click', function () {
+        var url = "/unhealthy/unhealthyHarassPhone?randomKey=" + randomKey + "&userID=" + userID + "&clientID=" + clientID + "&cityID=" + cityID + "&citySRC=" + citySRC + "&local_x=" + local_x + "&localFrom=" + localFrom + "&local_y=" + local_y;
+        window.location.href = url;
+    })
+    $('#website').on('click', function () {
+        var url = "/unhealthy/unhealthyWebsite?randomKey=" + randomKey + "&userID=" + userID + "&clientID=" + clientID + "&cityID=" + cityID + "&citySRC=" + citySRC + "&local_x=" + local_x + "&localFrom=" + localFrom + "&local_y=" + local_y;
+        window.location.href = url;
+    })
+    $('#personInfo').on('click', function () {
+        var url = "/unhealthy/unhealthyPersonInfo?randomKey=" + randomKey + "&userID=" + userID + "&clientID=" + clientID + "&cityID=" + cityID + "&citySRC=" + citySRC + "&local_x=" + local_x + "&localFrom=" + localFrom + "&local_y=" + local_y;
+        window.location.href = url;
+    })
+    $('#message').on('click', function () {
+        var url = "/unhealthy/unhealthyMessage?randomKey=" + randomKey + "&userID=" + userID + "&clientID=" + clientID + "&cityID=" + cityID + "&citySRC=" + citySRC + "&local_x=" + local_x + "&localFrom=" + localFrom + "&local_y=" + local_y;
+        window.location.href = url;
+    })
+</script>
+</body>
+</html>

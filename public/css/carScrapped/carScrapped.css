@@ -1,0 +1,25 @@
+.text-list-div{
+	position: relative;
+}
+.listCon p{
+	padding: 0;
+    line-height: 0.694rem;
+    font-size: 0.277rem;
+}
+.listCon p:nth-of-type(1){
+	text-indent: 0.5rem;
+}
+.listCon {
+    border-top: 1px solid #edefee;
+    padding: 0.3rem 0.55rem;
+}
+.queryResult.parkingQuery .q-r-tit {
+    padding-bottom: 0.33rem;
+}
+.peccancyQuery.userInfor.onlyStyle .q-r-tit{
+	padding-right: 0.3rem;
+}
+.q-r-tit .notResult{
+	display: inline-block;
+    width: calc(100% - 1.1rem);
+}

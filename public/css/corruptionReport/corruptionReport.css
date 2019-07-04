@@ -1,0 +1,133 @@
+.webJBNotice{
+	border-top: 1px solid #edefee;
+	padding: 0.3rem 0.5rem 0.3rem 0.55rem;
+	/*height: -webkit-calc(100vh - 9.72rem);
+	height: -moz-calc(100vh - 9.72rem);
+	height: calc(100vh - 9.72rem);
+	overflow-y: auto;*/
+}
+.webJBNotice p{
+	font-size: 0.36rem;
+	color: #474747;
+	line-height: 0.777rem;
+}
+.webJBNotice p.colorYello{
+	color: #fc6721;
+}
+/*同意协议*/
+.agreeOK {
+    font-size: 0.34rem;
+    padding-top: 0.44rem;
+    border-top: 1px solid #e6e6e6;
+    margin: 0 0.55rem 0.5rem;
+}
+.agreeOK span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    background: url(../../images/icon-check28-default.png) no-repeat;
+    background-size: 0.4375rem 0.4375rem;
+    margin: 0.03rem 0.2rem 0 0rem;
+    float: left;
+}
+.agreeOK span.active {
+	background: url(../../images/icon-check28-selected.png) no-repeat;
+    background-size: 0.4375rem 0.4375rem;
+}
+.agreeWords{
+	float: left;
+	width: -webkit-calc(100% - 0.6375rem);
+	width: -moz-calc(100% - 0.6375rem);
+	width: calc(100% - 0.6375rem);
+	line-height: 0.58rem;
+}
+
+/*投诉举报留言*/
+.publicListText.textareaDesc{
+	height: 4.11rem;
+}
+.publicListText.textareaDesc .tit{
+	line-height: 1.02rem;
+	padding-left: 0.27rem;
+	border-bottom: 1px solid #d5d5d5;
+}
+.publicListText.textareaDesc textarea{
+	height: 3rem;
+	width: 100%;
+	border: none;
+	font-family: "微软雅黑";
+	line-height: 0.55rem;
+	padding: 0.27rem;
+	font-size: 0.36rem;
+	resize: none;
+}
+.publicListText.textareaDesc textarea:focus{
+	outline:  none;
+}
+.uploadFileTips{
+	color: #b2b2b2;
+	font-size: 0.277rem;
+	line-height: 0.5rem;
+	padding: 0 0.138rem 0 0.277rem;
+}
+.publicListText.uploadPicList{
+	height: 2.3rem;
+}
+.uploadAttaPic{
+	float: left;
+	margin-top: 0.3rem;
+}
+.uploadPicDefault{
+	width: 1.7rem;
+	height: 1.6rem;
+	background: #f7f7f7;
+	float: left;
+	margin-right: 0.166rem;
+	position: relative;
+}
+.upPicNum{
+	text-align: center;
+	font-size: 0.25rem;
+	color: #b9b9b9;
+	line-height: 0.25rem;
+}
+.uploadIcon{
+	background: url(../../images/monitorReport/uploadIcon.png) no-repeat;
+	width: 0.625rem;
+	height: 0.515rem;
+	background-size: 0.625rem 0.515rem;
+	margin: 0.33rem auto 0.2rem;
+}
+.upSuccessPic{
+	line-height: 1.6rem;
+	text-align: center;
+}
+.upSuccessPic img{
+	max-width: 100%;
+	max-height: 1.6rem;
+}
+.upPicDelete{
+	background: url(../../images/monitorReport/deleteIcon.png) no-repeat;
+	width: 0.4rem;
+	height: 0.4rem;
+	background-size: 0.4rem 0.4rem;
+	position: absolute;
+	top: -0.11rem;
+	right: -0.11rem;
+}
+.successTitWord.appCode.zzbCode .monitorTitWord{
+	font-size: 0.38rem;
+}
+
+@media (max-width:320px ) {
+	/*.webJBNotice{
+		height: -webkit-calc(100vh - 10.382rem);
+	    height: -moz-calc(100vh - 10.382rem);
+	    height: calc(100vh - 10.382rem);
+	}*/
+	.agreeOK {
+	    padding-top: 0.3rem;
+	    margin: 0 0.55rem 0.3rem;
+	}
+}

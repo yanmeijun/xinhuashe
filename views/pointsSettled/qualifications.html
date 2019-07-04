@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>积分落户资格条件</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/pointsSettled/pointsSettled.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" v-cloak id="qualificat">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--1.积分落户资格条件-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<form  method="post" action="/pointsSettled/pointsSettled" id="points">
+                    <input type="text" name="randomKey" value="<%= randomKey%>" style="display: none;">
+                    <input type="text" name="userID" value="<%= userID%>" style="display: none;">
+                    <input type="text" name="clientID" value="<%= clientID%>" style="display: none;">
+                    <input type="text" name="cityID" value="<%= cityID%>" style="display: none;">
+                    <input type="text" name="local_x" value="<%= local_x%>" style="display: none;">
+                    <input type="text" name="local_y" value="<%= local_y%>" style="display: none;">
+                    <input type="text" name="localFrom" value="<%= locals.localFrom %>" style="display: none;">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back('points')"/>1.积分落户资格条件</h1>
+				</form>
+				<hr class="hrLine">
+				<div class="conditionList">
+					<ul>
+						<li>(1) 持本市居住证</li>
+						<li>(2) 不超过法定退休年龄</li>
+						<li>(3) 在京连续缴纳社会保险7年及以上</li>
+						<li>(4) 无刑事犯罪记录</li>
+					</ul>
+					<div class="radioBox">
+						<span><i class="icon-radio" :class="{'active':selecte}" style="float: none;margin-top: -0.07rem;" @click="next"></i>符合</span>
+						<!--<span><i class="icon-radio active"></i>不符合</span>-->
+						<span><i class="icon-radio" :class="{'active':selected}" style="float: none;margin-top: -0.07rem;" @click="backs()"></i>不符合</span>
+					</div>
+				</div>
+			</div>
+			<!---->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>说明：</h2>
+				<div class="wantLookCon">
+					<p>符合以上四项资格条件的在京外地户籍人员可以在北京市申报积分落户。</p>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+	</div>
+	<script src="/js/pointsSettled/qualifications.js"></script>
+    <script src="/js/all.js"></script>
+</body>
+</html>

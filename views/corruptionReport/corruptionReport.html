@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>反腐败国际追逃追赃</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/corruptionReport/corruptionReport.css" />
+		<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" language="javascript">
+            var randomKey = "<%= randomKey %>"
+                ,userID = "<%= userID%>"
+                ,clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                cityName = "<%= cityInfo.cityName %>",
+                local_x = "<%= local_x %>"
+                ,local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	<style>
+		.accounts-all span {
+			font-size: 0.38rem;
+			color: #474747;
+		}
+		.accounts-all span i{
+			width: 0.4375rem;
+			height: 0.4375rem;
+			display:inline-block;
+			background: url("/images/icon-check28-default.png") no-repeat ;
+			background-size: 0.4375rem 0.4375rem;
+		}
+		.accounts-all span i.icon-check{
+			background: url("/images/icon-check28-default.png") no-repeat ;
+			background-size: 0.4375rem 0.4375rem;
+		}
+		.accounts-all span i.check-true{
+			background: url("/images/icon-check28-default.png") no-repeat ;
+			background-size: 0.4375rem 0.4375rem;
+		}
+		.accounts-all span.icon-default{
+			position: relative;
+		}
+		input[type="checkbox"]{
+			position: absolute;
+			left: -5px;
+			top: -3px;
+			opacity: 0;
+		}
+		input[type="checkbox"]:checked + i.icon-check{
+			background: url("/images/icon-check28-selected.png") no-repeat ;
+			background-size: 0.4375rem 0.4375rem;
+		}
+	</style>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/corruptionReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit">网上举报须知</h1>
+					<div class="webJBNotice">
+						<p>一、反腐败国际追逃追赃线索举报平台受理范围：</p>
+						<p>1.对党员和国家工作人员逃往国（境）外行为的举报；</p>
+						<p>2.对党员和国家工作人员向国（境）外转移涉嫌违法违纪资产行为的举报；</p>
+						<p>3.对反腐败国际追逃追赃工作的意见建议。</p>
+						<p>二、举报人应对所举报的问题真实性负责。对借举报故意捏造事实、诬告陷害他人的或者以举报为名制造事端，干扰纪检监察机关正常工作的，依照有关规定严肃处理，构成犯罪的，移送司法机关依法处理。</p>
+						<p>三、纪检监察机关提倡署名举报，特别鼓励署真实姓名和准确联系方式的实名举报。对认定为实名举报的，优先办理，及时回复。</p>
+						<p class="colorYello">Online Whistle Blowing Guidance</p>
+						<p>The platform of reporting anti-corruption fugitive repatriation and asset recovery clues deals with:</p>
+						<p>1.Reports on CPC members and public officials who have fled abroad.</p>
+						<p>2.Reports on CPC members and public officials who have transferred suspect corruption proceeds abroad.</p>
+						<p>3.Advice on anti-corruption fugitive repatriation and asset recovery.</p>
+					</div>
+					<div class="agreeOK clearfix">
+						<div class="radioList clearfix accounts-all " style="float: left">
+							<span class="icon-default special-style">
+                                <input type="checkbox" value="true" name="smsradio">
+                                <i class="icon-check"></i><em></em>
+                            </span>
+						</div>
+						<div class="agreeWords" style="float: left">
+							<p>我已阅读以上条款</p>
+							<p>I have read and accepted the above terms</p>
+						</div>
+					</div>
+					<div class="btn-box">
+						<input type="button" value="我要举报" class="btnDefault backHome"  onclick="report('report')"/>
+						<input type="button" value="反馈查询" class="btnDefault fuhe" onclick="report('search')"/>
+					</div>
+				</div>
+			</div>
+
+			<!-- ------------------------------提示语---------------------------------- -->
+			<div class="masktime" id="masktime" style="display:none;"></div>
+
+
+			<div style="height: 2.2rem;"></div>
+			<div class="data-sources">服务来源：
+				<br>中共中央纪律检查委员会
+				<br>中华人民共和国国家监察委员会
+			</div>
+		</div>
+		<script src="/js/corruptionReport/corruptionReport.js"></script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>个人所得税-利息、股息、红利所得</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/personalTax/personalTax.css" />
+	<script type="text/javascript" src="/lib/vue.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script>
+		var randomKey = "<%=locals.randomKey%>",
+				userID = "<%= locals.userID%>",
+				clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>",
+				local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="calculate">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--个人所得税-利息、股息、红利所得-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="goBack()"/>个人所得税-利息、股息、红利所得</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>收入金额</label>
+					<input ref="inputNum" type="number" placeholder="请输入收入金额" />
+				</div>
+				<div class="btn-box">
+					<input @click="calculate()" type="button" value="计算" />
+				</div>
+			</div>
+			<!--计算结果-->
+			<div v-if="result>=0" class="peccancyQuery queryResult userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>计算结果</h2>
+				<div class="calculationResult">
+					<div class="text-list-div clearfix">
+						<label>您的应纳税额为</label>
+						<span class="numberResults">{{result}}</span>
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="noteResult">注：以上结果，仅供参考</div>
+				</div>
+			</div>
+			<!--说明-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle">
+				<div class="personalPrompt">
+					<p><img src="/images/icon-tips.png" class="icon-tips">说明：</p>
+					<p>1：利息/股息/红利所得：指个人拥有债权、股权而取得的利     息、股息、红利所得。</p>
+					<p>2：对个人投资者从上市公司取得的股息红利所得，暂减按50％ 计入个人应纳税所得额，依照现行税法规定计征个人所得税。</p>
+					<p>3：税率：利息、股息、红利所得适用20%的比例税率。</p>
+					<p class="taxTitle">计算方法：</p>
+					<p>利息、股息、红利所得以每次取得利息、股息、红利收入为一次，按次缴纳个人所得税：</p>
+					<p>每次应缴个人所得税=应纳税所得额x20%。</p>
+				</div>
+			</div>
+		</div>
+		<!--提示语-->
+		<div v-if="noData" class="masktime" id="masktime">{{maskTips}}</div>
+		<div style="height:1.5rem"></div>
+		<div class="data-sources">服务来源：北京市地方税务局</div>
+	</div>
+	<script src="/js/personalTax/calculate.js"></script>
+</body>
+</html>

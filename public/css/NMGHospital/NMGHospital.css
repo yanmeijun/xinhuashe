@@ -1,0 +1,258 @@
+/*登录*/
+.goLoginBox {
+    font-size: 0.333rem;
+    color: #b2b2b2;
+    text-align: right;
+    margin: -0.273rem 0.55rem 0.5rem;
+}
+.goLoginBox a {
+    color: #3e8af8;
+}
+.btn-fl{
+	float: left;
+}
+.goRegister{
+	float: right;
+}
+
+/*注册*/
+.regTime label {
+    line-height: 0.5rem;
+    height: 0.5rem;
+}
+.selectDownMenu {
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    font-size: 0.37rem;
+    line-height: 0.5rem;
+    color: #ababae;
+}
+.NMGReg .text-list-div .get-code {
+    float: right;
+    margin-top: -0.05rem;
+}
+/*首页*/
+.departmentCon .tabConBox p {
+    width: 50%;
+    float: left;
+}
+.NMGList .department p{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+	margin-top: 0.16rem;
+}
+.NMGList .department .title{
+	color: #474747;
+	font-size: 0.416rem;
+	margin-top: 0;
+	white-space: initial;
+}
+.NMGList .department .titSpan{
+	color: #ef8935;
+	font-size: 0.3rem;
+	margin-top: 0.22rem;
+	margin-bottom: 0.18rem;
+}
+.hosList.NMGList{
+	width: -webkit-calc(100% - 0.3rem);
+    width: -moz-calc(100% - 0.3rem);
+    width: calc(100% - 0.3rem);
+}
+.NMGList .intro,
+.NMGList .address{
+	white-space: initial;
+}
+.NMGList .department p.intro{
+	margin: 0;
+}
+
+/*没有门诊信息*/
+.noInfo{
+	text-align: center;
+	padding: 1.02rem 0 0.97rem;
+}
+.noInfo p{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+}
+.noInfo p img{
+	max-width: 100%;
+}
+.noInfo p.tipsWords{
+	margin-top: 0.236rem;
+}
+/*医院简介*/
+.intro{
+	margin: 0.277rem 0.55rem 0.5rem;
+}
+.intro p{
+	color: #8d8d8d;
+	font-size: 0.277rem;
+	line-height: 0.472rem;
+}
+.intro h1{
+	font-size: 0.277rem;
+	color: #474747;
+	margin-bottom: 0.16rem;
+}
+/*科室排班信息*/
+.hosList.NMGHosList .title{
+	font-size: 0.33rem;
+	margin-bottom: 0.2rem;
+}
+.hosList.NMGHosList .nameOffice{
+	margin: 0rem 0 0.27rem;
+}
+.hosList.NMGHosList .introduce{
+	white-space: initial;
+}
+.hosList.NMGHosList dt img.photo {
+    width: 1.472rem;
+    height: 1.833rem;
+}
+.hosList.NMGHosList dd {
+    width: -webkit-calc(100% - 1.75rem);
+    width: -moz-calc(100% - 1.75rem);
+    width: calc(100% - 1.75rem);
+    float: none;
+    width: 100%;
+    overflow: inherit;
+}
+/*预约挂号*/
+.hosList.NMGHosList .nameTitle{
+	margin-bottom: 0.2rem;
+	font-size: 0.33rem;
+}
+.hosList.hNHosList.NMGHosList dd .time span{
+	font-size: 0.277rem;
+}
+.hosList.hNHosList.NMGHosList dd .time span:nth-of-type(2){
+	margin: 0 0 0 0.5rem;
+	padding: 0;
+}
+.login-tips.XL-query p.zjsxTit img {
+    margin-left: 0rem !important;
+}
+/**/
+.btn-box.gSBtnBox {
+    text-align: center;
+    margin: 0.4rem 0.55rem 0.55rem;
+}
+.gSBtnBox .btn-userCen, .gSBtnBox .btn-home {
+    width: 3.888rem;
+    height: 1.222rem;
+    line-height: 1.222rem;
+    margin: 0;
+    float: left;
+}
+.gSBtnBox .btn-home {
+    color: #747474;
+    background: #f0f0f0;
+    border: 1px solid #e6e6e6;
+    float: right;
+}
+/*个人中心下拉菜单*/
+.dialog-userCenter.NMGUser{
+	width: 2.803rem;
+}
+.dialog-userCenter.NMGUser ul li{
+    border-bottom: 1px solid #edefee;
+    height: 1rem;
+    line-height: 1rem;
+}
+.dialog-userCenter.NMGUser ul li:nth-last-of-type(1) {
+    border-bottom: none;
+}
+.dialog-userCenter.NMGUser ul li a{
+	font-size: 0.3rem;
+	padding-left: 0.138rem;
+}
+/*挂号信息*/
+.gjj-tab {
+    font-size: 0;
+    padding-bottom: 0.55rem;
+    padding-top: 0.4rem;
+}
+.gjj-tab li {
+    width: 50%;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+.gjj-tab li a {
+    color: #364555;
+    font-size: 0.388rem;
+    display: inline-block;
+}
+.gjj-tab li.active a {
+    color: #549dfb;
+}
+.gjj-tab li span {
+    width: 1.597rem;
+    height: 0.083rem;
+    border-radius: 20px;
+    display: inline-block;
+    position: absolute;
+    background: #549dfb;
+    bottom: -0.2rem;
+    left: 50%;
+    margin-left: -0.798rem;
+}
+.sameNameNum {
+    float: right;
+    margin-right: 0.55rem;
+}
+.historyBox .reservationDetails.NMGReserveDetails{
+	border: none;
+}
+.reservationDetails.NMGReserveDetails ul li .color0083e0{
+	color: #0083e0;
+}
+.reservationDetails.NMGReserveDetails ul li .colorff0808{
+	color: #ff0808;
+}
+.reservationDetails.NMGReserveDetails ul li span{
+	width: auto;
+}
+.regInfo{
+	border-top: 1px solid #edefee;
+}
+/*个人信息*/
+.reservationDetails.NMGPerInfo{
+	border-bottom: none;
+}
+.reservationDetails.NMGPerInfo ul li{
+	line-height: 0.833rem;
+}
+.reservationDetails.NMGPerInfo ul li label{
+	width: 2.138rem;
+}
+.perInfoNameTit{
+	border-bottom: 1px solid #edefee;
+	color: #474747;
+	font-size: 0.36rem;
+	padding: 0.388rem 0 0.333rem;
+}
+.perInfoNameTit span {
+    display: inline-block;
+    float: left;
+    width: 0.083rem;
+    height: 0.38rem;
+    background: #549dfb;
+    border-radius: 20px;
+    margin-left: 0.55rem;
+    margin-right: 0.27rem;
+    margin-top: 3px;
+}
+/*就诊人管理*/
+.sameNameNum .color0083e0{
+	color: #0083e0;
+	font-weight: normal;
+}
+.reservationDetails.NMGPatientManage{
+	border-bottom:none;
+}
+.reservationDetails.NMGPatientManage ul li{
+	line-height: 0.694rem;
+}

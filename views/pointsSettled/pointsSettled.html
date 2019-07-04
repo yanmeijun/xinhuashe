@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市积分落户模拟计算</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/pointsSettled/pointsSettled.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" v-cloak id="point">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--北京市积分落户模拟计算-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit">北京市积分落户模拟计算</h1>
+				<hr class="hrLine">
+				<div class="noteBox clearfix">
+					<i></i>
+					<span>北京实施积分落户政策啦！2018年北京市积分落户申报审核的四个时间段您要牢记哦~</span>
+				</div>
+				<form method="post" action="/pointsSettled/qualifications">
+					<input type="text" name="randomKey" value="<%= randomKey%>" style="display: none;">
+					<input type="text" name="userID" value="<%= userID%>" style="display: none;">
+					<input type="text" name="clientID" value="<%= clientID%>" style="display: none;">
+					<input type="text" name="cityID" value="<%= cityID%>" style="display: none;">
+					<input type="text" name="local_x" value="<%= local_x%>" style="display: none;">
+					<input type="text" name="local_y" value="<%= local_y%>" style="display: none;">
+                    <input type="text" name="localFrom" value="<%= locals.localFrom %>" style="display: none;">
+				<div class="homeBG">
+					<div class="conBG">
+						<p><span class="number">1</span>申报阶段<em>4月16日—6月14日</em></p>
+						<p><span class="number">2</span>核查阶段<em>6月15日—7月30日</em></p>
+						<p><span class="number">3</span>复查阶段<em>7月31日—9月4日</em></p>
+						<p><span class="number">4</span>公示及落户办理阶段<em>第4季度</em></p>
+						<p class="remark"><span>*</span>各阶段时间安排如果遇到特殊情况需临时调整的，以市人力社保局发布的通知为准~</p>
+					</div>
+					<div class="picBG"></div>
+				</div>
+					<div class="btn-box btn-newsStyle">
+						<input type="submit" value="开始算分" @click="nextPage()"/>
+					</div>
+				</form>
+			</div>
+			<!---->
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>您可能想要查看的</h2>
+				<div class="wantLookCon">
+					<p><a href="javascript:;" @click="next()">1、各区积分落户服务窗口的联系方式</a></p>
+					<p><a href="javascript:;" @click="second()">2、2018年北京市积分落户申报审核时间节点</a></p>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+	</div>
+	<script src="/js/pointsSettled/pointsSettled.js"></script>
+    <script src="/js/all.js"></script>
+</body>
+</html>

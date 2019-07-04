@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>打击涉枪涉爆犯罪举报</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/monitorReport/monitorReport.css" />
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+		<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script type="text/javascript" src="/js/publicInput.js"></script>
+		<script>
+			var randomKey = "<%= randomKey %>"
+					,userID = "<%= userID%>"
+					,clientID = "<%= clientID %>",
+					citySRC = "<%= cityInfo.citySRC %>",
+					cityName = "<%= cityInfo.cityName %>",
+					cityInfo = "<%= cityInfo %>",
+					cityID = "<%= cityID %>",
+					local_x = "<%= local_x %>"
+					,local_y = "<%= local_y %>",
+					localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	<body bgcolor="#f3f9f9">
+	<form>
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/gunviolenceReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit">举报信息填写</h1></div>
+				<!--举报人信息  start-->
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit publicMainTit"><span></span>举报人</h2>
+					<div class="pubListBox publicListLabelWH">
+						<div class="publicListText">
+							<label>真实姓名</label>
+							<input type="text" id="txtName">
+						</div>
+						<div class="publicListText">
+							<label>电话</label>
+							<input type="text" id="tel">
+						</div>
+					</div>
+				</div>
+				<!--被举报人信息  end-->
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit publicMainTit"><span></span>被举报人</h2>
+					<div class="pubListBox publicListLabelWH">
+						<div class="publicListText">
+							<label>为首分子姓名</label>
+							<input type="text" id="name">
+						</div>
+						<div class="publicListText">
+							<label>主要涉案地</label>
+							<input type="text" id="address">
+						</div>
+						<div class="publicListText textareaDesc textareaH">
+							<div class="tit">举报违法犯罪线索</div>
+							<textarea placeholder="请输入举报内容" id="txtContent"></textarea>
+						</div>
+						<div class="publicListText publicListCode">
+							<label>验证码</label>
+							<input type="text" id="reportImg" placeholder=""/>
+							<img src="/images/yanzm.gif" class="img-code" id="verification">
+						</div>
+					</div>
+					<div class="btn-box resultBtnBox marTopNo">
+						<input type="button" value="提 交" class="btnDefault backHome" id="submit"/>
+						<input type="reset" value="重置信息" class="btnDefault btn-gray" id="reset"/>
+					</div>
+				</div>
+
+				<!--被举报人信息  end-->
+				<div class="login-tips wgrzhjl clearfix">
+					<span class="wgTipsPicBox"><img src="/images/wgrzhjl/tips.png"></span>
+					<span class="wgTipsWords">说明：此举报材料仅公安部打击防范涉枪涉爆专项行动办公室有权阅读，您的身份会被严格保密！举报线索经查实后破获案件或抓捕犯罪嫌疑人的，将视情予以奖励。</span>
+			</div>
+
+				<!-- 查询动画提示开始-->
+				<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+				<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+					<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+					<p>加载中</p>
+				</div>
+
+				<div class="masktime" id="masktime" style="display:none;"></div>
+
+				<div class="peccancyQuery userInfor onlyStyle" style="display: none;" id="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>查询结果</h2>
+					<div class="reportListBox" id="detail">
+
+					</div>
+				</div>
+				<!-- 查询动画提示结束-->
+
+			</div>
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：中华人民共和国公安部</div>
+		</div>
+		<script src="/js/gunviolenceReport/gunviolenceReport.js"></script>
+	</form>
+	</body>
+</html>

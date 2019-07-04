@@ -1,0 +1,10 @@
+<div class="banner">
+    <img id="citySRC" src="/images/banner.png" />
+    <div class="address"><span><%= cityInfo.cityName %></span></div>
+</div>
+<script type="text/javascript" language="javascript">
+    document.getElementById("citySRC").src = citySRC;
+    if(localFrom == "xinhuashe_app"){//新华社头部隐藏城市名
+        document.getElementsByClassName("address")[0].style.display = "none";
+    }
+</script>

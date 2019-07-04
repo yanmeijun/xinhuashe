@@ -1,0 +1,195 @@
+.resultBg{
+	background: #358bf6;
+	font-size: 0.36rem;
+	color: #fff;
+	border: none;
+	padding: 0.277rem 0.55rem 0.319rem;
+}
+.resultBg p{
+	line-height: 0.638rem;
+}
+.resultBg p span{
+	margin-left: 0.138rem;
+}
+.resultBg p:nth-of-type(1) span{
+	color: #ffea00;
+}
+.resultPic{
+	background: url(../../images/VATInvoice/resultPic.png) no-repeat;
+	width: 2.777rem;
+	height: 2.166rem;
+	background-size: 2.777rem 2.166rem;
+	margin: 1.444rem auto 1.555rem;
+}
+/*查询结果*/
+.bulidTable tr td{
+	font-size: 0.33rem;
+	color: #777;
+	border-top: 1px solid #edefee;
+	height: 1.22rem;
+}
+.bulidTable{
+	border-collapse: collapse;
+	width: 100%;
+}
+.bulidTable tr th:nth-of-type(1),
+.bulidTable tr td:nth-of-type(1){
+	padding-left: 0.55rem;
+	text-align: left;
+	width: 40%;
+}
+.bulidTable tr th:nth-last-of-type(1),
+.bulidTable tr td:nth-last-of-type(1){
+	padding-right: 0.55rem;
+	text-align:left;
+	width: 60%;
+}
+.bulidTable tr td:nth-last-of-type(1){
+	color: #265fa8;
+}
+.bulidTable tr td:nth-last-of-type(1) p{
+	padding-right: 0.55rem;
+}
+.resultsList .bulidTable tr td.notDate{
+	text-align: center;
+	color: #777;	
+}
+.vatInvoiceTitle{
+	text-align: center;
+	font-size: 0.416rem;
+	color: #474747;
+	height: 1.08rem;
+	line-height: 1.08rem;
+}
+.vatInvoiceTitle .icon-invoice{
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/VATInvoice/icon-invoice.png) no-repeat;
+	width: 0.416rem;
+	height: 0.43rem;
+	background-size: 0.416rem 0.43rem;
+	margin-right: 0.22rem;
+	margin-top: -0.05rem;
+}
+.invoiceRemark{
+	border-top: 1px solid #edefee;
+	padding: 0.33rem 0.55rem 0.472rem;
+}
+.invoiceRemark p{
+	color: #056fb6;
+	font-size: 0.388rem;
+	line-height: 0.611rem;
+}
+.invoiceTabel tr th{
+	font-size: 0.388rem;
+	color: #474747;
+	font-weight: normal;
+	height: 1.22rem;
+	border-top: 1px solid #edefee;
+}
+.invoiceTabel tr th:nth-of-type(1),
+.invoiceTabel tr td:nth-of-type(1){
+	border-right: 1px solid #edefee;
+	width: 70%;
+}
+.invoiceTabel tr th:nth-of-type(2),
+.invoiceTabel tr td:nth-of-type(2){
+	width: 30%;
+	text-align: right;
+}
+.invoiceTabel tr td{
+	color: #056fb6;
+}
+.invoiceTabel tr:nth-last-of-type(1) td{
+	border-bottom: 1px solid #edefee;
+}
+.totalCon{
+	background: #358BF6;
+	font-size: 0.33rem;
+	color: #fff;
+	border-radius: 3px;
+	margin: 0.25rem 0.25rem 0.33rem;
+}
+.totalCon p{
+	height: 0.833rem;
+	line-height: 0.833rem;
+	border-bottom: 1px solid #72aef9;
+	padding: 0 0.25rem;
+}
+.totalCon p:nth-of-type(1){
+	padding-left: 0;
+}
+.totalCon p:nth-of-type(1) label{
+	height: 0.833rem;
+	line-height: 0.833rem;
+	display: inline-block;
+	width: 1.194rem;
+	text-align: center;
+	border-right: 1px solid #72aef9;
+}
+.totalCon p:nth-of-type(1) span{
+	margin-left: 0.277rem;
+}
+.totalCon p span b{
+	font-weight: normal;
+}
+.totalCon p span em{
+	font-style: normal;
+}
+/*弹框*/
+.dialog-project{
+	background: #fff;
+    border-radius: 3px;
+    position: fixed;
+    top: 3rem;
+    left: 0.333rem;
+    z-index: 100;
+    width: -webkit-calc(100% - 0.666rem);
+    width: -moz-calc(100% - 0.666rem);
+    width: calc(100% - 0.666rem);
+    padding-bottom: 0.416rem;
+}
+.dialog-project .title{
+	height: 0.972rem;
+	line-height: 0.972rem;
+	color: #329dfc;
+	font-size: 0.416rem;
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+}
+.dialog-project .title i{
+	display: inline-block;
+	vertical-align: middle;
+	width: 0.694rem;
+	height: 0.694rem;
+	background: url(../../images/close.png) no-repeat;
+	background-size: 0.694rem;
+	position: absolute;
+	right: 0.3rem;
+	top: 0.166rem;
+}
+.dialog-project .con .projectList{
+	border-bottom: 1px solid #e5e5e5;
+	padding: 0.277rem 0;
+	margin: 0 0.55rem;
+	font-size: 0.33rem;
+}
+.dialog-project .con .projectList label{
+	color: #474747;
+	font-size: 0.33rem;
+	width: 2.43rem;
+	float: left;
+	padding-right: 0.55rem;
+}
+.dialog-project .con .projectList span{
+	color: #616161;
+	font-size: 0.33rem;
+	width: -webkit-calc(100% - 2.43rem);
+	width: -moz-calc(100% - 2.43rem);
+	width: calc(100% - 2.43rem);
+	float: left;
+}
+.dialog-project .con .projectList span.blue{
+	color: #056fb6;
+}

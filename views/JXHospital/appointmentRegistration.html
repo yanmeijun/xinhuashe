@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>预约挂号</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" href="/css/heNanHospital/heNanHospital.css"/>
+    <link rel="stylesheet" href="/css/JXHospital/JXHospital.css"/>
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script  type="text/javascript">
+		var randomKey = "<%= locals.randomKey %>" || localStorage.getItem('randomKey')
+				,userID = "<%= locals.userID%>" || localStorage.getItem('userID')
+				,clientID = "<%= locals.clientID %>" || localStorage.getItem('clientID'),
+				cityID = "<%= locals.cityID %>" || localStorage.getItem('cityID'),
+				local_x = "<%= locals.local_x %>" || localStorage.getItem('local_x')
+				,local_y = "<%= locals.local_y %>" || localStorage.getItem('local_y')
+				,deptId = "<%= locals.deptId %>" || localStorage.getItem('deptId')
+				,comeFrom2 = "<%= locals.comeFrom2 %>" || localStorage.getItem('comeFrom2'),
+            	localFrom = "<%= locals.localFrom %>";
+		localStorage.setItem('deptId',deptId);
+//		localStorage.setItem('comeFrom2',comeFrom2);
+	</script>
+	<script>
+		var citySRC = "<%= cityInfo.citySRC %>";
+	</script>
+	<script type="text/javascript" src="/js/jxHospital/appointmentRegistration.js" ></script>
+	<script type="text/javascript" src="/js/jxHospital/toUserCenter.js" ></script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox">
+				<a onclick="toUserCenter('appointmentRegistration')" href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+			</div>
+		</div>
+		<!--科室挂号-->
+		<div class="warpBox" id="results_div">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit" id="title">
+
+				</h1>
+			</div>
+		</div>
+		<div id="results_template_div" style="display: none">
+
+			<div class="peccancyQuery userInfor onlyStyle clearfix">
+				<dl class="hosList NMGHosList JXGH">
+					<dt><a href="javascript:;"><img src="/images/JXHospital/jxDoc.png" class="photo"></a></dt>
+					<dd>
+						<p class="nameOffice"><span>${doctorName}</span>${doctorTitle}</p>
+						<p class="introduce">所在医院：${hospitalName}</p>
+						<p class="introduce">所在科室：${deptName}</p>
+					</dd>
+				</dl>
+				${timeTable}
+			</div>
+		</div>
+		<!-- 查询动画提示开始-->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：江西省预约诊疗系统</div>
+	</div>
+</body>
+</html>

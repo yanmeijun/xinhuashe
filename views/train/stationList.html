@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 54px;"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>车站选择</title>
+    <link type="image/x-icon" rel="shortcut icon" href="http://hzfw.12306.cn/zgzfw/resources/h5/images/favicon.ico">
+    <script src="/lib/calendar/flexible.js"></script>
+    <script src="/lib/calendar/zepto.js"></script>
+    <script src="/lib/calendar/json2-min.js"></script>
+    <script src="/lib/calendar/base.js"></script>
+    <script language="JavaScript">
+        const randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+        var _trackDataType = 'web';var _trackData = _trackData || [];
+    </script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+    <script type="text/javascript" language="javascript">
+        var win=window;
+    </script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="view">
+    <!-- 头部 -->
+    <!--<div class="header">-->
+    <!--<div class="header-left"><a href="javascript:;" class="return" id="goBack"></a></div>-->
+    <!--<div class="header-center">车站选择</div>-->
+    <!--</div>-->
+    <!-- 内容区 -->
+    <div class="content">
+        <div class="cells">
+            <div class="cell">
+                <div class="cell-hd">
+                    <label for="station_search_key" class="label label-sm">搜索:</label>
+                </div>
+                <div class="cell-bd">
+                    <input class="input tc" id="station_search_key" placeholder="中文/拼音/首字母" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="tab tab-station">
+            <div class="tab-hd-box">
+                <ul class="tab-hd" id="stationNoAll">
+                    <li class="active"><a href="javascript:;">最近常用</a></li>
+                    <li><a href="javascript:;">热点车站</a></li>
+                    <li><a href="javascript:;">车站列表</a></li>
+                </ul>
+            </div>
+            <div class="tab-item j-empty">
+                <ul class="letter-list" id="all_cityCodeList" style="display: none;">
+                    <li class="active"><a href="#anchor_A">A</a></li>
+                    <li><a href="#anchor_B">B</a></li>
+                    <li><a href="#anchor_C">C</a></li>
+                    <li><a href="#anchor_D">D</a></li>
+                    <li><a href="#anchor_E">E</a></li>
+                    <li><a href="#anchor_F">F</a></li>
+                    <li><a href="#anchor_G">G</a></li>
+                    <li><a href="#anchor_H">H</a></li>
+                    <li><a href="#anchor_I">I</a></li>
+                    <li><a href="#anchor_J">J</a></li>
+                    <li><a href="#anchor_K">K</a></li>
+                    <li><a href="#anchor_L">L</a></li>
+                    <li><a href="#anchor_M">M</a></li>
+                    <li><a href="#anchor_N">N</a></li>
+                    <li><a href="#anchor_O">O</a></li>
+                    <li><a href="#anchor_P">P</a></li>
+                    <li><a href="#anchor_Q">Q</a></li>
+                    <li><a href="#anchor_R">R</a></li>
+                    <li><a href="#anchor_S">S</a></li>
+                    <li><a href="#anchor_T">T</a></li>
+                    <li><a href="#anchor_U">U</a></li>
+                    <li><a href="#anchor_V">V</a></li>
+                    <li><a href="#anchor_W">W</a></li>
+                    <li><a href="#anchor_X">X</a></li>
+                    <li><a href="#anchor_Y">Y</a></li>
+                    <li><a href="#anchor_Z">Z</a></li>
+                </ul>
+                <div class="station-list">
+                    <ul id="all_citybox"><li class="j-stationData" data-text="北京" data-code="BJP">北京</li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/lib/calendar/station_name.js"></script>
+<script src="/lib/calendar/favorite_name.js"></script>
+<!--<script src="js/calendar/common.js"></script>-->
+<script src="/lib/calendar/stationList.js"></script>
+
+</body></html>

@@ -1,0 +1,185 @@
+/*详情展开*/
+.hosList.hNHosList.sDHosList dt{
+	height: 2.5rem;
+}
+.hosList.hNHosList.sDHosList dd{
+	float: none;
+	width: auto;
+}
+.color0083e0{
+	color: #0083e0;
+}
+/*挂号展开*/
+.sDReg p{
+	color: #737476;
+	line-height: 0.66rem;
+}
+.sDReg p:nth-of-type(1){
+	color: #0083e0;
+}
+.hNHosList .department.sDDetails .details span{
+	text-overflow:initial;
+    display:initial;
+    -webkit-line-clamp:initial;
+    overflow: initial;
+    word-break: initial;
+    width: 100%;
+    -webkit-box-orient: initial;
+}
+/*挂号---日期*/
+.sDTableDiv{
+	margin: 0 0.194rem 0.32rem;
+	border: 1px solid #e1e1e1;
+	border-radius: 2px;
+}
+.sDTableData th{
+	background: #f6f8fa;
+	border-bottom: 1px solid #edefee;
+}
+.reservationList.sDTableData tr td{
+	height: 1.11rem;
+	padding: 0;
+}
+.sDTableData tr td.stopZ span,
+.sDTableData tr td.stopY span,
+.sDTableData tr td.byAppointment span{
+	display: inline-block;
+	width: 0.833rem;
+	height: 0.486rem;
+	line-height: 0.486rem;
+	border-radius: 2px;
+}
+.remainingNumber{
+	font-size: 0.222rem;
+	color: #0083e0;
+}
+/*医生简介*/
+.sDTableDiv.spacTop{
+	margin-top: 0.32rem;
+}
+.sDDlList{
+	width: auto;
+}
+.hosList.hNHosList.sDDlList dd{
+	float: none;
+	width:100%;
+}
+/*预约挂号*/
+.nameTitle{
+	color: #474747;
+	font-size: 0.333rem;
+	margin-top: 0.16rem;
+    margin-bottom: 0.138rem;
+}
+.hNHosList .y-g .nameOffice.nameJobTitle{
+	margin: 0.138rem 0 0.16rem;
+}
+.peccancyQuery.userInfor .text-list-div.borderHava{
+	border-bottom: 1px solid #edefee;
+}
+.jiuZList{
+	border-bottom: 1px solid #edefee;
+	padding-bottom: 0.15rem;
+    margin-bottom: 0.3rem;
+}
+.jiuZList.padTop{
+	padding-top: 0.15rem;
+}
+/*就诊人管理*/
+.sDAddress .regListBox .regAddList{
+	width: 50%;
+}
+
+/*预约失败*/
+.notFound {
+    font-size: 0.3rem;
+    color: #6e6e6e;
+    text-align: center;
+    height: 3.33rem;
+    padding-top: 0.83rem;
+    border-bottom: 1px solid #edefee;
+    margin: 0 0.55rem;
+}
+.notFound .img-box img {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-bottom: 0.41rem;
+}
+.login-tips.XL-query.notF-tips {
+    padding: 0 0.22rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+/*个人中心*/
+.sDTit .alreadyReserved{
+	float: right;
+	font-style: normal;
+	margin-right: 0.277rem;
+}
+
+
+/*取消预约弹框*/
+.dialog-cancel {
+    background: #fff;
+    margin: 0 0.33rem;
+    height: 2.55rem;
+    position: fixed;
+    top: 50%;
+    margin-top: -1.275rem;
+    z-index: 100;
+    width: -webkit-calc(100% - 0.66rem);
+    width: -moz-calc(100% - 0.66rem);
+    width: calc(100% - 0.66rem);
+    border-radius: 5px;
+}
+.dialog-cancel .titTel {
+    height: 1.44rem;
+    line-height: 1.44rem;
+    font-size: 0.416rem;
+    color: #474747;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.dialog-cancel .btn-tel {
+    font-size: 0;
+}
+.dialog-cancel .btn-tel a {
+    display: inline-block;
+    width: 50%;
+    height: 1.083rem;
+    line-height: 1.083rem;
+    color: #329dfc;
+    font-size: 0.416rem;
+    text-align: center;
+}
+.dialog-cancel .btn-tel a:nth-of-type(1) {
+    border-right: 1px solid #ececec;
+    color: #a1a9ac;
+}
+/*注册*/
+.sDAgreeOK span{
+	height: 1rem;
+    float: left;
+    margin: 0.071rem 0.2rem 0 0.55rem;
+}
+/*登录*/
+.sDGoReg{
+	padding: 0 0.277rem;
+}
+.sDGoReg .goRegister{
+	float: left;
+}
+.addPatient{
+    color: #0083e0;
+    font-size: 0.38rem;
+    line-height: 0.3rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    margin-left: 2.5rem;
+}
+/*就诊时间下拉点击不到的情况*/
+#timeTrigger.selectDownMenu{
+	z-index: 1;
+    background: none;
+    position: relative;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>韶关市公积金查询</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" href="/css/gdsgGJJ/gdsgGJJ.css">
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+    <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script src="/js/networkCrimeReport/laydate/laydate.js"></script>
+    <script>
+        var randomKey = "<%= randomKey %>",
+            userID = "<%= userID%>",
+            clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+    </script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+    <!--banner图-->
+    <div class="banner">
+        <% include ../header.html %>
+        <div id="userAvatarBox" class="userAvatarBox">
+            <a href="javascript:;">
+                <p><img src="/images/hospital/userAvatar.png"></p>
+                <p>个人中心</p>
+            </a>
+            <div class="dialog-userCenter" style="display: none" id="userCenter">
+                <div class="triangle"></div>
+                <ul>
+                    <li id="quit"><a href="javascript:void(0);"><i class="icon-anhuiQuit"></i>退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="warpBox">
+        <div class="peccancyQuery XLQuery-home">
+            <h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" onclick="goPage('baseInfor')"/>个人账户明细查询</h1></div>
+        <!--举报人信息  start-->
+        <div class="peccancyQuery userInfor onlyStyle personAccount">
+            <h2 class="q-r-tit publicMainTit"><span></span>个人用户</h2>
+            <hr class="hrLine">
+            <div class="tab-content inforConfirm">
+                <div class="text-list-div clearfix" style="margin-bottom: .28rem;border-bottom: none">
+                    <label>个人账号：</label>
+                    <input type="text" style="text-align: left;color: #5ba7ec;" placeholder="请输入个人账号" id="company" readonly>
+                </div>
+                <div class="text-list-div regTime clearfix txtTime">
+                  <!-- <label>开始日期：</label>-->
+                    <!--<span class="selectDownMenu laydate-icon"  id="start" style="display: inline-block;height: 20px;">请选择</span>-->
+                    <label>开始日期</label>
+                    <span id="add_time" class="layui-input laydate-icon" style="top: 1px;width: calc(100% - 2.8rem);z-index: 3;position: relative;display: inline-block;height: .5rem;background: none;">2018-10-28</span>
+                    <img src="/images/wgrzhjl/date.png" class="icon-date laydate-icon" data-type='addTimes' id="addTimes">
+                </div>
+                <div class="text-list-div regTime clearfix txtTime" style="margin-top: .28rem;">
+                    <!--<label>结束日期</label>
+                    <span class="selectDownMenu laydate-icon" id="end" style="display: inline-block;height: 20px;">请选择</span>-->
+                    <label>结束日期</label>
+                    <span id="end_time" class="layui-input laydate-icon" style="top: 1px;width: calc(100% - 2.8rem);z-index: 3;position: relative;display: inline-block;height: .5rem;background: none;">2019-04-28</span>
+                    <img src="/images/wgrzhjl/date.png" class="icon-date laydate-icon" data-type='endTimes' id="endTimes">
+                </div>
+                <div class="btn-box">
+                    <input id="submit" type="button" value="查询"  onclick="getPersonInfor()"/>
+                </div>
+            </div>
+        </div>
+        <div class="peccancyQuery userInfor onlyStyle personalCenterBtn" id="resultShow" style="display:none">
+            <h2 class="q-r-tit publicMainTit"><span></span>查询结果</h2>
+            <hr class="hrLine" style="margin-bottom: 0">
+            <div class="query-date-title">
+                <span style="width:39%;display: inline-block;margin-left: 0.55rem;">交易时间</span>
+                <span style="width:25%;display: inline-block">业务类型</span>
+                <span style="width:29.1%;display: inline-block;text-align: center">发生额(元)</span>
+            </div>
+            <div class="tab-content bjgjj-list" id="result">
+                <div class="text-list-div clearfix">
+                    <label style="width: 3.7rem;">2018.03.09</label>
+                    <span style="width:2.5rem;float: left;text-align: left">df</span>
+                    <span style="width:calc(100% - 6.2rem);float: left;text-align: center">
+                        <span class="increase-red">720.00</span>
+                         <img src="/images/arrow.png" class="icon-rightArrow">
+                    </span>
+                </div>
+                <div class="text-list-div clearfix">
+                    <label style="width: 3.7rem;">2018.03.09</label>
+                    <span style="width:2.5rem;float: left;text-align: left">df</span>
+                    <span style="width:calc(100% - 6.2rem);float: left;text-align: center">
+                        <span class="increase-red">720.00</span>
+                         <img src="/images/arrow.png" class="icon-rightArrow">
+                    </span>
+                </div>
+                <div class="text-list-div clearfix">
+                    <label style="width: 3.7rem;">2018.03.09</label>
+                    <span style="width:2.5rem;float: left;text-align: left">df</span>
+                    <span style="width:calc(100% - 6.2rem);float: left;text-align: center">
+                        <span class="increase-red">720.00</span>
+                         <img src="/images/arrow.png" class="icon-rightArrow">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--举报人信息  end-->
+    </div>
+
+
+    <!--账单明细-->
+    <div class="mask" style="display:none;" id="detail"></div>
+    <div class="dialog-car-box dialog-zdmx" style="display:none;" id="detailCon">
+        <div class="businessInfor-title">账单明细</div>
+        <i class="title" id="close"></i>
+        <ul id="list">
+        </ul>
+    </div>
+
+    <!-- ------------------------------提示语---------------------------------- -->
+    <div class="masktime" id="masktime" style="display:none;"></div>
+
+    <!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+    <div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+    <div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+        <img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+        <p>加载中</p>
+    </div>
+    <!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+    <div style="height: 1.3rem;"></div>
+    <div class="data-sources">服务来源：韶关市住房公积金管理中心</div>
+
+    <script src="/js/gdsgGJJ/personalAccount.js"></script>
+</div>
+</body>
+</html>

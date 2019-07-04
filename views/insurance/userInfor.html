@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市社保网上查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+    <script type="text/javascript" src="/js/insurance/insuranceLogin.js"></script>
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			getUserInfo();
+			function getUserInfo(){
+				var data = {
+					randomKey: randomKey,
+					userID: userID,
+					clientID: clientID,
+					cityID: cityID,
+					local_x: local_x ,localFrom:localFrom,
+					local_y: local_y
+				};
+				$.ajax({
+					async: true,
+					type: 'post',
+					data: JSON.stringify(data),
+					dataType:"json",
+					url: '/insurance/getBasicInfo',
+					contentType: 'application/json'
+				}).done(function(data){
+					 if(data.retCode == '000000'){
+						 $("#sbphoto").attr("src",data.data.img);
+					 	$("#cjgzrq").text(data.data.cjgzrq);
+					 	$("#cbrlx").text(data.data.cbrlx);
+					 	$("#jfrylx").text(data.data.jfrylx);
+					 	$("#sbyjgz").text(data.data.sbyjgz);
+					 	$("#hqdzd").text(data.data.hqdzd);
+					 	$("#whcd").text(data.data.whcd);
+					 	$("#jzyb").text(data.data.jzyb);
+					 	$("#jzd").text(data.data.jzd);
+					 	$("#hkyb").text(data.data.hkyb);
+					 	$("#hkxz").text(data.data.hkxz);
+					 	$("#hkszd").text(data.data.hkszd);
+					 	$("#hkszd1").text(data.data.hkszd);
+					 	$("#IDcard").text(data.data.IDcard);
+					 	$("#IDcard1").text(data.data.IDcard);
+					 	$("#cbrdh").text(data.data.cbrdh);
+					 	$("#birthday").text(data.data.birthday);
+					 	$("#country").text(data.data.country);
+					 	$("#dwmc").text(data.data.dwmc);
+					 	$("#tyshxydm_zzjgdm").text(data.data.tyshxydm_zzjgdm);
+					 	$("#shbxdjh").text(data.data.shbxdjh);
+					 	$("#ssqx").text(data.data.ssqx);
+//					 	$("#cjxz1").text(data.data.cjxz[0]);
+//					 	$("#cjxz2").text(data.data.cjxz[1]);
+//					 	$("#cjxz3").text(data.data.cjxz[2]);
+//					 	$("#cjxz4").text(data.data.cjxz[3]);
+//					 	$("#cjxz5").text(data.data.cjxz[4]);
+					 	$("#xm").text(data.data.xm);
+					 	$("#xb").text(data.data.xb);
+					 	$("#mz").text(data.data.mz);
+					 	$("#wtdfyhmc").text(data.data.wtdfyhmc);
+						 if(data.data.ddyljg1){
+							 $("#ddyljg1").text(data.data.ddyljg1);
+							 $("#ddyljg1_div").show()
+						 }
+						 if(data.data.ddyljg2){
+							 $("#ddyljg2").text(data.data.ddyljg2);
+							 $("#ddyljg2_div").show()
+						 }
+						 if(data.data.ddyljg3){
+							 $("#ddyljg3").text(data.data.ddyljg3);
+							 $("#ddyljg3_div").show()
+						 }
+						 if(data.data.ddyljg4){
+							 $("#ddyljg4").text(data.data.ddyljg4);
+							 $("#ddyljg4_div").show()
+						 }
+						 if(data.data.ddyljg5){
+							 $("#ddyljg5").text(data.data.ddyljg5);
+							 $("#ddyljg5_div").show()
+						 }
+					 	$("#xinxi_div").show();
+					 }else{
+					 	alert(data.rtnMsg || "个人基本信息查询失败");
+					 }
+
+				});
+			}
+		})
+	</script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--头部-->
+		<!--<header>-->
+			<!--<ul>-->
+				<!--<li><a href="javascript:;"><img src="../images/logo.png" class="img-logo"></a></li>-->
+				<!--<li class="active"><a href="javascript:;">公共服务</a></li>-->
+				<!--<li><a href="javascript:;">推荐</a></li>-->
+				<!--<li><a href="javascript:;">现场云</a></li>-->
+				<!--<li><a href="javascript:;">北京</a></li>-->
+				<!--<li><a href="javascript:;"><img src="../images/icon-add.png" class="img-add"></a></li>-->
+			<!--</ul>-->
+		<!--</header>-->
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--个人基本信息查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery userInfor">
+				<h1 class="p-q-tit">
+					<img src="../images/icon-return.png" class="icon-return"/>
+					个人基本信息查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div clearfix">
+					<label>单位名称</label>
+					<span id="dwmc"></span>
+				</div>
+				<div class="text-list-div clearfix">
+					<label>统一社会信用代码</label>
+					<span id="tyshxydm_zzjgdm"></span>
+				</div>
+				<div class="text-list-div clearfix">
+					<label>社会保险登记号</label>
+					<span id="shbxdjh"></span>
+				</div>
+				<div class="text-list-div clearfix">
+					<label>所属区县</label>
+					<span id="ssqx"></span>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>基本信息<img src="/images/icon-downMenu.png" class="icon-downMenu" id="tab-tit-1"/></h2>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-1">
+					<div class="baseInfor clearfix">
+						<div class="baseLeft">
+							<div class="text-list-div clearfix">
+								<label>姓名：</label>
+								<span id="xm"></span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>性别：</label>
+								<span id="xb"></span>
+							</div>
+							<div class="text-list-div clearfix">
+								<label>民族：</label>
+								<span id="mz"></span>
+							</div>
+						</div>
+						<div class="base-avatar">
+							<img id="sbphoto" src="">
+						</div>
+					</div>
+					<hr class="hrLine hrLineOnly">
+					<div class="text-list-div clearfix">
+						<label>出生日期：</label>
+						<span id="birthday"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>国家地区：</label>
+						<span id="country"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>身份证号：</label>
+						<span id="IDcard"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>参加工作日期：</label>
+						<span id="cjgzrq"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>文化程度：</label>
+						<span id="whcd"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>参保人电话：</label>
+						<span id="cbrdh"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>证件类型：</label>
+						<span>身份证</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>证件号码：</label>
+						<span id="IDcard1"></span>
+					</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>户籍信息<img src="/images/icon-downMenu.png" class="icon-downMenu" id="tab-tit-2"/></h2>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-2">
+					<div class="text-list-div clearfix">
+						<label>户口所在区县街乡：</label>
+						<span id="hkszd1"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>户口性质：</label>
+						<span id="hkxz"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>户口所在地地址：</label>
+						<span id="hkszd"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>户口所在地邮编：</label>
+						<span id="hkyb"></span>
+					</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>居住地信息<img src="/images/icon-downMenu.png" class="icon-downMenu" id="tab-tit-3" /></h2>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-3">
+					<div class="text-list-div clearfix">
+						<label>居住地（联系）地址：</label>
+						<span id="jzd"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>居住地（联系）邮编：</label>
+						<span id="jzyb"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>选择邮寄社保对账单地址：</label>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>参保信息<img src="/images/icon-downMenu.png" class="icon-downMenu" id="tab-tit-4"/></h2>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-4">
+					<div class="text-list-div clearfix">
+						<label>申报月均工资收入（元）:</label>
+						<span id="sbyjgz"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>委托代发银行名称：</label>
+						<span id="wtdfyhmc"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>委托代发银行账号：</label>
+						<span></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>缴费人员类别：</label>
+						<span id="jfrylx"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>医疗参保人员类别：</label>
+						<span id="cbrlx"></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>离退休类别：</label>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>定点医院<img src="/images/icon-downMenu.png" class="icon-downMenu" id="tab-tit-5"/></h2>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-5">
+					<div id="ddyljg1_div" class="text-list-div clearfix" style="display: none">
+						<label id="ddyljg1"></label>
+						<span></span>
+					</div>
+					<div id="ddyljg2_div" class="text-list-div clearfix" style="display: none">
+						<label id="ddyljg2"></label>
+						<span></span>
+					</div>
+					<div id="ddyljg3_div" class="text-list-div clearfix" style="display: none">
+						<label id="ddyljg3"></label>
+						<span></span>
+					</div>
+					<div id="ddyljg4_div" class="text-list-div clearfix" style="display: none">
+						<label id="ddyljg4"></label>
+						<span></span>
+					</div>
+					<div id="ddyljg5_div" class="text-list-div clearfix" style="display: none">
+						<label id="ddyljg5"></label>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>外籍人员信息<img src="/images/icon-downMenu.png" class="icon-downMenu" id="tab-tit-6"/></h2>
+				<hr class="hrLine">
+				<div class="tab-content" id="tab-content-6">
+					<div class="text-list-div clearfix">
+						<label>护照号码：</label>
+						<span></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>外国人居留证号：</label>
+						<span></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>外国人证件类型：</label>
+						<span></span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>外国人证件号码：</label>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 2.6rem;"></div>
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+		<!--<footer>-->
+			<!--<img src="../images/footer.png">-->
+		<!--</footer>-->
+	</div>
+</body>
+</html>

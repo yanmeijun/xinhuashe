@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中国国家博物馆网上预约</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css"/>
+    <link rel="stylesheet" href="/css/museum/museum.css"/>
+    <script type="text/javascript" src="/lib/vue.min.js"></script>
+    <script type="text/javascript" src="/lib/axios.js"></script>
+    <script type="text/javascript" language="javascript">
+        var randomKey = "<%=locals.randomKey%>"
+                ,userID = "<%= locals.userID%>"
+                ,clientID = "<%= locals.clientID %>",
+                cityID = "<%= locals.cityID %>",
+                local_x = "<%= locals.local_x %>"
+                ,local_y = "<%= locals.local_y %>",
+                err = "<%=locals.err%>",
+                localFrom = "<%= locals.localFrom %>";
+        if(err){
+            alert(err);
+        }
+    </script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+    <!--banner图-->
+    <div class="banner">
+        <img src="/images/beijing.png">
+        <div class="address"><span>北京</span></div>
+    </div>
+    <!--中国国家博物馆网上预约-->
+    <div class="warpBox" id="onlineBooking" v-cloak>
+        <div class="peccancyQuery">
+            <form id="onlineBooking_form" action="/museum/register" method="post">
+                <h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="returnPage"/>中国国家博物馆网上预约</h1>
+                <hr class="hrLine">
+                <div class="text-list-div">
+                    <label>姓名</label>
+                    <input name="xm" type="text" placeholder="请输入您的姓名" value="<%=locals.xm%>" required/>
+                </div>
+                <div class="text-list-div">
+                    <label>证件类型</label>
+                    <input type="text" placeholder="身份证" disabled class="notSelectable"/>
+                </div>
+                <div class="text-list-div">
+                    <label>证件号码</label>
+                    <input name="zjh" type="text" placeholder="请输入证件号码" value="<%=locals.zjh%>" required maxlength="18" minlength="18"/>
+                </div>
+                <div class="text-list-div">
+                    <label>参观日期</label>
+                    <input name="cgrq" type="text" placeholder="<%=locals.cgrq%>" disabled class="notSelectable"/>
+                </div>
+                <div class="text-list-div">
+                    <label>EMAIL</label>
+                    <input name="Email" type="email" placeholder="请输入您的邮箱" value="<%=locals.Email%>" required/>
+                </div>
+                <div class="text-list-div text-list-code">
+                    <label>验证码</label>
+                    <input name="code" type="text" placeholder="请输入验证码" value="<%=locals.code%>" required/>
+                    <img :src="imageSrc" class="img-code" @click="getImageCode">
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>cgrq</label>
+                    <input name="cgrq" type="text" placeholder="cgrq" value="<%=locals.cgrq%>"/>
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>id</label>
+                    <input name="id" type="text" placeholder="id" value="<%=locals.id%>"/>
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>randomKey</label>
+                    <input name="randomKey" type="text" placeholder="randomKey" value="<%=locals.randomKey%>"/>
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>userID</label>
+                    <input name="userID" type="text" placeholder="userID" value="<%=locals.userID%>"/>
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>clientID</label>
+                    <input name="clientID" type="text" placeholder="clientID" value="<%=locals.clientID%>"/>
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>cityID</label>
+                    <input name="cityID" type="text" placeholder="cityID" value="<%=locals.cityID%>"/>
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>local_x</label>
+                    <input name="local_x" type="text" placeholder="local_x" value="<%=locals.local_x%>"/>
+                </div>
+                <div class="text-list-div" style="display: none">
+                    <label>local_y</label>
+                    <input name="local_y" type="text" placeholder="local_y" value="<%=locals.local_y%>"/>
+                </div>
+                <div class="btn-box">
+                    <input name="submit" type="submit" value="确认预约"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div style="height: 1.3rem;"></div>
+    <div class="data-sources">服务来源：中国国家博物馆</div>
+</div>
+<script type="text/javascript" src="/js/museum/museum.js"></script>
+<script>
+    fnSize()
+    window.addEventListener('resize',fnSize,false)
+    function fnSize () {
+        if(document.documentElement.offsetWidth>1024){
+            document.getElementsByTagName('html')[0].style.fontSize = 375/10 +'px';
+            document.getElementsByClassName("max")[0].style.width="375px";
+            document.getElementsByClassName("max")[0].style.margin ="0 auto";
+            document.getElementsByClassName("data-sources")[0].style.width ="375px";
+            return;
+        }else{
+            document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth/10 +'px';
+            document.getElementsByClassName("max")[0].style.width="100%";
+            document.getElementsByClassName("data-sources")[0].style.width ="100%";
+            return;
+        }
+
+    }
+</script>
+</body>
+</html>

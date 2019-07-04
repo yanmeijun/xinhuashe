@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>国务院取消和下放的行政审批事项</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/guoWYAdminApprove/guoWYAdminApprove.css" />
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.under-line{
+		   transition-timing-function:ease-in;
+		   transition:left .5s;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max"  id="cancelPermit">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--国务院取消和下放的行政审批事项-->
+		<div class="warpBox">
+			<div class="peccancyQuery" >
+				<h1 class="p-q-tit">国务院取消和下放的行政审批事项</h1>
+				<hr class="hrLine">
+				<div style="position: relative;">
+					<ul class="gjj-tab clearfix">
+						<li class="active cancelTitle"><a href="javascript:;" @click="administration(0)">取消的行政审批事项</a></li>
+						<li class="cancelTitle"><a href="javascript:;" @click="administration(1)">下放的行政审批事项</a></li>
+					</ul>
+					<div class="under-line"></div>
+				</div>
+			</div>
+			<!---取消的行政审批事项 start-->
+			<div class="gjj-tab-con" style="display:;">
+				<div class="peccancyQuery spacTop">
+					<div class="text-list-div downMenu-style">
+						<label>关键字</label>
+						<input type="text" placeholder="请输入查询事项" v-model="addminPlace">
+					</div>
+					<div class="btn-box">
+						<input type="button" value="查询" @click="getSearch()"/>
+					</div>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit">
+						<span></span>
+						根据当前检索条件共检测到
+						<label class="sameNameNum"><b>{{adminCount}}</b> 项</label>
+					</h2>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<div class="selectDepartment">
+						<label class="guoWYTitle" style=" background: #549dfb;color: #fff">部门</label>
+						<span class="guoWYSelect" id="cityTrigger" @click="city()">全部</span>
+						<!--<span @click="upDown()">-->
+							<!--<img src="/images/icon-downMenu.png" class="icon-downMenu" v-if="Exhibition">-->
+							<!--<img src="/images/credit/icon-upMenu.png"  class="icon-downMenu" v-else>-->
+						<!--</span>-->
+						<img src="../../images/icon-downMenu.png" class="icon-downMenu"  @click="city()"  >
+					</div>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<table class="guoWYTList">
+						<tr>
+							<th>序号</th>
+							<th>项目名称</th>
+						</tr>
+						<tr v-for="(item,index) in lists" v-bind:key='item.id'>
+							<td>{{item.serialNumber}}</td>
+							<td @click="project(item.processingDecisions,item.projectName,item.department)">{{item.projectName}}</td>
+						</tr>
+						<!--<tr>-->
+							<!--<td>1</td>-->
+							<!--<td>企业投资扩建民用机场项目核准</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>2</td>-->
+							<!--<td>企业投资年产100万吨及以上新油田开发项目核准</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>3</td>-->
+							<!--<td>企业投资年产20亿立方米及以上新气田开发项目核准</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>4</td>-->
+							<!--<td>地方粮库划转中央直属粮食储备库（站）审批</td>-->
+						<!--</tr>-->
+						<!--<tr>-->
+							<!--<td>5</td>-->
+							<!--<td>企业投资精对苯二甲酸（PTA）、甲苯二异氰酸酯（TDI）项目及对二甲苯（PX）改扩建项</td>-->
+						<!--</tr>-->
+						<tr v-if="noDate">
+							<td></td>
+							<td>暂无更多内容~</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!---取消的行政审批事项 end-->
+			<!---下放的行政审批事项 start-->
+			<!--<div class="gjj-tab-con" style="display:none;">-->
+				<!--<div class="peccancyQuery spacTop">-->
+					<!--<div class="text-list-div downMenu-style">-->
+						<!--<label>关键字</label>-->
+						<!--<input type="text" placeholder="请输入查询事项" v-model="addminPlace">-->
+					<!--</div>-->
+					<!--<div class="btn-box">-->
+						<!--<input type="button" value="查询" @click="search"/>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="peccancyQuery userInfor onlyStyle">-->
+					<!--<h2 class="q-r-tit">-->
+						<!--<span></span>-->
+						<!--根据当前检索条件共检测到-->
+						<!--<label class="sameNameNum"><b>{{adminCount}}</b> 项</label>-->
+					<!--</h2>-->
+				<!--</div>-->
+				<!--<div class="peccancyQuery userInfor onlyStyle">-->
+					<!--<div class="selectDepartment">-->
+						<!--<label class="guoWYTitle">部门</label>-->
+						<!--<span class="guoWYSelect">全部</span>-->
+						<!--&lt;!&ndash;<img src="/images/icon-downMenu.png" class="icon-downMenu">&ndash;&gt;-->
+						<!--<span @click="upDown()">-->
+							<!--<img src="/images/icon-downMenu.png" class="icon-downMenu" v-if="Exhibition">-->
+							<!--<img src="/images/credit/icon-upMenu.png"  class="icon-downMenu" v-else>-->
+						<!--</span>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="peccancyQuery userInfor onlyStyle" v-if="Exhibition">-->
+					<!--<table class="guoWYTList">-->
+						<!--<tr>-->
+							<!--<th>序号</th>-->
+							<!--<th>项目名称</th>-->
+						<!--</tr>-->
+						<!--<tr v-for="(item,index) in lists" v-bind:key='item.id'>-->
+							<!--<td>{{item.serialNumber}}</td>-->
+							<!--<td>{{item.projectName}}</td>-->
+						<!--</tr>-->
+						<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>2</td>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>企业投资年产100万吨及以上新油田开发项目核准</td>&ndash;&gt;-->
+						<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+						<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>3</td>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>企业投资年产20亿立方米及以上新气田开发项目核准</td>&ndash;&gt;-->
+						<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+						<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>4</td>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>地方粮库划转中央直属粮食储备库（站）审批</td>&ndash;&gt;-->
+						<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+						<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>5</td>&ndash;&gt;-->
+							<!--&lt;!&ndash;<td>企业投资精对苯二甲酸（PTA）、甲苯二异氰酸酯（TDI）项目及对二甲苯（PX）改扩建项</td>&ndash;&gt;-->
+						<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+						<!--<tr v-if="noDate">-->
+							<!--<td></td>-->
+							<!--<td>暂无更多内容~</td>-->
+						<!--</tr>-->
+					<!--</table>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!---下放的行政审批事项 end-->
+			<!--说明-->
+			<div class="login-tips XL-query">
+				<p><img src="/images/icon-tips.png">说明:</p>
+				<p>党中央、国务院高度重视简政放权改革。李克强总理多次强调，要紧紧扭住简政放权这个“牛鼻子”，逐步厘清政府和市场的边界，进一步激发市场活力和创造性，切实解放和发展生产力。党的十八大以来，国务院部门已累计取消下放697项行政审批事项。具体取消和下放的行政审批事项有哪些？本服务由中国政府网提供的数据库供您查询。</p>
+			</div>
+		</div>
+		<!--弹框-->
+		<div class="mask" v-if="maskProject"></div>
+		<div class="dialog-project" v-if="maskProject">
+			<div class="title">项目明细<i class="close" @click="close()"></i></div>
+			<div class="con">
+				<div class="projectList clearfix">
+					<label>项目名称：</label>
+					<span>{{projectName}}</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>处理决定：</label>
+					<span>{{projectCancel}}</span>
+				</div>
+				<div class="projectList clearfix">
+					<label>审批部门：</label>
+					<span>{{projectDepartment}}</span>
+				</div>
+			</div>
+		</div>
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;" id="dialogMask" v-if="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="dialogMask">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+		<div class="data-sources">服务来源：中国政府网</div>
+	</div>
+	<script src="/js/cancelPermit/cancelPermit.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

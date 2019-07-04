@@ -1,0 +1,137 @@
+.notSelectable{
+	background: #fff;
+}
+.q-r-tit .success {
+    float: right;
+    font-size: 0.36rem;
+    color: #474747;
+    margin-right: 0.55rem;
+}
+.q-r-tit .success.smallColor {
+    color: #b2b2b2;
+}
+.peccancyQuery.userInfor .text-list-div span.museumColor{
+	color: #f83e3e;
+}
+.peccancyQuery.userInfor .listWH .text-list-div label{
+	width: 2.6rem;	
+}
+.peccancyQuery.userInfor .listWH .text-list-div span{
+	width: -webkit-calc(100% - 2.6rem);
+    width: -moz-calc(100% - 2.6rem);
+    width: calc(100% - 2.6rem);
+}
+.q-r-tit.timeTit time em{
+	margin-left: 0.486rem;
+	font-style: normal;
+}
+.q-r-tit.timeTit span{
+	margin-left: 0.3rem;
+}
+.seleteTimeList {
+	font-size: 0;
+	margin: 0.222rem 0.277rem 0.277rem 0.68rem;
+}
+.seleteTimeList .number{
+	display: inline-block;
+	float: left;
+	font-size: 0.333rem;
+	color: #474747;    
+	line-height: 0.625rem;
+	width: 6.1rem;
+}
+.seleteTimeList .number span:nth-of-type(1){
+	color: #8b8b8b;
+	margin: 0 0.13rem;
+}
+.seleteTimeList .number span:nth-last-of-type(1){
+	color: #549dfb;
+	margin: 0 0.13rem;
+}
+.seleteTimeList .number .colorB2{
+	color: #b2b2b2;
+	font-style: normal;
+}
+.seleteTimeList .btn-reserve{
+	display: inline-block;
+	float: right;
+}
+.seleteTimeList .btn-reserve a{
+	display: inline-block;
+	background: #549dfb;
+	width: 1.32rem;
+	height: 0.625rem;
+	line-height: 0.625rem;
+	color: #fff;
+	text-align: center;
+	font-size: 0.333rem;
+	border-radius: 3px;
+}
+.seleteTimeList .btn-reserve.disabled a{
+	background: #ddebfe;
+}
+.peccancyQuery.userInfor.onlyStyle:nth-last-of-type(1){
+	margin-bottom: 0.555rem;
+}
+
+/*预约成功页*/
+.reservationSuccess-infor{
+	margin: 0 0.55rem;
+}
+.reservationSuccess-infor .hrLine{
+	margin:0.277rem 0;
+}
+.reservationSuccess-infor p{
+	font-size: 0.333rem;
+	color: #000;
+	line-height: 0.6rem;
+}
+.reservationSuccess-infor p.successTit{
+	background: url(../../images/museum/icon-success.png) no-repeat left center;
+    background-size: 0.36rem;
+    padding-left: 0.625rem;
+    margin-top: 0.388rem;
+    margin-bottom: 0.2rem;
+}
+.reservationSuccess-infor p span.time{
+	color: #f32b2b;
+}
+.ticketTicket-img{
+	background: #549dfb;
+	color: #fff;    
+	margin-bottom: 0.777rem;
+    margin-top: 0.5rem;
+    padding-bottom: 0.33rem;
+}
+.ticketTicket-img .icon-tickets{
+	background: url(../../images/museum/icon-tickets.png) repeat-x;
+	background-size: 0.3194rem 0.0833rem;
+	width: 100%;
+	height: 0.0833rem;
+}
+.ticketTicket-img .ticketTitle{
+	font-size: 0.4rem;
+	border-bottom: 1px solid #aacefd;
+	line-height: 0.875rem;
+    padding: 0 0.333rem;
+    margin-bottom: 0.22rem;
+}
+.ticketTicket-img .ticketTitle time{
+	font-size: 0.36rem;
+	float: right;
+}
+.ticketTicket-img .ticketTitle .circular{
+	display: inline-block;
+	width: 0.375rem;
+	height: 0.375rem;
+	background: #fff;
+	border-radius: 50%;
+	float: left;
+    margin-top: 0.24rem;
+    margin-right: 0.069rem;
+}
+.ticketTicket-img .ticketList{
+	font-size: 0.333rem;
+    padding: 0 0.333rem;
+    line-height: 0.6rem;
+}

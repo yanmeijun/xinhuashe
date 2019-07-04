@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>甘肃省预约挂号平台</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/heNanHospital/heNanHospital.css"/>
+    <link rel="stylesheet" href="/css/gSHospital/gSHospital.css" />
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityInfo = "<%= cityInfo %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>"
+			,USERNAME = "<%= locals.userName %>"
+			,PASSWORD = "<%= locals.password %>",
+            localFrom = "<%= locals.localFrom %>";
+		if(USERNAME){
+			sessionStorage.setItem('gsHospital_USERNAME',USERNAME);
+		}
+		if(PASSWORD){
+			sessionStorage.setItem('gsHospital_PASSWORD',PASSWORD);
+		}
+        var userkey=sessionStorage.getItem("userKey");
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max" v-cloak>
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox"  @click="checkUser()" v-cloak>
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png" ></p>
+					<p>个人中心</p>
+				</a>
+				<div class="dialog-userCenter gSUser" v-if="pesCenterFlag" v-cloak>
+					<div class="triangle"></div>
+					<ul>
+						<li><a href="javascript:;" @click="jumpPerson()">个人中心</a></li>
+						<li><a href="javascript:;" @click="exitBtn()">退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--预约挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit">甘肃省预约挂号平台</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>医院名称</label>
+					<input v-model="hos_name" type="text" placeholder="请输入医院名称" v-cloak/>
+				</div>
+				<div class="btn-box">
+					<input @click="search" type="button" value="查询" v-cloak />
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" v-if="noResult" v-cloak>
+				<h2 class="q-r-tit"><span></span>很抱歉，您搜索的信息不存在！</h2>
+			</div>
+			<!--默认 start-->
+			<div class="" v-if="flag=='hot'">
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>热门医院</h2>
+				</div>
+				<div v-for="hos in hosList" @click="jumpHtml(hos.ID,hos.NAME)" class="peccancyQuery userInfor onlyStyle" v-cloak>
+					<dl class="hosList hNHosList">
+						<dt><a href="javascript:;"><img v-cloak :src="hos.IMG?hos.IMG:' http://www.gsyygh.com/arweb/res/image/hospital.png'"></a></dt>
+						<dd>
+							<p class="title" v-cloak>{{hos.NAME}}</p>
+							<p class="time"><span v-cloak>{{hos.HOS_LEVEL}}</span><span class="sX-yy-num">{{hos.TYPE}}</span></p>
+							<p class="address gSAddress">
+								<i class="icon-address"></i>
+								<span v-cloak>{{hos.ADRESS}}</span>
+							</p>
+							<p class="tel" v-cloak><i class="icon-tel"></i>{{hos.TEL}}</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<!--默认 end-->
+			<!--搜索结果 start-->
+			<div class="" v-if="flag=='search' && !noResult" v-cloak>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>相关搜索结果</h2>
+				</div>
+				<div v-for="hos in searchList" v-cloak class="peccancyQuery userInfor onlyStyle" @click="jumpHtml(hos.HOS_KEY,hos.HOS_NAME)">
+					<div class="gSResultList">
+						<div class="hospitalNameTel">
+							<span v-cloak>{{hos.HOS_NAME}}</span>
+							<span class="tel" v-if="hos.TEL" v-cloak><i class="icon-tel"></i>{{hos.TEL}}</span>
+						</div>
+						<p class="address" v-if="hos.HOS_ADDRESS" v-cloak>
+							<i class="icon-address"></i>
+							<span v-cloak>{{hos.HOS_ADDRESS}}</span>
+						</p>
+						<div class="gSIntro index" v-if="hos.CONTENT_STR" v-cloak>
+							{{hos.CONTENT_STR}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--搜索结果 end-->
+		</div>
+		<div class="mask" v-if="maskFlag" ref="masktime" v-cloak></div>
+		<!--退出弹框-->
+		<div class="dialog-tel" v-if="exitFlag" v-cloak>
+			<div class="titTel">您确定要退出登录吗？</div>
+			<div class="btn-tel">
+				<a href="javascript:;" @click="cancelExit()">取消</a>
+				<a href="javascript:;" @click="exit()">确定</a>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+        <div class="masktime" id="masktime" v-if="masktime" v-cloak>{{masktime}}</div>
+		<div class="data-sources">服务来源：健康甘肃</div>
+	</div>
+    <script type="text/javascript" src="/js/all.js"></script>
+<script src="/lib/vue.min.js"></script>
+<script src="/lib/axios.js"></script>
+<script src="/js/gsHospital/index.js"></script>
+</body>
+</html>

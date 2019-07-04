@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>添加就诊人</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+	<script type="text/javascript" language="javascript">
+		const randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+    <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript" src="/js/hospital/md5.js" ></script>
+    <script type="text/javascript" src="/js/hospital/addPatients.js" ></script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--添加就诊人-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back"/>添加就诊人</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>姓名</label>
+					<input id="name" type="text" placeholder="请输入您的真实姓名" />
+				</div>
+				<div class="text-list-div">
+					<label>性别</label>
+					<div class="accounts-all">
+						<span id="sexBoy"><picture></picture>男</span>
+				    	<span id="sexGirl"><picture></picture>女</span>
+					</div>
+				</div>
+				<div class="text-list-div">
+					<label>证件类型</label>
+					<span class="aloneStyle">身份证</span>
+				</div>
+				<div class="text-list-div">
+					<label>证件号码</label>
+					<input id="idNo" type="text" placeholder="请输入证件号码" />
+				</div>
+				<div class="text-list-div">
+					<label>手机号码</label>
+					<input id="phone" type="text" placeholder="请输入手机号码" />
+				</div>
+				<div class="text-list-div regAddress">
+					<label>现居住地</label>
+					<div class="regListBox">
+						<div class="regAddList">
+							<span id="provinceTrigger">省份</span>
+							<img id="province" src="/images/icon-downMenu.png" class="icon-downMenu">
+						</div>
+						<div class="regAddList">
+							<span id="cityTrigger">城市</span>
+							<img id="city" src="/images/icon-downMenu.png" class="icon-downMenu">
+						</div>
+						<div class="regAddList">
+							<span id="countyTrigger">区县</span>
+							<img id="county" src="/images/icon-downMenu.png" class="icon-downMenu">
+						</div>
+					</div>
+				</div>
+				<div class="text-list-div phone-list-code codeStyle">
+					<label>验证码</label>
+					<input id="verifycode" type="text" placeholder="验证码" />
+					<img id="image"  class="img-code">
+				</div>
+				<div class="text-list-div phone-list-code">
+					<label>手机验证码</label>
+					<input id="tpyzm" type="text" placeholder="短信验证码" />
+					<a id="getCode" href="javascript:;" class="get-code">获取验证码</a>
+				</div>
+				<div class="btn-box">
+					<input id="addPatient" type="button" value="确认添加" />
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<!-- ---------------------------------------提示语------------------------------------------- -->
+		<div class="masktime" id="masktime" style="display:none;"></div>
+
+		<div class="data-sources">服务来源：北京市预约挂号统一平台</div>
+	</div>
+</body>
+</html>
+<script>
+//同意协议、性别按钮切换
+	let sex = "1";
+	$("#agreeSelect,#sexBoy picture,#sexGirl picture").on("click",function(){
+		$(this).parents().siblings().children("picture").removeClass("active");
+	    $(this).toggleClass("active");
+		if($(this).parent().attr("id") == "sexGirl"){
+			sex = "2";
+		}
+	})
+</script>
+<script type="text/javascript" src="/js/all.js"></script>

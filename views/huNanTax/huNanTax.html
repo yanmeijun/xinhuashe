@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>个税计算器</title>
+    <link type="text/css" rel="stylesheet" href="../../css/news.css" />
+    <link rel="stylesheet" href="../../css/huNanTax/huNanTax.css" />
+	<script type="text/javascript" src="/lib/zepto.min.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" src="js/huNanTax/tools.js"></script>
+	<script type="text/javascript" src="js/huNanTax/validator.js"></script>
+	<script type="text/javascript" src="js/huNanTax/TaxCalculator.js"></script>
+	<script type="text/javascript" src="js/huNanTax/huNanTax.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_y = "<%= local_y %>",
+			localFrom = "<%= locals.localFrom %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.underTransition{
+		transition-timing-function:ease-in;
+		transition:left .5s;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max"  id="huNanTax">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--个税计算器-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">个税计算器</h1>
+				<hr class="hrLine">
+				<div class="personType" style="position: relative">
+					<ul class="gjj-tab clearfix" id="personType">
+						<li class="active"><a href="javascript:;" >税前</a></li>
+						<li><a href="javascript:;">税后</a></li>
+					</ul>
+					<span class="under-line"></span>
+				</div>
+			</div>
+			<!---税前 start-->
+			<div class="gjj-tab-con"  id="preTaxCon">
+				<div class="peccancyQuery spacTop">
+					<div class="text-list-div downMenu-style">
+						<label id="preCon">起征金额</label>
+						<!--<span class="selectDownMenu">3500</span>-->
+						<input type="text" id="deductBase" value="3500" class="selectDownMenu">
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="text-list-div downMenu-style">
+						<label id="preMoney">税前薪资</label>
+						<input type="text" placeholder="请输入税前薪资" id="salary"/>
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="btn-box">
+						<input type="hidden" id="taxOrNot" value="0">
+						<input type="button" value="计算" id="calculate"/>
+					</div>
+				</div>
+			</div>
+			<!---税前 end-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle" id="huNanResult" style="display: none">
+				<h2 class="q-r-tit"><span></span>计算结果</h2>
+				<div class="calculationResult">
+					<div class="text-list-div clearfix">
+						<label>应纳税额</label>
+						<!--<span class="numberResults" id="taxMoney"></span>-->
+						<input type="text"  id="taxMoney" class="numberResults">
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="text-list-div clearfix">
+						<label id="LastPreMoney">税后薪资</label>
+						<!--<span class="numberResults" ></span>-->
+						<input type="text" id="result" class="numberResults">
+						<b class="rmbUnit">元</b>
+					</div>
+				</div>
+				<div class="promptCon">
+					<p>备注说明：</p>
+					<p>1、应纳税额 =（税前薪资 - 扣除标准）× 适用税率 – 速算扣除数</p>
+					<p>税后薪资 = 税前薪资 - 应纳税额</p>
+					<p>征收率类型：超额累进</p>
+					<p>适用税率：<span id="rate">0.2</span></p>
+					<p>速算扣除数：<span id="deductNum">555</span></p>
+					<p>2、本计算结果仅供参考，具体税费数额以税务机关前台计算结果为准。</p>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="masktime" id="masktime" style="display: none"></div>
+		<div class="data-sources">服务来源：湖南省地方税务局</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+/*医疗保险查询*/
+.peccancyQuery.userInfor .text-list-div.list-wh label{
+	width: 4.8rem;
+}
+.peccancyQuery.userInfor .text-list-div.list-wh span{
+	width: -webkit-calc(100% - 4.8rem);
+	width: -moz-calc(100% - 4.8rem);
+	width: calc(100% - 4.8rem);
+}
+/*商务法规查询*/
+.peccancyQuery.userInfor .text-list-div.rule-wh label{
+	width: 2.6rem;
+}
+.peccancyQuery.userInfor .text-list-div.rule-wh span{
+	width: -webkit-calc(100% - 2.7rem);
+	width: -moz-calc(100% - 2.7rem);
+	width: calc(100% - 2.7rem);
+}
+
+/*个人缴费信息查询*/
+.downMenu{
+	display: none;
+	border: 1px solid #ddd;
+	background: #fff;
+	position: absolute;
+	margin-left: 0.55rem;
+	top:30%;
+	width:-webkit-calc(100% - 1.1rem);
+	width:-moz-calc(100% - 1.1rem);
+	width:calc(100% - 1.1rem);
+	z-index: 100;
+	padding-bottom:0.1rem;
+	border-radius: 5px;
+}
+.downMenu h2{
+	font-size: 0.38rem;
+	background: #549dfb;
+	line-height: 1rem;
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 0.2rem;
+}
+.downMenu p{
+	font-size: 0.33rem;
+	color: #666;
+	line-height: 0.8rem;
+	text-align: center;
+}
+.downMenu p:hover{
+	background: #ddd;
+}
+
+/*火车票起售时间*/
+.peccancyQuery.userInfor.onlyStyle .q-r-tit label{
+	color: #474747;
+	font-size: 0.36rem;
+	float: right;
+	margin-right: 0.55rem;
+}
+.q-r-tit small{
+	color: #666;
+	font-size: 0.33rem;
+}
+.con-box{
+	margin-top: 0.7rem;
+	margin-bottom: 0.625rem;
+}
+.con-box span{
+	float: left;
+	width: 37%;
+	text-align: center;
+	font-size: 0.583rem;
+	color: #000;
+}
+.con-box span .colorBlue{
+	color: #056fb6;
+}
+.con-box span:nth-child(2){
+	width: 26%;
+	font-size: 0.33rem;
+	color: #666;
+	margin-top: 3px;
+}
+.con-box span:nth-child(2) p:nth-child(1){
+	border-bottom: 1px solid #9c9c9c;
+}
+.con-box span:nth-child(2) p b{
+	display: inline-block;
+	width:8px;
+	height:8px;
+	border-radius: 50%;
+	background: #9c9c9c;
+	float: left;
+	margin-top: -5px;
+}
+.con-box span p{
+	line-height: 0.7rem;
+}
+.con-box span:nth-child(2) p b:nth-last-child(1){
+	float: right;
+}
+.con-box span:nth-child(2) p:nth-child(2){
+	height: 0.1rem;
+}
+.con-box span:nth-child(1) p,
+.con-box span:nth-last-child(1) p{
+	line-height: 0.9rem;
+}
+.trainTable{
+	width: 100%;
+	font-size: 0.39rem;
+}
+.trainTable thead th{
+	text-align: left;
+	font-weight: normal;
+	font-size: 0.34rem;
+	color: #9c9c9c;
+	line-height: 0.86rem;
+	border-bottom: 1px solid #edefee;
+}
+.trainTable thead th,
+.trainTable tbody td{
+	width: 20%;
+	line-height: 1.2rem;
+	color: #666;
+	font-size: 0.39rem;
+}
+#dataList_template td{
+	width: 20%;
+	line-height: 1.2rem;
+	color: #666;
+	font-size: 0.39rem;
+}
+.trainTable thead th:nth-child(1),
+.trainTable tbody td:nth-child(1){
+	width: 14%;
+	text-align: center;
+}
+.trainTable thead th:nth-child(2),
+.trainTable tbody td:nth-child(2){
+	width: 26%;
+}
+.trainTable tbody .colorBlue td{
+	color: #056fb6;
+}
+/*火车票余票查询*/
+.yp-input-text{
+	text-align: center;
+	padding: 0 0.55rem;
+	height: 1.67rem;
+	padding-top: 0.38rem;
+}
+.yp-input-text img{
+	width: 1rem;
+	height: 1rem;
+	float: left;
+}
+.yp-input-text input{
+	border: none;
+	float: left;
+	width: 3.58rem;
+	height: 1rem;
+	font-size: 0.38rem;
+}
+.yp-input-text input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color:#000;
+}
+.yp-input-text input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:#000;
+}
+.yp-input-text input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:#000;
+}
+.yp-input-text input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #000;
+}
+.yp-input-text a:nth-last-of-type(1) input{
+	text-align: right;
+}
+.yp-data{
+	margin: 0 0.55rem;
+	font-size: 0.38rem;
+	line-height: 1.5rem;
+	border-top: 1px solid #edefee;
+	border-bottom: 1px solid #edefee;
+}
+.student{
+	font-size: 0.38rem;
+	color: #666;
+	margin: 0 0.55rem;
+	padding-top: 0.38rem;
+	/*padding-bottom: 0.4rem;*/
+}
+
+.yupiao_checkbox {
+	font-size: 0.48rem;
+}
+.student span{
+	float: left;
+	margin-right: 0.2rem;
+}
+.trainsNumber{
+	color: #474747;
+	font-size: 0.36rem;
+}
+.trainsNumber{
+	margin: 0.278rem 0 0.278rem 0.8rem;
+}
+.trainsNumber p{
+	margin-bottom: 0.25rem;
+}
+.trainsNumber p span{
+	float: left;
+	margin-right: 0.52rem;
+}
+.trainsNumber p span input{
+	float: left;
+}
+.trainsNumber p span:nth-of-type(1){
+	margin-right: 0;
+}
+.trainsNumber p span .iradio_square-blue{
+	margin-right: 0.16rem;
+}
+.syNum{
+	border-top: 1px solid #edefee;
+	height: 0.83rem;
+	line-height: 0.3rem;
+	text-align: center;
+}
+.syNum span{
+	font-size: 0.3rem;
+	color: #666;
+	margin: 0 0.33rem;
+}
+.syNum span.colorblack{
+	color: #333;
+}
+.yp-data input{border:none;font-size:0.38rem;color:#000;}
+
+/*单选框、复选框样式 start*/
+.demo-list li{
+	display: inline-block;
+}
+.icheckbox_square-blue,
+.iradio_square-blue {
+	display: inline-lock;
+	margin: 0;
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	background: url(../images/blue.png) no-repeat;
+	border: none;
+	cursor: pointer;
+	float: left;
+}
+.icheckbox_square-blue {
+	background-position: 0 0;
+}
+.icheckbox_square-blue.hover {
+	background-position: -24px 0;
+}
+.icheckbox_square-blue.checked {
+	background-position: -48px 0;
+}
+.iradio_square-blue {
+	background-position: -120px 0;
+}
+.iradio_square-blue.hover {
+	background-position: -144px 0;
+}
+.iradio_square-blue.checked {
+	background-position: -168px 0;
+}
+/*单选框、复选框样式 end*/

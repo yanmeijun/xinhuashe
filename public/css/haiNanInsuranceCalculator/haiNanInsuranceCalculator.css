@@ -1,0 +1,97 @@
+.calculatorBox{
+	padding:0.833rem 0.55rem 0.12rem;
+}
+.calculatorList{
+	position: relative;
+	margin-bottom: 0.347rem;
+}
+.calculatorList label{
+	font-size: 0.388rem;
+	color: #474747;
+	width: 2.1rem;
+	line-height: 0.888rem;
+	float: left;
+}
+.calculatorList span,.calculatorList.sbjs input{
+	float: left;
+	display: inline-block;
+	width: -webkit-calc(100% - 2.1rem);
+	width: -moz-calc(100% - 2.1rem);
+	width: calc(100% - 2.1rem);
+	height: 0.888rem;
+	line-height: 0.888rem;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	font-size: 0.333rem;
+	color: #797979;
+	padding: 0 0.75rem 0 0.138rem;
+}
+.calculatorList b{
+	color: #797979;
+	font-size: 0.333rem;
+	font-weight: normal;
+	position: absolute;
+	right: 0.277rem;
+	top: 0.2rem;
+}
+.calculatorList .icon-downMenu{
+	position: absolute;
+	right: 0;
+	top: 0.097rem;
+	width: 0.694rem;
+    height: 0.694rem;
+}
+.calculatorList.gsbxxs{
+	margin-top: 0.625rem;
+}
+.calculatorList.gsbxxs label{
+	line-height: normal;
+}
+/*计算结果*/
+.calculatorBox.calculationResults{
+	padding: 0.472rem 0.55rem 0.12rem;
+}
+.calculatorBox.calculationResults .calculatorList span{
+	width: 5.6rem;
+	padding: 0 0.138rem 0 0.138rem;
+}
+.calculatorBox.calculationResults .calculatorList b{
+	position: initial;
+    float: left;
+    margin: 0.2rem 0rem 0 0.15rem;
+}
+.calculatorBox.calculationResults .calculatorList .getGsbxxs{
+	color: #797979;
+	font-size: 0.277rem;
+	line-height: 0.888rem;
+}
+.calculatorBox.calculationResults .calculatorList .getGsbxxs em{
+	font-style: normal;
+}
+/*后期样式变更*/
+.listWHBox .publicListText label{
+	width: 2.9rem;
+}
+.listWHBox .publicListText span,
+.listWHBox .publicListText input{
+	width: -webkit-calc(100% - 3.53rem);
+    width: -moz-calc(100% - 3.53rem);
+    width: calc(100% - 3.53rem);
+}
+.listWHBox .publicListText b{
+	color: #797979;
+	font-weight: normal;
+}
+@media (min-width: 320px) and (max-width: 375px) {
+	.calculatorBox.calculationResults{
+		padding: 0.472rem 0rem 0.12rem 0.55rem;
+	}
+}
+@media (max-width: 320px) {
+	.calculatorBox.calculationResults{
+		padding: 0.472rem 0rem 0.12rem 0.55rem;
+	}
+	.calculatorBox.calculationResults .calculatorList b {
+	    margin: 0.2rem 0.1rem 0;
+	}
+}

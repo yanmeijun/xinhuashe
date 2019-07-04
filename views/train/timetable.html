@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 54px;">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>日期选择</title>
+    <script src="/lib/calendar/zepto.js"></script>
+    <script src="/lib/calendar/flexible.js"></script>
+    <script src="/lib/calendar/base.js"></script>
+    <script src="/lib/calendar/calendar.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script>
+        const randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+        leftTicketDTO = {
+            'arrive_time': null,
+            'bigger20': 'Y',
+            'from_station': null,
+            'from_station_name': null,
+            'from_station_no': null,
+            'lishi': null,
+            'login_id': null,
+            'login_mode': null,
+            'login_site': null,
+            'purpose_codes': null,
+            'query_type': null,
+            'seatTypeAndNum': null,
+            'seat_types': null,
+            'start_time': null,
+            'start_time_begin': null,
+            'start_time_end': null,
+            'station_train_code': null,
+            'to_station': null,
+            'to_station_name': null,
+            'to_station_no': null,
+            'train_date': null,
+            'train_flag': null,
+            'train_headers': null,
+            'train_no': null,
+            'useMasterPool': true,
+            'useWB10LimitTime': true,
+            'usingGemfireCache': false,
+            'ypInfoDetail': null
+        };
+    </script>
+    <!--<link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">-->
+    <link href="/css/style.css" rel="stylesheet">
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body>
+<div class="view max" id="datepickerPage" style="width: 100%; overflow: auto;">
+    <!-- 头部 -->
+    <!--<div class="header">-->
+    <!--<div class="header-left"><a id="goBack" href="javascript:;" data-rel="back" class="return"></a></div>-->
+    <!--<div class="header-center">日期选择</div>-->
+    <!--</div>-->
+    <!-- 内容区 -->
+    <article id="datepicker">
+
+    </article>
+</div>
+<script type="text/javascript" src="/js/all.js"></script>
+<script>
+    $(function () {
+        show_calendar();
+    })
+</script>
+</body>
+</html>

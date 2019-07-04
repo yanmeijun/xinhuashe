@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>我的预约记录</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/guiZhouInternetService/guiZhouInternetService.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+    <script>
+		var randomKey = "<%=locals.randomKey%>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+				user_name = "<%= locals.user_name %>",
+				cardno = "<%= locals.cardno %>",
+				email = "<%= locals.email %>",
+				oldmobile = "<%= locals.oldmobile %>",
+            localFrom = "<%= locals.localFrom %>";
+    </script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="reservationRecord">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--我的预约记录-有记录-->
+		<div v-if="records.length>0" class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back()"/>我的预约记录</h1>
+				<hr class="hrLine">
+				<h2 class="q-r-tit htTitke"><span></span>您共有{{totalNumber}}次预约记录</h2>
+			</div>
+			<div v-for="(item,index) in records">
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>{{index+1}} 预约编号：<em class="reservationNumber">{{item.number}}</em></h2>
+				<hr class="hrLine">
+				<div class="tab-content inforConfirm">
+					<div class="text-list-div clearfix">
+						<label>预约事项：</label>
+						<span>{{item.item}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>预约部门：</label>
+						<span>{{item.department}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>预约日期：</label>
+						<span>{{item.date}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>状态：</label>
+						<span>{{item.status}}</span>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!--我的预约记录-无记录-->
+		<div v-else class="warpBox">
+			<div class="peccancyQuery userInfor">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back()"/>我的预约记录</h1>
+				<hr class="hrLine">
+				<div class="notFound">
+					<div class="img-box"><img src="/images/notFound.png"></div>
+					<div class="notF-infor">查询结果：无记录!</div>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="我要预约" @click="back()"/>
+				</div>
+			</div>
+		</div>
+		<!-- 查询动画提示开始-->
+		<div v-if="sendBefore" class="mask" style="opacity: 0;" id="dialogMask"></div>
+		<div v-if="sendBefore" class="dialog-tel timeM" style="text-align: center;" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>查询中</p>
+		</div>
+		<!-- 查询动画提示结束-->
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：贵州省网上办事大厅</div>
+	</div>
+	<script type="text/javascript" src="/js/GzOnlineWork/reservationRecord.js"></script>
+    <!--<script>-->
+        <!--fnSize()-->
+        <!--window.addEventListener('resize',fnSize,false)-->
+        <!--function fnSize () {-->
+            <!--if(document.documentElement.offsetWidth>1024){-->
+                <!--document.getElementsByTagName('html')[0].style.fontSize = 375/10 +'px';-->
+                <!--document.getElementsByClassName("max")[0].style.width="375px";-->
+                <!--document.getElementsByClassName("max")[0].style.margin ="0 auto";-->
+                <!--document.getElementsByClassName("data-sources")[0].style.width ="375px";-->
+                <!--return;-->
+            <!--}else{-->
+                <!--document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth/10 +'px';-->
+                <!--document.getElementsByClassName("max")[0].style.width="100%";-->
+                <!--document.getElementsByClassName("data-sources")[0].style.width ="100%";-->
+                <!--return;-->
+            <!--}-->
+
+        <!--}-->
+    <!--</script>-->
+</body>
+</html>

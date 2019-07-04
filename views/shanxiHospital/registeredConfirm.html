@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>挂号单确认</title>
+    <link type="text/css" rel="stylesheet" href="../../css/news.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/hospital/hospital.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/heNanHospital/heNanHospital.css"/>
+	<link rel="stylesheet" href="../../css/sXHospital/sXHospital.css" />
+	<script type="text/javascript" src="/lib/jquery.min.js" ></script>
+	<script src="/js/sXHospital/jquery.base64.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<style>
+		.icon-default1  i{
+			width: .35rem;
+			height: .35rem;
+			display:inline-block;
+			background: url("/assets/images/yaohao/icon-yh-default.png") no-repeat ;
+			background-size: 0.35rem 0.35rem;
+		}
+		.icon-default1  i.icon-check{
+			background: url("/assets/images/yaohao/icon-yh-default.png") no-repeat ;
+			background-size: 0.35rem 0.35rem;
+		}
+		.icon-default1  i.check-true{
+			background: url("/assets/images/yaohao/icon-yh-check.png") no-repeat ;
+			background-size: 0.35rem 0.35rem;
+		}
+		.icon-default1{
+			position: relative;
+		}
+		input[type="radio"]{
+			position: absolute;
+			left: -5px;
+			top: -3px;
+			opacity: 0;
+		}
+		input[type="radio"]:checked + i.icon-check{
+			background: url("/assets/images/yaohao/icon-yh-check.png") no-repeat ;
+			background-size: 0.35rem 0.35rem;
+		}
+	</style>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox" id="personalCenter">
+				<a href="javascript:void(0)">
+					<p><img src="../../images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+			</div>
+		</div>
+		<!--科室挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit">
+					<img src="../../images/icon-return.png" class="icon-return" id="back"/>
+					<span class="color0083e0" id="ks_title">陕西省人民医院--眼科</span>
+				</h1>
+				<hr class="hrLine" />
+				<dl class="hosList hNHosList sXHosList" id="register">
+					<!--<dt><a href="javascript:;"><img src="../../images/heNanHospital/photo.jpg" class="photo"></a></dt>-->
+					<!--<dd>-->
+						<!--<p class="nameOffice"><span>卫玉荣</span>副主任医师</p>-->
+						<!--<p class="hospitalName">陕西省人民医院</p>-->
+						<!--<p class="introduce color47">地址：陕西省西安市友谊西路256号</p>-->
+					<!--</dd>-->
+				</dl>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>号源详情</h2>
+				<hr class="hrLine">
+				<div id="inforConfirm"></div>
+				<!--<div class="tab-content inforConfirm sXRegConfirm">-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>门诊类型：</label>-->
+						<!--<span>专家门诊</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>就诊时间：</label>-->
+						<!--<span>2018-04-26  13:00-15:00</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>门诊诊查费：</label>-->
+						<!--<span><em class="coloref8935">￥4.5</em>元</span>-->
+					<!--</div>-->
+					<!--<div class="text-list-div clearfix">-->
+						<!--<label>挂号费：</label>-->
+						<!--<span><em class="coloref8935">￥50</em>元</span>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>挂号信息</h2>
+				<hr class="hrLine">
+				<div class="tab-content inforConfirm heNanReg" >
+					<div id="patientInfor"></div>
+					<div style="clear: both"></div>
+					<!--<div class="text-list-div inforCheck-style">-->
+						<!--<label>就诊人：</label>-->
+						<!--<div class="accounts-all clearfix">-->
+							<!--<div class="jiuZList">-->
+						    	<!--<span class="icon-default">-->
+						    		<!--<i><img src="../../images/icon-yh-check.png"></i>张三-->
+						    	<!--</span>-->
+						    	<!--<div class="y-g-tel">手机：186****2498</div>-->
+						    	<!--<div class="y-g-ID">身份证：4114**********1621</div>-->
+					    	<!--</div>-->
+					    	<!--<div class="jiuZList padTop">-->
+						    	<!--<span class="icon-default">-->
+						    		<!--<i><img src="../../images/icon-checkBox-default.png"></i>李四-->
+						    	<!--</span>-->
+						    	<!--<div class="y-g-tel">手机：186****2498</div>-->
+						    	<!--<div class="y-g-ID">身份证：4114**********1621</div>-->
+					    	<!--</div>-->
+					    	<!--<div class="addPatient">+ 添加就诊人</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="text-list-div borderHava clearfix">-->
+						<!--<label>初复诊选择：</label>-->
+						<!--<span>初诊（第一次去这家医院）</span>-->
+						<!--<img src="../../images/icon-downMenu.png" class="icon-downMenu">-->
+					<!--</div>-->
+				<!--<div class="agreeOK"><span id="agreeSelect"></span>我已阅读并同意<a href="javascript:;">《预约诊疗服务系统应用须知》</a></div>-->
+				<div class="btn-box">
+					<input type="button" value="确认预约" id="confirmBtn"/>
+				</div>
+			</div>
+		</div>
+			<!--提示语-->
+			<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：陕西省预约挂号及支付平台</div>
+	</div>
+	</div>
+	<script src="/js/sXHospital/common.js"></script>
+	<script src="/js/sXHospital/registeredConfirm.js"></script>
+</body>
+</html>

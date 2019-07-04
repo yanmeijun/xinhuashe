@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市社会保险查询系统</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+	<script type="text/javascript" src="/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script type="text/javascript" src="/js/insurance/insuranceLogin.js"></script>
+	<script language="JavaScript">
+		var _trackDataType = 'web';var _trackData = _trackData || [];
+	</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--头部-->
+		<!--<header>-->
+			<!--<ul>-->
+				<!--<li><a href="javascript:;"><img src="../images/logo.png" class="img-logo"></a></li>-->
+				<!--<li class="active"><a href="javascript:;">公共服务</a></li>-->
+				<!--<li><a href="javascript:;">推荐</a></li>-->
+				<!--<li><a href="javascript:;">现场云</a></li>-->
+				<!--<li><a href="javascript:;">北京</a></li>-->
+				<!--<li><a href="javascript:;"><img src="../images/icon-add.png" class="img-add"></a></li>-->
+			<!--</ul>-->
+		<!--</header>-->
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--北京市社会保险查询系统-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img id="insuranceList_back" src="../images/icon-return.png" class="icon-return"/>北京市社会保险查询系统</h1>
+				<hr class="hrLine">
+				<div class="btn-box bj-insuranceSystem">
+					<input id="chaxun" class="activeBGC" type="button" value="个人基本信息查询" />
+					<input id="perPayInfo" class="activeBGC" type="button" value="个人缴费信息查询" />
+					<input id="ylbxdySel" class="activeBGC" type="button" value="医疗保险待遇查询" />
+					<!--<input type="button" value="社会保险历年对账单查询（四险）" />-->
+					<!--<input type="button" value="1992年-1995年养老保险年账户查询" />-->
+				</div>
+			</div>
+		</div>
+		
+		<div class="data-sources">服务来源：北京市人力资源和社会保障局</div>
+		<!--<footer>-->
+			<!--<img src="../images/footer.png">-->
+		<!--</footer>-->
+	</div>
+</body>
+</html>

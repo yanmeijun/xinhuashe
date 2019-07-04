@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>领事保护应急电话查询</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/emergencyPhone/emergencyPhone.css" />
+		<script type="text/javascript" src="/lib/zepto.min.js"></script>
+	    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script type="text/javascript" language="javascript">
+            var randomKey = "<%= randomKey %>"
+                ,userID = "<%= userID%>"
+                ,clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                cityName = "<%= cityInfo.cityName %>",
+                local_x = "<%= local_x %>"
+                ,local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+		</script>
+	</head>
+	<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/emergencyPhone/banner.png">
+		</div>
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="back">查询结果</h1>
+				<div class="emergencyPhone">
+					<div class="resultTit" id="embassy"></div>
+					<div class="tabPhone">
+						<table >
+							<tr>
+								<td rowspan="3" style="width: 2.57rem;">
+									<div class="phoneTit">
+										<div class="phoneIconBox"><img src="/images/emergencyPhone/icon-phone.png"></div>
+										<div class="phoneWord">应急电话</div>
+									</div>
+								</td>
+								<!--<td><p class="phoneNum">+850-1912500729</p></td>-->
+							</tr>
+							<tr>
+								<td id="resultsTable"><p class="phoneNum"></p></td>
+							</tr>
+							<!--<tr>
+								<td><p class="phoneNum">+850-1912501232</p></td>
+							</tr>-->
+						</table>
+					</div>
+
+				</div>
+				<hr class="hrLine">
+				<div class="btn-box font80" >
+					<input type="button" value="返回首页"  id="goHome"/>
+				</div>
+			</div>
+			
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中华人民共和国外交部</div>
+	</div>
+	<script src="/js/emergencyPhone/result.js"></script>
+	</body>
+</html>

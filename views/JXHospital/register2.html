@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>注册</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" href="/css/JXHospital/JXHospital.css" />
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	<script>
+		var citySRC = "<%= cityInfo.citySRC %>",
+				localFrom = "<%= locals.localFrom %>";
+	</script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox">
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+			</div>
+		</div>
+		<!--注册-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home NMGReg">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return"/>个人信息</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>真实姓名</label>
+					<input type="text" placeholder="请输入真实姓名" />
+				</div>
+				<div class="text-list-div">
+					<label>身份证号码</label>
+					<input type="text" placeholder="请输入身份证号码" />
+				</div>
+				<div class="text-list-div">
+					<label>手机号码</label>
+					<input type="text" placeholder="请输入手机号码" />
+				</div>
+				<div class="text-list-div phone-list-code">
+					<label>短信验证码</label>
+					<input type="text" placeholder="请输入短信验证码" />
+					<a href="javascript:;" class="get-code">获取验证码</a>
+				</div>
+				<div class="agreeOK"><span id="agreeSelect"></span>我已阅读并同意<a href="javascript:;">《预约挂号协议》</a></div>
+				<div class="btn-box">
+					<input type="button" value="注册" />
+				</div>
+				<div class="goLoginBox clearfix">
+					<span class="goRegister">已有账户，去<a href="javascript:;">登录</a></span>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：江西省预约诊疗系统</div>
+	</div>
+</body>
+</html>

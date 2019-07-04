@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>学位查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link type="text/css" rel="stylesheet" href="/css/degree/degree.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+			citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            errMsg = "<%= locals.errMsg %>",
+            xwzsbh = "<%= locals.xwzsbh %>",
+            name = "<%= locals.name %>",
+            localFrom = "<%= locals.localFrom %>";
+        if(xwzsbh){
+            $("input[name='xwzsbh']").val(xwzsbh);
+        }
+        if(name){
+            $("input[name='name']").val(name);
+        }
+	</script>
+    <script type="text/javascript" src="/js/degree/degree.js" ></script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="title">中国高等教育学位证书查询</div>
+		</div>
+		<!--学位查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit">学位查询</h1>
+				<hr class="hrLine">
+				<form id="searchForm" method="post" action="/degree/getDegreeInfo">
+                    <input type="hidden" name="randomKey"/>
+                    <input type="hidden" name="userID"/>
+                    <input type="hidden" name="clientID"/>
+                    <input type="hidden" name="cityID"/>
+                    <input type="hidden" name="local_x"/>
+                    <input type="hidden" name="local_y"/>
+					<div class="text-list-div">
+						<label>证书编号</label>
+						<input id="xwzsbh" name="xwzsbh" type="text" placeholder="学位证书编号" />
+					</div>
+					<div class="text-list-div">
+						<label>姓名</label>
+						<input id="name" name="name" type="text" placeholder="学历证书上的姓名" />
+					</div>
+					<div class="text-list-div phone-list-code">
+						<label>图片验证码</label>
+						<input id="verifycode" name="provinceId" type="text" placeholder="请输入验证码" />
+						<img id="veriCodeImg" src="" class="img-code">
+					</div>
+					<!--<div class="text-list-div">
+						<label>手机号码</label>
+						<input id="phoneNum" name="phone" type="text" placeholder="仅支持中国大陆地区手机号码" />
+					</div>
+					<div class="text-list-div phone-list-code">
+						<label>短信验证码</label>
+						<input id="phoneCode" name="phoneCode" type="text" placeholder="短信验证码" />
+						<a id="getVel" disabled="disabled" href="javascript:;" class="get-code ccc">获取验证码</a>
+					</div>-->
+					<div class="btn-box">
+						<input id="searchBtn" type="button" value="查询" />
+					</div>
+				</form>
+			</div>
+			<div class="login-tips XL-query">
+				<p><img src="/images/icon-tips.png">注意:</p>
+				<p>1、本系统现可查询2008年9月1日以来（<span class="detailsNet" onclick="jumpPro();">详见最新上网情况</span>）中国境内各学位授予单位按照有关规定程序颁发的各级各类学位证书相关信息。</p>
+				<p>2、查询学位证书信息需经学位获得者同意。</p>
+				<p>3、学位证书查询结果不得用于违背学位获得者意愿之用途。</p>
+				<p>4、学位证书查询免费。</p>
+			</div>
+		</div>
+		<!-- -----------------------------------------------查询动画提示开始---------------------------------- -->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="masktime" id="masktime" style="display:none;"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- -----------------------------------------------查询动画提示结束--------------------------------- -->
+		<div class="data-sources">服务来源：中国学位与研究生教育信息网</div>
+	</div>
+    <script>
+        if(errMsg){
+            //alert(errMsg);
+            maskTip(errMsg);
+        }
+        fnSize();
+        window.addEventListener('resize',fnSize,false);
+        function fnSize () {
+            if(document.documentElement.offsetWidth>1024){
+                document.getElementsByTagName('html')[0].style.fontSize = 375/10 +'px';
+                document.getElementsByClassName("max")[0].style.width="375px";
+                document.getElementsByClassName("max")[0].style.margin ="0 auto";
+                document.getElementsByClassName("data-sources")[0].style.width ="375px";
+                return;
+            }else{
+                document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth/10 +'px';
+                document.getElementsByClassName("max")[0].style.width="100%";
+                document.getElementsByClassName("data-sources")[0].style.width ="100%";
+                return;
+            }
+        }
+    </script>
+</body>
+</html>

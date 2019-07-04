@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>韶关市公积金查询</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" href="/css/gdsgGJJ/gdsgGJJ.css">
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+    <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script>
+        var randomKey = "<%= randomKey %>",
+            userID = "<%= userID%>",
+            clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+    </script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+    <!--banner图-->
+    <div class="banner">
+        <% include ../header.html %>
+        <div id="userAvatarBox" class="userAvatarBox">
+            <a href="javascript:;">
+                <p><img src="/images/hospital/userAvatar.png"></p>
+                <p>个人中心</p>
+            </a>
+            <div class="dialog-userCenter" style="display: none" id="userCenter">
+                <div class="triangle"></div>
+                <ul>
+                    <li id="quit"><a href="javascript:void(0);"><i class="icon-anhuiQuit"></i>退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="warpBox">
+        <div class="peccancyQuery XLQuery-home">
+            <h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" id="backhistory"/>个人缴存证明查询</h1></div>
+            <div class="peccancyQuery userInfor onlyStyle">
+                <h2 class="q-r-tit publicMainTit"><span></span>个人缴存证明</h2>
+                <hr class="hrLine">
+                <div class="tab-content inforConfirm">
+                    <div class="text-list-div clearfix" style="border-bottom:0;">
+                        <label>个人账号：</label>
+                        <input type="text" style="text-align: left;color: #5ba7ec;" id="company" readonly>
+                    </div>
+                    <div class="btn-box">
+                        <input id="submit" type="button" value="查询" onclick="getPersonInfor()"/>
+                    </div>
+                </div>
+            </div>
+        <!--人信息  start-->
+        <div class="peccancyQuery userInfor onlyStyle payProve" id="resultShow" style="display:none">
+            <h2 class="q-r-tit publicMainTit"><span></span>查询结果</h2>
+            <hr class="hrLine">
+            <div class="tab-content inforConfirm personalCenter" id="result">
+
+            </div>
+        </div>
+        <!--举报人信息  end-->
+    </div>
+    <!-- ------------------------------提示语---------------------------------- -->
+    <div class="masktime" id="masktime" style="display:none;"></div>
+
+    <!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+    <div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+    <div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+        <img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+        <p>加载中</p>
+    </div>
+    <!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+    <div class="mask" style="display:none;" id="detail"></div>
+    <div style="height: 1.3rem;"></div>
+    <div class="data-sources">服务来源：韶关市住房公积金管理中心</div>
+
+    <script src="/js/gdsgGJJ/personalpayProve.js"></script>
+</div>
+</body>
+</html>

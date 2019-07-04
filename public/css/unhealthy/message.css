@@ -1,0 +1,139 @@
+/*举报不良信息*/
+.messageBox-list{
+	line-height: 0.5rem;
+}
+.messageBox-list label{
+	float: left;
+}
+.messageBox-list textarea{
+	float: left;
+	font-family: "微软雅黑";
+	color: #b2b2b2;
+	width: -webkit-calc(100% - 3rem);
+	width: -moz-calc(100% - 3rem);
+	width: calc(100% - 3rem);
+	max-width: -webkit-calc(100% - 3rem);
+    max-width: -moz-calc(100% - 3rem);
+    max-width: calc(100% - 3rem);
+    font-size: 0.37rem;
+    height: 0.5rem;
+    border: none;
+    padding: 0;
+}
+.messageBox-list textarea:focus{
+	border: 1px solid #eee;
+	outline:none;
+}
+.queryResult.parkingQuery .q-r-tit {
+    padding-bottom: 0.33rem;
+}
+.parkingResult{
+	border-top: 1px solid #edefee;
+	height: 1.05rem;
+	line-height: 1.05rem;
+	color: #474747;
+	font-size: 0.36rem;
+	padding-left: 0.65rem;
+}
+.jubao-list .text-list-div label{
+	width: 2.6rem !important;    		
+	}
+.jubao-list .text-list-div span{
+	width: -webkit-calc(100% - 2.6rem) !important;
+    width: -moz-calc(100% - 2.6rem) !important;
+    width: calc(100% - 2.6rem) !important;		
+	}
+
+.report-title small {
+    display: inline-block;
+    color: #0083e0;
+    margin-left: 0.55rem;
+    font-size: 0.38rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.report-title label {
+    float: right;
+    color: #b2b2b2;
+    margin-right: 0.55rem;
+}
+.downMenu-style img{
+	position: absolute;
+    right: 0;
+    margin: 0;
+    bottom: 0.4rem;
+}
+.downMenu-style{
+	position: relative;
+}
+.downMenu-style .icon-downMenu{
+	/*position: absolute;
+    right: 0;
+    margin: 0;
+    bottom: 0.3rem;*/
+}
+.check-style .accounts-all {
+    display: inline-block;
+    width: -webkit-calc(100% - 3rem);
+    width: moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+}
+.check-style label{
+	padding-top: 0.1rem;
+	float: left;
+    height: 0.38rem;
+}
+.check-style .accounts-all span {
+    font-size: 0.38rem;
+    color: #474747;
+    float: left;
+    display: inline-block;
+    margin-bottom: 0.55rem;
+}
+.check-style .accounts-all span:nth-of-type(2n+1){
+	margin-right: 0.55rem;
+}
+.check-style .accounts-all span.special-style{
+	width: 4rem;
+}
+.check-style .accounts-all span:nth-last-of-type(1){
+	margin-bottom: 0rem;
+}
+.check-style .accounts-all span.icon-default{
+	color: #b2b2b2;
+}
+.check-style .accounts-all span.icon-default.icon-check{
+	color: #474747;
+}
+.check-style .accounts-all span img {
+    width: 0.34rem;
+    height: 0.34rem;
+    margin-right: 0.22rem;
+}
+.harass-check{
+	border-bottom: none;
+}
+.harass-check .accounts-all span:nth-last-of-type(1),
+.harass-check .accounts-all span:nth-last-of-type(2){
+	margin-bottom: 0rem;
+}
+.masktime{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 231px;
+    height: 49px;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 4px;
+    margin: auto;
+}
+.p-q-tit{
+    padding-right: .6rem;
+}

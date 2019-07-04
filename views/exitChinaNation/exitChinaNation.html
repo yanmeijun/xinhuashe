@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>退出中国国籍审批初审</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/wgrzhjl/wgrzhjl.css" />
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= randomKey %>"
+				,userID = "<%= userID%>"
+				,clientID = "<%= clientID %>",
+				cityID = "<%= cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= local_x %>"
+				,local_y = "<%= local_y %>",
+				localFrom = "<%= locals.localFrom %>";
+		if(cityID == "110000"){
+			sessionStorage.removeItem("oldCity");
+		}
+		var oldCity = sessionStorage.getItem("oldCity");
+		if(oldCity){
+			oldCity = oldCity;
+		}else{
+			oldCity = cityID;
+		}
+	</script>
+    <style>
+    	.wgTipsPicBox img {
+		    margin-top: -0.1rem;
+		}
+    </style>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--举报不良信息首页-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">退出中国国籍审批初审</h1>
+				<hr class="hrLine">
+				<div class="btn-box bj-insuranceSystem">
+					<input type="button" value="预约申请" id="appointsubmit"/>
+					<input type="button" value="预约查询" id="appointment" />
+				</div>
+			</div>
+			<!--默认提示-->
+			<div class="login-tips wgrzhjl clearfix">
+					<span class="wgTipsPicBox"><img src="/images/wgrzhjl/tips.png"></span>
+					<span class="wgTipsWords">重要提示:目前该业务仅在北京市公安局出入境管理局接待大厅受理（地址：北京市东城区安定门东大街二号），请妥善确认您所选择的受理单位。如您仍需了解具体情况请拨打咨询电话:84020101。</span>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京市公安局</div>
+	  </div>
+	<script type="text/javascript" src="/js/exitChinaNation/tczggjspcs.js"></script>
+</body>
+</html>

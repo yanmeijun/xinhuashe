@@ -1,0 +1,256 @@
+.peccancyQuery.userInfor .jxzwfwwCon .text-list-div label{
+	width: 3rem;
+}
+.peccancyQuery.userInfor .jxzwfwwCon .text-list-div span{
+	width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    text-align: left;
+}
+.pubFontCon{
+	font-size: 0.388rem;
+    padding: 0.3rem 0.55rem;
+    line-height: 0.6rem;
+    color: #333;
+}
+.listAll{
+	border: 1px solid #edefee;
+	margin: 0 0.55rem 0.4rem;
+}
+.listAll:nth-of-type(1){
+	border-top: none;
+}
+.listAll .text-list-div{
+	margin: 0;
+	padding: 0.61rem 0.15rem 0.25rem;
+}
+.guoWYTList {
+    border-collapse: collapse;
+    margin-bottom: 0.3rem;
+    width: 100%;
+}
+.guoWYTList tr th {
+    font-size: 0.36rem;
+    color: #474747;
+    height: 1.11rem;
+    border-bottom: 1px solid #edefee;
+}
+.guoWYTList tr td {
+    padding: 0.388rem 0;
+    font-size: 0.33rem;
+    color: #777;
+    border-bottom: 1px solid #edefee;
+}
+.guoWYTList tr th:nth-of-type(1), 
+.guoWYTList tr td:nth-of-type(1) {
+    padding-left: 0.55rem;
+    text-align: left;
+}
+.modelText{
+	display: block;
+}
+.jxzwfwConList .tit{
+	font-size: 0.38rem;
+	color: #474747;
+	padding:0 0.25rem 0.3rem;
+	border-bottom: 1px solid #eee;
+	margin: 0.3rem;
+}
+/*弹框-图片*/
+.dialogPicShow{
+	position: fixed;
+    width: 9.2rem;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 13.5rem;
+    overflow: hidden;
+    text-align: center;
+}
+.dialogPicShow .picShowBg{
+	max-width: 8.8rem;
+}
+.dialogPicShow .picTit{
+	background: #fff;
+    height: 1rem;
+    width: 100%;
+    font-size: 0.6rem;
+    text-align: right;
+    padding-right: 0.1rem;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.dialogPicShow .picTit img{
+	width: 0.781rem;
+	height: 0.781rem;
+}
+/*办理材料明细*/
+.dialog-project {
+    background: #fff;
+    border-radius: 3px;
+    position: fixed;
+    top: 2rem;
+    left: 0.333rem;
+    z-index: 100;
+    width: -webkit-calc(100% - 0.666rem);
+    width: -moz-calc(100% - 0.666rem);
+    width: calc(100% - 0.666rem);
+    padding-bottom: 0.416rem;
+    max-height: 484px;
+    overflow: auto;
+}
+.dialog-project .title {
+    height: 0.972rem;
+    line-height: 0.972rem;
+    color: #329dfc;
+    font-size: 0.416rem;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+.dialog-project .title i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.694rem;
+    height: 0.694rem;
+    background: url(../../images/close.png) no-repeat;
+    background-size: 0.694rem;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.166rem;
+}
+.dialog-project .con .projectList {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0.277rem 0;
+    margin: 0 0.55rem;
+    font-size: 0.33rem;
+}
+.dialog-project .con .projectList label {
+    color: #474747;
+    font-size: 0.33rem;
+    width: 3rem;
+    float: left;
+}
+.dialog-project .con .projectList span {
+    color: #616161;
+    font-size: 0.33rem;
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    float: left;
+}
+/*阅读须知*/
+.jxSltj,.jxNote,.jxTips{
+	color: #666;
+	font-size: 0.388rem;
+	margin: 0.33rem;
+	padding-bottom: 0.33rem;
+	line-height: 0.65rem;
+	border-bottom: 1px solid #ddd;
+}
+.jxNote{
+	color: #f00;
+}
+.jxTips{
+	border-bottom:none;
+}
+.jxzwTable{
+	border-collapse: collapse;
+	width: 100%;
+}
+.jxzwTable tr th,
+.jxzwTable tr td{
+	font-size: 0.388rem;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	font-weight: normal;
+	padding: 0.2rem;
+	height: 1rem;
+    line-height: 0.55rem;
+}
+.jxzwTable tr th{
+	border-top: 1px solid #ddd;
+}
+.jxzwTable tr th:nth-of-type(1),
+.jxzwTable tr td:nth-of-type(1){
+	border-right: 1px solid #ddd;
+}
+.jxSltj.marBotNot{
+	border-bottom:none;
+	padding-bottom: 0;
+}
+/*信息填写*/
+.jxzwTable tr td input,.jxzwTable tr td textarea{
+	width: 100%;
+	border: none;
+	font-size: 0.388rem;
+}
+.jxzwTable tr td textarea{
+	height: 1.5rem;
+	resize: none;
+}
+.jxzwTable.tableBorTop{
+	border-top: 1px solid #ddd;
+}
+.sbclTips{
+	color: #f00;
+	font-size: 0.388rem;
+	padding: 0.33rem;
+	border-top: 1px solid #ddd;
+}
+.btnSelectBox a{
+	display: block;
+    font-size: 0.388rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #549dfb;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0.05rem 0;
+    width: 1.8rem;
+    margin-bottom: 0.1rem;
+}
+.btnSelectBox a.test{
+	background: #549dfb;
+	border: 1px solid #549dfb;
+	color: #fff;
+}
+.jxzwTable.infoFillTab tr td:nth-last-of-type(1){
+	border-left: 1px solid #ddd;
+}
+.btn-box.btnInfoBox{
+	text-align: center;
+}
+.btn-box.btnInfoBox input{
+	width: 40%;
+}
+.btn-box.btnInfoBox input:nth-of-type(1){
+	margin: 0 0.3rem 0 0;
+}
+.btn-box.btnInfoBox input:nth-of-type(2){
+	margin: 0 0 0 0.3rem;
+}
+/*结果页*/
+.userInfoResult{
+	padding: 0 0.33rem 0.33rem;
+}
+.userInfoResult .tit{
+	font-size: 0.4rem;
+	color: #333;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 0.2rem;
+	margin-bottom: 0.2rem;
+	padding-top: 0.4rem;
+}
+.userInfoResult p{
+	font-size: 0.388rem;
+	color: #333;
+	line-height: 0.7rem;
+}
+.userInfoResult p span{
+	color: #FF9900;
+}

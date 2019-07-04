@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>河南省预约挂号平台</title>
+    <link type="text/css" rel="stylesheet" href="../../css/news.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/hospital/hospital.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/heNanHospital/heNanHospital.css"/>
+	<link rel="stylesheet" href="/css/mobileSelect.css" />
+	<script type="text/javascript" src="/js/hospital/mobileSelect.js" ></script>
+	<script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            local_x = "<%= local_x %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_y = "<%= local_y %>"
+			,USERNAME = "<%= locals.userName %>"
+			,PASSWORD = "<%= locals.password %>",
+            localFrom = "<%= locals.localFrom %>";
+		if(USERNAME){
+			sessionStorage.setItem('heNanHospital_USERNAME',USERNAME);
+		}
+		if(PASSWORD){
+			sessionStorage.setItem('heNanHospital_PASSWORD',PASSWORD);
+		}
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox">
+				<a href="javascript:;">
+					<p><img src="../../images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+				<div id="userCenter" class="dialog-userCenter" style="display:none;">
+					<div class="triangle"></div>
+					<ul>
+						<li id="record"><a href="javascript:;"><i class="icon-registeredRecord"></i>挂号记录</a></li>
+						<li id="quit"><a href="javascript:;"><i class="icon-quit"></i>退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--北京市预约挂号-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit">河南省预约挂号平台</h1>
+				<hr class="hrLine">
+				<div class="text-list-div downMenu-style">
+					<label>城市</label>
+					<span id="cityTrigger">请选择城市</span>
+                	<img src="../../images/icon-downMenu.png" class="icon-downMenu" id="city">
+				</div>
+				<div class="text-list-div downMenu-style">
+					<label>医院类别</label>
+					<span id="categoryTrigger">请选择类别</span>
+                	<img src="../../images/icon-downMenu.png" class="icon-downMenu" id="category">
+				</div>
+				<div class="text-list-div downMenu-style">
+					<label>医院等级</label>
+					<span id="GradeTrigger">请选择等级</span>
+                	<img src="../../images/icon-downMenu.png" class="icon-downMenu" id="Grade">
+				</div>
+				<div class="btn-box">
+					<input type="button" value="查询" onclick="search()"/>
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" style="display: none" id="noDate">
+				<h2 class="q-r-tit"><span></span><strong class="searchNumber" id="noDateCon">查询无结果</strong></h2>
+			</div>
+
+
+			<div id="havaDate">
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>根据当前检索条件共检索到<strong class="searchNumber" id="HosTotal">108</strong>家医院</h2>
+				</div>
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>热门推荐</h2>
+				</div>
+				<!--医院详情列表开始-->
+				<div id="ContentHos">
+					<!--<div class="peccancyQuery userInfor onlyStyle">-->
+						<!--<dl class="hosList hNHosList">-->
+							<!--<dt><a href="javascript:;"><img src="http://img.precare.cn/20120507112707.jpg"  onclick="hosDetails('8D62855DF2D3415C95B02FED44026F6F')"></a></dt>-->
+							<!--<dd>-->
+								<!--<p class="title" onclick="hosDetails('8D62855DF2D3415C95B02FED44026F6F')">郑州大学第一附属医院</p>-->
+								<!--<p class="time"><span>三级甲等</span><span>综合医院</span><span>252144人已预约</span></p>-->
+								<!--<p class="address"><i class="icon-address"></i>郑东院区：郑东新区北三环和龙湖中环南路交叉口西南角。 河医院区：二七区建设东路1号 惠济院区：惠济区南阳路169号附10号</p>-->
+								<!--<p class="tel"><i class="icon-tel"></i>医院总机查号台：0371-67966010</p>-->
+							<!--</dd>-->
+						<!--</dl>-->
+					<!--</div>-->
+					<!--<div class="peccancyQuery userInfor onlyStyle">-->
+						<!--<dl class="hosList hNHosList">-->
+							<!--<dt><a href="javascript:;"><img src="http://img.precare.cn/20120504084800.jpg"  onclick="hosDetails('BD0AB4B958DA4393B98A511B9C4B2D62')"></a></dt>-->
+							<!--<dd>-->
+								<!--<p class="title" onclick="hosDetails('BD0AB4B958DA4393B98A511B9C4B2D62')">河南中医药大学第一附属医院</p>-->
+								<!--<p class="time"><span>三级甲等</span><span>中医院</span><span>231342人已预约</span></p>-->
+								<!--<p class="address"><i class="icon-address"></i>郑州市人民路19号</p>-->
+								<!--<p class="tel"><i class="icon-tel"></i>医院总机查号台：0371-96129</p>-->
+							<!--</dd>-->
+						<!--</dl>-->
+					<!--</div>-->
+					<!--<div class="peccancyQuery userInfor onlyStyle">-->
+						<!--<dl class="hosList hNHosList">-->
+							<!--<dt><a href="javascript:;"><img src="http://img.precare.cn/18042016360107910.jpg"  onclick="hosDetails('FAE8ECBB75C3463DA26802DABED70ECD')"></a></dt>-->
+							<!--<dd>-->
+								<!--<p class="title" onclick="hosDetails('FAE8ECBB75C3463DA26802DABED70ECD')">河南省人民医院</p>-->
+								<!--<p class="time"><span>三级甲等</span><span>综合医院</span><span>211171人已预约</span></p>-->
+								<!--<p class="address"><i class="icon-address"></i>郑州市纬五路7号（与经三路交叉口）</p>-->
+								<!--<p class="tel"><i class="icon-tel"></i>医院总机查号台：0371-65580070</p>-->
+							<!--</dd>-->
+						<!--</dl>-->
+					<!--</div>-->
+					<!--<div class="peccancyQuery userInfor onlyStyle">-->
+						<!--<dl class="hosList hNHosList">-->
+							<!--<dt><a href="javascript:;"><img src="http://img.precare.cn/17082917111009350.png"  onclick="hosDetails('7668DF641CCD481AB8FFDB956E344969')"></a></dt>-->
+							<!--<dd>-->
+								<!--<p class="title" onclick="hosDetails('7668DF641CCD481AB8FFDB956E344969')">河南中医药大学第三附属医院</p>-->
+								<!--<p class="time"><span>三级甲等</span><span>中医院</span><span>154025人已预约</span></p>-->
+								<!--<p class="address"><i class="icon-address"></i>郑州市金水东段东明路63号</p>-->
+								<!--<p class="tel"><i class="icon-tel"></i>医院总机查号台：0371-65575978</p>-->
+							<!--</dd>-->
+						<!--</dl>-->
+					<!--</div>-->
+				</div>
+				<!--医院详情列表结束-->
+			</div>
+
+			<!--下拉动画-->
+			<div id="circle" class="circle" style="display:none;">
+				<img src="/images/Circle.gif" alt="" class="circleImg"  >
+				<p>加载</p>
+			</div>
+           <!-- 查询动画提示开始-->
+			<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+			<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+				<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+				<p>加载中</p>
+			</div>
+			<!-- 查询动画提示结束-->
+			<!-- ------------------------------提示语---------------------------------- -->
+			<div class="masktime" id="masktime" style="display:none;"></div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：河南省预约挂号服务平台</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="/js/heNanHospital/heNanHospital.js"></script>
+</body>
+</html>

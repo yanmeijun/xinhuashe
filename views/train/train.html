@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>火车票查询系统</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <script type="text/javascript" src="/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+                ,userID = "<%= userID%>"
+                ,clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                local_x = "<%= local_x %>"
+                ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+    </script>
+    <script type="text/javascript" src="/js/train/train.js"></script>
+    <script language="JavaScript">
+        var _trackDataType = 'web';var _trackData = _trackData || [];
+    </script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+    <!--banner图-->
+    <% include ../header.html %>
+    <!--火车票查询系统-->
+    <div class="warpBox">
+        <div class="peccancyQuery">
+            <h1 class="p-q-tit">火车票查询系统</h1>
+            <hr class="hrLine">
+            <div class="btn-box bj-insuranceSystem">
+                <input id="trainSellTime" class="activeBGC" type="button" value="火车票起售时间查询" />
+                <input id="trainTimetable" class="activeBGC" type="button" value="火车时刻表查询" />
+                <input id="trainYupiao" class="activeBGC" type="button" value="火车余票查询" />
+            </div>
+        </div>
+    </div>
+
+    <div class="data-sources">服务来源：中国铁路信息技术中心</div>
+</div>
+</body>
+</html>

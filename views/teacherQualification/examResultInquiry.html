@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中小学教师资格证考试成绩查询</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/teacherQualification/teacherQualification.css">
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= locals.randomKey %>"
+            ,userID = "<%= locals.userID%>"
+            ,clientID = "<%= locals.clientID %>",
+            cityID = "<%= locals.cityID %>",
+			citySRC = "<%= cityInfo.citySRC %>",
+			cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= locals.local_x %>"
+            ,local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max" >
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--中小学教师资格证考试成绩查询-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit">中小学教师资格证考试成绩查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>姓名</label>
+					<input type="text" placeholder="请输入姓名" v-model="name"/>
+				</div>
+				<div class="text-list-div">
+					<label>证件号</label>
+					<input type="text" placeholder="请输入证件号" v-model="idcard"/>
+				</div>
+				<div class="text-list-div text-list-code">
+					<label>验证码</label>
+					<input type="text" placeholder="请输入验证码" v-model="veriCode"/>
+					<img  v-bind:src="srcImg" class="img-code" @click="veriCodeImage">
+				</div>
+				<div class="inquireTips">
+					<p>注：1.如考生姓名中带有点，请复制使用这个标准的点符号（·），点的两边不能再有空格。</p>
+					<p>2.如有所列孤僻字请粘贴使用，例：、仝、㼆。</p>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="查询" @click="search"/>
+				</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" v-if="this.noDate==true">
+				<h2 class="q-r-tit"><span></span>{{errorImg}}</h2>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+
+		<div class="masktime" id="masktime" v-if="masktime">{{masktime}}</div>
+
+		<div class="data-sources">服务来源：中小学教师资格考试</div>
+	</div>
+	<script src="/js/teacherQualification/examResultInquiry.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

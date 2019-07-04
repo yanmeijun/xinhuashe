@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中央网信举报中心</title>
+    <link rel="stylesheet" href="/css/news.css"/>
+    <link rel="stylesheet" href="/css/monitorReport/monitorReport.css"/>
+    <link rel="stylesheet" href="/css/networkCrimeReport/networkCrimeReport.css"/>
+    <link rel="stylesheet" href="/css/mobileSelect.css"/>
+    <script language="JavaScript">var _trackDataType = 'web';
+    var _trackData = _trackData || [];</script>
+    <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615"
+            src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+    <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+	<script type="text/javascript" src="/js/publicInput.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script type="text/javascript" src="/lib/vue.min.js"></script>
+    <script type="text/javascript" src="/lib/axios.js"></script>
+    <script type="text/javascript" src="/lib/mobileSelect.js"></script>
+    <script  type="text/javascript">
+        var randomKey = sessionStorage.getItem('randomKey'),
+                userID = sessionStorage.getItem('userID'),
+                clientID = sessionStorage.getItem('clientID'),
+                cityID = sessionStorage.getItem('cityID'),
+                local_x = sessionStorage.getItem('local_x'),
+                local_y = sessionStorage.getItem('local_y'),
+                localFrom = sessionStorage.getItem('localFrom'),
+                realName = "<%=locals.realName%>";
+    </script>
+    <style>
+        .publicListText.uploadPicList.zywxjb {
+            height: auto;
+        }
+
+        .publicListText.uploadPicList.zywxjb .uploadAttaPic {
+            width: -webkit-calc(100% - 2.472rem);
+            width: -moz-calc(100% - 2.472rem);
+            width: calc(100% - 2.472rem);
+        }
+
+        .publicListText.uploadPicList.zywxjb .uploadAttaPic .uploadPicDefault {
+            margin-bottom: 0.33rem;
+        }
+
+        .publicListText.textareaDesc.textareaH {
+            height: 2.84rem;
+        }
+
+        .publicListText.textareaDesc.textareaH textarea {
+            height: 1.7rem;
+        }
+    </style>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max" id="realNameNext">
+    <!--banner图-->
+    <div class="banner">
+        <img src="/images/zywxReport/banner.png">
+    </div>
+    <div class="warpBox">
+        <div class="peccancyQuery XLQuery-home">
+            <h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="back">{{isReal}}举报</h1></div>
+        <!--举报人信息  start-->
+        <div class="peccancyQuery userInfor onlyStyle">
+            <div class="pubListBox marTopNoB">
+                <div class="publicListText publicSelectColor" @click="reportTypeSelect">
+                    <label @click.stop>举报类型</label>
+                    <!--<input type="text" readonly placeholder="网站/客户端链接">-->
+                    <span id="reportType" data_id="0">网站</span>
+                    <img src="/images/icon-downMenu.png" class="icon-downMenu">
+                </div>
+                <!--网站/客户端链接 satrt-->
+                <div v-show="reportType=='0'" class="downMenuTab">
+                    <div class="publicListText">
+                        <label>网站名称</label>
+                        <input type="text" v-model="websiteName"/>
+                    </div>
+                    <div class="publicListText textareaDesc textareaH">
+                        <div class="tit">有害信息所在详细网址(url)</div>
+                        <textarea placeholder="http://" maxlength="1000" v-model="websiteUrl">{{websiteUrl}}</textarea>
+                    </div>
+                    <div class="reportTipsBox">举报多个网址请回车后再输入，否则举报无效</div>
+                </div>
+                <!--网站/客户端链接 end-->
+                <!--搜索引擎 satrt-->
+                <div v-show="reportType=='1'" class="downMenuTab">
+                    <div class="publicListText" @click="sETypeSelect">
+                        <label style="padding-left: 0.1rem;">搜索引擎类型</label>
+                        <!--<input type="text" readonly placeholder="请选择">-->
+                        <span id="sEType">请选择</span>
+                        <img src="/images/icon-downMenu.png" class="icon-downMenu">
+                    </div>
+                    <div class="publicListText">
+                        <label>举报关键字</label>
+                        <input type="text" v-model="sEKeyword"/>
+                    </div>
+                    <div v-show="sEType=='-1| |其他'" class="publicListText">
+                        <label style="padding-left: 0.1rem;">其他引擎名称</label>
+                        <input type="text" v-model="otherSE"/>
+                    </div>
+                    <!--<div class="publicListText">-->
+                        <!--<label>网站名称</label>-->
+                        <!--<input type="text" v-model="sEWebsiteName"/>-->
+                    <!--</div>-->
+                    <div class="publicListText textareaDesc textareaH">
+                        <div class="tit">有害信息所在详细网址(url)</div>
+                        <textarea placeholder="http://" v-model="sEUrl">{{sEUrl}}</textarea>
+                    </div>
+                    <div class="reportTipsBox">举报多个网址请回车后再输入，否则举报无效</div>
+                </div>
+                <!--搜索引擎 end-->
+                <!--违法app satrt-->
+                <div v-show="reportType=='2'" class="downMenuTab">
+                    <div class="publicListText">
+                        <label>APP名称</label>
+                        <input type="text" v-model="appName"/>
+                    </div>
+                    <div class="publicListText" @click="appDownloadSelect">
+                        <label style="padding-left: 0.1rem;" @click.stop>下载资源类别</label>
+                        <!--<input type="text" readonly placeholder="请选择">-->
+                        <span id="appDownload">请选择</span>
+                        <img src="/images/icon-downMenu.png" class="icon-downMenu">
+                    </div>
+                    <div v-show="appDownload=='0'" class="publicListText">
+                        <label style="padding-left: 0.1rem;">其他下载源</label>
+                        <input type="text" v-model="otherAppDownload"/>
+                    </div>
+                    <div class="publicListText">
+                        <label style="padding-left: 0.1rem;">应用所在栏目</label>
+                        <input type="text" v-model="appCol"/>
+                    </div>
+                </div>
+                <!--违法app end-->
+                <!--网络账号 satrt-->
+                <div v-show="reportType=='14'" class="downMenuTab">
+                    <div class="publicListText" @click="toolNameSelect">
+                        <label style="padding-left: 0.1rem;" @click.stop>平台类别</label>
+                        <span id="toolName">请选择</span>
+                        <img src="/images/icon-downMenu.png" class="icon-downMenu">
+                    </div>
+                    <!--<div v-show="toolName=='0'" class="publicListText">-->
+                        <!--<label style="padding-left: 0.1rem;">其他名称</label>-->
+                        <!--<input type="text" v-model="otherTool"/>-->
+                    <!--</div>-->
+                    <div class="publicListText" @click="accountNatureSelect" v-show="toolName=='1' || toolName=='2' || toolName=='8'">
+                        <label @click.stop>账号性质</label>
+                        <span id="accountNature">请选择</span>
+                        <img src="/images/icon-downMenu.png" class="icon-downMenu">
+                    </div>
+                    <div v-show="toolName=='10' || toolName=='11' || toolName=='12' || toolName=='13' || toolName=='0'" class="publicListText">
+                            <label style="padding-left: 0.1rem;">{{drivenameName}}</label>
+                            <input type="text" v-model="drivename" id="driveName"/>
+                    </div>
+                    <div class="publicListText">
+                        <label style="padding-left: 0.1rem;">账号</label>
+                        <input type="text" v-model="accountName"/>
+                    </div>
+                </div>
+                <!--网络账号 end-->
+                <!--网盘账号 satrt-->
+                <!--<div v-show="reportType=='7'" class="downMenuTab">-->
+                    <!--<div class="publicListText" @click="driveNameSelect">-->
+                        <!--<label @click.stop>网盘名称</label>-->
+                        <!--<span id="driveName">请选择</span>-->
+                        <!--<img src="/images/icon-downMenu.png" class="icon-downMenu">-->
+                    <!--</div>-->
+                    <!--<div v-show="driveName=='3'" class="publicListText">-->
+                        <!--<label style="padding-left: 0.1rem;">其他名称</label>-->
+                        <!--<input type="text" v-model="otherDrive"/>-->
+                    <!--</div>-->
+                    <!--<div class="publicListText" @click="accountNaturesSelect">-->
+                        <!--<label @click.stop>账号性质</label>-->
+                        <!--<span id="accountNatures">请选择</span>-->
+                        <!--<img src="/images/icon-downMenu.png" class="icon-downMenu">-->
+                    <!--</div>-->
+                    <!--<div class="publicListText">-->
+                        <!--<label style="padding-left: 0.1rem;">账号</label>-->
+                        <!--<input type="text" v-model="driveAccountName"/>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--网盘账号 end-->
+                <div class="publicListText textareaDesc textareaH">
+                    <div class="tit">举报内容</div>
+                    <textarea placeholder="请输入举报内容" v-model="reportContent">{{reportContent}}</textarea>
+                </div>
+                <!--<div class="publicListText" @click="harmTypeSelect">
+                    <label style="padding-left: 0.1rem;" @click.stop>有害信息类型</label>
+                    <span id="harmType">请选择有害信息类型</span>
+                    <img src="/images/icon-downMenu.png" class="icon-downMenu">
+                </div>-->
+                <div class="publicListText uploadPicList zywxjb clearfix">
+                    <label>上传附件</label>
+                    <div class="uploadAttaPic">
+                        <div class="uploadPicDefault" v-for='(value, key) in imgs'>
+                            <div class="upSuccessPic"><img :src="getObjectURL(value)"></div>
+                            <div class="upPicDelete" @click="delImg(key)"></div>
+                        </div>
+                        <div class="uploadPicDefault">
+                            <div class="uploadIcon"></div>
+                            <div class="upPicNum">{{fileCount}}/10</div>
+                            <input type="file" name="file" id="file" value="" multiple accept="image/*;capture=camera"
+                                   ref="inputer" @change="imgChange($event)"
+                                   style="width:100%;height:100%;
+                                           position: absolute;
+                                           top: 0;
+                                           opacity:0;-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(opacity=0)'"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="reportTipsBox">附件上传格式：jpg、jpeg、gshow、bmp、png</div>
+                <div class="publicListText publicListCode">
+                    <label>验证码</label>
+                    <input type="text" placeholder="" v-model="verifyCode"/>
+                    <img :src="verifyCodeSrc" class="img-code" @click="getVerifyCode">
+                </div>
+            </div>
+            <div class="btn-box">
+                <input type="button" value="提 交" @click="submit"/>
+            </div>
+        </div>
+        <!--举报人信息  end-->
+    </div>
+    <div class="masktime" v-if="masktime">{{masktime}}</div>
+    <!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+    <div class="mask" style="opacity: 0;" id="dialogMask" v-if="dialogMask"></div>
+    <div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="dialogMask">
+        <img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+        <p>加载中</p>
+    </div>
+    <!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+    <div style="height: 2.3rem;"></div>
+    <div class="data-sources">服务来源：<br/>中央网信办（国家互联网信息办公室）<br>违法和不良信息举报中心</div>
+</div>
+</body>
+<script type="text/javascript" src="/js/zywxReport/realNameNext.js"></script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>全国知识产权举报</title>
+		<link rel="stylesheet" href="/css/news.css" />
+		<link rel="stylesheet" href="/css/knowledgeReport/knowledgeReport.css" />
+		<script type="text/javascript" src="/js/all.js"></script>
+		<script>
+			var randomKey = "<%= randomKey %>",
+					userID = "<%= userID%>",
+					clientID = "<%= clientID %>",
+					cityID = "<%= cityID %>",
+					citySRC = "<%= cityInfo.citySRC %>",
+					local_x = "<%= local_x %>",
+					local_y = "<%= local_y %>",
+					localFrom = "<%= locals.localFrom %>";
+		</script>
+		<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+		<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	</head>
+	<body bgcolor="#f3f9f9">
+		<div class="max">
+			<!--banner图-->
+			<div class="banner">
+				<img src="/images/knowledgeReport/banner.png">
+			</div>
+			<div class="warpBox">
+				<div class="peccancyQuery XLQuery-home">
+					<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" onclick="renderTo('bInfoFill')">举报结果</h1>
+					<hr class="hrLine">
+					<div class="successAppCode">
+						<i class="icon-semicircle semicircleLeft"></i>
+						<i class="icon-semicircle semicircleRight"></i>
+						<div class="successTitWord">
+							<img src="/images/wgrzhjl/failed.png" class="failedPic">
+							<span class="failedWord">提交失败！</span>
+						</div>
+						<div class="successTitWord appCode zzbCode">
+							<div class="cxCode failedCode">请您重新尝试！</div>
+						</div>
+						
+					</div>
+					<div class="btn-box resultBtnBox">
+						<input type="button" value="继续举报" class="btnDefault backHome" onclick="renderTo('infoFill')" />
+						<input type="button" value="返回首页" class="btnDefault fuhe" onclick="renderTo('knowledgeReport')" />
+					</div>
+				</div>
+			</div>
+			<div style="height: 1.3rem;"></div>
+			<div class="data-sources">服务来源：国家知识产权局</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function renderTo(page) {
+			window.location.href = '/knowledgeReport?page=' + page + "&randomKey=" + randomKey + "&userID=" + userID
+					+ "&clientID=" + clientID + "&cityID=" + cityID + "&local_x=" + local_x + "&localFrom=" + localFrom
+					+ "&local_y=" + local_y;
+		}
+	</script>
+</html>

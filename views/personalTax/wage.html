@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>个人所得税-工资、薪金所得</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/personalTax/personalTax.css" />
+	<script type="text/javascript" src="/lib/vue.min.js" ></script>
+	<script>
+		var randomKey = "<%=locals.randomKey%>",
+				userID = "<%= locals.userID%>",
+				clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>",
+				local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="wage">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--个人所得税-工资、薪金所得-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="goBack()"/>个人所得税-工资、薪金所得</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>所属国籍</label>
+					<div class="accounts-all">
+				    	<span v-if="domestic"><i class="icon-radio active" @click="radioSwitch(true)"></i>中国</span>
+						<span v-else=""><i class="icon-radio" @click="radioSwitch(true)"></i>中国</span>
+						<span v-if="domestic"><i class="icon-radio" @click="radioSwitch()"></i>外国</span>
+						<span v-else=""><i class="icon-radio active" @click="radioSwitch()"></i>外国</span>
+					</div>
+				</div>
+				<div class="text-list-div">
+					<label>收入金额</label>
+					<input ref="inputNum" type="number" placeholder="请输入收入金额" />
+				</div>
+				<div class="btn-box">
+					<input @click="calculate()" type="button" value="计算" />
+				</div>
+				<div class="viewSample"><a href="javascript:;" @click="showTable(true)">个人所得税税率表</a></div>
+			</div>
+			<!--计算结果-->
+			<div v-if="result>=0" class="peccancyQuery queryResult userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>计算结果</h2>
+				<div class="calculationResult">
+					<div class="text-list-div clearfix">
+						<label>您的应纳税额为</label>
+						<span class="numberResults">{{result}}</span>
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="noteResult">注：以上结果，仅供参考</div>
+				</div>
+			</div>
+			<!--说明-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle">
+				<div class="personalPrompt">
+					<p><img src="../../images/icon-tips.png" class="icon-tips">说明：</p>
+					<p>工资/薪金所得：指个人因任职或者受雇而取得的工资、薪金、奖金、年终加薪、劳动分红、津贴、补贴以及与任职或者受雇有关的其他所得。</p>
+					<p class="taxTitle">计算方法：</p>
+					<p>应纳税额 = 应纳税所得额 x税率-速算扣除数 </p>
+					<p>应纳税所得额 =工资薪金所得-3500</p>
+					<p class="taxTitle">特殊规定：对于在中国境内的外商投资企业和外国企业中工作的外籍人员；应聘在中国境内的企业、事业单位、社会团体、国家机关中工作的外籍专家；在中国境内有 住所而在中国境外任职或者受雇取得工资、薪金所得的个人；财政部确定的其他人员可以享受附加减除费用。附加减除费用标准为1300元。</p>
+					<p class="taxTitle">计算公式：</p>
+					<p>应纳税额 = 应纳税所得额 x税率-速算扣除数</p>
+					<p>应纳税所得额 =工资薪金所得-3500－1300</p>
+				</div>
+			</div>
+		</div>
+		<!--提示语-->
+		<div v-if="noData" class="masktime" id="masktime">{{maskTips}}</div>
+		<div style="height:1.5rem"></div>
+		<div class="data-sources">服务来源：北京市地方税务局</div>
+	<!--弹框--税率表-->
+	<div v-if="ifShowTab" class="mask"></div>
+	<div v-if="ifShowTab" class="dialog-project" id="dialog">
+		<div class="title" id="title" style="background: #fff;position: fixed; width: 93%;">个人所得税税率表<i class="close" @click="showTable()"></i></div>
+		<div class="personalTaxCon" style="margin-top: 0.972rem;">
+			<div class="mainTitle">税率</div>
+			<div class="subTitle">工资、薪金所得适用3%-45%的七级超额累进税率。 </div>
+			<table class="personalTabel">
+				<tr>
+					<td rowspan="2">级数</td>
+					<td colspan="2">全月应纳税所得额 </td>
+					<td rowspan="2">税率(%)</td>
+					<td rowspan="2">速算扣除数</td>
+				</tr>
+				<tr>
+					<td>含税级距</td>
+					<td>不含税级距</td>
+				</tr>
+				<tr>
+					<td class="num">1</td>
+					<td class="left">不超过1500元的</td>
+					<td class="left">不超过1455元的</td>
+					<td>3</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="num">2</td>
+					<td class="left">超过1500元至4500元的部分</td>
+					<td class="left">超过1455元至4155元的部分</td>
+					<td>10</td>
+					<td>105</td>
+				</tr>
+				<tr>
+					<td class="num">3</td>
+					<td class="left">超过4500元至9000元的部分</td>
+					<td class="left">超过4155元至7755元的部分</td>
+					<td>20</td>
+					<td>555</td>
+				</tr>
+				<tr>
+					<td class="num">4</td>
+					<td class="left">超过9000元至35000元的部分</td>
+					<td class="left">超过7755元至27255元的部分</td>
+					<td>25</td>
+					<td>1005</td>
+				</tr>
+				<tr>
+					<td class="num">5</td>
+					<td class="left">超过35000元至55000元的部分</td>
+					<td class="left">超过27255元至41255元的部分</td>
+					<td>30</td>
+					<td>2755</td>
+				</tr>
+				<tr>
+					<td class="num">6</td>
+					<td class="left">超过55000元至80000元的部分</td>
+					<td class="left">超过41255元至57505元的部分</td>
+					<td>35</td>
+					<td>5505</td>
+				</tr>
+				<tr>
+					<td class="num">7</td>
+					<td class="left">超过80000元的部分</td>
+					<td class="left">超过57505元的部分</td>
+					<td>45</td>
+					<td>13505</td>
+				</tr>
+			</table>
+			<div class="personalNote">
+				<h3>注：</h3>
+				<p>1、本表所列含税级距与不含税级距，均为按照税法规定减除有关费用后的所得额；</p>
+				<p>2、含税级距适用于由纳税人负担税款的工资、薪金所得；不含税级距适用于由他人（单 位）代付税款的工资、薪金所得。</p>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="/js/personalTax/wage.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

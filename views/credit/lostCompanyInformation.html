@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>公司信息</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/credit/credit.css">
+    <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" language="javascript">
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            cityName = "<%= cityInfo.cityName %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--公司信息-->
+		<div class="warpBox">
+			<div class="peccancyQuery userInfor creditInfo">
+				<h1 class="companyTit">
+					<img src="/images/icon-return.png" class="icon-return" id="back">
+					<span class="companyName" id="companyName">杭州固本贸易有限公司</span>
+					<!--<span class="companyStatus">在营</span>-->
+					<span class="companyStatus statusBg" id="companyStatus">吊销</span>
+				</h1>
+				<hr class="hrLine hrLine1">
+				<div class="tab-content" id="companyInfo">
+			        <!--<div class="text-list-div clearfix">-->
+			          <!--<label>统一社会信用代码：</label>-->
+			          <!--<span>33014000257783</span>-->
+			        <!--</div>-->
+			        <!--<div class="text-list-div clearfix">-->
+			          <!--<label>地址：</label>-->
+			          <!--<span>杭州市江干区秋涛北路83号819室3</span>-->
+			        <!--</div>-->
+			        <!--<div class="text-list-div clearfix">-->
+			          <!--<label>报告参看时间：</label>-->
+			          <!--<span>2018年03月27日</span>-->
+			        <!--</div>-->
+			      </div>
+			</div>
+			<!--信息概览-->
+			<div class="numResult-box">
+				<div class="peccancyQuery userInfor onlyStyle">
+					<h2 class="q-r-tit"><span></span>信息概览<img src="/images/icon-downMenu.png" class="icon-downMenu"/></h2>
+					<div id="companyListBox"></div>
+					<!--<div class="tab-content companyListBox">-->
+						<!--<div class="text-list-div clearfix">-->
+							<!--<label>工商注册号：</label>-->
+							<!--<span>330104000257763</span>-->
+						<!--</div>-->
+						<!--<div class="text-list-div clearfix">-->
+							<!--<label>法人信息：</label>-->
+							<!--<span>夏婷</span>-->
+						<!--</div>-->
+						<!--<div class="text-list-div clearfix">-->
+							<!--<label>成立日期：</label>-->
+							<!--<span>2014-11-21</span>-->
+						<!--</div>-->
+						<!--<div class="text-list-div clearfix">-->
+							<!--<label>企业类型：</label>-->
+							<!--<span>有限责任公司（自然人投资或控股）</span>-->
+						<!--</div>-->
+						<!--<div class="text-list-div clearfix">-->
+							<!--<label>登记机关：</label>-->
+							<!--<span>杭州市工商行政管理局</span>-->
+						<!--</div>-->
+					<!--</div>-->
+				</div>
+			</div>
+			<!--行政许可-->
+			<div class="numResult-box">
+			    <div class="peccancyQuery userInfor onlyStyle credit-Bg" >
+			        <h2 class="q-r-tit"><span></span><em class="new-credit">行政许可 <em class="hot" id="licHot"></em></em><img  src="/images/credit/icon-upMenu.png" class="icon-downMenu down"></h2>
+			        <!--<div class="tab-content ListLineBox" style="display:none;">-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>行政许可决定书文号：</label>-->
+				            <!--<span>33014000257783</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+					        <!--<label>审核类型：</label>-->
+					        <!--<span>登记</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法人代表人姓名：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>企业类型：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>内容许可：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可有效期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可决定日期：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可截止日期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>地方编码：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可机关：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>数据更新时间：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+			        <!--</div>-->
+			<!---->
+			        <!--<div class="tab-content ListLineBox" style="display:none;">-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>行政许可决定书文号：</label>-->
+				            <!--<span>33014000257783</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>审核类型：</label>-->
+				            <!--<span>登记</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法人代表人姓名：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>企业类型：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>内容许可：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可有效期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可决定日期：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可截止日期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>地方编码：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>许可机关：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>数据更新时间：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+			       <!--</div>-->
+					<div id="license"></div>
+			    </div>
+			</div>
+			<!--行政处罚-->
+			<div class="numResult-box">
+			    <div class="peccancyQuery userInfor onlyStyle credit-Bg">
+			      <h2 class="q-r-tit"><span></span><em class="new-credit">行政处罚 <em class="hot" id="punHot"></em></em><img src="/images/credit/icon-upMenu.png" class="icon-downMenu down"></h2>
+					<div id="Punish"></div>
+					<!--<div class="tab-content ListLineBox" style="display: none">-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>决定书文号：</label>-->
+				            <!--<span>33014000257783</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚名称：</label>-->
+				            <!--<span>第0977字号</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法人代表人姓名：</label>-->
+				            <!--<span>虎虎</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚类别：</label>-->
+				            <!--<span>行政降级</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚结果：</label>-->
+				            <!--<span>降级</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚事由：</label>-->
+				            <!--<span>未请假</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚依据：</label>-->
+				            <!--<span>无依据</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚机关：</label>-->
+				            <!--<span>工商管理</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚决定日期：</label>-->
+				            <!--<span>2018-01-01</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚期限：</label>-->
+				            <!--<span>1年</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>数据更新时间：</label>-->
+				            <!--<span>2018-02-01</span>-->
+				        <!--</div>-->
+			        <!--</div>-->
+			<!---->
+			         <!--<div class="tab-content ListLineBox" style="display: none">-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>决定书文号：</label>-->
+				            <!--<span>33014000257783</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚名称：</label>-->
+				            <!--<span>第0977字号</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法人代表人姓名：</label>-->
+				            <!--<span>虎虎</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚类别：</label>-->
+				            <!--<span>行政降级</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚结果：</label>-->
+				            <!--<span>降级</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚事由：</label>-->
+				            <!--<span>未请假</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚依据：</label>-->
+				            <!--<span>无依据</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚机关：</label>-->
+				            <!--<span>工商管理</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚决定日期：</label>-->
+				            <!--<span>2018-01-01</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>处罚期限：</label>-->
+				            <!--<span>1年</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>数据更新时间：</label>-->
+				            <!--<span>2018-02-01</span>-->
+				        <!--</div>-->
+			        <!--</div>-->
+
+			    </div>
+			</div>
+			<!--守信红名单-->
+			<div class="numResult-box">
+			    <div class="peccancyQuery userInfor onlyStyle credit-blacklist credit-Bg">
+			        <h2 class="q-r-tit"><span></span><em class="new-credit">守信红名单<em class="hot" id="redHot"></em></em><img  src="/images/credit/icon-upMenu.png" class="icon-downMenu"></h2>
+			        <div id="RedList"></div>
+					<!--<div class="tab-content blacklist ListLineBox" style="display:none">-->
+			        	<!--<div class="abnormal-list abnor-list abnorBg">A级纳税人</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>服务来源：</label>-->
+				            <!--<span>工商总局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>序号：</label>-->
+				            <!--<span>1</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>纳税人名称：</label>-->
+				            <!--<span>虎虎</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>评价年度：</label>-->
+				            <!--<span>2015-01-04</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>最新更新日期：</label>-->
+				            <!--<span>2018-03-04</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>文件名：</label>-->
+				            <!--<span>A级</span>-->
+				        <!--</div>-->
+			        <!--</div>-->
+			        <!--<div class="tab-content ListLineBox noData" style="display:none">-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<p class="credit-txt">该企业没有相关记录</p>-->
+				        <!--</div>-->
+			        <!--</div>-->
+			    </div>
+			</div>
+			<!--重点关注名单-->
+			<div class="numResult-box">
+			    <div class="peccancyQuery userInfor onlyStyle credit-blacklist" >
+			        <h2 class="q-r-tit"><span></span><em class="new-credit">重点关注名单<em class="hot" id="keyHot"></em></em><img  src="/images/credit/icon-upMenu.png" class="icon-downMenu"></h2>
+
+					<div id="KeyList"></div>
+					<!--<div class="tab-content blacklist ListLineBox" style="display: none">-->
+			        	<!--<div class="abnormal-list">异常名录</div>-->
+			        	<!--<div class="text-list-div clearfix">-->
+				            <!--<label>服务来源：</label>-->
+				            <!--<span>工商总局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>企业名称：</label>-->
+				            <!--<span>杭州贸易</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>注册号：</label>-->
+				            <!--<span>332146622333322121</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法定代表人：</label>-->
+				            <!--<span>夏丽娥</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>列入经营异常名录原因以及类型：</label>-->
+				            <!--<span class="color-fa6e08">杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>设立日期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>列入决定机关名称：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>最后更新日期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+			        <!--</div>-->
+			<!---->
+			        <!--<div class="tab-content blacklist ListLineBox" style="display: none">-->
+			        	<!--<div class="abnormal-list">异常名录</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>服务来源：</label>-->
+				            <!--<span>工商总局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>企业名称：</label>-->
+				            <!--<span>杭州贸易</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>注册号：</label>-->
+				            <!--<span>332146622333322121</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法定代表人：</label>-->
+				            <!--<span>夏丽娥</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>列入经营异常名录原因以及类型：</label>-->
+				            <!--<span class="color-fa6e08">2015年度末末依照某某列规定的期限</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>设立日期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>列入决定机关名称：</label>-->
+				            <!--<span>杭州市工商行政管理局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>最后更新日期：</label>-->
+				            <!--<span>2014-11-21</span>-->
+				        <!--</div>-->
+			      	<!--</div>-->
+			    </div>
+			</div>
+			<!--黑名单-->
+			<div class="numResult-box">
+			    <div class="peccancyQuery userInfor onlyStyle credit-blacklist" >
+			        <h2 class="q-r-tit"><span></span><em class="new-credit">黑名单<em class="hot" id="blackHot"></em></em><img id="" src="/images/credit/icon-upMenu.png" class="icon-downMenu"></h2>
+
+					<div id="BlackList"></div>
+					<!--<div class="tab-content blacklist ListLineBox" style="display: none">-->
+			        	<!--<div class="abnormal-list abnor-list">重大税收违法案件当事人名单</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>服务来源：</label>-->
+				            <!--<span>工商总局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>纳税人名称：</label>-->
+				            <!--<span>杭州贸易</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>纳税人识别码：</label>-->
+				            <!--<span>332146622333322121</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>组织机构代码：</label>-->
+				            <!--<span>8465937509</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>注册地址：</label>-->
+				            <!--<span>北京工商总局</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法定代表人或负责人姓名：</label>-->
+				            <!--<span>虎虎</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法定代表人或负责人性别：</label>-->
+				            <!--<span>男</span>-->
+				        <!--</div>-->
+				        <!--<div class="text-list-div clearfix">-->
+				            <!--<label>法定代表人或负责人证件名称：</label>-->
+				            <!--<span>虎虎</span>-->
+				        <!--</div>-->
+			        <!--</div>-->
+			    </div>
+			</div>
+
+		</div>
+
+		<!-- -----------------------------------------------查询动画提示开始---------------------------------- -->
+		<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- -----------------------------------------------查询动画提示结束--------------------------------- -->
+
+
+		<div class="masktime" id="masktime" style="display: none">信用中国</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：信用中国</div>
+	</div>
+	<script src="/js/credit/lostCompanyInformation.js"></script>
+</body>
+</html>

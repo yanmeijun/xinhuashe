@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市出入境办理</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/beiJingPassport/beiJingPassport.css" />
+    <script type="text/javascript" src="/lib/zepto.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+    <script>
+        var randomKey = "<%= randomKey %>"
+                ,userID = "<%= userID%>"
+                ,clientID = "<%= clientID %>",
+                cityID = "<%= cityID %>",
+                local_x = "<%= local_x %>",
+                citySRC = "<%= cityInfo.citySRC %>",
+                cityName = "<%= cityInfo.cityName %>",
+                local_y = "<%= local_y %>",
+                localFrom = "<%= locals.localFrom %>";
+    </script>
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/beijing.png" id="carInspect_cityName">
+			<div class="address"><span><%= cityInfo.cityName %></span></div>
+		</div>
+		<!---->
+		<div class="warpBox">
+			<div class="peccancyQuery userInfor shgjjCon">
+				<h1 class="p-q-tit">北京市出入境办理</h1>
+				<hr class="hrLine">
+				<ul class="gjj-tab clearfix">
+					<li><a href="javascript:;">京籍居民出入境</a></li>
+					<li class="active"><a href="javascript:;">非京籍居民出入境</a><span></span></li>
+				</ul>
+				<hr class="hrLine">
+				<div class="tabCon">
+					<div class="btn-box bj-insuranceSystem" style="display: none;">
+						<input type="button" value="预申请受理" />
+						<input type="button" value="预约结果查询" />
+					</div>
+					<div class="btn-box bj-insuranceSystem">
+						<input type="button" value="预申请受理" />
+						<input type="button" value="申请结果查询" />
+						<input type="button" value="预约结果查询" />
+						<input type="button" value="复核结果查询" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--弹框-->
+		<div class="mask" style="display: none;"></div>
+		<!--点击预申请受理按钮-非京籍人员重要提示 start-->
+		<div class="dialog-project" style="display: none;">
+			<div class="title">重要提示<i class="close"></i></div>
+			<div class="conTips">
+				<p>一、持北京公安机关签发的《北京市居住证》人员，在京连续缴纳一年（自申请日期往前推算连续缴纳12个月社会保险，包括医疗险、养老险、工伤险、失业险、生育险五类保险，期间不能中断或缺项）以上社会保险，可在本站办理普通护照、往来港澳通行证、往来台湾通行证。预申请完成后可在48小时后查询初审结果。</p>
+				<p>二、初审结果30日有效，申请人通过初审的，请及时预约，并于预约时间到达选定的出入境接待大厅，按照现场办证流程提示完成现场申请。网上预约号码当日有效，如未按照预约时间现场办理，请重新提交预约申请。</p>
+				<p>三、申请人对初审结果有异议的，请先根据初审结果自行核对填报信息，无误后可重新在网上提交申请。再次申请不通过的或者情况复杂的，由本人持二代居民身份证到出入境管理总队申请现场复核。 复核结果为最终审核结果，复核不通过的，申请人须回户籍地办理出入境证件。</p>
+				<p>四、未满16周岁未成年人应当由监护人或监护人委托他人陪同申请，提供出生证、能够直接载明监护关系的户口簿、监护关系公证书，并提交监护人居民身份证或护照。在申请表上填写监护人同意出境的意见。监护人委托他人陪同的，除上述材料外，还应提交监护人委托书，以及陪同人的居民身份证或者护照。</p>
+				<p>五、出入境证件的申请由申请人户籍所在地公安机关出入境管理机构审批。被告知不予签发出入境证件的申请人依法享有在户籍所在地申请行政复议或者提起行政诉讼的权利。</p>
+				<p>六、属于登记备案的国家工作非京籍人员须回户籍地递交申请。</p>
+				<p>七、申请人须保证网上填报内容真实无误、所提交的申请材料真实有效，接受公安机关出入境管理部门的询问并承担相应的法律责任。对于弄虚作假骗领出入境证件的申请人，公安机关将依法处理。</p>
+				<p>八、如果您网上预约的申请类别与现场申请不符，请您重新提交网上预申请后再办理。</p>
+				<p>九、2014年1月1日起，申请人可以在“翼-拍照”互联网服务平台（网址：http://bj.e-photo.cn）查询选择能够拍摄符合出入境证件照片要求的照相馆采集照片。前台受理民警根据申请人提供的相片回执单调取申请人数字相片办理业务。西城分局厂桥、牛街、白纸坊、天桥、展览路派出所受理点暂无法现场采集制证照片，预约前往上述派出所递交材料的申请人须持符合要求的相片回执单进行现场申请。</p>
+				<p>十、派出所受理点只受理网上预约申请，直接到现场递交的不予受理。申请人可自行选择派出所，不受户籍地限制。在派出所递交申请的人员网上预约时可选择免费速递服务（速递时间不计入取证时限）。需自行领取证件的人员，应在受理时及时告知窗口工作人员，并持取证凭单到派出所所属分局出入境接待大厅领取证件。</p>
+				<p>十一、一般情况下办理普通护照、往来港澳通行证、往来台湾通行证的办证时限为七个工作日（受理当日、周六、日、法定节假日以及速递时间不计入工作日）；办理往来港澳台相应签注的办证时限为七个工作日（受理当日、周六、日以及法定节假日不计入工作日），特殊情况除外。</p>
+				<p>十二、单独办理往来港澳台相应签注人员须确保本人《往来港澳通行证》、《往来台湾通行证》有效且有效期超过所申请签注有效期30天以上。</p>
+			</div>
+			<div class="agreeOK"><span></span>我已阅读并同意以上提示</div>
+			<div class="btn-box">
+				<input type="button" value="下一步" />
+			</div>
+		</div>
+		<!--点击预申请受理按钮-非京籍人员重要提示 end-->
+		<!--点击预申请受理按钮-京籍人员重要提示 start-->
+		<div class="dialog-project" style="display: none;">
+			<div class="title">重要提示<i class="close"></i></div>
+			<div class="conTips">
+				<p>一、本市户籍居民网上申办出入境证件预申请通过初审后，可根据系统显示自行选择办理时间及受理地点，系统自动生成网上预约号码。本人持网上预约号码、有效二代居民身份证、申请表和相关申请材料于预约时间到达选定的接待大厅（可现场手工填写申请表也可使用自助填表机打印申请表），并按照现场办证流程提示完成现场申请。网上预约号码当日有效，如未按照预约时间现场办理，请重新提交预约申请。</p>
+				<p>二、未满16周岁未成年人应当由监护人或监护人委托他人陪同申请，提供出生证、能够直接载明监护关系的户口簿、监护关系公证书，并提交监护人居民身份证或护照。在申请表上填写监护人同意出境的意见。监护人委托他人陪同的，除上述材料外，还应提交监护人委托书，以及陪同人的居民身份证或者护照。</p>
+				<p>三、暂不能进行网上预申请的人员包括部队驻地在京的现役军人、武警、军队离退休人员（未移交地方的）。</p>
+				<p>四、网上预约未通过初审的申请人，可按照出入境管理总队、各分局出入境接待大厅业务受理范围前往现场窗口进行办理，无需进行复核。</p>
+				<p>五、一般情况下办理普通护照、往来港澳通行证、往来台湾通行证的办证时限为七个工作日（受理当日、周六、日、法定节假日以及速递时间不计入工作日）；办理往来港澳台签注（上门取证速递除外）的办证时限为五个工作日（受理当日、周六、日以及法定节假日不计入工作日）；再次申请旅游签注最快可实现当日可取（现役军人、武警、未移交地方军队离退休人员、登记备案国家工作人员、华侨除外）。</p>
+				<p>六、上门取证速递办证时限（自邮政速递人员上门取证后下一个工作日开始计算且周六、日以及
+法定节假日不计入工作日）：本市揽收、投递到本市为七个工作日；本市揽收、投递到外省市为七个工作日；外省市揽收、投递到本市为十个工作日；外省市揽收、投递到外省市为十五个工作日。</p>
+				<p>七、如果您网上预约的申请类别与现场申请不符，请您重新提交网上预申请后再办理。</p>
+				<p>八、2014年1月1日起，申请人可以在“翼-拍照”互联网服务平台（网址：http://bj.e-photo.cn）查询选择能够拍摄符合出入境证件照片要求的照相馆采集照片。前台受理民警根据申请人提供的相片回执单调取申请人数字相片办理业务。西城分局厂桥、牛街、白纸坊、天桥、展览路派出所受理点暂无法现场采集制证照片，预约前往上述派出所递交材料的申请人须持符合要求的相片回执单进行现场申请。</p>
+				<p>九、派出所受理点只受理网上预约申请，直接到现场递交的不予受理。申请人可自行选择派出所，不受户籍地限制。在派出所递交申请的人员网上预约时可选择免费速递服务（速递时间不计入取证时限）。需自行领取证件的人员，应在受理时及时告知窗口工作人员，并持取证凭单到派出所所属分局出入境接待大厅领取证件。</p>
+				<p>十、单独办理往来港澳台相应签注人员须确保本人《往来港澳通行证》、《往来台湾通行证》有效且有效期超过所申请签注有效期30天以上。</p>
+			</div>
+			<div class="agreeOK"><span></span>我已阅读并同意以上提示</div>
+			<div class="btn-box">
+				<input type="button" value="下一步" />
+			</div>
+		</div>
+		<!--点击预申请受理按钮-京籍人员重要提示 end-->
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京市公安局</div>
+	</div>
+    <script src="/js/beiJingPassport/beiJingPassport.js"></script>
+</body>
+</html>

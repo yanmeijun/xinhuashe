@@ -1,0 +1,113 @@
+/*证书*/
+.font18{
+	font-size: 0.25rem;
+}
+.gjj-list .text-list-div label, .gjj-list .text-list-div span {
+    width: auto !important;
+    line-height: 0.5rem;
+}
+.certificateList .text-list-div:nth-last-of-type(1){
+	border-bottom: none;
+}
+.certificateList .text-list-div span{
+	float: right;
+	text-align: right;
+	color: #0083e0 !important;
+	font-size: 0.38rem;
+}
+.certificatePic{
+	padding: 0.36rem 0.55rem;
+	border-bottom: 1px solid #eee;
+}
+.certificate-lf{
+	width: 5.486rem;
+	display: inline-block;
+	float: left;
+}
+.certificate-lf .userName{
+	font-size: 0.388rem; 
+	text-indent: 0.777rem;   
+	line-height: 0.77rem;
+	margin-top: 0.55rem;
+}
+.certificate-lf .userName span{
+	color: #0083e0;
+	margin-right: 0.277rem;
+}
+.certificate-lf .userName span:nth-of-type(1){
+	margin-right: 0.277rem;
+}
+.certificate-lf .userName span{
+	margin-left: 0.16rem;
+	margin-right: 0.16rem;
+}
+.userCer{
+	color: #b2b2b2;
+	font-size: 0.277rem;
+	margin-top: 0.4rem;
+}
+.avatarBox{
+	display: inline-block;
+	float: right;
+	text-align: right;
+	width: -webkit-calc(100% - 5.8rem);
+	width: -moz-calc(100% - 5.8rem);
+	width: calc(100% - 5.8rem);
+}
+.avatarBox img{
+	width: 2.3rem;
+	height:3.2rem;
+}
+.aloneStyle {
+	display: inline-block;
+    font-size: 0.38rem;
+    color: #797979;
+    line-height: 0.5rem;
+    width: -webkit-calc(100% - 3rem);
+    width: -moz-calc(100% - 3rem);
+    width: calc(100% - 3rem);
+    vertical-align: top;
+}
+.regWH .text-list-div label, .regAddress label {
+    width: 2rem;
+}
+.inquireTips {
+    font-size: 0.28rem;
+    color: #6e6e6e;
+    margin: 0.416rem 0.55rem 0rem 1.175rem;
+}
+.inquireTips p {
+    line-height: 0.6rem;
+}
+.inquireTips p:nth-of-type(1) {
+    text-indent: -0.625rem;
+}
+.text-list-div .icon-downMenu {
+    margin-top: 0rem;
+}
+.text-list-div .img-code{
+	float: right;
+    margin-top: -0.15rem;
+}
+.notFound {
+    font-size: 0.3rem;
+    color: #6e6e6e;
+    text-align: center;
+    height: 3.33rem;
+    padding-top: 0.83rem;
+    border-bottom: 1px solid #edefee;
+    margin: 0 0.55rem;
+}
+.notFound .img-box img {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-bottom: 0.41rem;
+}
+.login-tips.XL-query.notF-tips {
+    padding: 0 0.22rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+#examTrigger,#subjectTrigger{
+	color: #474747;
+}

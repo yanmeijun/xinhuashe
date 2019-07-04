@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>挂号记录</title>
+  <link type="text/css" rel="stylesheet" href="/css/news.css" />
+  <link rel="stylesheet" href="/css/hospital/hospital.css">
+  <link rel="stylesheet" href="/css/mobiscroll/mobiscroll.css">
+  <link rel="stylesheet" href="/css/mobiscroll/mobiscroll_002.css">
+  <link rel="stylesheet" href="/css/mobiscroll/mobiscroll_003.css">
+  <script type="text/javascript" src="/lib/jquery.min.js" ></script>
+  <script type="text/javascript" src="/lib/mobiscroll_002.js" ></script>
+  <script type="text/javascript" src="/lib/mobiscroll.js" ></script>
+  <script type="text/javascript" src="/lib/mobiscroll_003.js" ></script>
+  <!--<script type="text/javascript" src="/lib/zepto.min.js" ></script>-->
+  <script type="text/javascript" src="/js/all.js" ></script>
+  <script  type="text/javascript">
+      var randomKey = "<%= randomKey %>"
+          ,userID = "<%= userID%>"
+          ,clientID = "<%= clientID %>",
+          cityID = "<%= cityID %>",
+              citySRC = "<%= cityInfo.citySRC %>",
+          local_x = "<%= local_x %>"
+          ,local_y = "<%= local_y %>"
+          ,comeFrom = "<%= locals.comeFrom %>",
+          localFrom = "<%= locals.localFrom %>";
+  </script>
+  <script type="text/javascript" src="/js/hospital/reservationDetail.js" ></script>
+  <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+  <script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+<div class="max">
+  <!--banner图-->
+  <% include ../header.html %>
+  <!--挂号预约个人中心-->
+  <div class="warpBox">
+    <div class="peccancyQuery XLQuery-home">
+      <h1 class="p-q-tit"><img src="../../images/icon-return.png" class="icon-return" id="back"/>个人中心</h1>
+      <hr class="hrLine">
+    </div>
+  </div>
+  <div class="peccancyQuery userInfor onlyStyle">
+    <h2 class="q-r-tit"><span></span>我的预约</h2>
+  </div>
+  <div class="peccancyQuery userInfor onlyStyle">
+  	<div class="tab-content inforConfirm">
+	  	<div class="text-list-div clearfix">
+				<label>状态选择：</label>
+				<input id="orderType" type="text" placeholder="全部" readonly class="otherStyleText">
+				<img id="orderType_choose" src="/images/icon-downMenu.png" class="icon-downMenu">
+			</div>
+			<div class="text-list-div hospitalUserCen clearfix">
+				<label>就诊时间：</label>
+				<input id="startDate" type="text" placeholder="开始时间"  readonly>
+				<span>至</span>
+				<input id="endDate" type="text" placeholder="结束时间" readonly>
+			</div>
+			<div class="btn-box">
+					<input id="search" type="button" value="查询" />
+				</div>
+		</div>
+  </div>
+  <div id="total_div" class="peccancyQuery userInfor onlyStyle">
+    <h2 class="q-r-tit"><span></span>挂号记录<small class="success" id="total">共 0 条</small></h2>
+  </div>
+  <div id="results"></div>
+  <div id="result_err" class="login-tips font28" style="display: none;">
+    提示：没有符合条件的数据
+  </div>
+<div id="waitDoc_template" style="display: none">
+  <div class="peccancyQuery userInfor onlyStyle">
+    <div class="tab-content gjj-list Wait-doctor-main">
+      <div class="text-list-div clearfix Wait-doctor">
+        <label><em>${status}</em></label>
+        <span><img src="/images/icon-downMenu.png" class="icon-downMenu spacTop" id="tab-tit-${id}"></span>
+      </div>
+      <!--就诊信息-->
+      <div class="doctor-Details" id="tab-content-${id}">
+        <ul>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">就诊医院：</span>${yy}</li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">就诊科室：</span>${ks}</li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">医生职称：</span>${ys}</li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">候诊时间：</span><span class="timeColor">${jzsj}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">取号地点：</span><span>${qhsj}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">取号时间：</span><span>${qhdd}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">识别码：</span><span>${sbm}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">患者姓名：</span>${ghr}</li>
+          <!--<li><img src="/images/hospital/radio.png" alt=""><span class="w125">身份证：</span><span>07:00-09:00</span></li>-->
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">医事服务费：</span>￥<span class="colorTxt">${ysfwf}</span></li>
+        </ul>
+      <div class="btn-box">
+        <input id="cancel_${orderId}_${hospitalType}" onclick="cancelReg('${orderId}_${hospitalType}')" type="button" value="取消预约">
+      </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <div id="other_template" style="display: none">
+  <div class="peccancyQuery userInfor onlyStyle">
+    <div class="tab-content gjj-list">
+      <div class="text-list-div clearfix Wait-doctor">
+        <label>${status}</label>
+        <span><img src="/images/icon-downMenu.png" class="icon-downMenu spacTop" id="tab-tit-${id}"></span>
+      </div>
+      <div class="doctor-Details" id="tab-content-${id}">
+        <ul>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">就诊医院：</span>${yy}</li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">就诊科室：</span>${ks}</li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">医生职称：</span>${ys}</li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">候诊时间：</span><span class="timeColor">${jzsj}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">取号时间：</span><span>${qhsj}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">取号地点：</span><span>${qhdd}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">识别码：</span><span>${sbm}</span></li>
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">患者姓名：</span>${ghr}</li>
+          <!--<li><img src="/images/hospital/radio.png" alt=""><span class="w125">身份证：</span><span>07:00-09:00</span></li>-->
+          <li><img src="/images/hospital/radio.png" alt=""><span class="w125">医事服务费：</span>￥<span class="colorTxt">${ysfwf}</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="masktime" id="masktime" style="display:none;"></div>
+  <div style="height: 1.3rem;"></div>
+  <div class="data-sources">服务来源：北京市预约挂号统一平台</div>
+</div>
+<div id="mask" class="mask" style="display: none;"></div>
+<div id="orderType_list_div" class="dialog-car-box" style="display: none;">
+	<div class="dialogTitle">状态选择</div>
+  <ul id="orderType_list">
+    <!--<li><a href="javascript:;" data-index="-1">状态选择</a></li>-->
+    <li class="dialogColor"><a href="javascript:;" data-index="-1">全部</a></li>
+    <li><a href="javascript:;"  data-index="1">待就诊</a></li>
+    <li class="dialogColor"><a href="javascript:;"  data-index="2">已取消</a></li>
+    <li><a href="javascript:;" data-index="3">已过期</a></li>
+    <li><a href="javascript:;" data-index="64">爽约</a></li>
+    <li><a href="javascript:;" data-index="3840">停诊</a></li>
+  </ul>
+</div>
+
+<!-- 查询动画提示开始-->
+<div class="mask" style="opacity: 0;display: none" id="dialogMask"></div>
+<div class="dialog-tel timeM" style="text-align: center;display: none" id="dialog">
+  <img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+  <p>加载中</p>
+</div>
+<!-- 查询动画提示结束-->
+
+</body>
+</html>

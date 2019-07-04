@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>选择科室</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hospital/hospital.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/heNanHospital/heNanHospital.css"/>
+    <link rel="stylesheet" href="/css/gSHospital/gSHospital.css" />
+	<script>
+        var randomKey = "<%= randomKey %>"
+            ,userID = "<%= userID%>"
+            ,clientID = "<%= clientID %>",
+            cityID = "<%= cityID %>",
+            citySRC = "<%= cityInfo.citySRC %>",
+            local_x = "<%= local_x %>"
+            ,local_y = "<%= local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+        var hoskey=sessionStorage.getItem("hos_key");
+        var userkey=sessionStorage.getItem("userKey");
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="max" v-cloak>
+		<!--banner图-->
+		<div class="banner">
+			<% include ../header.html %>
+			<div class="userAvatarBox" @click="checkUser()">
+				<a href="javascript:;">
+					<p><img src="/images/hospital/userAvatar.png"></p>
+					<p>个人中心</p>
+				</a>
+				<div class="dialog-userCenter gSUser" v-if="pesCenterFlag">
+					<div class="triangle"></div>
+					<ul>
+						<li><a href="javascript:;" @click="jumpPerson()">个人中心</a></li>
+						<li><a href="javascript:;" @click="exitBtn()">退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--选择科室-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home regWH">
+				<h1 class="p-q-tit"><img @click="back()" src="/images/icon-return.png" class="icon-return"/>选择科室</h1>
+				<hr class="hrLine">
+				<div class="peccancyQuery userInfor onlyStyle">
+					<dl class="hosList hNHosList gSDlList clearfix">
+						<dt><a href="javascript:;"><img v-if="sysOrg.hosCode" :src="sysOrg.photoImage"></a></dt>
+						<dd class="department">
+							<p class="title">{{sysOrg.fullName}}<span class="hos_intro" @click="goIntro()">医院简介</span></p>
+							<p class="time"><span v-if="sysOrg.hosLevelName">{{sysOrg.hosLevelName}}</span><span v-if="sysOrg.hosTypeName" class="sX-yy-num">{{sysOrg.hosTypeName}}</span></p>
+							<p v-if="sysOrg.hosAddress" class="address"><i class="icon-address"></i>{{sysOrg.hosAddress}}</p>
+							<p v-if="sysOrg.tel" class="tel"><i class="icon-tel"></i>{{sysOrg.tel}}</p>
+						</dd>
+					</dl>
+					<div v-if="sysOrg.arrivalRoute" class="intro"><i class="icon-gs-intro"></i>{{sysOrg.arrivalRoute}}</div>
+				</div>
+			</div>
+			<div class="peccancyQuery userInfor onlyStyle clearfix" v-if="deptInfo && deptNum">
+				<div class="tabTitle">
+					<ul ref="deptCon">
+						<li v-for="(dept,index) in deptInfo" :class="{active:curChoose==index}" @click="showDeptfn(index)"><a href="javascript:;">{{dept.DEPTNAME}}</a></li>
+					</ul>
+				</div>
+				<div class="depar-tabCon departmentCon">
+					<div class="tabConBox gSConList">
+						<p v-for="item in showDept" :dept="item.ID" @click="jumpOrder(item.ID,item.NAME)">
+							{{item.NAME}}<span v-if="item.num" style="color:#067fd8;">（{{item.num}}）<span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mask" v-if="maskFlag" ref="masktime"></div>
+		<!--退出弹框-->
+		<div class="dialog-tel" v-if="exitFlag">
+			<div class="titTel">您确定要退出登录吗？</div>
+			<div class="btn-tel">
+				<a href="javascript:;" @click="cancelExit()">取消</a>
+				<a href="javascript:;" @click="exit()">确定</a>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：健康甘肃</div>
+	</div>
+	<script src="/lib/vue.min.js"></script>
+	<script src="/lib/axios.js"></script>
+	<script src="/js/gsHospital/selectDep.js"></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+</body>
+</html>

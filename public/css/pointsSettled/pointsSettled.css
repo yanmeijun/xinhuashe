@@ -1,0 +1,580 @@
+.btn-newsStyle input{
+	background: #0083e0;
+	border-radius: 30px;
+	font-size: 0.458rem;
+	color: #eff5fc;
+}
+.btn-newsStyle{
+	margin-top: 0;
+}
+/*积分落户首页*/
+.noteBox{
+	background: #05be7f;
+	border-radius: 10px;
+	padding: 0.25rem 0.194rem;
+	font-size: 0.333rem;
+	color: #fff;
+	margin: 0.333rem 0.55rem;
+}
+.noteBox i{
+	display: inline-block;
+	float: left;
+	margin-right: 0.333rem;
+	background: url(../../images/pointsSettled/calculator-pic.png) no-repeat;
+	width: 0.8rem;
+	height: 1.04rem;
+	background-size: 0.8rem 1.04rem;
+}
+.noteBox span{
+	display: inline-block;
+	float: left;
+	width: -webkit-calc(100% - 1.133rem);
+	width: -moz-calc(100% - 1.133rem);
+	width: calc(100% - 1.133rem);
+	margin-top: 0.1rem;
+}
+.homeBG{
+	background: url(../../images/pointsSettled/homeBG.png) no-repeat;
+	width: 8.2rem;
+	height: 6.138rem;
+	background-size: 7.958rem 6.138rem;
+	margin: 0 0.55rem;
+	position: relative;
+	float:left;
+}
+.conBG{
+	background-color: rgba(255,233,12,0.8);
+	border-radius: 10px;
+	padding: 0.333rem;
+}
+.conBG p{
+	font-size: 0.3rem;
+	width: 5.73rem;
+	margin-bottom: 0.25rem;
+	color: #373642;
+	font-weight: bold;
+}
+.conBG p .number{
+	display: inline-block;
+	color: #fff;
+	background: #f77052;
+	width: 0.416rem;
+	height: 0.416rem;
+	line-height: 0.416rem;
+	border-radius: 50%;
+	text-align: center;
+	margin-right: 0.16rem;
+}
+.conBG p em{
+	font-style: normal;
+	margin-left: 0.277rem;
+}
+.conBG p.remark{
+	font-size: 0.25rem;
+	color: #000;
+	font-weight: normal;
+}
+.conBG p.remark span{
+	color: #fe8549;
+	margin-right: 0.1rem;
+}
+.picBG{
+	background: url(../../images/pointsSettled/peopleBG.png) no-repeat;
+	width: 3.291rem;
+	height: 4.763rem;
+	background-size: 3.291rem 4.763rem;
+	position: absolute;
+	right: -0.277rem;
+	top: 1.22rem;
+}
+.wantLookCon{
+	color: #515c68;
+	font-size: 0.25rem;
+	border-top: 1px solid #e6e6e6;
+	padding: 0.416rem 0.55rem;
+}
+.wantLookCon p{
+	margin-bottom: 0.1rem;
+	line-height: 0.416rem;
+	/*text-indent: 0.5rem;*/
+}
+.wantLookCon p a{
+	color: #515c68;
+}
+/*积分落户资格条件*/
+.conditionList{
+	margin: 0.694rem 0.55rem 0;
+}
+.conditionList ul li{
+	color: #364555;
+	font-size: 0.416rem;
+	line-height: 0.916rem;
+}
+.radioBox{
+	border-top: 1px solid #edefee;
+	height: 1.36rem;
+	line-height: 1.36rem;
+	text-align: center;
+	margin-top: 0.694rem
+}
+.radioBox span{
+	display: inline-block;
+	float: left;
+	width: 50%;
+	font-size: 0.416rem;
+	color: #333;
+}
+.icon-radio{
+	display: inline-block;
+	background:url(../../images/pointsSettled/radio-default.png) no-repeat;
+	width: 0.416rem;
+	height: 0.45rem;
+    background-size: 0.416rem 0.416rem;
+    vertical-align: middle;
+    margin-right: 0.416rem;
+    float: left;
+    margin-top: 0.065rem;
+}
+.icon-radio.active{
+	background:url(../../images/pointsSettled/radio-select.png) no-repeat;
+	background-size: 0.416rem 0.416rem;
+}
+/*不符合条件*/
+.conBG.doesNotMeet p.remark{
+	font-size: 0.333rem;
+	width: 4.8rem;
+}
+.doesNotMeet{
+	margin-top: 1.138rem;
+}
+/*合法稳定就业-社保年限*/
+.examples{
+	color: #777;
+	font-size: 0.3rem;
+	text-align: center;
+	margin: 0.55rem 0rem 0.763rem;
+}
+.examples a{
+	color: #f02b42;
+}
+.ageLimt-title{
+	color: #364555;
+	font-size: 0.416rem;
+	margin:0.5rem 0.55rem 0;
+}
+.ageLimt-text{
+	margin: 0.5rem 0.55rem;
+	font-size: 0;
+	position: relative;
+}
+.ageLimt-text input{
+	height: 1.152rem;
+	line-height: 1.152rem;
+	border:1px solid #c6c6c6;
+	width: 100%;
+	border-radius: 5px;
+	padding-left: 0.3rem;
+}
+.ageLimt-text span.disabled{
+	height: 1.152rem;
+	line-height: 1.152rem;
+	border:1px solid #c6c6c6;
+	width: 100%;
+	border-radius: 5px;
+	padding-left: 0.3rem;
+	display: inline-block;
+	font-size: .38rem;
+	color:#ababae;
+}
+.promptRemarks{
+	color: #f02b42;
+	font-size: 0.333rem;
+	line-height: 0.5rem;
+    margin-top: 0.1rem;
+}
+/*示例*/
+.dialog-examples{
+	position: fixed;
+	top: 50%;
+    z-index: 101;
+	margin: -3.5rem 0.33rem 0;
+	background: #fff;
+	border-radius: 5px;
+	width: -webkit-calc(100% - 0.66rem);
+	width: -moz-calc(100% - 0.66rem);
+	width: calc(100% - 0.66rem);
+}
+.dialog-examples .title{
+	height: 0.972rem;
+	line-height: 0.972rem;
+	position: relative;
+	color: #329dfc;
+	font-size: 0.416rem;
+	border-bottom: 1px solid #e5e5e5;
+	text-align: center;
+}
+.dialog-examples .title a{
+	display: inline-block;
+	background:url(../../images/pointsSettled/close.png) no-repeat;
+	width: 0.444rem;
+	height: 0.444rem;
+	background-size: 0.444rem;
+	position: absolute;
+	top: 0.25rem;
+	right: 0.26rem;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-ms-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+	opacity: 0.8;
+}
+.dialog-examples .title a:hover{
+	opacity:1;
+}
+.dialog-examples .examplesCon{
+	color: #474747;
+	font-size: 0.333rem;
+	line-height: 0.55rem;
+	margin: 0.5rem 0.55rem;
+}
+/*合法稳定住所*/
+.textList .ageLimt-text{
+	margin-top: 0.347rem;
+	position: relative;
+}
+.icon-check{
+	display: inline-block;
+	background:url(../../images/pointsSettled/icon-check-default.png) no-repeat;
+	width: 0.444rem;
+	height: 0.444rem;
+	background-size: 0.444rem;
+	margin-right: 0.347rem;
+    vertical-align: middle;
+    margin-top: -0.08rem;
+}
+.icon-check.active{
+	background:url(../../images/pointsSettled/icon-check-select.png) no-repeat;
+	background-size: 0.444rem;
+}
+
+/*合法稳定住所-示例*/
+.dialog-legalResidence{
+	top: 0.94rem;
+	margin-top: 0;
+	max-height: 90%;
+    overflow-y: auto;
+}
+.tableCon{
+	margin: 0 0.33rem;
+}
+.examplesTit{
+	color: #474747;
+	font-size: 0.277rem;
+	margin-bottom: 0.277rem;
+}
+.tableBox1{
+	border-collapse: collapse;
+	border: 1px solid #cacee6;
+	width: 100%;
+}
+.tableBox1 tr th{
+	height: 0.527rem;
+	color: #000;
+	font-size: 0.277rem;
+	background: #6adee6;
+	text-align: left;
+	padding: 0 0.2rem;
+}
+.tableBox1 tr td{
+	height: 0.5rem;
+	color: #000;
+	font-size: 0.22rem;
+	padding: 0 0.2rem;
+}
+.tableBox1 tr:nth-child(odd) td{
+	background: #e4eeed;
+}
+.tableBox1 tr:nth-child(even) td{
+	background: #fff;
+}
+.tableBox1 tr td:nth-child(odd){
+	background: #e4eeed;
+}
+
+.tableBox1 tr:nth-child(even) td:nth-child(odd){
+	background: #eaf7f8;
+}
+.tableBox1 tr:nth-child(odd) td:nth-child(odd){
+	background: #d1e7e7;
+}
+.noteCon{
+	text-align: center;
+	font-size: 0;
+}
+.noteCon .downArrow{
+	display: inline-block;
+	background: url(../../images/pointsSettled/downArrow.png) no-repeat;
+	width: 0.458rem;
+	height: 0.638rem;
+	background-size:0.458rem 0.638rem;
+	margin: 0.125rem 0;
+}
+.noteCon p{
+	color: #404040;
+	font-size: 0.3rem;
+	line-height: 0.55rem;
+}
+.exampleListBox{
+	margin: 0.2rem 0 0.5rem;
+}
+.exampleListBox .listDiv{
+	font-size: 0.277rem;
+	color: #000;
+	border-bottom: 1px solid #fff;
+	padding: 0.1rem 0;
+}
+.exampleListBox .listDiv p{
+	line-height: 0.55rem;
+	padding: 0 0.194rem;
+}
+.exampleListBox .listDiv p span:nth-of-type(1){
+	display: inline-block;
+	width: 60%;
+}
+.exampleListBox .listDiv p span:nth-of-type(2){
+	display: inline-block;
+	width: 40%;
+}
+.exampleListBox .listDiv:nth-of-type(1),
+.exampleListBox .listDiv:nth-of-type(3){
+	background: #d2eaf2;
+}
+.exampleListBox .listDiv:nth-of-type(2){
+	background: #e5f8f6;
+}
+.exampleListBox .listDiv:nth-last-of-type(1){
+	background: #6adee6;
+}
+/**/
+.ageLimt-text .downMenu{
+	position: absolute;
+	right: 0.11rem;
+	top: 0.22rem;
+	width: 0.694rem;
+	height: 0.694rem;
+}
+.conditionTit{
+	overflow: hidden;
+    float: left;
+    width: -moz-calc(100% - 1rem);
+    width: -webkit-calc(100% - 1rem);
+    width: calc(100% - 1rem);
+}
+.font28{
+	font-size: 0.388rem;
+}
+/*纳税*/
+.payTaxesCondition{
+	background: #0083e0;
+	color: #fff;
+	font-size: 0.388rem;
+	line-height: 0.736rem;
+	margin: 0 0.55rem;
+	padding-left: 0.25rem;
+	border-radius: 3px;
+	margin-top: 0.42rem;
+}
+.spacHt{
+	height: 1.19rem;
+}
+/*联系方式*/
+.contactList{
+	margin: 0.416rem 0 0.444rem;
+}
+.contactBox{
+	border: 1px solid #e6e6e6;
+	border-radius: 3px;
+	margin: 0 0.55rem 0.277rem;
+}
+.contactBox .title{
+	font-size: 0.36rem;
+	color: #474747;
+	line-height: 0.944rem;
+	border-bottom: 1px solid #e6e6e6;
+}
+.contactBox .title span{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+    display: inline-block;
+    float: left;
+}
+.contactBox i{
+	display: inline-block;
+	float: left;
+}
+.contactBox .title .icon-boldLine{
+	background: #549dfb;
+	width: 0.083rem;
+	height: 0.388rem;
+	border-radius: 5px;
+	margin: 0.28rem 0.277rem 0;
+}
+.contactBox .address{
+	font-size: 0.33rem;
+	color: #474747;
+	line-height: 0.583rem;
+	margin-top: 0.25rem;
+}
+.contactBox .address span{
+	display: inline-block;
+    width: calc(100% - 0.8rem);
+}
+.contactBox .tel{
+	font-size: 0.33rem;
+	color: #474747;
+	line-height: 0.583rem;
+	margin-bottom: 0.25rem;
+}
+.contactBox .address .icon-address{
+	background: url(../../images/pointsSettled/icon-address.png) no-repeat;
+	width: 0.222rem;
+	height: 0.263rem;
+	background-size: 0.222rem 0.263rem;
+	margin: 0.17rem 0.2rem 0;
+}
+.contactBox .tel .icon-tel{
+	background: url(../../images/pointsSettled/icon-tel.png) no-repeat;
+	width: 0.25rem;
+	height: 0.25rem;
+	background-size: 0.25rem;
+	margin: 0.17rem 0.2rem 0;
+}
+/*模拟积分结果*/
+.fractionBox{
+	background: url(../../images/pointsSettled/fractionBG.png) no-repeat;
+	width: 8.222rem;
+	height: 3.444rem;
+	background-size: 8.222rem 3.444rem;
+	margin: 0.1rem auto 0.83rem;
+	padding-top: 1.2rem;
+}
+.totalScore{
+	font-size: 0.416rem;
+	color: #364555;
+	text-align: center;
+	height: 1.36rem;
+	line-height: 1.36rem;
+}
+.totalScore span{
+	color: #f92424;
+	font-size: 0.694rem;
+	font-weight: bold;
+}
+.percentage{
+	font-size: 0.333rem;
+	color: #333;
+	text-align: center;
+	border-top: 1px solid #e5e5e5;
+	height: 0.833rem;
+	line-height: 0.833rem;
+	margin: 0 0.6rem;
+}
+.percentage span{
+	color: #f92424;
+}
+.integralProjectDetailsList{
+	border-collapse: collapse;
+	width: 100%
+}
+.integralProjectDetailsList tr th{
+	height: 0.8rem;
+	line-height: 0.8rem;
+	font-size: 0.333rem;
+	color: #555;
+	text-align: left;
+	padding-left: 0.347rem;
+	border-bottom: 1px solid #e6e6e6;
+}
+.integralProjectDetailsList tr td{
+	height: 0.7rem;
+	line-height: 0.7rem;
+	border-bottom: 1px solid #e6e6e6;
+	font-size: 0.333rem;
+	color: #555;
+	padding-left: 0.347rem;
+}
+.integralProjectDetailsList tr:nth-child(even){
+	background: #f7f7f7;
+}
+.integralProjectDetailsList tr td:nth-of-type(1){
+	width: 25%;
+}
+.integralProjectDetailsList tr td:nth-of-type(2){
+	width: 55%;
+}
+.integralProjectDetailsList tr td:nth-of-type(3){
+	width: 20%;
+}
+.spacHt2{
+	height: 0.597rem;
+}
+/*时间节点*/
+.timeNodeTabel{
+	margin-top: 0.333rem;
+	margin-bottom: 0.527rem;
+}
+.timeNodeTabel tr th:nth-of-type(1){
+	width: 60%;
+}
+.timeNodeTabel tr th:nth-of-type(2){
+	width: 40%;
+}
+.timeNodeTabel tr th,.timeNodeTabel tr td{
+	height: 0.63rem;
+	line-height: 0.5rem;
+	padding: 0.1rem 0.2rem;
+}
+.timeNodeTabel tr td p{
+	line-height: 0.444rem;
+}
+
+/*联系方式弹框*/
+.dialog-tel{
+	background: #fff;
+	margin:0 0.33rem;
+	height: 2.541rem;
+	position: fixed;
+	top: 50%;
+	margin-top: -1.27rem;
+	z-index: 100;
+	width: -webkit-calc(100% - 0.66rem);
+	width: -moz-calc(100% - 0.66rem);
+	width: calc(100% - 0.66rem);
+	border-radius: 5px;
+}
+.dialog-tel .titTel{
+	height: 1.44rem;
+	line-height: 1.44rem;
+	font-size: 0.416rem;
+	color: #474747;
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+}
+.dialog-tel .btn-tel{
+	font-size: 0;
+}
+.dialog-tel .btn-tel a{
+	display: inline-block;
+	width: 50%;
+	height: 1.083rem;
+	line-height: 1.083rem;
+	color: #329dfc;
+	font-size: 0.416rem;
+	text-align: center;
+}
+.dialog-tel .btn-tel a:nth-of-type(1){
+	border-right: 1px solid #ececec;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>个人所得税-稿酬所得</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/personalTax/personalTax.css" />
+	<script type="text/javascript" src="/lib/vue.min.js" ></script>
+    <script type="text/javascript" src="/js/all.js"></script>
+	<script>
+		var randomKey = "<%=locals.randomKey%>",
+				userID = "<%= locals.userID%>",
+				clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>",
+				local_y = "<%= locals.local_y %>",
+            localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="manuscript">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--个人所得税-稿酬所得-->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="goBack()"/>个人所得税-稿酬所得</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>收入金额</label>
+					<input ref="inputNum" type="number" placeholder="请输入收入金额" />
+				</div>
+				<div class="btn-box">
+					<input @click="calculate()" type="button" value="计算" />
+				</div>
+			</div>
+			<!--计算结果-->
+			<div v-if="result>=0" class="peccancyQuery queryResult userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>计算结果</h2>
+				<div class="calculationResult">
+					<div class="text-list-div clearfix">
+						<label>您的应纳税额为</label>
+						<span class="numberResults">{{result}}</span>
+						<b class="rmbUnit">元</b>
+					</div>
+					<div class="noteResult">注：以上结果，仅供参考</div>
+				</div>
+			</div>
+			<!--说明-->
+			<div class="peccancyQuery queryResult userInfor onlyStyle">
+				<div class="personalPrompt">
+					<p><img src="/images/icon-tips.png" class="icon-tips">说明：</p>
+					<p>1：稿酬所得： 指个人因其作品以图书、报刊形式出版、发表而取得的所得。</p>
+					<p>2：税率：稿酬所得适用20%的比例税率，并按应纳税额减征30%。</p>
+					<p class="taxTitle">计算方法：</p>
+					<p>稿酬所得以每次出版、发表取得的收入为一次，计算缴纳个人所得税：</p>
+					<p>每次应缴个人所得税=应纳税所得额x20% x（1-30%）</p>
+					<p>应纳税所得额=每次收入额（≤4000）-800</p>
+					<p>每次收入额（ >4000）x（1-20%）</p>
+					<p class="taxTitle">稿酬所得每次收入不超过4000元的，减除费用800元；</p>
+					<p>4000元以上的，减除20%的费用，其余额为应纳税所得额。</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;" id="dialogMask" v-if="this.dialogMask==true"></div>
+		<div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="this.dialogMask==true">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+
+		<!--提示语-->
+		<div v-if="noData" class="masktime" id="masktime">{{maskTips}}</div>
+		<div style="height:1.5rem"></div>
+		<div class="data-sources">服务来源：北京市地方税务局</div>
+	</div>
+	<script src="/js/personalTax/manuscript.js"></script>
+</body>
+</html>

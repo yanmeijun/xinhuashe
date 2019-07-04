@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>贵州省网上办事大厅申请人统一认证</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/guiZhouInternetService/guiZhouInternetService.css" />
+	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+    <script>
+		var randomKey = "GzOnlineWork_" + Math.random().toString(36).substr(2)
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				citySRC = "<%= cityInfo.citySRC %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>"
+				,err = "<%= locals.err %>"
+				,USERNAME = "<%= locals.userName %>" || sessionStorage.getItem('GzOnlineWork_USERNAME')
+				,PASSWORD = "<%= locals.password %>" || sessionStorage.getItem('GzOnlineWork_PASSWORD'),
+            localFrom = "<%= locals.localFrom %>";
+		if(USERNAME){
+			sessionStorage.setItem('GzOnlineWork_USERNAME',USERNAME);
+		}
+		if(PASSWORD){
+			sessionStorage.setItem('GzOnlineWork_PASSWORD',PASSWORD);
+		}
+//		if(err){
+//			alert(err)
+//		}
+    </script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max" id="GzOnlineWork">
+		<!--banner图-->
+		<% include ../header.html %>
+		<!--贵州省网上办事大厅申请人统一认证-->
+		<div class="warpBox">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit">贵州省网上办事大厅申请人统一认证</h1>
+				<hr class="hrLine">
+				<form id="loginForm" action="/GzOnlineWork/login" method="post">
+				<div class="text-list-div">
+					<label>用户名</label>
+					<input id="username" name="username" type="text" placeholder="请输入用户名/手机号/身份证号" />
+				</div>
+				<div class="text-list-div">
+					<label>密码</label>
+					<input id="password" name="password" type="password" placeholder="请输入密码" />
+				</div>
+				<div class="text-list-div text-list-code">
+					<label>验证码</label>
+					<input id="piccode" name="piccode" type="text" placeholder="请输入验证码" />
+					<img :src="veryCode" class="img-code" @click="getVeryCode(v)" id="veryCode">
+				</div>
+				<div class="inquireTips">
+					<p>注：1.目前只支持个人用户登录</p>
+					<p>2.用户须在贵州省网上办事大厅申请人统一认证平台注册，注册后的用户可登录。</p>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="登录" @click="doSubmit()"/>
+				</div>
+					<input name="randomKey" type="text" placeholder="randomKey" value="" style="display: none"/>
+					<input name="userID" type="text" placeholder="userID" value="<%=locals.userID%>" style="display: none"/>
+					<input name="cityID" type="text" placeholder="cityID" value="<%=locals.cityID%>" style="display: none"/>
+					<input name="local_x" type="text" placeholder="local_x" value="<%=locals.local_x%>" style="display: none"/>
+					<input name="local_y" type="text" placeholder="local_y" value="<%=locals.local_y%>" style="display: none"/>
+					<input name="clientID" type="text" placeholder="clientID" value="<%=locals.clientID%>" style="display: none"/>
+				</form>
+			</div>
+		</div>
+		<div class="masktime" id="masktime" v-if="this.masktimeFalse==true">{{masktime}}</div>
+		<!-- ---------------------------------------查询动画提示开始--------------------------------------------- -->
+		<div class="mask" style="opacity: 0;" id="dialogMask" v-if="dialogMask"></div>
+		<div class="dialog-tel timeM" style="text-align: center;" id="dialog" v-if="dialogMask">
+			<img src="/images/taxOffice/timg.gif" alt="" style="width: 40px">
+			<p>加载中</p>
+		</div>
+		<!-- ---------------------------------------查询动画提示结束--------------------------------------------- -->
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：贵州省网上办事大厅</div>
+	</div>
+	<script type="text/javascript" src="/js/GzOnlineWork/GzOnlineWork.js"></script>
+    <!--<script>-->
+        <!--fnSize()-->
+        <!--window.addEventListener('resize',fnSize,false)-->
+        <!--function fnSize () {-->
+            <!--if(document.documentElement.offsetWidth>1024){-->
+                <!--document.getElementsByTagName('html')[0].style.fontSize = 375/10 +'px';-->
+                <!--document.getElementsByClassName("max")[0].style.width="375px";-->
+                <!--document.getElementsByClassName("max")[0].style.margin ="0 auto";-->
+                <!--document.getElementsByClassName("data-sources")[0].style.width ="375px";-->
+                <!--return;-->
+            <!--}else{-->
+                <!--document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth/10 +'px';-->
+                <!--document.getElementsByClassName("max")[0].style.width="100%";-->
+                <!--document.getElementsByClassName("data-sources")[0].style.width ="100%";-->
+                <!--return;-->
+            <!--}-->
+
+        <!--}-->
+    <!--</script>-->
+	<script type="text/javascript">
+		if(localFrom == "xinhuashe_app") {
+			document.getElementById('username').value = USERNAME || sessionStorage.getItem('GzOnlineWork_USERNAME');
+			document.getElementById('password').value = PASSWORD || sessionStorage.getItem('GzOnlineWork_PASSWORD');
+		}
+	</script>
+</body>
+</html>

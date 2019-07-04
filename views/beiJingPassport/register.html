@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>北京市出入境办理</title>
+    <link rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/beiJingPassport/beiJingPassport.css" />
+    <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+	</head>
+	<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/beijing.png">
+			<div class="address"><span>北京</span></div>
+		</div>
+		<!---->
+		<div class="warpBox">
+			<div class="peccancyQuery">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" >注册</h1>
+				<hr class="hrLine">
+				<div class="calculatorBox">
+					<div class="calculatorList clearfix">
+						<label>姓名：</label>
+						<input type="text" placeholder="注册后不可编辑" />
+					</div>
+					<div class="calculatorList clearfix">
+						<label>身份证号：</label>
+						<input type="text" placeholder="注册后不可编辑" />
+					</div>
+					<div class="calculatorList">
+						<label>性别：</label>
+						<div class="accounts-all">
+							<span id="sexBoy"><picture class="active"></picture>男</span>
+					    	<span id="sexGirl"><picture></picture>女</span>
+						</div>
+					</div>
+					<div class="calculatorList clearfix">
+						<label>民族：</label>
+						<span>汉族</span>
+						<img src="/images/icon-downMenu.png" class="icon-downMenu">
+					</div>
+					<div class="calculatorList clearfix">
+						<label>出生日期：</label>
+						<span>1996-02-07</span>
+						<img src="/images/wgrzhjl/date.png" class="icon-date">
+					</div>
+					<div class="calculatorList clearfix">
+						<label>手机号码：</label>
+						<input type="text" placeholder="" />
+					</div>
+				</div>
+				<div class="btn-box">
+					<input type="button" value="下一步" />
+				</div>
+				<div class="goLoginBox sDGoReg clearfix">
+					<span class="goRegister">已有账号？去<a href="javascript:;">登录</a></span>
+				</div>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：北京市公安局</div>
+	</div>
+</body>
+</html>
+<script>
+//同意协议、性别按钮切换
+$("#sexBoy picture,#sexGirl picture").on("click", function () {
+    if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).parent().siblings("span").find('picture').removeClass("active");
+    } else {
+        $(this).addClass("active");
+        $(this).parent().siblings("span").find('picture').removeClass("active");
+    }
+})
+</script>

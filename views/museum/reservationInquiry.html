@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>中国国家博物馆网上预约查询</title>
+    <link type="text/css" rel="stylesheet" href="/css/news.css" />
+    <link rel="stylesheet" href="/css/museum/museum.css" />
+	<script type="text/javascript" src="/lib/vue.min.js"></script>
+	<script type="text/javascript" src="/lib/axios.js"></script>
+	<script type="text/javascript" language="javascript">
+		var randomKey = "<%= locals.randomKey %>"
+				,userID = "<%= locals.userID%>"
+				,clientID = "<%= locals.clientID %>",
+				cityID = "<%= locals.cityID %>",
+				local_x = "<%= locals.local_x %>"
+				,local_y = "<%= locals.local_y %>",
+            	localFrom = "<%= locals.localFrom %>";
+	</script>
+	<script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
+	<script type="text/javascript" charset="utf-8" id="kpyfx_js_id_10004615" src="//fxsjcj.kaipuyun.cn/count/10004615/10004615.js"></script>
+</head>
+<body bgcolor="#f3f9f9">
+	<div class="max">
+		<!--banner图-->
+		<div class="banner">
+			<img src="/images/beijing.png">
+		</div>
+		<!--中国国家博物馆网上预约查询-->
+		<div class="warpBox" id="reservationInquiry">
+			<div class="peccancyQuery XLQuery-home">
+				<h1 class="p-q-tit"><img src="/images/icon-return.png" class="icon-return" @click="returnPage"/>中国国家博物馆网上预约查询</h1>
+				<hr class="hrLine">
+				<div class="text-list-div">
+					<label>姓名</label>
+					<input v-model="xm" type="text" placeholder="请输入姓名" />
+				</div>
+				<div class="text-list-div">
+					<label>证件类型</label>
+					<input type="text" placeholder="身份证" disabled class="notSelectable"/>
+				</div>
+				<div class="text-list-div">
+					<label>证件号码</label>
+					<input v-model="zjh" type="text" placeholder="请输入证件号码" />
+				</div>
+				<div class="btn-box">
+					<input type="button" value="查询" @click="registerSearch"/>
+				</div>
+			</div>
+			<!--查询结果-->
+			<div v-if='this.hasResult==true'>
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>预约记录<small class="success">{{dataList.length}}&nbsp;条</small></h2>
+			</div>
+			<div v-for="(item,index) in dataList">
+			<div class="peccancyQuery userInfor onlyStyle">
+				<h2 class="q-r-tit"><span></span>订票日期：<small class="success smallColor">{{item.dprq}}</small></h2>
+				<hr class="hrLine">
+				<div class="tab-content listWH">
+					<div class="text-list-div clearfix">
+						<label>姓名：</label>
+						<span>{{item.xm}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>参观日期：</label>
+						<span>{{item.cgrq}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>证件号码：</label>
+						<span>{{item.zjh}}</span>
+					</div>
+					<div class="text-list-div clearfix">
+						<label>预约编码：</label>
+						<span class="museumColor">{{item.yym}}</span>
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+			<!--查询无结果-->
+			<div class="peccancyQuery userInfor onlyStyle" v-if='this.noResult==true'>
+				<h2 class="q-r-tit"><span></span>{{err}}</h2>
+			</div>
+		</div>
+		<div style="height: 1.3rem;"></div>
+		<div class="data-sources">服务来源：中国国家博物馆</div>
+	</div>
+	<script type="text/javascript" src="/js/museum/museum.js"></script>
+    <script>
+        fnSize()
+        window.addEventListener('resize',fnSize,false)
+        function fnSize () {
+            if(document.documentElement.offsetWidth>1024){
+                document.getElementsByTagName('html')[0].style.fontSize = 375/10 +'px';
+                document.getElementsByClassName("max")[0].style.width="375px";
+                document.getElementsByClassName("max")[0].style.margin ="0 auto";
+                document.getElementsByClassName("data-sources")[0].style.width ="375px";
+                return;
+            }else{
+                document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.offsetWidth/10 +'px';
+                document.getElementsByClassName("max")[0].style.width="100%";
+                document.getElementsByClassName("data-sources")[0].style.width ="100%";
+                return;
+            }
+
+        }
+    </script>
+</body>
+</html>
