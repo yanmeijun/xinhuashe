@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>邮件通知-源端监控</title>
+    <style type="text/css">
+        /*默认基本样式*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 12px;
+            margin: 0;
+            font-family: 'Microsoft Yahei';
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        i, em {
+            font-style: normal;
+        }
+
+        b, strong {
+            font-weight: normal;
+        }
+
+        a img {
+            border: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        ol, ul, dl, li {
+            list-style: none;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .p10 {
+            padding: 0 10px;
+        }
+
+        .clearfix:after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        /*邮件模板*/
+        .mailNotice{
+            width: 640px;
+            margin: 13px auto;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .logoTitle{
+            height: 55px;
+            line-height: 55px;
+            background: #00bcd5;
+        }
+        .logoTitle .logo{
+            width: 37px;
+            height: 30px;
+            margin-left: 35px;
+            margin-top: 12px;
+        }
+        .logoWord{
+            color: #fff;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        .userTitle{
+            color: #383b4d;
+            font-size: 18px;
+            padding: 10px 0 10px 40px;
+        }
+        .noticeCon{
+            background: #f8fbfc;
+            border: 1px solid #e7e7e7;
+            padding: 20px 0 15px;
+            margin: 0 40px 20px;
+        }
+        .ucapDown{
+            font-size: 14px;
+            color: #363636;
+            margin: 0 20px 10px;
+        }
+        .ucapDown label{
+            display: inline-block;
+            width: 94px;
+            float: left;
+        }
+        .ucapDown span{
+            overflow: hidden;
+            display: block;
+        }
+        .ucapDown span em{
+            margin-right: 5px;
+            color: #f46363;
+        }
+        .ucapDown a{
+            color: #00bcd5;
+            text-decoration: underline;
+        }
+        .mailFooter{
+            height: 35px;
+            line-height: 35px;
+            border-top: 1px solid #515561;
+            background: #656871;
+            color: #e6e6e7;
+            text-align: center;
+        }
+        .intro{
+            font-size: 14px;
+            color: #666;
+            padding: 0 40px 10px 40px;
+            line-height: 20px;
+        }
+        .intro span{
+            color: #f46363;
+            margin: 0 5px;
+        }
+    </style>
+
+</head>
+<body bgcolor="e4e5ea">
+    <div class="mailNotice">
+        <div class="logoTitle">
+            <div class="logo fl">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAeCAYAAAHcJOf7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkUyMDQ1RDY4OERFMTFFODhGMTZBRDQ1Mzc5NzkwNkQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkUyMDQ1RDU4OERFMTFFODhGMTZBRDQ1Mzc5NzkwNkQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUJEQTIxNEU3RkYzMTFFODg0RjdDNzZGRUJDRDFDMzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUJEQTIxNEY3RkYzMTFFODg0RjdDNzZGRUJDRDFDMzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7VeqfeAAAEMUlEQVR42mL4//8/AxQfhrFZGCDgPxAzwmgmqGAOVAAEvBn/g9RDVIHAXCB+DRBADEhmniJo5n8kiVwQgwmqAoQ7gfgMSBIggBgh9sABCgfJAQwwZ3IgKWJEUgASEwcLAk10AdJ7oBIg9g+oRhC4AcQaQHwf5Pxz/yGAAUo//I8AmTAvAgQQsr9BWAWI/wGxIbI4euAgg8cwOWTfghgCQPwR6ol/MM8woQVFO5QuQBEHmpQONV4UzTo1IC4DYk6YdQ5AfAfq7TdALALEB6DicId/QAoKGyDugPJB9H2G/5hgExIbpJkBIIDQ4xIZPARiOSziH4BYEJsGJixiylDfgwz6ixT/IPwJGpwgeWsMnWgxOB/NKwxYMDI4hCumf/7HDi4CcQQQH8QiFwfErOiGwcA3JMPZgPgTmmaQhfxIap4C8VIgbgRiRvRc+wEpTGZBxd4B8VMg1oXyLaFsUFqIgop5gMIYn2GMSEG7BYiXAfErIFaEWpQFxN1AHACLfYAAYsARyDDcAMSvgfg9EPfiU4tLQvc/buCITQ+2xMoKxL8Y8ANYlsWbUD8hsaOREqk9kvh7Qok0BskLv7B44QmSfB2+MEIGt7AYtAVNDSO2MLoJxGq4CmcchTfIi0LIYaSFZMhDNI0VQFyIZggsoBcBsSRyGKFn3lt4ov8dVA2I7gJidxAf5KKVSDapQmmQ6xqwxOgUmFeAQAaIXwDxcVCSAYWRDZBxBCrpAC1bXZA070Hj/4Cqd0EJTFD1A6TlkfLbOiC2AuKDULF0IJ6JpCcNWuk1I0VIKgsW57MDcQqSK7ElQHEkMVBOAFftjEQUzeVA7IrERhfbjh5je4A4C0ssogNd9OIZIMAIFSPYsBAQzwXiP/8Jg81ALE+qHaQoVgbiV//JA1+B2JzajqrCYyGogo8EYmsgDgTixUD8G4faGdRy1C4cFjQS0BePQ981IGYn11HCeKLrGpEhvAGH/h9ArE6qoxyhTU9c4C8QSxBwECu0rsUHUol1VDMJCbgSuW5BwlF4GlL/oR6eAMQXgLgVn6NAhh/BYgCoESUHxDv/UwZAUa4BxJ+B+DwQm0JpUK1yG4iZ0R0lCW3SoIMDaCEBUneGRMc8AGIdJDOYoD2TUGhmOAINLVD6NYDV5vrQvhw6AIlNx9Pq4QfiECB2hPYiQE32z9BeBahyWg2tEnEBWyC+C8Q94I4XA4MJEJ8CtyqQOl7o6eIDrGMBxF54yp6HONox6GAjVF0mAXWfiXXUUqg6FzKqJSO0eg6XuiSYIiYG0sAPPHJboO0sdHwWTV0mDnWwJPSJBSogA+2fPoVKgHpofEgN4X9IfVhJNEu+AfFWJH4WtJfKgGRWDxZPfIS2xjEAKKFLAOl4LH3Lj1DXv4K2YxKwNGthra8OaPfIH4u8KBAnQdl6QMwN7e38wNF+ZAAA0dZHe3u4lGEAAAAASUVORK5CYII=">
+            </div>
+            <div class="logoWord fl">开普云数据异构聚合平台</div>
+        </div>
+        <div class="userTitle">尊敬的用户，您好！</div>
+        <div class="intro">截止到<%= time %>，开普云数据异构聚合平台监测到<span><%= length %></span>个运行异常预警信息，请及时处理，详情如下：</div>
+        <% docs.forEach(function(doc){ %>
+        <div class="mainNoteCon">
+            <div class="noticeCon">
+                <div class="ucapDown"><label>监控名：</label><span><%= doc.originName %></span></div>
+                <div class="ucapDown"><label>监控地址：</label><a href="<%= doc.originUrl %>"><%= doc.originUrl %></a></div>
+                <div class="ucapDown"><label>监控类别：</label><span>源站页面是否可访问</span></div>
+                <div class="ucapDown"><label>监测时间：</label><span><%= doc.time %></span></div>
+                <div class="ucapDown">
+                    <a href="https://dip.kaipuyun.cn">[登录开普云数据异构聚合平台查看详情]</a>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+        <div class="mailFooter">© Copyright 2018 开普云版权所有</div>
+    </div>
+</body>
+</html>
