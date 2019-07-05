@@ -1,0 +1,592 @@
+/**
+ * Copyright 2019 The Kaipuyun Project Authors. All right reserved.
+ * Use of this source that is governed by a Apache-style
+ * license that can be found in the LICENSE file.
+ *
+ * 定义异构系统接口开发平台 之 标签页窗体、开发者工具和模板列表等组件样式
+ *
+ * @authors hjboss <hongjiangproject@gmail.com> 2019-06 $
+ */
+@import 'sanitize.css';
+
+$themePrefix: 'devplatform-' !default;
+$themeAnimation: .375s !default; // CSS3动画时长
+$themeBorderRadius: .25rem !default; // 圆角半径
+$themeColorWeight: 6.75% !default; // Darken/Lighten默认参数
+
+// 响应式设计 Media Breakpoints
+$themeBreakpointMobile: 20rem !default;
+$themeBreakpointTablet: 48rem !default;
+$themeBreakpointDesktop: 64rem !default;
+
+// 公共组件字体尺寸规范
+$themeFontHeader: 2.375rem !default;
+$themeFontSubheader: 2.125rem !default;
+$themeFontTitle: 1.875rem !default;
+$themeFontSubtitle: 1.125rem !default;
+$themeFontCaption: .75rem !default;
+$themeFontDefault: .875rem !default;
+
+// 公共组件字体系列规范
+$themeFontSansserif: system-ui,
+  /* macOS 10.11-10.12 */
+  -apple-system,
+  /* Windows 6+ */
+  Segoe UI,
+  /* Android 4+ */
+  Reboto,
+  /* Ubuntu 10.10+ */
+  Ubuntu,
+  /* Gnome 3+ */
+  Cantarell,
+  /* KDE Plasma 5+ */
+  Noto Sans,
+  /* fallback */
+  sans-serif,
+  /* macOS emoji */
+  'Apple Color Emoji',
+  /* Windows emoji */
+  'Segoe UI Emoji',
+  /* Windows emoji */
+  'Segoe UI Symbol',
+  /* Linux emoji */
+  'Noto Color Emoji' !default;
+$themeFontMonospace:
+  /* macOS 10.10+ */
+  Menlo,
+  /* Windows 6+ */
+  Consolas,
+  /* Android 4+ */
+  Roboto Mono,
+  /* Ubuntu 10.10+ */
+  Ubuntu Mono,
+  /* KDE Plasma 5+ */
+  Noto Mono,
+  /* KDE Plasma 4+ */
+  Oxygen Mono,
+  /* Linux/OpenOffice fallback */
+  Liberation Mono,
+  /* fallback */
+  monospace !default;
+
+// 主题颜色规范
+$themeColorAccentLighten: #55acee;
+$themeColorAccentDarken: darken($themeColorAccentLighten, $themeColorWeight);
+
+// 系统颜色规范
+$themeColorBlue:    #0078d7 !default;
+$themeColorIndigo:  #3498db !default; // Curious Blue
+$themeColorCyan:    #19b5fe !default; // Dodger Blue
+$themeColorPurple:  #9a12b3 !default; // Seance
+$themeColorPink:    #e74c3c !default; // Cinnabar
+$themeColorRed:     #c0392b !default; // Pomegranate
+$themeColorOrange:  #e87e04 !default; // Tahiti Gold
+$themeColorYellow:  #f7ca18 !default; // Ripe Lemon
+$themeColorGreen:   #2ecc71 !default; // Shamrock
+$themeColorTeal:    #1ba39c !default; // Light Sae Green
+$themeColorWhite:   #ffffff !default;
+$themeColorGray50:  #fafafa !default; 
+$themeColorGray100: #f4f4f4 !default;
+$themeColorGray200: #eaeaea !default; 
+$themeColorGray300: #e4e4e4 !default;
+$themeColorGray400: #cccccc !default;
+$themeColorGray500: #999999 !default;
+$themeColorGray600: #767676 !default;
+$themeColorGray700: #666666 !default; 
+$themeColorGray800: #333333 !default;
+$themeColorGray900: #222222 !default;
+$themeColorBlack:   #000000 !default;
+
+$themeZindexDropdown:      1000 !default;
+$themeZindexSticky:        1020 !default;
+$themeZindexFixed:         1030 !default;
+$themeZindexModalBackdrop: 1040 !default;
+$themeZindexModal:         1050 !default;
+$themeZindexPopover:       1060 !default;
+$themeZindexTooltip:       1070 !default;
+
+// 基本组件尺寸及其颜色
+$themeBackgroundColor: #2c3c51 !default;
+$themeTabHeight: 1.875rem !default;
+$themeTabHeightButton: 1.375rem !default;
+$themeTabHeightTitlebar: 1.5rem !default;
+$themeTabColorText: #dee1e6 !default;
+$themeTabColorButton: #9ea4ad !default;
+$themeTabColorSeparator: lighten($themeBackgroundColor, $themeColorWeight * 2) !default;
+
+$themeSearchHeight: 2.625rem !default;
+$themeSearchColorButton: #5f6368 !default;
+$themeSearchColorShadow: #eff1f2 !default;
+$themeSearchColorHolder: #969ca2 !default;
+$themeSearchColorBorder: #b6b4b6 !default;
+$themeSearchColorFocus: #99befa !default;
+$themeSearchColorDisabled: #babcbe !default;
+
+$themeDevtoolHeightTitle: 2rem !default;
+$themeDevtoolColorTitle: #f3f3f3 !default;
+$themeDevtoolColorBorder: $themeSearchColorBorder !default;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $themeFontSansserif;
+  background-color: $themeBackgroundColor;
+  overflow: hidden;
+
+  // Placeholder文本样式
+  ::-webkit-input-placeholder {
+    color: $themeSearchColorHolder;
+  }
+  :-moz-placeholder {
+    color: $themeSearchColorHolder;
+  }
+  ::-moz-placeholder {
+    color: $themeSearchColorHolder;
+  }
+  :-ms-input-placeholder {
+    color: $themeSearchColorHolder;
+  }
+
+  .#{$themePrefix}viewport {
+    width: 100vw;
+    height: 100vh;
+
+    :global(span.#{$themePrefix}icon) {
+      display: inline-block;
+      vertical-align: baseline;
+      border-radius: $themeBorderRadius * 2;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+      }
+    }
+
+    header {
+      display: flex;
+      flex-wrap: nowrap;
+      position: relative;
+      height: $themeTabHeight;
+      line-height: $themeTabHeight;
+      vertical-align: baseline;
+      box-sizing: content-box;
+
+      // 禁止标签文本选取
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+        -moz-user-select: -moz-none;
+          -ms-user-select: none;
+              user-select: none;
+
+      .#{$themePrefix}titlebar {
+        padding-left: $themeTabHeight;
+        font-size: $themeFontDefault;
+        color: $themeTabColorButton;
+        background-image: url(../dist/img/256.png);
+        background-size: $themeFontSubtitle $themeFontSubtitle;
+        background-position: ($themeTabHeight - $themeFontSubtitle) / 2 center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+      }
+
+      :global(span.#{$themePrefix}icon) {
+        display: inline-block;
+        width: $themeTabHeightButton;
+        height: $themeTabHeightButton;
+        line-height: $themeFontTitle;
+        margin-top: ($themeTabHeight - $themeTabHeightButton) / 2;
+        margin-bottom: ($themeTabHeight - $themeTabHeightButton) / 2;
+        margin-right: ($themeTabHeight - $themeTabHeightButton) / 2;
+        font-size: $themeFontSubtitle;
+        color: $themeTabColorButton;
+
+        &:hover {
+          color: darken($themeTabColorButton, $themeColorWeight);
+          background-color: lighten($themeBackgroundColor, $themeColorWeight);
+        }
+
+        &:active {
+          color: darken($themeTabColorButton, $themeColorWeight * 2);
+          background-color: lighten($themeBackgroundColor, $themeColorWeight * 2);
+        }
+
+        &:global(.#{$themePrefix}icon-minimize::before) {
+          font-size: $themeFontCaption;
+          padding-left: $themeTabHeightButton / 5;
+        }
+
+        &:global(.#{$themePrefix}icon-maximize::before),
+        &:global(.#{$themePrefix}icon-close::before) {
+          padding-left: $themeTabHeightButton / 4;
+        }
+      }
+
+      .#{$themePrefix}controllers {
+        display: flex;
+        padding-left: $themeTabHeight - $themeTabHeightButton;
+        border-left: 1px solid $themeTabColorSeparator;
+      }
+
+      .#{$themePrefix}tabs {
+        display: flex;
+        height: $themeTabHeight;
+        line-height: $themeTabHeight;
+        padding-left: $themeTabHeightButton;
+        margin: 0;
+        overflow: hidden;
+        flex: 1;
+
+        :global(span.#{$themePrefix}icon-add) {
+          margin-left: ($themeTabHeight - $themeTabHeightButton) / 2;
+          padding-left: $themeTabHeightButton / 6;
+          line-height: $themeFontTitle - .125rem;
+          color: $themeTabColorText;
+        }
+
+        li {
+          list-style: none;
+          position: relative;
+          max-width: 16rem;
+          min-width: 3rem;
+          height: $themeTabHeight;
+          padding: 0 $themeTabHeight;
+          color: $themeTabColorText;
+          font-size: $themeFontDefault;
+          background-color: $themeBackgroundColor;
+          border-left: 1px solid $themeTabColorSeparator;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          cursor: pointer;
+          flex: auto;
+
+          :global(.#{$themePrefix}icon) {
+            position: absolute;
+            top: 0;
+            z-index: $themeZindexTooltip;
+          }
+
+          :global(img.#{$themePrefix}icon) {
+            width: $themeFontSubtitle;
+            height: $themeFontSubtitle;
+            top: ($themeTabHeight - $themeFontSubtitle) / 2;
+            left: ($themeTabHeight - $themeFontSubtitle) / 2;
+
+            &:hover,
+            &:active {
+              background-color: transparent;
+            }
+          }
+
+          :global(span.#{$themePrefix}icon-close) {
+            right: 0;
+          }
+
+          &:hover {
+            background-color: lighten($themeBackgroundColor, $themeColorWeight);
+          }
+
+          &:active {
+            background-color: lighten($themeBackgroundColor, $themeColorWeight * 2);
+          }
+
+          &:nth-last-child(2) {
+            border-right: 1px solid $themeTabColorSeparator;
+          }
+
+          &.#{$themePrefix}active,
+          &.#{$themePrefix}dragging {
+            color: $themeColorGray100;
+            background-image: linear-gradient(to left, #39baf9, #2365df);
+            border-top-left-radius: $themeBorderRadius;
+            border-top-right-radius: $themeBorderRadius;
+
+            :global(span.#{$themePrefix}icon-close) {
+              color: $themeColorGray100;
+
+              &:hover,
+              &:active {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      height: 100%;
+
+      .#{$themePrefix}tabview {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-top: $themeSearchHeight;
+        overflow: hidden;
+
+        webview {
+          width: 100%;
+          height: 100%;
+          background-color: $themeColorGray50;
+          overflow: auto !important;
+        }
+
+        .#{$themePrefix}searchbar,
+        .#{$themePrefix}devtool {
+          // 禁止标签文本选取
+          -webkit-user-select: none;
+           -khtml-user-select: none;
+             -moz-user-select: -moz-none;
+              -ms-user-select: none;
+                  user-select: none;
+        }
+
+        :global(.#{$themePrefix}icon) {
+          width: $themeSearchHeight - $themeBorderRadius;
+          height: $themeSearchHeight - $themeBorderRadius;
+          line-height: $themeSearchHeight - $themeBorderRadius;
+          margin: $themeBorderRadius / 2;
+          font-size: $themeFontSubtitle;
+          color: rgba($themeSearchColorButton, 0.8);
+          border-radius: $themeBorderRadius;
+          cursor: pointer;
+
+          &::before {
+            padding-left: $themeFontSubtitle * 4 / 7;
+          }
+
+          &:hover {
+            background-color: $themeSearchColorShadow;
+          }
+
+          &:active {
+            background-color: darken($themeSearchColorShadow, $themeColorWeight / 3);
+          }
+
+          &:global(.#{$themePrefix}icon-disabled) {
+            color: rgba($themeSearchColorDisabled, 0.8);
+
+            &,
+            &:hover,
+            &:active {
+              background-color: transparent;
+              cursor: default;
+            }
+          }
+
+          &:global(.#{$themePrefix}icon-hidden) {
+            display: none;
+          }
+        }
+
+        .#{$themePrefix}search {
+          display: flex;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: 0;
+          height: $themeSearchHeight;
+          line-height: $themeSearchHeight;
+          background-color: $themeColorGray50;
+          box-shadow: 0 0 .125rem $themeSearchColorBorder;
+
+          .#{$themePrefix}searchbox {
+            position: relative;
+            height: $themeTabHeight + .25rem;
+            line-height: $themeTabHeight;
+            margin: ($themeSearchHeight - $themeTabHeight - .25rem) / 2;
+            padding: 0 $themeTabHeight + $themeFontDefault / 2;
+            background-color: $themeSearchColorShadow;
+            border: .125rem solid $themeSearchColorShadow;
+            border-radius: $themeTabHeight;
+            flex: 1;
+
+            :global(.#{$themePrefix}icon-first),
+            :global(.#{$themePrefix}icon-last) {
+              position: absolute;
+              top: 0;
+              margin: 0;
+              width: $themeTabHeight + $themeFontDefault / 2;
+              height: $themeTabHeight;
+              color: rgba($themeSearchColorButton, 0.6);
+              z-index: $themeZindexTooltip;
+
+              &::before {
+                padding-left: $themeFontSubtitle / 2;
+              }
+            }
+
+            :global(.#{$themePrefix}icon-first) {
+              left: .125rem;
+              line-height: $themeSearchHeight - $themeBorderRadius * 2;
+
+              &,
+              &:hover,
+              &:focus {
+                background-color: transparent;
+              }
+            }
+
+            :global(.#{$themePrefix}icon-last) {
+              display: none;
+              right: 0;
+              
+              background-color: $themeSearchColorShadow;
+              border-top-right-radius: $themeTabHeight;
+              border-bottom-right-radius: $themeTabHeight;
+            }
+
+            &,
+            code,
+            input[type="search"] {
+              color: $themeSearchColorButton;
+              font-size: $themeFontDefault + .125rem;
+              font-family: $themeFontMonospace;
+              white-space: nowrap;
+              overflow: hidden;
+              outline: none;
+              cursor: text;
+            }
+
+            input[type="search"] {
+              width: 100%;
+              height: $themeTabHeight;
+              line-height: $themeTabHeight;
+              color: $themeSearchColorShadow;
+              background-color: transparent;
+              border-width: 0;
+            }
+
+            code {
+              display: block;
+              position: absolute;
+              top: 0;
+              right: $themeTabHeight + $themeFontDefault / 4;
+              left: $themeTabHeight + $themeFontDefault / 4;
+              color: $themeSearchColorHolder;
+
+              em {
+                color: $themeColorGray800;
+                font-style: normal;
+              }
+            }
+
+            &.#{$themePrefix}searchbox-focus,
+            &.#{$themePrefix}searchbox-error {
+              color: $themeColorGray700;
+              background-color: $themeColorWhite;
+
+              code.#{$themePrefix}format {
+                display: none;
+              }
+
+              input[type="search"] {
+                color: $themeSearchColorButton;
+              }
+
+              :global(.#{$themePrefix}icon-last) {
+                display: inline-block;
+              }
+            }
+
+            &.#{$themePrefix}searchbox-focus {
+              border-color: $themeSearchColorFocus;
+            }
+
+            &.#{$themePrefix}searchbox-error {
+              border-color: $themeColorPink;
+            }
+          }
+        }
+
+        .#{$themePrefix}devtool {
+          position: fixed;
+          width: 100%;
+          background-color: $themeColorGray50;
+          bottom: 0;
+
+          table.#{$themePrefix}devtool-network {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+
+            thead {
+              display: flex;
+              width: 100%;
+              background-color: $themeDevtoolColorTitle;
+              box-shadow: 0 0 .125rem $themeDevtoolColorBorder;
+
+              th {
+                padding-left: $themeFontDefault;
+                padding-right: $themeFontDefault;
+                height: $themeDevtoolHeightTitle;
+                line-height: $themeDevtoolHeightTitle;
+                color: $themeColorGray700;
+                font-size: $themeFontDefault;
+                font-weight: normal;
+                border-right: 1px solid $themeColorGray300;
+                box-sizing: border-box;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.#{$themePrefix}viewport-darwin {
+      header {
+        padding-top: $themeTabHeightTitlebar;
+
+        &:after {
+          content: ' ';
+          position: absolute;
+          top: $themeTabHeightTitlebar;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background-color: $themeTabColorSeparator;
+        }
+
+        .#{$themePrefix}titlebar {
+          position: absolute;
+          top: 0;
+          left: 4rem;
+          right: 4rem;
+          line-height: $themeTabHeightTitlebar;
+          font-size: $themeFontDefault;
+          text-align: center;
+          background-image: none;
+        }
+
+        .#{$themePrefix}controllers {
+          display: none;
+        }
+
+        .#{$themePrefix}tabs {
+          padding-left: 0;
+
+          li:first-child {
+            border-left: 0;
+          }
+        }
+      }
+    }
+
+    &.#{$themePrefix}viewport-linux {
+      header {
+        .#{$themePrefix}titlebar,
+        .#{$themePrefix}controllers {
+          display: none;
+        }
+
+        .#{$themePrefix}tabs {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

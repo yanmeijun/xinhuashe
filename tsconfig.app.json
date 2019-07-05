@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "dist",
+    "target": "es3",
+    "lib": [
+      "es2016"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "skipLibCheck": true
+  },
+  "files": [
+    "src/devplatform.ts"
+  ]
+}
